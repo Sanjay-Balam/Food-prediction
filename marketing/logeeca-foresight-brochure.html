@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logeeca Foresight – Kitchen Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap">
+<style>
+  /* Brand tokens */
+  :root {
+    --ink: #14110F;          /* warm black: cover and back */
+    --paper: #FAF7F0;        /* ivory: inner pages */
+    --card: #FFFDF8;
+    --gold: #C9A25A;         /* gold on dark */
+    --gold-soft: #D8B672;
+    --gold-deep: #8A5A12;    /* gold text on ivory (passes 4.5:1) */
+    --gold-rule: #D9C9A6;
+    --text: #1A1612;
+    --text-body: #3A342C;
+    --text-muted: #5C554B;
+    --on-ink: #F3EEE3;
+    --on-ink-muted: #CFC7B8;
+    --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', 'Segoe UI', Arial, sans-serif;
+  }
+
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: #E7E2D8;
+    font-family: var(--sans);
+    color: var(--text);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* One A4 sheet = 794 x 1123 px at 96 dpi */
+  .page {
+    width: 794px;
+    height: 1123px;
+    margin: 32px auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 64px 72px 48px;
+    background: var(--paper);
+    box-shadow: 0 10px 40px rgba(20, 17, 15, 0.18);
+    break-after: page;
+  }
+  .page.dark { background: var(--ink); color: var(--on-ink); }
+
+  .print-button {
+    position: fixed; right: 24px; bottom: 24px; z-index: 10;
+    font: 600 15px var(--sans); letter-spacing: 0.04em;
+    color: var(--ink); background: var(--gold);
+    border: 0; border-radius: 999px; padding: 14px 22px; min-height: 48px;
+    cursor: pointer; box-shadow: 0 6px 20px rgba(20, 17, 15, 0.25);
+  }
+  .print-button:hover { background: var(--gold-soft); }
+  .print-button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  @media print {
+    body { background: none; }
+    .page { margin: 0; box-shadow: none; }
+    .print-button { display: none; }
+  }
+
+  /* Type */
+  .eyebrow { display: flex; align-items: center; gap: 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-deep); }
+  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--gold-rule); }
+  .dark .eyebrow { color: var(--gold); }
+  .dark .eyebrow::after { background: rgba(201, 162, 90, 0.4); }
+  .title { margin: 18px 0 0; font-family: var(--serif); font-weight: 600; font-size: 46px; line-height: 1.1; letter-spacing: -0.01em; text-wrap: balance; }
+  .title em { font-style: italic; font-weight: 500; color: var(--gold-deep); }
+  .dark .title em { color: var(--gold-soft); }
+  .lead { margin: 22px 0 0; font-size: 17px; line-height: 1.6; color: var(--text-body); text-wrap: pretty; }
+  .dark .lead { color: var(--on-ink-muted); }
+
+  /* Running foot */
+  .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.16em; color: #6B6357; }
+  .foot .num { font-family: var(--serif); font-style: italic; font-size: 16px; letter-spacing: 0; color: var(--gold-deep); }
+  .dark .foot { color: #A79F92; }
+  .dark .foot .num { color: var(--gold); }
+
+  /* Brand mark */
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-name { font-size: 15px; font-weight: 700; letter-spacing: 0.32em; color: #E9D9B6; }
+  .brand-name.on-paper { color: var(--text); }
+
+  /* Cover */
+  .cover-rings { position: absolute; left: 360px; top: -110px; }
+  .cover-copy { position: relative; margin-top: auto; display: flex; flex-direction: column; gap: 24px; }
+  .product { display: flex; align-items: baseline; gap: 14px; }
+  .product-name { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--gold-soft); }
+  .product-tag { font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--on-ink-muted); }
+  .cover-headline { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 80px; line-height: 1.04; letter-spacing: -0.01em; color: #F6F1E6; }
+  .cover-headline em { font-style: italic; font-weight: 500; color: var(--gold-soft); }
+  .cover-sub { margin: 0; max-width: 570px; font-size: 19px; line-height: 1.6; font-weight: 300; color: var(--on-ink-muted); }
+  .pillars { position: relative; margin-top: 60px; padding-top: 22px; border-top: 1px solid rgba(201, 162, 90, 0.45); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+  .pillar { display: flex; flex-direction: column; gap: 8px; }
+  .pillar b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; color: var(--gold); }
+  .pillar span { font-size: 14px; font-weight: 500; line-height: 1.35; color: #EDE6D8; }
+
+  /* Problem page */
+  .problem-intro { margin-top: 24px; display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 40px; align-items: start; }
+  .problem-intro .lead { margin: 0; }
+  .stat { border-top: 2px solid #B8862B; padding-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .stat strong { font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--gold-deep); }
+  .stat span { font-size: 15px; line-height: 1.45; color: var(--text-body); }
+  .stat small { font-size: 12px; line-height: 1.4; color: var(--text-muted); }
+  .problems { margin-top: 34px; border-bottom: 1px solid #E3D8C3; }
+  .problem { display: grid; grid-template-columns: 64px minmax(0, 1fr); padding: 16px 0; border-top: 1px solid #E3D8C3; }
+  .problem > b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 26px; line-height: 1.1; color: #B8862B; }
+  .problem h2 { margin: 0 0 5px; font-family: var(--serif); font-weight: 600; font-size: 21px; }
+  .problem p { margin: 0; font-size: 16px; line-height: 1.5; color: #4A443B; }
+
+  /* Feature cards (solution pages) */
+  .features { margin-top: 26px; display: flex; flex-direction: column; gap: 20px; }
+  .feature { background: var(--card); border: 1px solid #E1D5BD; border-radius: 3px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+  .feature-head { display: flex; align-items: center; gap: 16px; }
+  .icon { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--gold-rule); display: grid; place-items: center; }
+  .icon svg { width: 22px; height: 22px; fill: none; stroke: var(--gold-deep); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .feature-head b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; color: #B8862B; }
+  .feature-head h2 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 25px; }
+  .solves { margin: 0; font-size: 15px; line-height: 1.5; color: var(--text-muted); }
+  .solves span { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; color: var(--gold-deep); margin-right: 8px; }
+  .solves i { font-family: var(--serif); font-size: 17px; color: var(--text); }
+  .feature p.how { margin: 0; font-size: 16px; line-height: 1.55; color: var(--text-body); text-wrap: pretty; }
+  .outcomes { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 26px; }
+  .outcomes li { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text); }
+  .outcomes svg { width: 16px; height: 16px; fill: none; stroke: #B8862B; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .proof { margin-top: 4px; padding-top: 16px; border-top: 1px solid #EBE1CE; display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 32px; align-items: end; }
+  .proof div { display: flex; flex-direction: column; gap: 4px; }
+  .proof strong { font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--gold-deep); }
+  .proof span { font-size: 13px; line-height: 1.35; color: var(--text-muted); }
+  .proof small { font-size: 12px; line-height: 1.45; color: var(--text-muted); }
+
+  /* Back page */
+  .steps { margin-top: 30px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 40px; }
+  .step { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 4px; }
+  .step > b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 34px; line-height: 1; color: var(--gold); }
+  .step h3 { margin: 4px 0 6px; font-family: var(--serif); font-weight: 600; font-size: 20px; color: #F6F1E6; }
+  .step p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--on-ink-muted); }
+  .why { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(201, 162, 90, 0.35); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+  .why h3 { margin: 0 0 8px; font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--gold-soft); }
+  .why p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--on-ink-muted); }
+  .cta { margin-top: 40px; border: 1px solid rgba(201, 162, 90, 0.6); padding: 28px 32px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; }
+  .cta h2 { margin: 0 0 8px; font-family: var(--serif); font-weight: 600; font-size: 28px; color: #F6F1E6; }
+  .cta p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--on-ink-muted); }
+  .contact { display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 500; color: #EDE6D8; white-space: nowrap; }
+  .contact span { color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; margin-right: 10px; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 · COVER ============ -->
+<section class="page dark" aria-label="Cover">
+  <svg class="cover-rings" aria-hidden="true" width="680" height="680" viewBox="0 0 680 680">
+    <circle cx="340" cy="340" r="320" fill="none" stroke="#C9A25A" stroke-opacity="0.16"/>
+    <circle cx="340" cy="340" r="262" fill="none" stroke="#C9A25A" stroke-opacity="0.24"/>
+    <circle cx="340" cy="340" r="204" fill="none" stroke="#C9A25A" stroke-opacity="0.32"/>
+    <circle cx="340" cy="340" r="146" fill="none" stroke="#C9A25A" stroke-opacity="0.42"/>
+    <circle cx="340" cy="340" r="88" fill="none" stroke="#C9A25A" stroke-opacity="0.55"/>
+    <path d="M340 340 L 82 152" stroke="#C9A25A" stroke-opacity="0.5"/>
+    <path d="M 202 118 A 262 262 0 0 1 340 78" fill="none" stroke="#C9A25A" stroke-width="2.5"/>
+    <path d="M 158 208 A 204 204 0 0 1 216 154" fill="none" stroke="#C9A25A" stroke-opacity="0.8" stroke-width="2"/>
+    <circle cx="340" cy="340" r="7" fill="#C9A25A"/>
+    <circle cx="202" cy="118" r="4.5" fill="#E2C489"/>
+  </svg>
+
+  <div class="brand" style="position: relative;">
+    <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34">
+      <circle cx="17" cy="17" r="15.5" fill="none" stroke="#C9A25A" stroke-width="1.5"/>
+      <circle cx="17" cy="17" r="9" fill="none" stroke="#C9A25A"/>
+      <circle cx="17" cy="17" r="3.5" fill="#C9A25A"/>
+    </svg>
+    <span class="brand-name">LOGEECA</span>
+  </div>
+
+  <div class="cover-copy">
+    <div class="product">
+      <span class="product-name">Foresight</span>
+      <span class="product-tag">Kitchen Intelligence Platform</span>
+    </div>
+    <h1 class="cover-headline">Know tomorrow’s orders <em>tonight.</em></h1>
+    <p class="cover-sub">Logeeca Foresight predicts what every dish will sell, keeps your stock in step, cuts waste and protects your revenue — so your kitchen plans instead of guessing.</p>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar"><b>01</b><span>Demand Forecasting</span></div>
+    <div class="pillar"><b>02</b><span>Inventory Management</span></div>
+    <div class="pillar"><b>03</b><span>Wastage Tracking</span></div>
+    <div class="pillar"><b>04</b><span>Smart Alerts</span></div>
+    <div class="pillar"><b>05</b><span>Revenue Management</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 · THE PROBLEM ============ -->
+<section class="page" aria-label="The problem">
+  <div class="eyebrow">The problem</div>
+  <h1 class="title">Every kitchen runs on <em>a guess.</em></h1>
+
+  <div class="problem-intro">
+    <p class="lead">Every night, someone decides how much biryani to cook, how much mutton to order and how many naans to prep — from memory and yesterday’s numbers. Guess high and good food is thrown away. Guess low and guests hear “sold out”.</p>
+    <div class="stat">
+      <strong>290 million</strong>
+      <span>tonnes of food were wasted by restaurants and other food service worldwide in 2022.</span>
+      <small>Source: UNEP Food Waste Index Report 2024</small>
+    </div>
+  </div>
+
+  <div class="problems">
+    <div class="problem"><b>01</b><div><h2>Prep by guesswork</h2><p>Weekends, festivals, Ramzan evenings and rainy days move demand far more than memory can track, so every day’s prep is a gamble.</p></div></div>
+    <div class="problem"><b>02</b><div><h2>Stock surprises</h2><p>Ingredients are ordered on instinct. Mutton runs out on Sunday while vegetables and dairy spoil by Tuesday.</p></div></div>
+    <div class="problem"><b>03</b><div><h2>Invisible waste</h2><p>Leftovers go in the bin without a record, so nobody knows which dishes are over-prepared or what that costs each month.</p></div></div>
+    <div class="problem"><b>04</b><div><h2>Problems found too late</h2><p>You learn a bestseller has sold out when a guest asks for it — not the night before, when you could still act.</p></div></div>
+    <div class="problem"><b>05</b><div><h2>Revenue left on the table</h2><p>Sold-out bestsellers, slow dishes and quiet weekdays cap your takings without anyone noticing.</p></div></div>
+  </div>
+
+  <div class="foot"><span>LOGEECA · FORESIGHT</span><span class="num">02</span></div>
+</section>
+
+<!-- ============ PAGE 3 · SOLUTION: FORECASTING & INVENTORY ============ -->
+<section class="page" aria-label="The solution: demand forecasting and inventory management">
+  <div class="eyebrow">The solution</div>
+  <h1 class="title">Five features. <em>One answer</em> to each problem.</h1>
+  <p class="lead">Logeeca Foresight replaces the nightly guess with a plan. Each feature answers one of the problems on the previous page.</p>
+
+  <div class="features">
+    <article class="feature">
+      <div class="feature-head">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M7 15h2M11 15h2M15 15h2"/></svg></div>
+        <b>01</b><h2>Demand Forecasting</h2>
+      </div>
+      <p class="solves"><span>SOLVES</span><i>Prep by guesswork</i></p>
+      <p class="how">Foresight predicts how many portions of every dish you will sell — tomorrow and for the next seven days — with a likely number and a safe low–high range. It learns your weekday rhythm, your bookings and promotions, and festivals such as Diwali, Christmas and more. It updates every night from the day’s sales and relearns every week.</p>
+      <ul class="outcomes">
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Prep to a number, not a feeling</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>A safe range for every dish</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Weekly totals for purchasing</li>
+      </ul>
+      <div class="proof">
+        <div><strong>86%</strong><span>daily accuracy,<br>whole-restaurant total*</span></div>
+        <div><strong>91%</strong><span>weekly accuracy,<br>whole-restaurant total*</span></div>
+        <small>*Back-tested on two years of real restaurant sales, on days the model had never seen. Results vary by restaurant.</small>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="feature-head">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></div>
+        <b>02</b><h2>Inventory Management</h2>
+      </div>
+      <p class="solves"><span>SOLVES</span><i>Stock surprises</i></p>
+      <p class="how">Foresight turns tomorrow’s dish forecast into the exact ingredients your recipes need, checks them against what is in stock, and tells you what to order and how much — before your supplier’s cut-off.</p>
+      <ul class="outcomes">
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Order list built from the forecast</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Fewer last-minute market runs</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Less spoiled stock</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="foot"><span>LOGEECA · FORESIGHT</span><span class="num">03</span></div>
+</section>
+
+<!-- ============ PAGE 4 · SOLUTION: WASTE, ALERTS, REVENUE ============ -->
+<section class="page" aria-label="The solution: wastage tracking, smart alerts and revenue management">
+  <div class="eyebrow">The solution, continued</div>
+  <h1 class="title">See waste, act early, <em>earn more.</em></h1>
+
+  <div class="features">
+    <article class="feature">
+      <div class="feature-head">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg></div>
+        <b>03</b><h2>Wastage Tracking</h2>
+      </div>
+      <p class="solves"><span>SOLVES</span><i>Invisible waste</i></p>
+      <p class="how">Record leftovers for each dish in seconds at closing. Foresight shows waste by dish, by day and in rupees, and points to the dishes you keep over-preparing — so every week’s prep gets a little tighter.</p>
+      <ul class="outcomes">
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Waste measured in ₹, not guessed</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Over-prepared dishes flagged</li>
+      </ul>
+    </article>
+
+    <article class="feature">
+      <div class="feature-head">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+        <b>04</b><h2>Smart Alerts</h2>
+      </div>
+      <p class="solves"><span>SOLVES</span><i>Problems found too late</i></p>
+      <p class="how">Get a message before trouble starts: a bestseller likely to sell out, stock that will not cover tomorrow, a festival or a large booking ahead, or an unusual drop in sales.</p>
+      <ul class="outcomes">
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Act the night before, not during service</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Straight to your phone</li>
+      </ul>
+    </article>
+
+    <article class="feature">
+      <div class="feature-head">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+        <b>05</b><h2>Revenue Management</h2>
+      </div>
+      <p class="solves"><span>SOLVES</span><i>Revenue left on the table</i></p>
+      <p class="how">Foresight shows the sales you lose to sell-outs, prepares you for peak days so bestsellers never run short, and highlights the quiet days and slow dishes worth a promotion — turning better planning into higher takings.</p>
+      <ul class="outcomes">
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Capture every peak</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Smarter offers on quiet days</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="foot"><span>LOGEECA · FORESIGHT</span><span class="num">04</span></div>
+</section>
+
+<!-- ============ PAGE 5 · HOW IT WORKS & CONTACT ============ -->
+<section class="page dark" aria-label="How it works and contact">
+  <div class="eyebrow">How it works</div>
+  <h1 class="title">From last night’s sales to <em>this morning’s plan.</em></h1>
+
+  <div class="steps">
+    <div class="step"><b>1</b><div><h3>Close the day</h3><p>Upload each dish’s sold count — from your POS or the Foresight app. It takes a minute.</p></div></div>
+    <div class="step"><b>2</b><div><h3>Overnight</h3><p>Foresight forecasts tomorrow and the week ahead, and checks your stock against it.</p></div></div>
+    <div class="step"><b>3</b><div><h3>Every morning</h3><p>Your chef gets the prep sheet and any alerts — in English, Hinglish or Telugu.</p></div></div>
+    <div class="step"><b>4</b><div><h3>Every week</h3><p>The model relearns from your latest sales, and a new version goes live only when it is more accurate.</p></div></div>
+  </div>
+
+  <div class="why">
+    <div><h3>Built for Hyderabad</h3><p>Knows the Telangana calendar: Ramzan, Eid, Sankranti, Bonalu, Bathukamma and more.</p></div>
+    <div><h3>Numbers you can trust</h3><p>Every figure comes from a forecasting model trained on your own sales — never invented by a chatbot.</p></div>
+    <div><h3>Your data, kept separate</h3><p>Each restaurant’s sales and models are stored apart and used only for that restaurant.</p></div>
+  </div>
+
+  <div class="cta">
+    <div>
+      <h2>See Foresight on your own sales.</h2>
+      <p>Book a demo: share your past sales, and we will show you tomorrow’s forecast for your kitchen.</p>
+    </div>
+    <div class="contact">
+      <div><span>CALL</span>[Phone number]</div>
+      <div><span>EMAIL</span>[Email address]</div>
+      <div><span>WEB</span>[Website]</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 34 34">
+        <circle cx="17" cy="17" r="15.5" fill="none" stroke="#C9A25A" stroke-width="1.5"/>
+        <circle cx="17" cy="17" r="9" fill="none" stroke="#C9A25A"/>
+        <circle cx="17" cy="17" r="3.5" fill="#C9A25A"/>
+      </svg>
+      <span>LOGEECA</span>
+    </span>
+    <span>© 2026 LOGEECA · FORESIGHT</span>
+  </div>
+</section>
+
+<button class="print-button" type="button" onclick="window.print()">Print / Save as PDF</button>
+</body>
+</html>
