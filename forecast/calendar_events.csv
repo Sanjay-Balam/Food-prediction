@@ -1,0 +1,23 @@
+# Hyderabad / Telangana days that the `holidays` package (India, subdivision TG) does not cover.
+# kind: festival | ramzan | ipl | local   (end = start for one-day events)
+# Lunar festival dates move every year. Each December, check the Telangana GAD holiday G.O. and add the next year.
+# Add IPL Hyderabad match days and big city events (kind ipl / local) per season.
+# Missing so far (not verified): 2024 Ugadi/Bonalu/Bathukamma/Vinayaka Chavithi/Ramzan, 2025 Bathukamma, 2026 Vinayaka Chavithi, all of 2027 except fixed dates.
+start,end,kind,event,source
+2024-01-15,2024-01-15,festival,Sankranti,Telangana holidays 2024 G.O.Rt.No.1633
+2024-06-02,2024-06-02,festival,Telangana Formation Day,fixed date
+2025-01-13,2025-01-13,festival,Bhogi,Telangana holidays 2025
+2025-01-14,2025-01-14,festival,Sankranti,Telangana holidays 2025
+2025-03-02,2025-03-30,ramzan,Ramzan,first roza 2 Mar 2025; end approx +-1 day
+2025-03-30,2025-03-30,festival,Ugadi,Telangana holidays 2025
+2025-06-02,2025-06-02,festival,Telangana Formation Day,fixed date
+2025-07-21,2025-07-21,festival,Bonalu,Telangana holidays 2025
+2025-08-27,2025-08-27,festival,Vinayaka Chavithi,Telangana holidays 2025
+2026-01-14,2026-01-14,festival,Bhogi,Telangana holidays 2026 G.O.Rt.No.1715
+2026-01-15,2026-01-15,festival,Sankranti,Telangana holidays 2026 G.O.Rt.No.1715
+2026-02-19,2026-03-19,ramzan,Ramzan,first roza 19 Feb 2026 (Hyderabad); end approx +-1 day
+2026-03-19,2026-03-19,festival,Ugadi,Telangana holidays 2026
+2026-06-02,2026-06-02,festival,Telangana Formation Day,fixed date
+2026-08-10,2026-08-10,festival,Bonalu,Telangana holidays 2026
+2026-10-18,2026-10-18,festival,Saddula Bathukamma,Telangana holidays 2026
+2027-06-02,2027-06-02,festival,Telangana Formation Day,fixed date

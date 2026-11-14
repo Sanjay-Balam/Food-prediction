@@ -1,0 +1,13 @@
+# secrets
+.env
+
+# restaurant data and generated output: never push client data
+/data/
+/artifacts/
+/forecasts/
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
