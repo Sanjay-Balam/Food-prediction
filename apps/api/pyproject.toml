@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+# lets `pytest` find the forecast package and the shared tests/sample_data.py, however pytest is started
+pythonpath = [".", "tests"]
+testpaths = ["tests"]

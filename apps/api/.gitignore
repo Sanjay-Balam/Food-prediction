@@ -1,0 +1,4 @@
+# restaurant data and generated output: never push client data
+/data/
+/artifacts/
+/forecasts/

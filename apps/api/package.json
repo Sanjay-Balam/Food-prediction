@@ -1,0 +1,9 @@
+{
+  "name": "api",
+  "private": true,
+  "description": "Python forecasting backend (FastAPI + LightGBM). Python deps: pip install -r requirements.txt",
+  "scripts": {
+    "dev": "python -m uvicorn forecast.api:app --reload",
+    "test": "python -m pytest -q"
+  }
+}

@@ -1,0 +1,7 @@
+packages:
+  - "apps/*"
+
+# install scripts that pnpm may run (moved here from apps/demo-web)
+allowBuilds:
+  sharp: false
+  unrs-resolver: false

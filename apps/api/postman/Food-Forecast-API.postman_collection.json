@@ -1,0 +1,661 @@
+{
+  "info": {
+    "name": "Food Forecast API",
+    "description": "# Food Forecast API\n\nPredicts how many portions of each menu item a restaurant will sell, as a **low / likely / high** range.\nAll numbers come from **LightGBM**. The LLM (Groq) only rewords the forecast into a chef message.\n\n## Before you start\n1. Start the server in PowerShell and keep the window open, either:\n   - in `C:\\projects\\food-predection`: `pnpm dev` (starts the API and the Next.js web app), or\n   - in `C:\\projects\\food-predection\\apps\\api`: `python -m uvicorn forecast.api:app --reload` (API only)\n2. Collection **Variables** tab:\n   - `baseUrl` = `http://127.0.0.1:8000`\n   - `restaurantId` = `hyd_demo`. Change it to start a fresh test; each id keeps its own data and models.\n   - `cutoff` = `2026-11-06`. The model trains only on sales up to this day; the uploaded days after it are\n     the hidden test. Change it to test another week.\n3. **Upload files** must be **.csv** or **.json** (anything else is rejected). The requests already point to\n   test data of an imaginary Hyderabad biryani restaurant in `test_data\\hyderabad_demo\\` (2 years, 10 dishes;\n   its README lists the patterns hidden in it). To use your own data, select your file instead. If Postman says a file is missing, open\n   *Body > form-data > file* and select it again, or turn on *Settings > General > Allow reading files\n   outside working directory*.\n\n## Test with your own data (hold-out test)\nRun the folders in order, or the whole collection with the **Runner**:\n1. **1. Upload data** > *Upload sales*: **all** your real sales, once.\n2. **2. Train and forecast** > *Train* (about 40 s), then *Forecast next 7 days*. Both use `until={{cutoff}}`,\n   so the model never sees the days after the cutoff.\n3. **3. Check accuracy** > *Compare per day* / *Compare per week*: the forecast vs your uploaded real sales\n   after the cutoff. No file needed.\n4. To test another week, change `cutoff` and run folder 2 and 3 again.\n\n*Compare with a reference file* is the other way: send real sales in a file that is **not saved**.\n\n**Fairness check:** if the live model was trained on days after the cutoff, Forecast refuses with a clear\nmessage, because it would be testing on days it already saw. Train with the same cutoff first.\n\n## Nightly use (real life, no cutoff)\n**4. Nightly use**: upload the day's sales, *Forecast tomorrow only*, then *Chef message*.\n\n## What the accuracy numbers mean\n- **Accuracy = 100% - (portions missed / portions sold)**, measured on days the model never saw.\n- **Per day:** `accuracy_per_item_per_day`, `accuracy_daily_total`, and `actual_inside_range_percent`\n  (how often real sales fell between low and high; target about 80%).\n- **Per week:** `accuracy_per_item` and `accuracy_restaurant_total` over the forecast days added up. Weekly is\n  higher than daily, because daily ups and downs cancel out.\n- On a date with real sales, an item that is missing counts as **0 sold** (POS exports skip such items).\n\n## File formats (.csv or .json)\n- **Sales CSV:** `date,item,qty_sold,sold_out`. `date` is YYYY-MM-DD only, `qty_sold` is a whole number,\n  `sold_out` (yes/no) is optional.\n- **Sales JSON:** a list of rows:\n  `[{\"date\": \"2026-11-14\", \"item\": \"Chicken Biryani\", \"qty_sold\": 182, \"sold_out\": \"no\"}]`\n  (example: `postman\\sample_files\\sales_example.json`)\n- **Day info:** `date,closed,bookings,promo`, as CSV or the same JSON list style. Future dates are allowed.\n\n## Errors\n- **400:** bad file or value. The message says what is wrong and on which file line.\n- **404:** this restaurant has no sales or no forecast yet.\n- **422:** a parameter has a wrong value (e.g. `period=month`, or a date not in YYYY-MM-DD).\n\nNo login yet: keep the server on your own computer (127.0.0.1) until authentication is added.\n",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "restaurantId",
+      "value": "hyd_demo"
+    },
+    {
+      "key": "cutoff",
+      "value": "2026-11-06"
+    },
+    {
+      "key": "juneTestRestaurantId",
+      "value": "hyd_june_test"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Upload data",
+      "description": "Send sales and optional day info as .csv or .json. Re-sending a date replaces it, so corrections are safe.",
+      "item": [
+        {
+          "name": "Upload sales",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/sales/upload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "sales",
+                "upload"
+              ]
+            },
+            "description": "Upload sales as .csv (`date,item,qty_sold[,sold_out]`) or .json (a list of rows). For a hold-out test, upload ALL your real sales; the `cutoff` variable decides which days stay hidden. Returns rows added / replaced.",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "C:\\projects\\food-predection\\apps\\api\\test_data\\hyderabad_demo\\sales.csv",
+                  "description": ".csv or .json file"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Upload day info (optional)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/days/upload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "days",
+                "upload"
+              ]
+            },
+            "description": "Bookings, promotions and closed days (`date,closed,bookings,promo`) as .csv or .json. Future dates are allowed. The model starts using them at the next Train, after a few weeks of records.",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "C:\\projects\\food-predection\\apps\\api\\test_data\\hyderabad_demo\\day_info.csv",
+                  "description": ".csv or .json file"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Train and forecast",
+      "item": [
+        {
+          "name": "Train (weekly)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/train?weeks=8&until={{cutoff}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "train"
+              ],
+              "query": [
+                {
+                  "key": "weeks",
+                  "value": "8",
+                  "description": "test window in weeks (default 8)"
+                },
+                {
+                  "key": "until",
+                  "value": "{{cutoff}}",
+                  "description": "test mode: use only sales up to this day; remove for real nightly use"
+                }
+              ]
+            },
+            "description": "Backtests on recent weeks the model never saw, retrains, and makes the new model live only if it beats the same-weekday average. With `until`, only sales up to the cutoff are used. Takes about 40 seconds."
+          }
+        },
+        {
+          "name": "Forecast next 7 days",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/forecast?days=7&until={{cutoff}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "forecast"
+              ],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "7",
+                  "description": "1 to 7"
+                },
+                {
+                  "key": "until",
+                  "value": "{{cutoff}}",
+                  "description": "test mode: use only sales up to this day; remove for real nightly use"
+                }
+              ]
+            },
+            "description": "Forecast for the 7 days after the cutoff (or, without `until`, after the last uploaded day): low / likely / high per item. Compare uses the latest forecast."
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Check accuracy",
+      "item": [
+        {
+          "name": "Compare per day",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/compare?period=day",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "compare"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "day",
+                  "description": "day or week"
+                }
+              ]
+            },
+            "description": "Latest forecast vs the real sales already uploaded for those days, day by day."
+          }
+        },
+        {
+          "name": "Compare per week",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/compare?period=week",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "compare"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "week",
+                  "description": "day or week"
+                }
+              ]
+            },
+            "description": "Latest forecast vs real sales, added up per item over the forecast days, plus the restaurant total."
+          }
+        },
+        {
+          "name": "Compare with a reference file (optional)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/compare?period=week",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "compare"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "week",
+                  "description": "day or week"
+                }
+              ]
+            },
+            "description": "Same comparison, but the real sales come from this file (.csv or .json), which is NOT saved. Use it when the real days were not uploaded.",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "C:\\projects\\food-predection\\apps\\api\\test_data\\hyderabad_demo\\last_week_sales.csv",
+                  "description": ".csv or .json file"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Backtest (last 8 weeks)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/backtest?weeks=8",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "backtest"
+              ],
+              "query": [
+                {
+                  "key": "weeks",
+                  "value": "8",
+                  "description": "test window in weeks"
+                }
+              ]
+            },
+            "description": "Automatic accuracy report on the most recent weeks of uploaded sales: next day and up to 7 days ahead, per item and by sales volume."
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Nightly use",
+      "description": "Real life: after the restaurant uploads the day's sales. No cutoff and no training; training stays weekly.",
+      "item": [
+        {
+          "name": "Forecast tomorrow only",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/forecast?days=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "forecast"
+              ],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "1",
+                  "description": "1 to 7"
+                }
+              ]
+            },
+            "description": "Next-day forecast for daily prep (uses the more accurate 1-day model)."
+          }
+        },
+        {
+          "name": "Chef message",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/message?language=Hinglish",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{restaurantId}}",
+                "message"
+              ],
+              "query": [
+                {
+                  "key": "language",
+                  "value": "Hinglish",
+                  "description": "e.g. English, Hinglish, Telugu"
+                }
+              ]
+            },
+            "description": "Prep message for the first forecast day. Numbers come from the forecast; the LLM only rewords them. If the LLM adds or changes a number, the plain table is returned instead."
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Predict 19-25 June",
+      "description": "Run the 5 requests top to bottom. Uses its own restaurant `{{juneTestRestaurantId}}`. Expected: about 84% per dish per day, 93% daily total, 96% per dish per week.",
+      "item": [
+        {
+          "name": "1. Upload sales until 18 Jun",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{juneTestRestaurantId}}/sales/upload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{juneTestRestaurantId}}",
+                "sales",
+                "upload"
+              ]
+            },
+            "description": "All sales up to 18 June 2026 in one file.",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "C:\\projects\\food-predection\\apps\\api\\test_data\\hyderabad_demo\\nightly_test\\sales_until_2026-06-18.csv",
+                  "description": ".csv or .json file"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "2. Train",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{juneTestRestaurantId}}/train",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{juneTestRestaurantId}}",
+                "train"
+              ]
+            },
+            "description": "Train on everything uploaded (about 40 seconds)."
+          }
+        },
+        {
+          "name": "3. Forecast 19-25 Jun",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{juneTestRestaurantId}}/forecast?days=7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{juneTestRestaurantId}}",
+                "forecast"
+              ],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "7",
+                  "description": "1 to 7"
+                }
+              ]
+            },
+            "description": "Predict the 7 days after 18 June."
+          }
+        },
+        {
+          "name": "4. Compare per day",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{juneTestRestaurantId}}/compare?period=day",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{juneTestRestaurantId}}",
+                "compare"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "day",
+                  "description": "day or week"
+                }
+              ]
+            },
+            "description": "Forecast vs the real 19-25 June sales, day by day (file not saved).",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "C:\\projects\\food-predection\\apps\\api\\test_data\\hyderabad_demo\\nightly_test\\week_2026-06-19_to_2026-06-25.csv",
+                  "description": ".csv or .json file"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "5. Compare per week",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/restaurants/{{juneTestRestaurantId}}/compare?period=week",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "restaurants",
+                "{{juneTestRestaurantId}}",
+                "compare"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "week",
+                  "description": "day or week"
+                }
+              ]
+            },
+            "description": "Forecast vs the real 19-25 June sales, as week totals per dish (file not saved).",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "C:\\projects\\food-predection\\apps\\api\\test_data\\hyderabad_demo\\nightly_test\\week_2026-06-19_to_2026-06-25.csv",
+                  "description": ".csv or .json file"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

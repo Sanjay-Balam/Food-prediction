@@ -1,0 +1,5 @@
+[
+  {"date": "2026-11-14", "item": "Chicken Biryani", "qty_sold": 182, "sold_out": "no"},
+  {"date": "2026-11-14", "item": "Mutton Biryani", "qty_sold": 64, "sold_out": "yes"},
+  {"date": "2026-11-14", "item": "Double ka Meetha", "qty_sold": 23}
+]

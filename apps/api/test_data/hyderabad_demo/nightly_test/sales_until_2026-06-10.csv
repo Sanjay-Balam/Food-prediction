@@ -1,0 +1,5324 @@
+date,item,qty_sold,sold_out
+2024-11-01,Chicken Dum Biryani,247,no
+2024-11-01,Mutton Dum Biryani,74,no
+2024-11-01,Veg Biryani,35,no
+2024-11-01,Chicken 65,43,no
+2024-11-01,Apollo Fish,17,no
+2024-11-01,Paneer Butter Masala,34,no
+2024-11-01,Butter Naan,122,no
+2024-11-01,Double ka Meetha,31,no
+2024-11-01,Qubani ka Meetha,19,no
+2024-11-02,Chicken Dum Biryani,101,no
+2024-11-02,Mutton Dum Biryani,65,no
+2024-11-02,Veg Biryani,21,no
+2024-11-02,Chicken 65,58,no
+2024-11-02,Apollo Fish,18,no
+2024-11-02,Paneer Butter Masala,28,no
+2024-11-02,Butter Naan,194,no
+2024-11-02,Double ka Meetha,46,no
+2024-11-02,Qubani ka Meetha,15,no
+2024-11-03,Chicken Dum Biryani,249,no
+2024-11-03,Mutton Dum Biryani,51,no
+2024-11-03,Veg Biryani,57,no
+2024-11-03,Chicken 65,41,no
+2024-11-03,Apollo Fish,35,no
+2024-11-03,Paneer Butter Masala,26,no
+2024-11-03,Butter Naan,204,no
+2024-11-03,Double ka Meetha,62,no
+2024-11-03,Qubani ka Meetha,14,no
+2024-11-04,Chicken Dum Biryani,111,no
+2024-11-04,Mutton Dum Biryani,71,no
+2024-11-04,Veg Biryani,30,no
+2024-11-04,Chicken 65,33,no
+2024-11-04,Apollo Fish,13,no
+2024-11-04,Paneer Butter Masala,22,no
+2024-11-04,Butter Naan,100,no
+2024-11-04,Double ka Meetha,29,no
+2024-11-04,Qubani ka Meetha,18,no
+2024-11-05,Chicken Dum Biryani,141,no
+2024-11-05,Mutton Dum Biryani,58,no
+2024-11-05,Veg Biryani,25,no
+2024-11-05,Chicken 65,52,no
+2024-11-05,Apollo Fish,23,no
+2024-11-05,Paneer Butter Masala,29,no
+2024-11-05,Butter Naan,129,no
+2024-11-05,Double ka Meetha,45,no
+2024-11-05,Qubani ka Meetha,14,no
+2024-11-06,Chicken Dum Biryani,116,no
+2024-11-06,Mutton Dum Biryani,51,no
+2024-11-06,Veg Biryani,16,no
+2024-11-06,Chicken 65,59,no
+2024-11-06,Apollo Fish,16,no
+2024-11-06,Paneer Butter Masala,12,no
+2024-11-06,Butter Naan,79,no
+2024-11-06,Double ka Meetha,24,no
+2024-11-06,Qubani ka Meetha,11,no
+2024-11-07,Chicken Dum Biryani,150,no
+2024-11-07,Mutton Dum Biryani,42,no
+2024-11-07,Veg Biryani,31,no
+2024-11-07,Chicken 65,68,no
+2024-11-07,Apollo Fish,17,no
+2024-11-07,Paneer Butter Masala,17,no
+2024-11-07,Butter Naan,176,no
+2024-11-07,Double ka Meetha,26,no
+2024-11-07,Qubani ka Meetha,18,no
+2024-11-08,Chicken Dum Biryani,248,no
+2024-11-08,Mutton Dum Biryani,32,no
+2024-11-08,Veg Biryani,32,no
+2024-11-08,Chicken 65,45,no
+2024-11-08,Apollo Fish,37,no
+2024-11-08,Paneer Butter Masala,23,no
+2024-11-08,Butter Naan,125,no
+2024-11-08,Double ka Meetha,34,no
+2024-11-08,Qubani ka Meetha,8,no
+2024-11-09,Chicken Dum Biryani,219,no
+2024-11-09,Mutton Dum Biryani,70,no
+2024-11-09,Veg Biryani,27,no
+2024-11-09,Chicken 65,100,no
+2024-11-09,Apollo Fish,28,no
+2024-11-09,Paneer Butter Masala,23,no
+2024-11-09,Butter Naan,217,no
+2024-11-09,Double ka Meetha,55,no
+2024-11-09,Qubani ka Meetha,13,no
+2024-11-10,Chicken Dum Biryani,275,no
+2024-11-10,Mutton Dum Biryani,55,no
+2024-11-10,Veg Biryani,50,no
+2024-11-10,Chicken 65,47,no
+2024-11-10,Apollo Fish,11,no
+2024-11-10,Paneer Butter Masala,26,no
+2024-11-10,Butter Naan,136,no
+2024-11-10,Double ka Meetha,58,no
+2024-11-10,Qubani ka Meetha,10,no
+2024-11-11,Chicken Dum Biryani,128,no
+2024-11-11,Mutton Dum Biryani,49,no
+2024-11-11,Veg Biryani,23,no
+2024-11-11,Chicken 65,29,no
+2024-11-11,Apollo Fish,17,no
+2024-11-11,Paneer Butter Masala,16,no
+2024-11-11,Butter Naan,113,no
+2024-11-11,Double ka Meetha,32,no
+2024-11-11,Qubani ka Meetha,12,no
+2024-11-12,Chicken Dum Biryani,149,no
+2024-11-12,Mutton Dum Biryani,47,no
+2024-11-12,Veg Biryani,17,no
+2024-11-12,Chicken 65,35,no
+2024-11-12,Apollo Fish,7,no
+2024-11-12,Paneer Butter Masala,8,no
+2024-11-12,Butter Naan,76,no
+2024-11-12,Double ka Meetha,20,no
+2024-11-12,Qubani ka Meetha,6,no
+2024-11-13,Chicken Dum Biryani,113,no
+2024-11-13,Mutton Dum Biryani,36,no
+2024-11-13,Veg Biryani,31,no
+2024-11-13,Chicken 65,44,no
+2024-11-13,Apollo Fish,13,no
+2024-11-13,Paneer Butter Masala,16,no
+2024-11-13,Butter Naan,105,no
+2024-11-13,Double ka Meetha,37,no
+2024-11-13,Qubani ka Meetha,4,no
+2024-11-14,Chicken Dum Biryani,154,no
+2024-11-14,Mutton Dum Biryani,51,no
+2024-11-14,Veg Biryani,22,no
+2024-11-14,Chicken 65,61,no
+2024-11-14,Apollo Fish,11,no
+2024-11-14,Paneer Butter Masala,22,no
+2024-11-14,Butter Naan,129,no
+2024-11-14,Double ka Meetha,32,no
+2024-11-14,Qubani ka Meetha,11,no
+2024-11-15,Chicken Dum Biryani,193,no
+2024-11-15,Mutton Dum Biryani,100,yes
+2024-11-15,Veg Biryani,39,no
+2024-11-15,Chicken 65,43,no
+2024-11-15,Apollo Fish,26,no
+2024-11-15,Paneer Butter Masala,18,no
+2024-11-15,Butter Naan,221,no
+2024-11-15,Double ka Meetha,45,no
+2024-11-15,Qubani ka Meetha,10,no
+2024-11-16,Chicken Dum Biryani,175,no
+2024-11-16,Mutton Dum Biryani,79,no
+2024-11-16,Veg Biryani,38,no
+2024-11-16,Chicken 65,74,no
+2024-11-16,Apollo Fish,27,no
+2024-11-16,Paneer Butter Masala,21,no
+2024-11-16,Butter Naan,165,no
+2024-11-16,Double ka Meetha,48,no
+2024-11-16,Qubani ka Meetha,18,no
+2024-11-17,Chicken Dum Biryani,277,no
+2024-11-17,Mutton Dum Biryani,98,no
+2024-11-17,Veg Biryani,28,no
+2024-11-17,Chicken 65,46,no
+2024-11-17,Apollo Fish,24,no
+2024-11-17,Paneer Butter Masala,43,no
+2024-11-17,Butter Naan,257,no
+2024-11-17,Double ka Meetha,44,no
+2024-11-17,Qubani ka Meetha,23,no
+2024-11-18,Chicken Dum Biryani,119,no
+2024-11-18,Mutton Dum Biryani,60,no
+2024-11-18,Veg Biryani,27,no
+2024-11-18,Chicken 65,35,no
+2024-11-18,Apollo Fish,15,no
+2024-11-18,Paneer Butter Masala,19,no
+2024-11-18,Butter Naan,116,no
+2024-11-18,Double ka Meetha,30,no
+2024-11-18,Qubani ka Meetha,7,no
+2024-11-19,Chicken Dum Biryani,141,no
+2024-11-19,Mutton Dum Biryani,56,no
+2024-11-19,Veg Biryani,41,no
+2024-11-19,Chicken 65,44,no
+2024-11-19,Apollo Fish,12,no
+2024-11-19,Paneer Butter Masala,29,no
+2024-11-19,Butter Naan,121,no
+2024-11-19,Double ka Meetha,31,no
+2024-11-19,Qubani ka Meetha,8,no
+2024-11-20,Chicken Dum Biryani,124,no
+2024-11-20,Mutton Dum Biryani,53,no
+2024-11-20,Veg Biryani,20,no
+2024-11-20,Chicken 65,35,no
+2024-11-20,Apollo Fish,11,no
+2024-11-20,Paneer Butter Masala,31,no
+2024-11-20,Butter Naan,152,no
+2024-11-20,Double ka Meetha,28,no
+2024-11-20,Qubani ka Meetha,12,no
+2024-11-21,Chicken Dum Biryani,174,no
+2024-11-21,Mutton Dum Biryani,64,no
+2024-11-21,Veg Biryani,20,no
+2024-11-21,Chicken 65,57,no
+2024-11-21,Apollo Fish,31,no
+2024-11-21,Paneer Butter Masala,20,no
+2024-11-21,Butter Naan,121,no
+2024-11-21,Double ka Meetha,43,no
+2024-11-21,Qubani ka Meetha,11,no
+2024-11-22,Chicken Dum Biryani,179,no
+2024-11-22,Mutton Dum Biryani,100,yes
+2024-11-22,Veg Biryani,19,no
+2024-11-22,Chicken 65,49,no
+2024-11-22,Apollo Fish,26,no
+2024-11-22,Paneer Butter Masala,25,no
+2024-11-22,Butter Naan,170,no
+2024-11-22,Double ka Meetha,37,no
+2024-11-22,Qubani ka Meetha,11,no
+2024-11-23,Chicken Dum Biryani,173,no
+2024-11-23,Mutton Dum Biryani,61,no
+2024-11-23,Veg Biryani,43,no
+2024-11-23,Chicken 65,68,no
+2024-11-23,Apollo Fish,25,no
+2024-11-23,Paneer Butter Masala,34,no
+2024-11-23,Butter Naan,169,no
+2024-11-23,Double ka Meetha,26,no
+2024-11-23,Qubani ka Meetha,17,no
+2024-11-24,Chicken Dum Biryani,196,no
+2024-11-24,Mutton Dum Biryani,68,no
+2024-11-24,Veg Biryani,19,no
+2024-11-24,Chicken 65,57,no
+2024-11-24,Apollo Fish,25,no
+2024-11-24,Paneer Butter Masala,36,no
+2024-11-24,Butter Naan,148,no
+2024-11-24,Double ka Meetha,23,no
+2024-11-24,Qubani ka Meetha,27,no
+2024-11-25,Chicken Dum Biryani,75,no
+2024-11-25,Mutton Dum Biryani,45,no
+2024-11-25,Veg Biryani,27,no
+2024-11-25,Chicken 65,27,no
+2024-11-25,Apollo Fish,9,no
+2024-11-25,Paneer Butter Masala,14,no
+2024-11-25,Butter Naan,79,no
+2024-11-25,Double ka Meetha,33,no
+2024-11-25,Qubani ka Meetha,9,no
+2024-11-26,Chicken Dum Biryani,125,no
+2024-11-26,Mutton Dum Biryani,46,no
+2024-11-26,Veg Biryani,11,no
+2024-11-26,Chicken 65,50,no
+2024-11-26,Apollo Fish,22,no
+2024-11-26,Paneer Butter Masala,21,no
+2024-11-26,Butter Naan,132,no
+2024-11-26,Double ka Meetha,44,no
+2024-11-26,Qubani ka Meetha,6,no
+2024-11-27,Chicken Dum Biryani,121,no
+2024-11-27,Mutton Dum Biryani,60,no
+2024-11-27,Veg Biryani,19,no
+2024-11-27,Chicken 65,38,no
+2024-11-27,Apollo Fish,12,no
+2024-11-27,Paneer Butter Masala,29,no
+2024-11-27,Butter Naan,137,no
+2024-11-27,Double ka Meetha,18,no
+2024-11-27,Qubani ka Meetha,23,no
+2024-11-28,Chicken Dum Biryani,217,no
+2024-11-28,Mutton Dum Biryani,82,no
+2024-11-28,Veg Biryani,31,no
+2024-11-28,Chicken 65,44,no
+2024-11-28,Apollo Fish,23,no
+2024-11-28,Paneer Butter Masala,24,no
+2024-11-28,Butter Naan,114,no
+2024-11-28,Double ka Meetha,43,no
+2024-11-28,Qubani ka Meetha,11,no
+2024-11-29,Chicken Dum Biryani,224,no
+2024-11-29,Mutton Dum Biryani,81,no
+2024-11-29,Veg Biryani,41,no
+2024-11-29,Chicken 65,69,no
+2024-11-29,Apollo Fish,24,no
+2024-11-29,Paneer Butter Masala,26,no
+2024-11-29,Butter Naan,158,no
+2024-11-29,Double ka Meetha,48,no
+2024-11-29,Qubani ka Meetha,14,no
+2024-11-30,Chicken Dum Biryani,114,no
+2024-11-30,Mutton Dum Biryani,53,no
+2024-11-30,Veg Biryani,37,no
+2024-11-30,Chicken 65,45,no
+2024-11-30,Apollo Fish,18,no
+2024-11-30,Paneer Butter Masala,23,no
+2024-11-30,Butter Naan,187,no
+2024-11-30,Double ka Meetha,38,no
+2024-11-30,Qubani ka Meetha,11,no
+2024-12-01,Chicken Dum Biryani,373,no
+2024-12-01,Mutton Dum Biryani,100,yes
+2024-12-01,Veg Biryani,66,no
+2024-12-01,Chicken 65,52,no
+2024-12-01,Apollo Fish,31,no
+2024-12-01,Paneer Butter Masala,44,no
+2024-12-01,Butter Naan,245,no
+2024-12-01,Double ka Meetha,74,no
+2024-12-01,Qubani ka Meetha,35,no
+2024-12-02,Chicken Dum Biryani,110,no
+2024-12-02,Mutton Dum Biryani,76,no
+2024-12-02,Veg Biryani,51,no
+2024-12-02,Chicken 65,58,no
+2024-12-02,Apollo Fish,26,no
+2024-12-02,Paneer Butter Masala,23,no
+2024-12-02,Butter Naan,116,no
+2024-12-02,Double ka Meetha,26,no
+2024-12-02,Qubani ka Meetha,21,no
+2024-12-03,Chicken Dum Biryani,186,no
+2024-12-03,Mutton Dum Biryani,58,no
+2024-12-03,Veg Biryani,21,no
+2024-12-03,Chicken 65,35,no
+2024-12-03,Apollo Fish,10,no
+2024-12-03,Paneer Butter Masala,23,no
+2024-12-03,Butter Naan,129,no
+2024-12-03,Double ka Meetha,31,no
+2024-12-03,Qubani ka Meetha,24,no
+2024-12-04,Chicken Dum Biryani,147,no
+2024-12-04,Mutton Dum Biryani,66,no
+2024-12-04,Veg Biryani,28,no
+2024-12-04,Chicken 65,34,no
+2024-12-04,Apollo Fish,20,no
+2024-12-04,Paneer Butter Masala,21,no
+2024-12-04,Butter Naan,152,no
+2024-12-04,Double ka Meetha,22,no
+2024-12-04,Qubani ka Meetha,7,no
+2024-12-05,Chicken Dum Biryani,157,no
+2024-12-05,Mutton Dum Biryani,72,no
+2024-12-05,Veg Biryani,42,no
+2024-12-05,Chicken 65,29,no
+2024-12-05,Apollo Fish,31,no
+2024-12-05,Paneer Butter Masala,33,no
+2024-12-05,Butter Naan,172,no
+2024-12-05,Double ka Meetha,47,no
+2024-12-05,Qubani ka Meetha,10,no
+2024-12-06,Chicken Dum Biryani,200,no
+2024-12-06,Mutton Dum Biryani,76,no
+2024-12-06,Veg Biryani,51,no
+2024-12-06,Chicken 65,74,no
+2024-12-06,Apollo Fish,10,no
+2024-12-06,Paneer Butter Masala,41,no
+2024-12-06,Butter Naan,148,no
+2024-12-06,Double ka Meetha,47,no
+2024-12-06,Qubani ka Meetha,14,no
+2024-12-07,Chicken Dum Biryani,243,no
+2024-12-07,Mutton Dum Biryani,100,yes
+2024-12-07,Veg Biryani,36,no
+2024-12-07,Chicken 65,83,no
+2024-12-07,Apollo Fish,21,no
+2024-12-07,Paneer Butter Masala,27,no
+2024-12-07,Butter Naan,199,no
+2024-12-07,Double ka Meetha,42,no
+2024-12-07,Qubani ka Meetha,17,no
+2024-12-08,Chicken Dum Biryani,291,no
+2024-12-08,Mutton Dum Biryani,100,yes
+2024-12-08,Veg Biryani,52,no
+2024-12-08,Chicken 65,81,no
+2024-12-08,Apollo Fish,12,no
+2024-12-08,Paneer Butter Masala,27,no
+2024-12-08,Butter Naan,175,no
+2024-12-08,Double ka Meetha,40,no
+2024-12-08,Qubani ka Meetha,22,no
+2024-12-09,Chicken Dum Biryani,153,no
+2024-12-09,Mutton Dum Biryani,76,no
+2024-12-09,Veg Biryani,22,no
+2024-12-09,Chicken 65,54,no
+2024-12-09,Apollo Fish,24,no
+2024-12-09,Paneer Butter Masala,11,no
+2024-12-09,Butter Naan,163,no
+2024-12-09,Double ka Meetha,18,no
+2024-12-09,Qubani ka Meetha,11,no
+2024-12-10,Chicken Dum Biryani,135,no
+2024-12-10,Mutton Dum Biryani,74,no
+2024-12-10,Veg Biryani,33,no
+2024-12-10,Chicken 65,31,no
+2024-12-10,Apollo Fish,13,no
+2024-12-10,Paneer Butter Masala,22,no
+2024-12-10,Butter Naan,153,no
+2024-12-10,Double ka Meetha,22,no
+2024-12-10,Qubani ka Meetha,13,no
+2024-12-11,Chicken Dum Biryani,144,no
+2024-12-11,Mutton Dum Biryani,40,no
+2024-12-11,Veg Biryani,30,no
+2024-12-11,Chicken 65,53,no
+2024-12-11,Apollo Fish,21,no
+2024-12-11,Paneer Butter Masala,23,no
+2024-12-11,Butter Naan,124,no
+2024-12-11,Double ka Meetha,25,no
+2024-12-11,Qubani ka Meetha,8,no
+2024-12-12,Chicken Dum Biryani,122,no
+2024-12-12,Mutton Dum Biryani,63,no
+2024-12-12,Veg Biryani,34,no
+2024-12-12,Chicken 65,43,no
+2024-12-12,Apollo Fish,22,no
+2024-12-12,Paneer Butter Masala,17,no
+2024-12-12,Butter Naan,119,no
+2024-12-12,Double ka Meetha,28,no
+2024-12-12,Qubani ka Meetha,15,no
+2024-12-13,Chicken Dum Biryani,187,no
+2024-12-13,Mutton Dum Biryani,83,no
+2024-12-13,Veg Biryani,32,no
+2024-12-13,Chicken 65,53,no
+2024-12-13,Apollo Fish,24,no
+2024-12-13,Paneer Butter Masala,22,no
+2024-12-13,Butter Naan,114,no
+2024-12-13,Double ka Meetha,54,no
+2024-12-13,Qubani ka Meetha,10,no
+2024-12-14,Chicken Dum Biryani,257,no
+2024-12-14,Mutton Dum Biryani,66,no
+2024-12-14,Veg Biryani,36,no
+2024-12-14,Chicken 65,45,no
+2024-12-14,Apollo Fish,21,no
+2024-12-14,Paneer Butter Masala,28,no
+2024-12-14,Butter Naan,139,no
+2024-12-14,Double ka Meetha,42,no
+2024-12-14,Qubani ka Meetha,13,no
+2024-12-15,Chicken Dum Biryani,200,no
+2024-12-15,Mutton Dum Biryani,99,no
+2024-12-15,Veg Biryani,49,no
+2024-12-15,Chicken 65,89,no
+2024-12-15,Apollo Fish,31,no
+2024-12-15,Paneer Butter Masala,41,no
+2024-12-15,Butter Naan,178,no
+2024-12-15,Double ka Meetha,32,no
+2024-12-15,Qubani ka Meetha,23,no
+2024-12-16,Chicken Dum Biryani,143,no
+2024-12-16,Mutton Dum Biryani,64,no
+2024-12-16,Veg Biryani,24,no
+2024-12-16,Chicken 65,41,no
+2024-12-16,Apollo Fish,16,no
+2024-12-16,Paneer Butter Masala,13,no
+2024-12-16,Butter Naan,144,no
+2024-12-16,Double ka Meetha,37,no
+2024-12-16,Qubani ka Meetha,23,no
+2024-12-17,Chicken Dum Biryani,137,no
+2024-12-17,Mutton Dum Biryani,48,no
+2024-12-17,Veg Biryani,17,no
+2024-12-17,Chicken 65,36,no
+2024-12-17,Apollo Fish,17,no
+2024-12-17,Paneer Butter Masala,17,no
+2024-12-17,Butter Naan,100,no
+2024-12-17,Double ka Meetha,23,no
+2024-12-17,Qubani ka Meetha,13,no
+2024-12-18,Chicken Dum Biryani,144,no
+2024-12-18,Mutton Dum Biryani,62,no
+2024-12-18,Veg Biryani,11,no
+2024-12-18,Chicken 65,52,no
+2024-12-18,Apollo Fish,15,no
+2024-12-18,Paneer Butter Masala,12,no
+2024-12-18,Butter Naan,133,no
+2024-12-18,Double ka Meetha,27,no
+2024-12-18,Qubani ka Meetha,10,no
+2024-12-19,Chicken Dum Biryani,98,no
+2024-12-19,Mutton Dum Biryani,50,no
+2024-12-19,Veg Biryani,13,no
+2024-12-19,Chicken 65,45,no
+2024-12-19,Apollo Fish,32,no
+2024-12-19,Paneer Butter Masala,24,no
+2024-12-19,Butter Naan,128,no
+2024-12-19,Double ka Meetha,37,no
+2024-12-19,Qubani ka Meetha,18,no
+2024-12-20,Chicken Dum Biryani,226,no
+2024-12-20,Mutton Dum Biryani,100,yes
+2024-12-20,Veg Biryani,31,no
+2024-12-20,Chicken 65,82,no
+2024-12-20,Apollo Fish,19,no
+2024-12-20,Paneer Butter Masala,37,no
+2024-12-20,Butter Naan,234,no
+2024-12-20,Double ka Meetha,72,no
+2024-12-20,Qubani ka Meetha,9,no
+2024-12-21,Chicken Dum Biryani,216,no
+2024-12-21,Mutton Dum Biryani,96,no
+2024-12-21,Veg Biryani,30,no
+2024-12-21,Chicken 65,56,no
+2024-12-21,Apollo Fish,44,no
+2024-12-21,Paneer Butter Masala,49,no
+2024-12-21,Butter Naan,206,no
+2024-12-21,Double ka Meetha,52,no
+2024-12-21,Qubani ka Meetha,19,no
+2024-12-22,Chicken Dum Biryani,236,no
+2024-12-22,Mutton Dum Biryani,100,yes
+2024-12-22,Veg Biryani,28,no
+2024-12-22,Chicken 65,95,no
+2024-12-22,Apollo Fish,29,no
+2024-12-22,Paneer Butter Masala,52,no
+2024-12-22,Butter Naan,232,no
+2024-12-22,Double ka Meetha,87,no
+2024-12-22,Qubani ka Meetha,16,no
+2024-12-23,Chicken Dum Biryani,188,no
+2024-12-23,Mutton Dum Biryani,70,no
+2024-12-23,Veg Biryani,24,no
+2024-12-23,Chicken 65,31,no
+2024-12-23,Apollo Fish,13,no
+2024-12-23,Paneer Butter Masala,12,no
+2024-12-23,Butter Naan,102,no
+2024-12-23,Double ka Meetha,16,no
+2024-12-23,Qubani ka Meetha,12,no
+2024-12-24,Chicken Dum Biryani,186,no
+2024-12-24,Mutton Dum Biryani,79,no
+2024-12-24,Veg Biryani,29,no
+2024-12-24,Chicken 65,37,no
+2024-12-24,Apollo Fish,18,no
+2024-12-24,Paneer Butter Masala,27,no
+2024-12-24,Butter Naan,131,no
+2024-12-24,Double ka Meetha,39,no
+2024-12-24,Qubani ka Meetha,13,no
+2024-12-25,Chicken Dum Biryani,188,no
+2024-12-25,Mutton Dum Biryani,85,no
+2024-12-25,Veg Biryani,32,no
+2024-12-25,Chicken 65,46,no
+2024-12-25,Apollo Fish,27,no
+2024-12-25,Paneer Butter Masala,31,no
+2024-12-25,Butter Naan,183,no
+2024-12-25,Double ka Meetha,38,no
+2024-12-25,Qubani ka Meetha,15,no
+2024-12-26,Chicken Dum Biryani,175,no
+2024-12-26,Mutton Dum Biryani,56,no
+2024-12-26,Veg Biryani,28,no
+2024-12-26,Chicken 65,40,no
+2024-12-26,Apollo Fish,17,no
+2024-12-26,Paneer Butter Masala,18,no
+2024-12-26,Butter Naan,120,no
+2024-12-26,Double ka Meetha,36,no
+2024-12-26,Qubani ka Meetha,12,no
+2024-12-27,Chicken Dum Biryani,237,no
+2024-12-27,Mutton Dum Biryani,73,no
+2024-12-27,Veg Biryani,21,no
+2024-12-27,Chicken 65,42,no
+2024-12-27,Apollo Fish,20,no
+2024-12-27,Paneer Butter Masala,14,no
+2024-12-27,Butter Naan,77,no
+2024-12-27,Double ka Meetha,45,no
+2024-12-27,Qubani ka Meetha,9,no
+2024-12-28,Chicken Dum Biryani,213,no
+2024-12-28,Mutton Dum Biryani,100,yes
+2024-12-28,Veg Biryani,39,no
+2024-12-28,Chicken 65,79,no
+2024-12-28,Apollo Fish,21,no
+2024-12-28,Paneer Butter Masala,24,no
+2024-12-28,Butter Naan,182,no
+2024-12-28,Double ka Meetha,55,no
+2024-12-28,Qubani ka Meetha,15,no
+2024-12-29,Chicken Dum Biryani,382,no
+2024-12-29,Mutton Dum Biryani,100,yes
+2024-12-29,Veg Biryani,44,no
+2024-12-29,Chicken 65,80,no
+2024-12-29,Apollo Fish,26,no
+2024-12-29,Paneer Butter Masala,34,no
+2024-12-29,Butter Naan,250,no
+2024-12-29,Double ka Meetha,66,no
+2024-12-29,Qubani ka Meetha,11,no
+2024-12-30,Chicken Dum Biryani,127,no
+2024-12-30,Mutton Dum Biryani,34,no
+2024-12-30,Veg Biryani,28,no
+2024-12-30,Chicken 65,27,no
+2024-12-30,Apollo Fish,19,no
+2024-12-30,Paneer Butter Masala,9,no
+2024-12-30,Butter Naan,73,no
+2024-12-30,Double ka Meetha,28,no
+2024-12-30,Qubani ka Meetha,10,no
+2024-12-31,Chicken Dum Biryani,230,no
+2024-12-31,Mutton Dum Biryani,100,yes
+2024-12-31,Veg Biryani,37,no
+2024-12-31,Chicken 65,124,no
+2024-12-31,Apollo Fish,18,no
+2024-12-31,Paneer Butter Masala,25,no
+2024-12-31,Butter Naan,148,no
+2024-12-31,Double ka Meetha,75,no
+2024-12-31,Qubani ka Meetha,9,no
+2025-01-01,Chicken Dum Biryani,131,no
+2025-01-01,Mutton Dum Biryani,99,no
+2025-01-01,Veg Biryani,25,no
+2025-01-01,Chicken 65,57,no
+2025-01-01,Apollo Fish,16,no
+2025-01-01,Paneer Butter Masala,14,no
+2025-01-01,Butter Naan,102,no
+2025-01-01,Double ka Meetha,49,no
+2025-01-01,Qubani ka Meetha,18,no
+2025-01-02,Chicken Dum Biryani,138,no
+2025-01-02,Mutton Dum Biryani,75,no
+2025-01-02,Veg Biryani,27,no
+2025-01-02,Chicken 65,45,no
+2025-01-02,Apollo Fish,21,no
+2025-01-02,Paneer Butter Masala,34,no
+2025-01-02,Butter Naan,88,no
+2025-01-02,Double ka Meetha,37,no
+2025-01-02,Qubani ka Meetha,7,no
+2025-01-03,Chicken Dum Biryani,216,no
+2025-01-03,Mutton Dum Biryani,74,no
+2025-01-03,Veg Biryani,37,no
+2025-01-03,Chicken 65,67,no
+2025-01-03,Apollo Fish,30,no
+2025-01-03,Paneer Butter Masala,27,no
+2025-01-03,Butter Naan,122,no
+2025-01-03,Double ka Meetha,35,no
+2025-01-03,Qubani ka Meetha,16,no
+2025-01-04,Chicken Dum Biryani,193,no
+2025-01-04,Mutton Dum Biryani,70,no
+2025-01-04,Veg Biryani,33,no
+2025-01-04,Chicken 65,61,no
+2025-01-04,Apollo Fish,27,no
+2025-01-04,Paneer Butter Masala,34,no
+2025-01-04,Butter Naan,173,no
+2025-01-04,Double ka Meetha,49,no
+2025-01-04,Qubani ka Meetha,14,no
+2025-01-05,Chicken Dum Biryani,196,no
+2025-01-05,Mutton Dum Biryani,77,no
+2025-01-05,Veg Biryani,42,no
+2025-01-05,Chicken 65,65,no
+2025-01-05,Apollo Fish,34,no
+2025-01-05,Paneer Butter Masala,32,no
+2025-01-05,Butter Naan,250,no
+2025-01-05,Double ka Meetha,64,no
+2025-01-05,Qubani ka Meetha,22,no
+2025-01-06,Chicken Dum Biryani,134,no
+2025-01-06,Mutton Dum Biryani,62,no
+2025-01-06,Veg Biryani,16,no
+2025-01-06,Chicken 65,38,no
+2025-01-06,Apollo Fish,23,no
+2025-01-06,Paneer Butter Masala,20,no
+2025-01-06,Butter Naan,79,no
+2025-01-06,Double ka Meetha,21,no
+2025-01-06,Qubani ka Meetha,5,no
+2025-01-07,Chicken Dum Biryani,141,no
+2025-01-07,Mutton Dum Biryani,57,no
+2025-01-07,Veg Biryani,14,no
+2025-01-07,Chicken 65,67,no
+2025-01-07,Apollo Fish,15,no
+2025-01-07,Paneer Butter Masala,23,no
+2025-01-07,Butter Naan,128,no
+2025-01-07,Double ka Meetha,23,no
+2025-01-07,Qubani ka Meetha,12,no
+2025-01-08,Chicken Dum Biryani,193,no
+2025-01-08,Mutton Dum Biryani,60,no
+2025-01-08,Veg Biryani,26,no
+2025-01-08,Chicken 65,49,no
+2025-01-08,Apollo Fish,22,no
+2025-01-08,Paneer Butter Masala,24,no
+2025-01-08,Butter Naan,113,no
+2025-01-08,Double ka Meetha,49,no
+2025-01-08,Qubani ka Meetha,12,no
+2025-01-09,Chicken Dum Biryani,114,no
+2025-01-09,Mutton Dum Biryani,72,no
+2025-01-09,Veg Biryani,35,no
+2025-01-09,Chicken 65,59,no
+2025-01-09,Apollo Fish,23,no
+2025-01-09,Paneer Butter Masala,18,no
+2025-01-09,Butter Naan,124,no
+2025-01-09,Double ka Meetha,32,no
+2025-01-09,Qubani ka Meetha,12,no
+2025-01-10,Chicken Dum Biryani,202,no
+2025-01-10,Mutton Dum Biryani,64,no
+2025-01-10,Veg Biryani,18,no
+2025-01-10,Chicken 65,38,no
+2025-01-10,Apollo Fish,17,no
+2025-01-10,Paneer Butter Masala,42,no
+2025-01-10,Butter Naan,111,no
+2025-01-10,Double ka Meetha,51,no
+2025-01-10,Qubani ka Meetha,24,no
+2025-01-11,Chicken Dum Biryani,128,no
+2025-01-11,Mutton Dum Biryani,100,yes
+2025-01-11,Veg Biryani,29,no
+2025-01-11,Chicken 65,93,no
+2025-01-11,Apollo Fish,22,no
+2025-01-11,Paneer Butter Masala,25,no
+2025-01-11,Butter Naan,129,no
+2025-01-11,Double ka Meetha,38,no
+2025-01-11,Qubani ka Meetha,14,no
+2025-01-12,Chicken Dum Biryani,208,no
+2025-01-12,Mutton Dum Biryani,100,yes
+2025-01-12,Veg Biryani,36,no
+2025-01-12,Chicken 65,81,no
+2025-01-12,Apollo Fish,36,no
+2025-01-12,Paneer Butter Masala,25,no
+2025-01-12,Butter Naan,132,no
+2025-01-12,Double ka Meetha,47,no
+2025-01-12,Qubani ka Meetha,14,no
+2025-01-13,Chicken Dum Biryani,131,no
+2025-01-13,Mutton Dum Biryani,46,no
+2025-01-13,Veg Biryani,16,no
+2025-01-13,Chicken 65,29,no
+2025-01-13,Apollo Fish,6,no
+2025-01-13,Paneer Butter Masala,16,no
+2025-01-13,Butter Naan,80,no
+2025-01-13,Double ka Meetha,23,no
+2025-01-13,Qubani ka Meetha,9,no
+2025-01-14,Chicken Dum Biryani,120,no
+2025-01-14,Mutton Dum Biryani,63,no
+2025-01-14,Veg Biryani,9,no
+2025-01-14,Chicken 65,51,no
+2025-01-14,Apollo Fish,9,no
+2025-01-14,Paneer Butter Masala,12,no
+2025-01-14,Butter Naan,155,no
+2025-01-14,Double ka Meetha,54,no
+2025-01-14,Qubani ka Meetha,9,no
+2025-01-15,Chicken Dum Biryani,91,no
+2025-01-15,Mutton Dum Biryani,66,no
+2025-01-15,Veg Biryani,21,no
+2025-01-15,Chicken 65,46,no
+2025-01-15,Apollo Fish,25,no
+2025-01-15,Paneer Butter Masala,23,no
+2025-01-15,Butter Naan,126,no
+2025-01-15,Double ka Meetha,22,no
+2025-01-15,Qubani ka Meetha,15,no
+2025-01-16,Chicken Dum Biryani,124,no
+2025-01-16,Mutton Dum Biryani,73,no
+2025-01-16,Veg Biryani,19,no
+2025-01-16,Chicken 65,43,no
+2025-01-16,Apollo Fish,22,no
+2025-01-16,Paneer Butter Masala,20,no
+2025-01-16,Butter Naan,146,no
+2025-01-16,Double ka Meetha,35,no
+2025-01-16,Qubani ka Meetha,7,no
+2025-01-17,Chicken Dum Biryani,151,no
+2025-01-17,Mutton Dum Biryani,71,no
+2025-01-17,Veg Biryani,35,no
+2025-01-17,Chicken 65,47,no
+2025-01-17,Apollo Fish,23,no
+2025-01-17,Paneer Butter Masala,29,no
+2025-01-17,Butter Naan,167,no
+2025-01-17,Double ka Meetha,42,no
+2025-01-17,Qubani ka Meetha,10,no
+2025-01-18,Chicken Dum Biryani,224,no
+2025-01-18,Mutton Dum Biryani,69,no
+2025-01-18,Veg Biryani,24,no
+2025-01-18,Chicken 65,64,no
+2025-01-18,Apollo Fish,15,no
+2025-01-18,Paneer Butter Masala,25,no
+2025-01-18,Butter Naan,221,no
+2025-01-18,Double ka Meetha,25,no
+2025-01-18,Qubani ka Meetha,12,no
+2025-01-19,Chicken Dum Biryani,215,no
+2025-01-19,Mutton Dum Biryani,77,no
+2025-01-19,Veg Biryani,31,no
+2025-01-19,Chicken 65,59,no
+2025-01-19,Apollo Fish,33,no
+2025-01-19,Paneer Butter Masala,18,no
+2025-01-19,Butter Naan,190,no
+2025-01-19,Double ka Meetha,50,no
+2025-01-19,Qubani ka Meetha,24,no
+2025-01-20,Chicken Dum Biryani,120,no
+2025-01-20,Mutton Dum Biryani,61,no
+2025-01-20,Veg Biryani,36,no
+2025-01-20,Chicken 65,39,no
+2025-01-20,Apollo Fish,19,no
+2025-01-20,Paneer Butter Masala,24,no
+2025-01-20,Butter Naan,132,no
+2025-01-20,Double ka Meetha,27,no
+2025-01-20,Qubani ka Meetha,11,no
+2025-01-21,Chicken Dum Biryani,175,no
+2025-01-21,Mutton Dum Biryani,60,no
+2025-01-21,Veg Biryani,17,no
+2025-01-21,Chicken 65,28,no
+2025-01-21,Apollo Fish,20,no
+2025-01-21,Paneer Butter Masala,22,no
+2025-01-21,Butter Naan,126,no
+2025-01-21,Double ka Meetha,36,no
+2025-01-21,Qubani ka Meetha,14,no
+2025-01-22,Chicken Dum Biryani,129,no
+2025-01-22,Mutton Dum Biryani,45,no
+2025-01-22,Veg Biryani,19,no
+2025-01-22,Chicken 65,32,no
+2025-01-22,Apollo Fish,14,no
+2025-01-22,Paneer Butter Masala,17,no
+2025-01-22,Butter Naan,130,no
+2025-01-22,Double ka Meetha,29,no
+2025-01-22,Qubani ka Meetha,9,no
+2025-01-23,Chicken Dum Biryani,106,no
+2025-01-23,Mutton Dum Biryani,55,no
+2025-01-23,Veg Biryani,23,no
+2025-01-23,Chicken 65,36,no
+2025-01-23,Apollo Fish,27,no
+2025-01-23,Paneer Butter Masala,22,no
+2025-01-23,Butter Naan,121,no
+2025-01-23,Double ka Meetha,32,no
+2025-01-23,Qubani ka Meetha,7,no
+2025-01-24,Chicken Dum Biryani,172,no
+2025-01-24,Mutton Dum Biryani,67,no
+2025-01-24,Veg Biryani,45,no
+2025-01-24,Chicken 65,76,no
+2025-01-24,Apollo Fish,25,no
+2025-01-24,Paneer Butter Masala,22,no
+2025-01-24,Butter Naan,335,no
+2025-01-24,Double ka Meetha,52,no
+2025-01-24,Qubani ka Meetha,1,no
+2025-01-25,Chicken Dum Biryani,149,no
+2025-01-25,Mutton Dum Biryani,85,no
+2025-01-25,Veg Biryani,29,no
+2025-01-25,Chicken 65,88,no
+2025-01-25,Apollo Fish,23,no
+2025-01-25,Paneer Butter Masala,32,no
+2025-01-25,Butter Naan,259,no
+2025-01-25,Double ka Meetha,45,no
+2025-01-25,Qubani ka Meetha,10,no
+2025-01-26,Chicken Dum Biryani,303,no
+2025-01-26,Mutton Dum Biryani,78,no
+2025-01-26,Veg Biryani,40,no
+2025-01-26,Chicken 65,99,no
+2025-01-26,Apollo Fish,35,no
+2025-01-26,Paneer Butter Masala,47,no
+2025-01-26,Butter Naan,276,no
+2025-01-26,Double ka Meetha,58,no
+2025-01-26,Qubani ka Meetha,14,no
+2025-01-27,Chicken Dum Biryani,125,no
+2025-01-27,Mutton Dum Biryani,55,no
+2025-01-27,Veg Biryani,13,no
+2025-01-27,Chicken 65,27,no
+2025-01-27,Apollo Fish,17,no
+2025-01-27,Paneer Butter Masala,20,no
+2025-01-27,Butter Naan,95,no
+2025-01-27,Double ka Meetha,23,no
+2025-01-27,Qubani ka Meetha,14,no
+2025-01-28,Chicken Dum Biryani,138,no
+2025-01-28,Mutton Dum Biryani,39,no
+2025-01-28,Veg Biryani,26,no
+2025-01-28,Chicken 65,39,no
+2025-01-28,Apollo Fish,20,no
+2025-01-28,Paneer Butter Masala,19,no
+2025-01-28,Butter Naan,73,no
+2025-01-28,Double ka Meetha,17,no
+2025-01-28,Qubani ka Meetha,18,no
+2025-01-29,Chicken Dum Biryani,129,no
+2025-01-29,Mutton Dum Biryani,60,no
+2025-01-29,Veg Biryani,26,no
+2025-01-29,Chicken 65,38,no
+2025-01-29,Apollo Fish,16,no
+2025-01-29,Paneer Butter Masala,23,no
+2025-01-29,Butter Naan,137,no
+2025-01-29,Double ka Meetha,23,no
+2025-01-29,Qubani ka Meetha,13,no
+2025-01-30,Chicken Dum Biryani,168,no
+2025-01-30,Mutton Dum Biryani,63,no
+2025-01-30,Veg Biryani,38,no
+2025-01-30,Chicken 65,39,no
+2025-01-30,Apollo Fish,15,no
+2025-01-30,Paneer Butter Masala,16,no
+2025-01-30,Butter Naan,91,no
+2025-01-30,Double ka Meetha,25,no
+2025-01-30,Qubani ka Meetha,14,no
+2025-01-31,Chicken Dum Biryani,197,no
+2025-01-31,Mutton Dum Biryani,62,no
+2025-01-31,Veg Biryani,50,no
+2025-01-31,Chicken 65,54,no
+2025-01-31,Apollo Fish,23,no
+2025-01-31,Paneer Butter Masala,21,no
+2025-01-31,Butter Naan,109,no
+2025-01-31,Double ka Meetha,26,no
+2025-01-31,Qubani ka Meetha,11,no
+2025-02-01,Chicken Dum Biryani,231,no
+2025-02-01,Mutton Dum Biryani,100,yes
+2025-02-01,Veg Biryani,44,no
+2025-02-01,Chicken 65,69,no
+2025-02-01,Apollo Fish,30,no
+2025-02-01,Paneer Butter Masala,27,no
+2025-02-01,Butter Naan,158,no
+2025-02-01,Double ka Meetha,39,no
+2025-02-01,Qubani ka Meetha,15,no
+2025-02-02,Chicken Dum Biryani,206,no
+2025-02-02,Mutton Dum Biryani,64,no
+2025-02-02,Veg Biryani,24,no
+2025-02-02,Chicken 65,57,no
+2025-02-02,Apollo Fish,40,no
+2025-02-02,Paneer Butter Masala,31,no
+2025-02-02,Butter Naan,233,no
+2025-02-02,Double ka Meetha,38,no
+2025-02-02,Qubani ka Meetha,14,no
+2025-02-03,Chicken Dum Biryani,129,no
+2025-02-03,Mutton Dum Biryani,77,no
+2025-02-03,Veg Biryani,29,no
+2025-02-03,Chicken 65,39,no
+2025-02-03,Apollo Fish,17,no
+2025-02-03,Paneer Butter Masala,16,no
+2025-02-03,Butter Naan,96,no
+2025-02-03,Double ka Meetha,20,no
+2025-02-03,Qubani ka Meetha,11,no
+2025-02-04,Chicken Dum Biryani,118,no
+2025-02-04,Mutton Dum Biryani,42,no
+2025-02-04,Veg Biryani,30,no
+2025-02-04,Chicken 65,48,no
+2025-02-04,Apollo Fish,18,no
+2025-02-04,Paneer Butter Masala,8,no
+2025-02-04,Butter Naan,138,no
+2025-02-04,Double ka Meetha,28,no
+2025-02-04,Qubani ka Meetha,12,no
+2025-02-05,Chicken Dum Biryani,151,no
+2025-02-05,Mutton Dum Biryani,53,no
+2025-02-05,Veg Biryani,34,no
+2025-02-05,Chicken 65,30,no
+2025-02-05,Apollo Fish,21,no
+2025-02-05,Paneer Butter Masala,14,no
+2025-02-05,Butter Naan,123,no
+2025-02-05,Double ka Meetha,26,no
+2025-02-05,Qubani ka Meetha,20,no
+2025-02-06,Chicken Dum Biryani,152,no
+2025-02-06,Mutton Dum Biryani,42,no
+2025-02-06,Veg Biryani,17,no
+2025-02-06,Chicken 65,52,no
+2025-02-06,Apollo Fish,13,no
+2025-02-06,Paneer Butter Masala,14,no
+2025-02-06,Butter Naan,82,no
+2025-02-06,Double ka Meetha,32,no
+2025-02-06,Qubani ka Meetha,12,no
+2025-02-07,Chicken Dum Biryani,213,no
+2025-02-07,Mutton Dum Biryani,84,no
+2025-02-07,Veg Biryani,26,no
+2025-02-07,Chicken 65,63,no
+2025-02-07,Apollo Fish,17,no
+2025-02-07,Paneer Butter Masala,29,no
+2025-02-07,Butter Naan,266,no
+2025-02-07,Double ka Meetha,42,no
+2025-02-07,Qubani ka Meetha,20,no
+2025-02-08,Chicken Dum Biryani,231,no
+2025-02-08,Mutton Dum Biryani,55,no
+2025-02-08,Veg Biryani,33,no
+2025-02-08,Chicken 65,50,no
+2025-02-08,Apollo Fish,28,no
+2025-02-08,Paneer Butter Masala,18,no
+2025-02-08,Butter Naan,219,no
+2025-02-08,Double ka Meetha,41,no
+2025-02-08,Qubani ka Meetha,16,no
+2025-02-09,Chicken Dum Biryani,202,no
+2025-02-09,Mutton Dum Biryani,98,no
+2025-02-09,Veg Biryani,39,no
+2025-02-09,Chicken 65,70,no
+2025-02-09,Apollo Fish,27,no
+2025-02-09,Paneer Butter Masala,52,no
+2025-02-09,Butter Naan,308,no
+2025-02-09,Double ka Meetha,34,no
+2025-02-09,Qubani ka Meetha,16,no
+2025-02-10,Chicken Dum Biryani,121,no
+2025-02-10,Mutton Dum Biryani,39,no
+2025-02-10,Veg Biryani,23,no
+2025-02-10,Chicken 65,33,no
+2025-02-10,Apollo Fish,16,no
+2025-02-10,Paneer Butter Masala,16,no
+2025-02-10,Butter Naan,95,no
+2025-02-10,Double ka Meetha,17,no
+2025-02-10,Qubani ka Meetha,5,no
+2025-02-11,Chicken Dum Biryani,104,no
+2025-02-11,Mutton Dum Biryani,48,no
+2025-02-11,Veg Biryani,33,no
+2025-02-11,Chicken 65,33,no
+2025-02-11,Apollo Fish,8,no
+2025-02-11,Paneer Butter Masala,27,no
+2025-02-11,Butter Naan,116,no
+2025-02-11,Double ka Meetha,14,no
+2025-02-11,Qubani ka Meetha,8,no
+2025-02-12,Chicken Dum Biryani,144,no
+2025-02-12,Mutton Dum Biryani,59,no
+2025-02-12,Veg Biryani,24,no
+2025-02-12,Chicken 65,41,no
+2025-02-12,Apollo Fish,15,no
+2025-02-12,Paneer Butter Masala,21,no
+2025-02-12,Butter Naan,148,no
+2025-02-12,Double ka Meetha,34,no
+2025-02-12,Qubani ka Meetha,8,no
+2025-02-13,Chicken Dum Biryani,128,no
+2025-02-13,Mutton Dum Biryani,43,no
+2025-02-13,Veg Biryani,16,no
+2025-02-13,Chicken 65,47,no
+2025-02-13,Apollo Fish,14,no
+2025-02-13,Paneer Butter Masala,28,no
+2025-02-13,Butter Naan,92,no
+2025-02-13,Double ka Meetha,28,no
+2025-02-13,Qubani ka Meetha,15,no
+2025-02-14,Chicken Dum Biryani,196,no
+2025-02-14,Mutton Dum Biryani,81,no
+2025-02-14,Veg Biryani,30,no
+2025-02-14,Chicken 65,59,no
+2025-02-14,Apollo Fish,18,no
+2025-02-14,Paneer Butter Masala,21,no
+2025-02-14,Butter Naan,115,no
+2025-02-14,Double ka Meetha,18,no
+2025-02-14,Qubani ka Meetha,9,no
+2025-02-15,Chicken Dum Biryani,183,no
+2025-02-15,Mutton Dum Biryani,100,yes
+2025-02-15,Veg Biryani,49,no
+2025-02-15,Chicken 65,56,no
+2025-02-15,Apollo Fish,34,no
+2025-02-15,Paneer Butter Masala,36,no
+2025-02-15,Butter Naan,109,no
+2025-02-15,Double ka Meetha,41,no
+2025-02-15,Qubani ka Meetha,15,no
+2025-02-16,Chicken Dum Biryani,222,no
+2025-02-16,Mutton Dum Biryani,65,no
+2025-02-16,Veg Biryani,29,no
+2025-02-16,Chicken 65,42,no
+2025-02-16,Apollo Fish,32,no
+2025-02-16,Paneer Butter Masala,32,no
+2025-02-16,Butter Naan,175,no
+2025-02-16,Double ka Meetha,51,no
+2025-02-16,Qubani ka Meetha,8,no
+2025-02-17,Chicken Dum Biryani,114,no
+2025-02-17,Mutton Dum Biryani,40,no
+2025-02-17,Veg Biryani,21,no
+2025-02-17,Chicken 65,59,no
+2025-02-17,Apollo Fish,11,no
+2025-02-17,Paneer Butter Masala,27,no
+2025-02-17,Butter Naan,165,no
+2025-02-17,Double ka Meetha,32,no
+2025-02-17,Qubani ka Meetha,13,no
+2025-02-18,Chicken Dum Biryani,83,no
+2025-02-18,Mutton Dum Biryani,46,no
+2025-02-18,Veg Biryani,20,no
+2025-02-18,Chicken 65,39,no
+2025-02-18,Apollo Fish,21,no
+2025-02-18,Paneer Butter Masala,20,no
+2025-02-18,Butter Naan,121,no
+2025-02-18,Double ka Meetha,21,no
+2025-02-18,Qubani ka Meetha,13,no
+2025-02-19,Chicken Dum Biryani,110,no
+2025-02-19,Mutton Dum Biryani,92,no
+2025-02-19,Veg Biryani,20,no
+2025-02-19,Chicken 65,31,no
+2025-02-19,Apollo Fish,18,no
+2025-02-19,Paneer Butter Masala,19,no
+2025-02-19,Butter Naan,131,no
+2025-02-19,Double ka Meetha,21,no
+2025-02-19,Qubani ka Meetha,11,no
+2025-02-20,Chicken Dum Biryani,135,no
+2025-02-20,Mutton Dum Biryani,77,no
+2025-02-20,Veg Biryani,15,no
+2025-02-20,Chicken 65,40,no
+2025-02-20,Apollo Fish,26,no
+2025-02-20,Paneer Butter Masala,27,no
+2025-02-20,Butter Naan,80,no
+2025-02-20,Double ka Meetha,17,no
+2025-02-20,Qubani ka Meetha,8,no
+2025-02-21,Chicken Dum Biryani,179,no
+2025-02-21,Mutton Dum Biryani,100,yes
+2025-02-21,Veg Biryani,37,no
+2025-02-21,Chicken 65,85,no
+2025-02-21,Apollo Fish,33,no
+2025-02-21,Paneer Butter Masala,35,no
+2025-02-21,Butter Naan,201,no
+2025-02-21,Double ka Meetha,43,no
+2025-02-21,Qubani ka Meetha,17,no
+2025-02-22,Chicken Dum Biryani,169,no
+2025-02-22,Mutton Dum Biryani,63,no
+2025-02-22,Veg Biryani,26,no
+2025-02-22,Chicken 65,72,no
+2025-02-22,Apollo Fish,27,no
+2025-02-22,Paneer Butter Masala,25,no
+2025-02-22,Butter Naan,178,no
+2025-02-22,Double ka Meetha,38,no
+2025-02-22,Qubani ka Meetha,13,no
+2025-02-23,Chicken Dum Biryani,217,no
+2025-02-23,Mutton Dum Biryani,100,yes
+2025-02-23,Veg Biryani,23,no
+2025-02-23,Chicken 65,69,no
+2025-02-23,Apollo Fish,18,no
+2025-02-23,Paneer Butter Masala,21,no
+2025-02-23,Butter Naan,180,no
+2025-02-23,Double ka Meetha,108,no
+2025-02-23,Qubani ka Meetha,20,no
+2025-02-24,Chicken Dum Biryani,90,no
+2025-02-24,Mutton Dum Biryani,57,no
+2025-02-24,Veg Biryani,27,no
+2025-02-24,Chicken 65,30,no
+2025-02-24,Apollo Fish,14,no
+2025-02-24,Paneer Butter Masala,16,no
+2025-02-24,Butter Naan,72,no
+2025-02-24,Double ka Meetha,26,no
+2025-02-24,Qubani ka Meetha,11,no
+2025-02-25,Chicken Dum Biryani,98,no
+2025-02-25,Mutton Dum Biryani,55,no
+2025-02-25,Veg Biryani,23,no
+2025-02-25,Chicken 65,47,no
+2025-02-25,Apollo Fish,8,no
+2025-02-25,Paneer Butter Masala,24,no
+2025-02-25,Butter Naan,124,no
+2025-02-25,Double ka Meetha,19,no
+2025-02-25,Qubani ka Meetha,13,no
+2025-02-26,Chicken Dum Biryani,155,no
+2025-02-26,Mutton Dum Biryani,41,no
+2025-02-26,Veg Biryani,24,no
+2025-02-26,Chicken 65,61,no
+2025-02-26,Apollo Fish,9,no
+2025-02-26,Paneer Butter Masala,35,no
+2025-02-26,Butter Naan,139,no
+2025-02-26,Double ka Meetha,30,no
+2025-02-26,Qubani ka Meetha,12,no
+2025-02-27,Chicken Dum Biryani,160,no
+2025-02-27,Mutton Dum Biryani,26,no
+2025-02-27,Veg Biryani,25,no
+2025-02-27,Chicken 65,48,no
+2025-02-27,Apollo Fish,18,no
+2025-02-27,Paneer Butter Masala,25,no
+2025-02-27,Butter Naan,138,no
+2025-02-27,Double ka Meetha,23,no
+2025-02-27,Qubani ka Meetha,9,no
+2025-02-28,Chicken Dum Biryani,160,no
+2025-02-28,Mutton Dum Biryani,63,no
+2025-02-28,Veg Biryani,33,no
+2025-02-28,Chicken 65,40,no
+2025-02-28,Apollo Fish,30,no
+2025-02-28,Paneer Butter Masala,36,no
+2025-02-28,Butter Naan,116,no
+2025-02-28,Double ka Meetha,41,no
+2025-02-28,Qubani ka Meetha,14,no
+2025-03-01,Chicken Dum Biryani,274,no
+2025-03-01,Mutton Dum Biryani,67,no
+2025-03-01,Veg Biryani,40,no
+2025-03-01,Chicken 65,76,no
+2025-03-01,Apollo Fish,37,no
+2025-03-01,Paneer Butter Masala,29,no
+2025-03-01,Butter Naan,280,no
+2025-03-01,Double ka Meetha,36,no
+2025-03-01,Qubani ka Meetha,29,no
+2025-03-02,Chicken Dum Biryani,337,no
+2025-03-02,Mutton Dum Biryani,100,yes
+2025-03-02,Veg Biryani,69,no
+2025-03-02,Chicken 65,57,no
+2025-03-02,Apollo Fish,37,no
+2025-03-02,Paneer Butter Masala,32,no
+2025-03-02,Butter Naan,121,no
+2025-03-02,Double ka Meetha,43,no
+2025-03-02,Qubani ka Meetha,17,no
+2025-03-02,Haleem,288,no
+2025-03-03,Chicken Dum Biryani,163,no
+2025-03-03,Mutton Dum Biryani,71,no
+2025-03-03,Veg Biryani,39,no
+2025-03-03,Chicken 65,42,no
+2025-03-03,Apollo Fish,14,no
+2025-03-03,Paneer Butter Masala,19,no
+2025-03-03,Butter Naan,144,no
+2025-03-03,Double ka Meetha,34,no
+2025-03-03,Qubani ka Meetha,16,no
+2025-03-03,Haleem,174,no
+2025-03-04,Chicken Dum Biryani,149,no
+2025-03-04,Mutton Dum Biryani,79,no
+2025-03-04,Veg Biryani,28,no
+2025-03-04,Chicken 65,53,no
+2025-03-04,Apollo Fish,22,no
+2025-03-04,Paneer Butter Masala,20,no
+2025-03-04,Butter Naan,133,no
+2025-03-04,Double ka Meetha,45,no
+2025-03-04,Qubani ka Meetha,19,no
+2025-03-04,Haleem,210,no
+2025-03-05,Chicken Dum Biryani,186,no
+2025-03-05,Mutton Dum Biryani,100,yes
+2025-03-05,Veg Biryani,30,no
+2025-03-05,Chicken 65,53,no
+2025-03-05,Apollo Fish,9,no
+2025-03-05,Paneer Butter Masala,23,no
+2025-03-05,Butter Naan,157,no
+2025-03-05,Double ka Meetha,60,no
+2025-03-05,Qubani ka Meetha,14,no
+2025-03-05,Haleem,268,no
+2025-03-06,Chicken Dum Biryani,203,no
+2025-03-06,Mutton Dum Biryani,76,no
+2025-03-06,Veg Biryani,21,no
+2025-03-06,Chicken 65,64,no
+2025-03-06,Apollo Fish,13,no
+2025-03-06,Paneer Butter Masala,23,no
+2025-03-06,Butter Naan,152,no
+2025-03-06,Double ka Meetha,51,no
+2025-03-06,Qubani ka Meetha,11,no
+2025-03-06,Haleem,253,no
+2025-03-07,Chicken Dum Biryani,235,no
+2025-03-07,Mutton Dum Biryani,45,no
+2025-03-07,Veg Biryani,35,no
+2025-03-07,Chicken 65,64,no
+2025-03-07,Apollo Fish,20,no
+2025-03-07,Paneer Butter Masala,17,no
+2025-03-07,Butter Naan,132,no
+2025-03-07,Double ka Meetha,75,no
+2025-03-07,Qubani ka Meetha,15,no
+2025-03-07,Haleem,217,no
+2025-03-08,Chicken Dum Biryani,282,no
+2025-03-08,Mutton Dum Biryani,100,yes
+2025-03-08,Veg Biryani,47,no
+2025-03-08,Chicken 65,90,no
+2025-03-08,Apollo Fish,29,no
+2025-03-08,Paneer Butter Masala,20,no
+2025-03-08,Butter Naan,207,no
+2025-03-08,Double ka Meetha,66,no
+2025-03-08,Qubani ka Meetha,26,no
+2025-03-08,Haleem,286,no
+2025-03-09,Chicken Dum Biryani,268,no
+2025-03-09,Mutton Dum Biryani,100,yes
+2025-03-09,Veg Biryani,59,no
+2025-03-09,Chicken 65,124,no
+2025-03-09,Apollo Fish,26,no
+2025-03-09,Paneer Butter Masala,25,no
+2025-03-09,Butter Naan,267,no
+2025-03-09,Double ka Meetha,125,no
+2025-03-09,Qubani ka Meetha,21,no
+2025-03-09,Haleem,320,yes
+2025-03-10,Chicken Dum Biryani,108,no
+2025-03-10,Mutton Dum Biryani,52,no
+2025-03-10,Veg Biryani,31,no
+2025-03-10,Chicken 65,51,no
+2025-03-10,Apollo Fish,11,no
+2025-03-10,Paneer Butter Masala,10,no
+2025-03-10,Butter Naan,100,no
+2025-03-10,Double ka Meetha,28,no
+2025-03-10,Qubani ka Meetha,17,no
+2025-03-10,Haleem,146,no
+2025-03-11,Chicken Dum Biryani,174,no
+2025-03-11,Mutton Dum Biryani,71,no
+2025-03-11,Veg Biryani,29,no
+2025-03-11,Chicken 65,31,no
+2025-03-11,Apollo Fish,14,no
+2025-03-11,Paneer Butter Masala,25,no
+2025-03-11,Butter Naan,102,no
+2025-03-11,Double ka Meetha,32,no
+2025-03-11,Qubani ka Meetha,16,no
+2025-03-11,Haleem,207,no
+2025-03-12,Chicken Dum Biryani,242,no
+2025-03-12,Mutton Dum Biryani,91,no
+2025-03-12,Veg Biryani,44,no
+2025-03-12,Chicken 65,56,no
+2025-03-12,Apollo Fish,21,no
+2025-03-12,Paneer Butter Masala,15,no
+2025-03-12,Butter Naan,162,no
+2025-03-12,Double ka Meetha,30,no
+2025-03-12,Qubani ka Meetha,10,no
+2025-03-12,Haleem,121,no
+2025-03-13,Chicken Dum Biryani,147,no
+2025-03-13,Mutton Dum Biryani,100,yes
+2025-03-13,Veg Biryani,45,no
+2025-03-13,Chicken 65,45,no
+2025-03-13,Apollo Fish,19,no
+2025-03-13,Paneer Butter Masala,23,no
+2025-03-13,Butter Naan,113,no
+2025-03-13,Double ka Meetha,45,no
+2025-03-13,Qubani ka Meetha,30,no
+2025-03-13,Haleem,232,no
+2025-03-14,Chicken Dum Biryani,156,no
+2025-03-14,Mutton Dum Biryani,89,no
+2025-03-14,Veg Biryani,32,no
+2025-03-14,Chicken 65,56,no
+2025-03-14,Apollo Fish,15,no
+2025-03-14,Paneer Butter Masala,18,no
+2025-03-14,Butter Naan,191,no
+2025-03-14,Double ka Meetha,29,no
+2025-03-14,Qubani ka Meetha,16,no
+2025-03-14,Haleem,183,no
+2025-03-15,Chicken Dum Biryani,288,no
+2025-03-15,Mutton Dum Biryani,100,yes
+2025-03-15,Veg Biryani,57,no
+2025-03-15,Chicken 65,65,no
+2025-03-15,Apollo Fish,29,no
+2025-03-15,Paneer Butter Masala,34,no
+2025-03-15,Butter Naan,149,no
+2025-03-15,Double ka Meetha,53,no
+2025-03-15,Qubani ka Meetha,12,no
+2025-03-15,Haleem,239,no
+2025-03-16,Chicken Dum Biryani,342,no
+2025-03-16,Mutton Dum Biryani,100,yes
+2025-03-16,Veg Biryani,34,no
+2025-03-16,Chicken 65,69,no
+2025-03-16,Apollo Fish,43,no
+2025-03-16,Paneer Butter Masala,37,no
+2025-03-16,Butter Naan,185,no
+2025-03-16,Double ka Meetha,62,no
+2025-03-16,Qubani ka Meetha,20,no
+2025-03-16,Haleem,320,yes
+2025-03-17,Chicken Dum Biryani,98,no
+2025-03-17,Mutton Dum Biryani,64,no
+2025-03-17,Veg Biryani,23,no
+2025-03-17,Chicken 65,37,no
+2025-03-17,Apollo Fish,11,no
+2025-03-17,Paneer Butter Masala,24,no
+2025-03-17,Butter Naan,102,no
+2025-03-17,Double ka Meetha,35,no
+2025-03-17,Qubani ka Meetha,22,no
+2025-03-17,Haleem,170,no
+2025-03-18,Chicken Dum Biryani,167,no
+2025-03-18,Mutton Dum Biryani,79,no
+2025-03-18,Veg Biryani,32,no
+2025-03-18,Chicken 65,40,no
+2025-03-18,Apollo Fish,18,no
+2025-03-18,Paneer Butter Masala,31,no
+2025-03-18,Butter Naan,92,no
+2025-03-18,Double ka Meetha,42,no
+2025-03-18,Qubani ka Meetha,20,no
+2025-03-18,Haleem,202,no
+2025-03-19,Chicken Dum Biryani,184,no
+2025-03-19,Mutton Dum Biryani,87,no
+2025-03-19,Veg Biryani,24,no
+2025-03-19,Chicken 65,43,no
+2025-03-19,Apollo Fish,9,no
+2025-03-19,Paneer Butter Masala,14,no
+2025-03-19,Butter Naan,107,no
+2025-03-19,Double ka Meetha,31,no
+2025-03-19,Qubani ka Meetha,17,no
+2025-03-19,Haleem,180,no
+2025-03-20,Chicken Dum Biryani,209,no
+2025-03-20,Mutton Dum Biryani,100,yes
+2025-03-20,Veg Biryani,38,no
+2025-03-20,Chicken 65,26,no
+2025-03-20,Apollo Fish,18,no
+2025-03-20,Paneer Butter Masala,20,no
+2025-03-20,Butter Naan,98,no
+2025-03-20,Double ka Meetha,36,no
+2025-03-20,Qubani ka Meetha,13,no
+2025-03-20,Haleem,229,no
+2025-03-21,Chicken Dum Biryani,230,no
+2025-03-21,Mutton Dum Biryani,100,yes
+2025-03-21,Veg Biryani,41,no
+2025-03-21,Chicken 65,57,no
+2025-03-21,Apollo Fish,25,no
+2025-03-21,Paneer Butter Masala,12,no
+2025-03-21,Butter Naan,121,no
+2025-03-21,Double ka Meetha,53,no
+2025-03-21,Qubani ka Meetha,16,no
+2025-03-21,Haleem,243,no
+2025-03-22,Chicken Dum Biryani,230,no
+2025-03-22,Mutton Dum Biryani,94,no
+2025-03-22,Veg Biryani,48,no
+2025-03-22,Chicken 65,79,no
+2025-03-22,Apollo Fish,17,no
+2025-03-22,Paneer Butter Masala,27,no
+2025-03-22,Butter Naan,151,no
+2025-03-22,Double ka Meetha,36,no
+2025-03-22,Qubani ka Meetha,26,no
+2025-03-22,Haleem,269,no
+2025-03-23,Chicken Dum Biryani,203,no
+2025-03-23,Mutton Dum Biryani,100,yes
+2025-03-23,Veg Biryani,34,no
+2025-03-23,Chicken 65,55,no
+2025-03-23,Apollo Fish,13,no
+2025-03-23,Paneer Butter Masala,50,no
+2025-03-23,Butter Naan,142,no
+2025-03-23,Double ka Meetha,52,no
+2025-03-23,Qubani ka Meetha,25,no
+2025-03-23,Haleem,320,yes
+2025-03-24,Chicken Dum Biryani,167,no
+2025-03-24,Mutton Dum Biryani,63,no
+2025-03-24,Veg Biryani,32,no
+2025-03-24,Chicken 65,22,no
+2025-03-24,Apollo Fish,12,no
+2025-03-24,Paneer Butter Masala,20,no
+2025-03-24,Butter Naan,66,no
+2025-03-24,Double ka Meetha,25,no
+2025-03-24,Qubani ka Meetha,16,no
+2025-03-24,Haleem,272,no
+2025-03-25,Chicken Dum Biryani,201,no
+2025-03-25,Mutton Dum Biryani,69,no
+2025-03-25,Veg Biryani,27,no
+2025-03-25,Chicken 65,26,no
+2025-03-25,Apollo Fish,19,no
+2025-03-25,Paneer Butter Masala,24,no
+2025-03-25,Butter Naan,81,no
+2025-03-25,Double ka Meetha,25,no
+2025-03-25,Qubani ka Meetha,8,no
+2025-03-25,Haleem,157,no
+2025-03-26,Chicken Dum Biryani,209,no
+2025-03-26,Mutton Dum Biryani,76,no
+2025-03-26,Veg Biryani,30,no
+2025-03-26,Chicken 65,30,no
+2025-03-26,Apollo Fish,27,no
+2025-03-26,Paneer Butter Masala,25,no
+2025-03-26,Butter Naan,143,no
+2025-03-26,Double ka Meetha,33,no
+2025-03-26,Qubani ka Meetha,13,no
+2025-03-26,Haleem,189,no
+2025-03-27,Chicken Dum Biryani,240,no
+2025-03-27,Mutton Dum Biryani,91,no
+2025-03-27,Veg Biryani,32,no
+2025-03-27,Chicken 65,43,no
+2025-03-27,Apollo Fish,12,no
+2025-03-27,Paneer Butter Masala,17,no
+2025-03-27,Butter Naan,138,no
+2025-03-27,Double ka Meetha,56,no
+2025-03-27,Qubani ka Meetha,8,no
+2025-03-27,Haleem,230,no
+2025-03-28,Chicken Dum Biryani,205,no
+2025-03-28,Mutton Dum Biryani,100,yes
+2025-03-28,Veg Biryani,46,no
+2025-03-28,Chicken 65,42,no
+2025-03-28,Apollo Fish,21,no
+2025-03-28,Paneer Butter Masala,15,no
+2025-03-28,Butter Naan,208,no
+2025-03-28,Double ka Meetha,57,no
+2025-03-28,Qubani ka Meetha,17,no
+2025-03-28,Haleem,252,no
+2025-03-29,Chicken Dum Biryani,290,no
+2025-03-29,Mutton Dum Biryani,93,no
+2025-03-29,Veg Biryani,53,no
+2025-03-29,Chicken 65,47,no
+2025-03-29,Apollo Fish,36,no
+2025-03-29,Paneer Butter Masala,27,no
+2025-03-29,Butter Naan,111,no
+2025-03-29,Double ka Meetha,56,no
+2025-03-29,Qubani ka Meetha,28,no
+2025-03-29,Haleem,265,no
+2025-03-30,Chicken Dum Biryani,464,no
+2025-03-30,Mutton Dum Biryani,100,yes
+2025-03-30,Veg Biryani,25,no
+2025-03-30,Chicken 65,79,no
+2025-03-30,Apollo Fish,22,no
+2025-03-30,Paneer Butter Masala,35,no
+2025-03-30,Butter Naan,209,no
+2025-03-30,Double ka Meetha,63,no
+2025-03-30,Qubani ka Meetha,19,no
+2025-03-30,Haleem,320,yes
+2025-03-31,Chicken Dum Biryani,221,no
+2025-03-31,Mutton Dum Biryani,100,yes
+2025-03-31,Veg Biryani,26,no
+2025-03-31,Chicken 65,60,no
+2025-03-31,Apollo Fish,27,no
+2025-03-31,Paneer Butter Masala,21,no
+2025-03-31,Butter Naan,187,no
+2025-03-31,Double ka Meetha,39,no
+2025-03-31,Qubani ka Meetha,15,no
+2025-04-01,Chicken Dum Biryani,112,no
+2025-04-01,Mutton Dum Biryani,50,no
+2025-04-01,Veg Biryani,34,no
+2025-04-01,Chicken 65,48,no
+2025-04-01,Apollo Fish,12,no
+2025-04-01,Paneer Butter Masala,25,no
+2025-04-01,Butter Naan,109,no
+2025-04-01,Double ka Meetha,12,no
+2025-04-01,Qubani ka Meetha,8,no
+2025-04-02,Chicken Dum Biryani,189,no
+2025-04-02,Mutton Dum Biryani,52,no
+2025-04-02,Veg Biryani,26,no
+2025-04-02,Chicken 65,46,no
+2025-04-02,Apollo Fish,20,no
+2025-04-02,Paneer Butter Masala,24,no
+2025-04-02,Butter Naan,98,no
+2025-04-02,Double ka Meetha,39,no
+2025-04-02,Qubani ka Meetha,6,no
+2025-04-03,Chicken Dum Biryani,183,no
+2025-04-03,Mutton Dum Biryani,69,no
+2025-04-03,Veg Biryani,27,no
+2025-04-03,Chicken 65,36,no
+2025-04-03,Apollo Fish,21,no
+2025-04-03,Paneer Butter Masala,21,no
+2025-04-03,Butter Naan,117,no
+2025-04-03,Double ka Meetha,21,no
+2025-04-03,Qubani ka Meetha,8,no
+2025-04-04,Chicken Dum Biryani,193,no
+2025-04-04,Mutton Dum Biryani,94,no
+2025-04-04,Veg Biryani,31,no
+2025-04-04,Chicken 65,74,no
+2025-04-04,Apollo Fish,15,no
+2025-04-04,Paneer Butter Masala,17,no
+2025-04-04,Butter Naan,178,no
+2025-04-04,Double ka Meetha,47,no
+2025-04-04,Qubani ka Meetha,22,no
+2025-04-05,Chicken Dum Biryani,195,no
+2025-04-05,Mutton Dum Biryani,90,no
+2025-04-05,Veg Biryani,33,no
+2025-04-05,Chicken 65,63,no
+2025-04-05,Apollo Fish,21,no
+2025-04-05,Paneer Butter Masala,37,no
+2025-04-05,Butter Naan,234,no
+2025-04-05,Double ka Meetha,50,no
+2025-04-05,Qubani ka Meetha,20,no
+2025-04-06,Chicken Dum Biryani,199,no
+2025-04-06,Mutton Dum Biryani,68,no
+2025-04-06,Veg Biryani,39,no
+2025-04-06,Chicken 65,45,no
+2025-04-06,Apollo Fish,18,no
+2025-04-06,Paneer Butter Masala,28,no
+2025-04-06,Butter Naan,165,no
+2025-04-06,Double ka Meetha,51,no
+2025-04-06,Qubani ka Meetha,18,no
+2025-04-07,Chicken Dum Biryani,135,no
+2025-04-07,Mutton Dum Biryani,67,no
+2025-04-07,Veg Biryani,23,no
+2025-04-07,Chicken 65,31,no
+2025-04-07,Apollo Fish,15,no
+2025-04-07,Paneer Butter Masala,23,no
+2025-04-07,Butter Naan,75,no
+2025-04-07,Double ka Meetha,24,no
+2025-04-07,Qubani ka Meetha,13,no
+2025-04-08,Chicken Dum Biryani,160,no
+2025-04-08,Mutton Dum Biryani,47,no
+2025-04-08,Veg Biryani,22,no
+2025-04-08,Chicken 65,30,no
+2025-04-08,Apollo Fish,20,no
+2025-04-08,Paneer Butter Masala,11,no
+2025-04-08,Butter Naan,87,no
+2025-04-08,Double ka Meetha,40,no
+2025-04-08,Qubani ka Meetha,13,no
+2025-04-09,Chicken Dum Biryani,131,no
+2025-04-09,Mutton Dum Biryani,52,no
+2025-04-09,Veg Biryani,28,no
+2025-04-09,Chicken 65,40,no
+2025-04-09,Apollo Fish,21,no
+2025-04-09,Paneer Butter Masala,27,no
+2025-04-09,Butter Naan,136,no
+2025-04-09,Double ka Meetha,26,no
+2025-04-09,Qubani ka Meetha,7,no
+2025-04-10,Chicken Dum Biryani,115,no
+2025-04-10,Mutton Dum Biryani,55,no
+2025-04-10,Veg Biryani,19,no
+2025-04-10,Chicken 65,48,no
+2025-04-10,Apollo Fish,22,no
+2025-04-10,Paneer Butter Masala,15,no
+2025-04-10,Butter Naan,109,no
+2025-04-10,Double ka Meetha,24,no
+2025-04-10,Qubani ka Meetha,20,no
+2025-04-11,Chicken Dum Biryani,144,no
+2025-04-11,Mutton Dum Biryani,83,no
+2025-04-11,Veg Biryani,33,no
+2025-04-11,Chicken 65,60,no
+2025-04-11,Apollo Fish,26,no
+2025-04-11,Paneer Butter Masala,22,no
+2025-04-11,Butter Naan,179,no
+2025-04-11,Double ka Meetha,37,no
+2025-04-11,Qubani ka Meetha,9,no
+2025-04-12,Chicken Dum Biryani,216,no
+2025-04-12,Mutton Dum Biryani,63,no
+2025-04-12,Veg Biryani,25,no
+2025-04-12,Chicken 65,41,no
+2025-04-12,Apollo Fish,16,no
+2025-04-12,Paneer Butter Masala,28,no
+2025-04-12,Butter Naan,134,no
+2025-04-12,Double ka Meetha,37,no
+2025-04-12,Qubani ka Meetha,22,no
+2025-04-13,Chicken Dum Biryani,302,no
+2025-04-13,Mutton Dum Biryani,86,no
+2025-04-13,Veg Biryani,52,no
+2025-04-13,Chicken 65,80,no
+2025-04-13,Apollo Fish,18,no
+2025-04-13,Paneer Butter Masala,35,no
+2025-04-13,Butter Naan,263,no
+2025-04-13,Double ka Meetha,49,no
+2025-04-13,Qubani ka Meetha,11,no
+2025-04-14,Chicken Dum Biryani,132,no
+2025-04-14,Mutton Dum Biryani,55,no
+2025-04-14,Veg Biryani,18,no
+2025-04-14,Chicken 65,51,no
+2025-04-14,Apollo Fish,21,no
+2025-04-14,Paneer Butter Masala,20,no
+2025-04-14,Butter Naan,135,no
+2025-04-14,Double ka Meetha,31,no
+2025-04-14,Qubani ka Meetha,10,no
+2025-04-15,Chicken Dum Biryani,96,no
+2025-04-15,Mutton Dum Biryani,40,no
+2025-04-15,Veg Biryani,23,no
+2025-04-15,Chicken 65,30,no
+2025-04-15,Apollo Fish,17,no
+2025-04-15,Paneer Butter Masala,21,no
+2025-04-15,Butter Naan,76,no
+2025-04-15,Double ka Meetha,17,no
+2025-04-15,Qubani ka Meetha,10,no
+2025-04-16,Chicken Dum Biryani,125,no
+2025-04-16,Mutton Dum Biryani,63,no
+2025-04-16,Veg Biryani,16,no
+2025-04-16,Chicken 65,34,no
+2025-04-16,Apollo Fish,10,no
+2025-04-16,Paneer Butter Masala,20,no
+2025-04-16,Butter Naan,114,no
+2025-04-16,Double ka Meetha,17,no
+2025-04-16,Qubani ka Meetha,9,no
+2025-04-17,Chicken Dum Biryani,125,no
+2025-04-17,Mutton Dum Biryani,46,no
+2025-04-17,Veg Biryani,35,no
+2025-04-17,Chicken 65,44,no
+2025-04-17,Apollo Fish,19,no
+2025-04-17,Paneer Butter Masala,21,no
+2025-04-17,Butter Naan,133,no
+2025-04-17,Double ka Meetha,25,no
+2025-04-17,Qubani ka Meetha,7,no
+2025-04-18,Chicken Dum Biryani,210,no
+2025-04-18,Mutton Dum Biryani,97,no
+2025-04-18,Veg Biryani,38,no
+2025-04-18,Chicken 65,59,no
+2025-04-18,Apollo Fish,20,no
+2025-04-18,Paneer Butter Masala,22,no
+2025-04-18,Butter Naan,204,no
+2025-04-18,Double ka Meetha,35,no
+2025-04-18,Qubani ka Meetha,11,no
+2025-04-19,Chicken Dum Biryani,163,no
+2025-04-19,Mutton Dum Biryani,100,yes
+2025-04-19,Veg Biryani,26,no
+2025-04-19,Chicken 65,69,no
+2025-04-19,Apollo Fish,34,no
+2025-04-19,Paneer Butter Masala,22,no
+2025-04-19,Butter Naan,148,no
+2025-04-19,Double ka Meetha,56,no
+2025-04-19,Qubani ka Meetha,17,no
+2025-04-20,Chicken Dum Biryani,176,no
+2025-04-20,Mutton Dum Biryani,94,no
+2025-04-20,Veg Biryani,40,no
+2025-04-20,Chicken 65,61,no
+2025-04-20,Apollo Fish,24,no
+2025-04-20,Paneer Butter Masala,31,no
+2025-04-20,Butter Naan,249,no
+2025-04-20,Double ka Meetha,40,no
+2025-04-20,Qubani ka Meetha,17,no
+2025-04-21,Chicken Dum Biryani,123,no
+2025-04-21,Mutton Dum Biryani,63,no
+2025-04-21,Veg Biryani,10,no
+2025-04-21,Chicken 65,49,no
+2025-04-21,Apollo Fish,16,no
+2025-04-21,Paneer Butter Masala,23,no
+2025-04-21,Butter Naan,150,no
+2025-04-21,Double ka Meetha,29,no
+2025-04-21,Qubani ka Meetha,10,no
+2025-04-22,Chicken Dum Biryani,134,no
+2025-04-22,Mutton Dum Biryani,63,no
+2025-04-22,Veg Biryani,17,no
+2025-04-22,Chicken 65,17,no
+2025-04-22,Apollo Fish,10,no
+2025-04-22,Paneer Butter Masala,18,no
+2025-04-22,Butter Naan,87,no
+2025-04-22,Double ka Meetha,29,no
+2025-04-22,Qubani ka Meetha,12,no
+2025-04-23,Chicken Dum Biryani,88,no
+2025-04-23,Mutton Dum Biryani,35,no
+2025-04-23,Veg Biryani,27,no
+2025-04-23,Chicken 65,55,no
+2025-04-23,Apollo Fish,16,no
+2025-04-23,Paneer Butter Masala,9,no
+2025-04-23,Butter Naan,98,no
+2025-04-23,Double ka Meetha,41,no
+2025-04-23,Qubani ka Meetha,9,no
+2025-04-24,Chicken Dum Biryani,144,no
+2025-04-24,Mutton Dum Biryani,40,no
+2025-04-24,Veg Biryani,24,no
+2025-04-24,Chicken 65,33,no
+2025-04-24,Apollo Fish,17,no
+2025-04-24,Paneer Butter Masala,16,no
+2025-04-24,Butter Naan,96,no
+2025-04-24,Double ka Meetha,22,no
+2025-04-24,Qubani ka Meetha,6,no
+2025-04-25,Chicken Dum Biryani,322,no
+2025-04-25,Mutton Dum Biryani,100,yes
+2025-04-25,Veg Biryani,40,no
+2025-04-25,Chicken 65,93,no
+2025-04-25,Apollo Fish,24,no
+2025-04-25,Paneer Butter Masala,29,no
+2025-04-25,Butter Naan,181,no
+2025-04-25,Double ka Meetha,62,no
+2025-04-25,Qubani ka Meetha,16,no
+2025-04-26,Chicken Dum Biryani,223,no
+2025-04-26,Mutton Dum Biryani,68,no
+2025-04-26,Veg Biryani,47,no
+2025-04-26,Chicken 65,52,no
+2025-04-26,Apollo Fish,17,no
+2025-04-26,Paneer Butter Masala,31,no
+2025-04-26,Butter Naan,174,no
+2025-04-26,Double ka Meetha,42,no
+2025-04-26,Qubani ka Meetha,13,no
+2025-04-27,Chicken Dum Biryani,126,no
+2025-04-27,Mutton Dum Biryani,100,yes
+2025-04-27,Veg Biryani,27,no
+2025-04-27,Chicken 65,80,no
+2025-04-27,Apollo Fish,27,no
+2025-04-27,Paneer Butter Masala,31,no
+2025-04-27,Butter Naan,119,no
+2025-04-27,Double ka Meetha,50,no
+2025-04-27,Qubani ka Meetha,18,no
+2025-04-28,Chicken Dum Biryani,73,no
+2025-04-28,Mutton Dum Biryani,29,no
+2025-04-28,Veg Biryani,25,no
+2025-04-28,Chicken 65,39,no
+2025-04-28,Apollo Fish,20,no
+2025-04-28,Paneer Butter Masala,14,no
+2025-04-28,Butter Naan,90,no
+2025-04-28,Double ka Meetha,57,no
+2025-04-28,Qubani ka Meetha,6,no
+2025-04-29,Chicken Dum Biryani,114,no
+2025-04-29,Mutton Dum Biryani,44,no
+2025-04-29,Veg Biryani,27,no
+2025-04-29,Chicken 65,40,no
+2025-04-29,Apollo Fish,30,no
+2025-04-29,Paneer Butter Masala,17,no
+2025-04-29,Butter Naan,118,no
+2025-04-29,Double ka Meetha,20,no
+2025-04-29,Qubani ka Meetha,8,no
+2025-04-30,Chicken Dum Biryani,134,no
+2025-04-30,Mutton Dum Biryani,53,no
+2025-04-30,Veg Biryani,26,no
+2025-04-30,Chicken 65,35,no
+2025-04-30,Apollo Fish,14,no
+2025-04-30,Paneer Butter Masala,30,no
+2025-04-30,Butter Naan,85,no
+2025-04-30,Double ka Meetha,30,no
+2025-04-30,Qubani ka Meetha,11,no
+2025-05-01,Chicken Dum Biryani,133,no
+2025-05-01,Mutton Dum Biryani,60,no
+2025-05-01,Veg Biryani,25,no
+2025-05-01,Chicken 65,58,no
+2025-05-01,Apollo Fish,23,no
+2025-05-01,Paneer Butter Masala,29,no
+2025-05-01,Butter Naan,159,no
+2025-05-01,Double ka Meetha,41,no
+2025-05-01,Qubani ka Meetha,13,no
+2025-05-02,Chicken Dum Biryani,223,no
+2025-05-02,Mutton Dum Biryani,61,no
+2025-05-02,Veg Biryani,31,no
+2025-05-02,Chicken 65,51,no
+2025-05-02,Apollo Fish,27,no
+2025-05-02,Paneer Butter Masala,36,no
+2025-05-02,Butter Naan,145,no
+2025-05-02,Double ka Meetha,22,no
+2025-05-02,Qubani ka Meetha,19,no
+2025-05-03,Chicken Dum Biryani,227,no
+2025-05-03,Mutton Dum Biryani,99,no
+2025-05-03,Veg Biryani,34,no
+2025-05-03,Chicken 65,59,no
+2025-05-03,Apollo Fish,14,no
+2025-05-03,Paneer Butter Masala,37,no
+2025-05-03,Butter Naan,201,no
+2025-05-03,Double ka Meetha,53,no
+2025-05-03,Qubani ka Meetha,9,no
+2025-05-04,Chicken Dum Biryani,183,no
+2025-05-04,Mutton Dum Biryani,74,no
+2025-05-04,Veg Biryani,37,no
+2025-05-04,Chicken 65,61,no
+2025-05-04,Apollo Fish,24,no
+2025-05-04,Paneer Butter Masala,29,no
+2025-05-04,Butter Naan,137,no
+2025-05-04,Double ka Meetha,51,no
+2025-05-04,Qubani ka Meetha,21,no
+2025-05-05,Chicken Dum Biryani,154,no
+2025-05-05,Mutton Dum Biryani,72,no
+2025-05-05,Veg Biryani,20,no
+2025-05-05,Chicken 65,46,no
+2025-05-05,Apollo Fish,19,no
+2025-05-05,Paneer Butter Masala,21,no
+2025-05-05,Butter Naan,106,no
+2025-05-05,Double ka Meetha,29,no
+2025-05-05,Qubani ka Meetha,7,no
+2025-05-06,Chicken Dum Biryani,166,no
+2025-05-06,Mutton Dum Biryani,42,no
+2025-05-06,Veg Biryani,25,no
+2025-05-06,Chicken 65,56,no
+2025-05-06,Apollo Fish,13,no
+2025-05-06,Paneer Butter Masala,19,no
+2025-05-06,Butter Naan,114,no
+2025-05-06,Double ka Meetha,23,no
+2025-05-06,Qubani ka Meetha,11,no
+2025-05-07,Chicken Dum Biryani,91,no
+2025-05-07,Mutton Dum Biryani,51,no
+2025-05-07,Veg Biryani,25,no
+2025-05-07,Chicken 65,46,no
+2025-05-07,Apollo Fish,23,no
+2025-05-07,Paneer Butter Masala,19,no
+2025-05-07,Butter Naan,86,no
+2025-05-07,Double ka Meetha,35,no
+2025-05-07,Qubani ka Meetha,7,no
+2025-05-08,Chicken Dum Biryani,157,no
+2025-05-08,Mutton Dum Biryani,63,no
+2025-05-08,Veg Biryani,27,no
+2025-05-08,Chicken 65,29,no
+2025-05-08,Apollo Fish,11,no
+2025-05-08,Paneer Butter Masala,20,no
+2025-05-08,Butter Naan,100,no
+2025-05-08,Double ka Meetha,16,no
+2025-05-08,Qubani ka Meetha,10,no
+2025-05-09,Chicken Dum Biryani,242,no
+2025-05-09,Mutton Dum Biryani,71,no
+2025-05-09,Veg Biryani,24,no
+2025-05-09,Chicken 65,55,no
+2025-05-09,Apollo Fish,23,no
+2025-05-09,Paneer Butter Masala,26,no
+2025-05-09,Butter Naan,107,no
+2025-05-09,Double ka Meetha,30,no
+2025-05-09,Qubani ka Meetha,15,no
+2025-05-10,Chicken Dum Biryani,110,no
+2025-05-10,Mutton Dum Biryani,73,no
+2025-05-10,Veg Biryani,27,no
+2025-05-10,Chicken 65,29,no
+2025-05-10,Apollo Fish,18,no
+2025-05-10,Paneer Butter Masala,13,no
+2025-05-10,Butter Naan,166,no
+2025-05-10,Double ka Meetha,42,no
+2025-05-10,Qubani ka Meetha,15,no
+2025-05-11,Chicken Dum Biryani,106,no
+2025-05-11,Mutton Dum Biryani,72,no
+2025-05-11,Veg Biryani,39,no
+2025-05-11,Chicken 65,40,no
+2025-05-11,Apollo Fish,39,no
+2025-05-11,Paneer Butter Masala,20,no
+2025-05-11,Butter Naan,202,no
+2025-05-11,Double ka Meetha,66,no
+2025-05-11,Qubani ka Meetha,16,no
+2025-05-12,Chicken Dum Biryani,104,no
+2025-05-12,Mutton Dum Biryani,54,no
+2025-05-12,Veg Biryani,31,no
+2025-05-12,Chicken 65,53,no
+2025-05-12,Apollo Fish,19,no
+2025-05-12,Paneer Butter Masala,17,no
+2025-05-12,Butter Naan,112,no
+2025-05-12,Double ka Meetha,28,no
+2025-05-12,Qubani ka Meetha,20,no
+2025-05-13,Chicken Dum Biryani,142,no
+2025-05-13,Mutton Dum Biryani,55,no
+2025-05-13,Veg Biryani,31,no
+2025-05-13,Chicken 65,31,no
+2025-05-13,Apollo Fish,11,no
+2025-05-13,Paneer Butter Masala,12,no
+2025-05-13,Butter Naan,102,no
+2025-05-13,Double ka Meetha,16,no
+2025-05-13,Qubani ka Meetha,7,no
+2025-05-14,Chicken Dum Biryani,125,no
+2025-05-14,Mutton Dum Biryani,47,no
+2025-05-14,Veg Biryani,30,no
+2025-05-14,Chicken 65,41,no
+2025-05-14,Apollo Fish,12,no
+2025-05-14,Paneer Butter Masala,14,no
+2025-05-14,Butter Naan,131,no
+2025-05-14,Double ka Meetha,21,no
+2025-05-14,Qubani ka Meetha,5,no
+2025-05-15,Chicken Dum Biryani,112,no
+2025-05-15,Mutton Dum Biryani,57,no
+2025-05-15,Veg Biryani,14,no
+2025-05-15,Chicken 65,45,no
+2025-05-15,Apollo Fish,18,no
+2025-05-15,Paneer Butter Masala,30,no
+2025-05-15,Butter Naan,88,no
+2025-05-15,Double ka Meetha,32,no
+2025-05-15,Qubani ka Meetha,9,no
+2025-05-16,Chicken Dum Biryani,149,no
+2025-05-16,Mutton Dum Biryani,67,no
+2025-05-16,Veg Biryani,35,no
+2025-05-16,Chicken 65,46,no
+2025-05-16,Apollo Fish,25,no
+2025-05-16,Paneer Butter Masala,21,no
+2025-05-16,Butter Naan,149,no
+2025-05-16,Double ka Meetha,30,no
+2025-05-16,Qubani ka Meetha,10,no
+2025-05-17,Chicken Dum Biryani,265,no
+2025-05-17,Mutton Dum Biryani,100,yes
+2025-05-17,Veg Biryani,22,no
+2025-05-17,Chicken 65,80,no
+2025-05-17,Apollo Fish,30,no
+2025-05-17,Paneer Butter Masala,31,no
+2025-05-17,Butter Naan,206,no
+2025-05-17,Double ka Meetha,46,no
+2025-05-17,Qubani ka Meetha,16,no
+2025-05-18,Chicken Dum Biryani,269,no
+2025-05-18,Mutton Dum Biryani,100,yes
+2025-05-18,Veg Biryani,40,no
+2025-05-18,Chicken 65,58,no
+2025-05-18,Apollo Fish,12,no
+2025-05-18,Paneer Butter Masala,16,no
+2025-05-18,Butter Naan,137,no
+2025-05-18,Double ka Meetha,60,no
+2025-05-18,Qubani ka Meetha,10,no
+2025-05-19,Chicken Dum Biryani,132,no
+2025-05-19,Mutton Dum Biryani,56,no
+2025-05-19,Veg Biryani,35,no
+2025-05-19,Chicken 65,41,no
+2025-05-19,Apollo Fish,14,no
+2025-05-19,Paneer Butter Masala,22,no
+2025-05-19,Butter Naan,87,no
+2025-05-19,Double ka Meetha,41,no
+2025-05-19,Qubani ka Meetha,9,no
+2025-05-20,Chicken Dum Biryani,123,no
+2025-05-20,Mutton Dum Biryani,30,no
+2025-05-20,Veg Biryani,23,no
+2025-05-20,Chicken 65,43,no
+2025-05-20,Apollo Fish,15,no
+2025-05-20,Paneer Butter Masala,16,no
+2025-05-20,Butter Naan,79,no
+2025-05-20,Double ka Meetha,31,no
+2025-05-20,Qubani ka Meetha,11,no
+2025-05-21,Chicken Dum Biryani,95,no
+2025-05-21,Mutton Dum Biryani,73,no
+2025-05-21,Veg Biryani,27,no
+2025-05-21,Chicken 65,44,no
+2025-05-21,Apollo Fish,29,no
+2025-05-21,Paneer Butter Masala,29,no
+2025-05-21,Butter Naan,109,no
+2025-05-21,Double ka Meetha,32,no
+2025-05-21,Qubani ka Meetha,12,no
+2025-05-22,Chicken Dum Biryani,122,no
+2025-05-22,Mutton Dum Biryani,78,no
+2025-05-22,Veg Biryani,22,no
+2025-05-22,Chicken 65,49,no
+2025-05-22,Apollo Fish,17,no
+2025-05-22,Paneer Butter Masala,23,no
+2025-05-22,Butter Naan,109,no
+2025-05-22,Double ka Meetha,18,no
+2025-05-22,Qubani ka Meetha,12,no
+2025-05-23,Chicken Dum Biryani,200,no
+2025-05-23,Mutton Dum Biryani,100,yes
+2025-05-23,Veg Biryani,22,no
+2025-05-23,Chicken 65,113,no
+2025-05-23,Apollo Fish,17,no
+2025-05-23,Paneer Butter Masala,46,no
+2025-05-23,Butter Naan,201,no
+2025-05-23,Double ka Meetha,90,no
+2025-05-23,Qubani ka Meetha,14,no
+2025-05-24,Chicken Dum Biryani,169,no
+2025-05-24,Mutton Dum Biryani,70,no
+2025-05-24,Veg Biryani,26,no
+2025-05-24,Chicken 65,57,no
+2025-05-24,Apollo Fish,18,no
+2025-05-24,Paneer Butter Masala,20,no
+2025-05-24,Butter Naan,177,no
+2025-05-24,Double ka Meetha,73,no
+2025-05-24,Qubani ka Meetha,21,no
+2025-05-25,Chicken Dum Biryani,185,no
+2025-05-25,Mutton Dum Biryani,100,yes
+2025-05-25,Veg Biryani,32,no
+2025-05-25,Chicken 65,84,no
+2025-05-25,Apollo Fish,35,no
+2025-05-25,Paneer Butter Masala,39,no
+2025-05-25,Butter Naan,138,no
+2025-05-25,Double ka Meetha,36,no
+2025-05-25,Qubani ka Meetha,15,no
+2025-05-26,Chicken Dum Biryani,144,no
+2025-05-26,Mutton Dum Biryani,54,no
+2025-05-26,Veg Biryani,14,no
+2025-05-26,Chicken 65,36,no
+2025-05-26,Apollo Fish,10,no
+2025-05-26,Paneer Butter Masala,9,no
+2025-05-26,Butter Naan,112,no
+2025-05-26,Double ka Meetha,32,no
+2025-05-26,Qubani ka Meetha,7,no
+2025-05-27,Chicken Dum Biryani,124,no
+2025-05-27,Mutton Dum Biryani,31,no
+2025-05-27,Veg Biryani,15,no
+2025-05-27,Chicken 65,36,no
+2025-05-27,Apollo Fish,21,no
+2025-05-27,Paneer Butter Masala,26,no
+2025-05-27,Butter Naan,141,no
+2025-05-27,Double ka Meetha,40,no
+2025-05-27,Qubani ka Meetha,11,no
+2025-05-28,Chicken Dum Biryani,130,no
+2025-05-28,Mutton Dum Biryani,57,no
+2025-05-28,Veg Biryani,25,no
+2025-05-28,Chicken 65,34,no
+2025-05-28,Apollo Fish,14,no
+2025-05-28,Paneer Butter Masala,23,no
+2025-05-28,Butter Naan,124,no
+2025-05-28,Double ka Meetha,30,no
+2025-05-28,Qubani ka Meetha,6,no
+2025-05-29,Chicken Dum Biryani,152,no
+2025-05-29,Mutton Dum Biryani,76,no
+2025-05-29,Veg Biryani,32,no
+2025-05-29,Chicken 65,44,no
+2025-05-29,Apollo Fish,12,no
+2025-05-29,Paneer Butter Masala,16,no
+2025-05-29,Butter Naan,85,no
+2025-05-29,Double ka Meetha,38,no
+2025-05-29,Qubani ka Meetha,15,no
+2025-05-30,Chicken Dum Biryani,214,no
+2025-05-30,Mutton Dum Biryani,83,no
+2025-05-30,Veg Biryani,29,no
+2025-05-30,Chicken 65,44,no
+2025-05-30,Apollo Fish,14,no
+2025-05-30,Paneer Butter Masala,49,no
+2025-05-30,Butter Naan,97,no
+2025-05-30,Double ka Meetha,48,no
+2025-05-30,Qubani ka Meetha,18,no
+2025-05-31,Chicken Dum Biryani,173,no
+2025-05-31,Mutton Dum Biryani,57,no
+2025-05-31,Veg Biryani,43,no
+2025-05-31,Chicken 65,42,no
+2025-05-31,Apollo Fish,21,no
+2025-05-31,Paneer Butter Masala,38,no
+2025-05-31,Butter Naan,159,no
+2025-05-31,Double ka Meetha,36,no
+2025-05-31,Qubani ka Meetha,20,no
+2025-06-01,Chicken Dum Biryani,161,no
+2025-06-01,Mutton Dum Biryani,100,yes
+2025-06-01,Veg Biryani,54,no
+2025-06-01,Chicken 65,64,no
+2025-06-01,Apollo Fish,21,no
+2025-06-01,Paneer Butter Masala,28,no
+2025-06-01,Butter Naan,224,no
+2025-06-01,Double ka Meetha,71,no
+2025-06-01,Qubani ka Meetha,18,no
+2025-06-02,Chicken Dum Biryani,174,no
+2025-06-02,Mutton Dum Biryani,80,no
+2025-06-02,Veg Biryani,28,no
+2025-06-02,Chicken 65,61,no
+2025-06-02,Apollo Fish,24,no
+2025-06-02,Paneer Butter Masala,26,no
+2025-06-02,Butter Naan,164,no
+2025-06-02,Double ka Meetha,30,no
+2025-06-02,Qubani ka Meetha,13,no
+2025-06-03,Chicken Dum Biryani,132,no
+2025-06-03,Mutton Dum Biryani,58,no
+2025-06-03,Veg Biryani,21,no
+2025-06-03,Chicken 65,55,no
+2025-06-03,Apollo Fish,26,no
+2025-06-03,Paneer Butter Masala,22,no
+2025-06-03,Butter Naan,114,no
+2025-06-03,Double ka Meetha,42,no
+2025-06-03,Qubani ka Meetha,14,no
+2025-06-04,Chicken Dum Biryani,106,no
+2025-06-04,Mutton Dum Biryani,66,no
+2025-06-04,Veg Biryani,24,no
+2025-06-04,Chicken 65,43,no
+2025-06-04,Apollo Fish,19,no
+2025-06-04,Paneer Butter Masala,24,no
+2025-06-04,Butter Naan,131,no
+2025-06-04,Double ka Meetha,23,no
+2025-06-04,Qubani ka Meetha,14,no
+2025-06-05,Chicken Dum Biryani,145,no
+2025-06-05,Mutton Dum Biryani,75,no
+2025-06-05,Veg Biryani,16,no
+2025-06-05,Chicken 65,65,no
+2025-06-05,Apollo Fish,27,no
+2025-06-05,Paneer Butter Masala,26,no
+2025-06-05,Butter Naan,113,no
+2025-06-05,Double ka Meetha,36,no
+2025-06-05,Qubani ka Meetha,11,no
+2025-06-06,Chicken Dum Biryani,139,no
+2025-06-06,Mutton Dum Biryani,54,no
+2025-06-06,Veg Biryani,42,no
+2025-06-06,Chicken 65,83,no
+2025-06-06,Apollo Fish,26,no
+2025-06-06,Paneer Butter Masala,23,no
+2025-06-06,Butter Naan,199,no
+2025-06-06,Double ka Meetha,53,no
+2025-06-06,Qubani ka Meetha,16,no
+2025-06-07,Chicken Dum Biryani,192,no
+2025-06-07,Mutton Dum Biryani,76,no
+2025-06-07,Veg Biryani,51,no
+2025-06-07,Chicken 65,50,no
+2025-06-07,Apollo Fish,28,no
+2025-06-07,Paneer Butter Masala,36,no
+2025-06-07,Butter Naan,230,no
+2025-06-07,Double ka Meetha,32,no
+2025-06-07,Qubani ka Meetha,21,no
+2025-06-08,Chicken Dum Biryani,201,no
+2025-06-08,Mutton Dum Biryani,100,yes
+2025-06-08,Veg Biryani,36,no
+2025-06-08,Chicken 65,55,no
+2025-06-08,Apollo Fish,33,no
+2025-06-08,Paneer Butter Masala,45,no
+2025-06-08,Butter Naan,236,no
+2025-06-08,Double ka Meetha,40,no
+2025-06-08,Qubani ka Meetha,17,no
+2025-06-09,Chicken Dum Biryani,116,no
+2025-06-09,Mutton Dum Biryani,48,no
+2025-06-09,Veg Biryani,14,no
+2025-06-09,Chicken 65,26,no
+2025-06-09,Apollo Fish,15,no
+2025-06-09,Paneer Butter Masala,19,no
+2025-06-09,Butter Naan,132,no
+2025-06-09,Double ka Meetha,20,no
+2025-06-09,Qubani ka Meetha,13,no
+2025-06-10,Chicken Dum Biryani,120,no
+2025-06-10,Mutton Dum Biryani,56,no
+2025-06-10,Veg Biryani,10,no
+2025-06-10,Chicken 65,54,no
+2025-06-10,Apollo Fish,22,no
+2025-06-10,Paneer Butter Masala,28,no
+2025-06-10,Butter Naan,111,no
+2025-06-10,Double ka Meetha,26,no
+2025-06-10,Qubani ka Meetha,5,no
+2025-06-11,Chicken Dum Biryani,202,no
+2025-06-11,Mutton Dum Biryani,64,no
+2025-06-11,Veg Biryani,30,no
+2025-06-11,Chicken 65,40,no
+2025-06-11,Apollo Fish,26,no
+2025-06-11,Paneer Butter Masala,17,no
+2025-06-11,Butter Naan,130,no
+2025-06-11,Double ka Meetha,24,no
+2025-06-11,Qubani ka Meetha,20,no
+2025-06-12,Chicken Dum Biryani,143,no
+2025-06-12,Mutton Dum Biryani,47,no
+2025-06-12,Veg Biryani,34,no
+2025-06-12,Chicken 65,49,no
+2025-06-12,Apollo Fish,21,no
+2025-06-12,Paneer Butter Masala,18,no
+2025-06-12,Butter Naan,85,no
+2025-06-12,Double ka Meetha,23,no
+2025-06-12,Qubani ka Meetha,15,no
+2025-06-13,Chicken Dum Biryani,217,no
+2025-06-13,Mutton Dum Biryani,72,no
+2025-06-13,Veg Biryani,36,no
+2025-06-13,Chicken 65,80,no
+2025-06-13,Apollo Fish,13,no
+2025-06-13,Paneer Butter Masala,22,no
+2025-06-13,Butter Naan,144,no
+2025-06-13,Double ka Meetha,35,no
+2025-06-13,Qubani ka Meetha,15,no
+2025-06-14,Chicken Dum Biryani,260,no
+2025-06-14,Mutton Dum Biryani,73,no
+2025-06-14,Veg Biryani,37,no
+2025-06-14,Chicken 65,68,no
+2025-06-14,Apollo Fish,19,no
+2025-06-14,Paneer Butter Masala,25,no
+2025-06-14,Butter Naan,196,no
+2025-06-14,Double ka Meetha,51,no
+2025-06-14,Qubani ka Meetha,14,no
+2025-06-15,Chicken Dum Biryani,245,no
+2025-06-15,Mutton Dum Biryani,100,yes
+2025-06-15,Veg Biryani,40,no
+2025-06-15,Chicken 65,70,no
+2025-06-15,Apollo Fish,25,no
+2025-06-15,Paneer Butter Masala,29,no
+2025-06-15,Butter Naan,220,no
+2025-06-15,Double ka Meetha,68,no
+2025-06-15,Qubani ka Meetha,23,no
+2025-06-16,Chicken Dum Biryani,109,no
+2025-06-16,Mutton Dum Biryani,56,no
+2025-06-16,Veg Biryani,15,no
+2025-06-16,Chicken 65,52,no
+2025-06-16,Apollo Fish,12,no
+2025-06-16,Paneer Butter Masala,16,no
+2025-06-16,Butter Naan,126,no
+2025-06-16,Double ka Meetha,36,no
+2025-06-16,Qubani ka Meetha,14,no
+2025-06-17,Chicken Dum Biryani,170,no
+2025-06-17,Mutton Dum Biryani,87,no
+2025-06-17,Veg Biryani,23,no
+2025-06-17,Chicken 65,34,no
+2025-06-17,Apollo Fish,11,no
+2025-06-17,Paneer Butter Masala,28,no
+2025-06-17,Butter Naan,122,no
+2025-06-17,Double ka Meetha,35,no
+2025-06-17,Qubani ka Meetha,14,no
+2025-06-18,Chicken Dum Biryani,126,no
+2025-06-18,Mutton Dum Biryani,45,no
+2025-06-18,Veg Biryani,34,no
+2025-06-18,Chicken 65,38,no
+2025-06-18,Apollo Fish,9,no
+2025-06-18,Paneer Butter Masala,22,no
+2025-06-18,Butter Naan,169,no
+2025-06-18,Double ka Meetha,35,no
+2025-06-18,Qubani ka Meetha,11,no
+2025-06-19,Chicken Dum Biryani,99,no
+2025-06-19,Mutton Dum Biryani,70,no
+2025-06-19,Veg Biryani,16,no
+2025-06-19,Chicken 65,46,no
+2025-06-19,Apollo Fish,10,no
+2025-06-19,Paneer Butter Masala,17,no
+2025-06-19,Butter Naan,84,no
+2025-06-19,Double ka Meetha,30,no
+2025-06-19,Qubani ka Meetha,21,no
+2025-06-20,Chicken Dum Biryani,188,no
+2025-06-20,Mutton Dum Biryani,72,no
+2025-06-20,Veg Biryani,30,no
+2025-06-20,Chicken 65,46,no
+2025-06-20,Apollo Fish,17,no
+2025-06-20,Paneer Butter Masala,28,no
+2025-06-20,Butter Naan,182,no
+2025-06-20,Double ka Meetha,49,no
+2025-06-20,Qubani ka Meetha,14,no
+2025-06-21,Chicken Dum Biryani,201,no
+2025-06-21,Mutton Dum Biryani,69,no
+2025-06-21,Veg Biryani,31,no
+2025-06-21,Chicken 65,61,no
+2025-06-21,Apollo Fish,42,no
+2025-06-21,Paneer Butter Masala,26,no
+2025-06-21,Butter Naan,97,no
+2025-06-21,Double ka Meetha,57,no
+2025-06-21,Qubani ka Meetha,14,no
+2025-06-22,Chicken Dum Biryani,220,no
+2025-06-22,Mutton Dum Biryani,100,yes
+2025-06-22,Veg Biryani,49,no
+2025-06-22,Chicken 65,80,no
+2025-06-22,Apollo Fish,26,no
+2025-06-22,Paneer Butter Masala,25,no
+2025-06-22,Butter Naan,157,no
+2025-06-22,Double ka Meetha,20,no
+2025-06-22,Qubani ka Meetha,18,no
+2025-06-23,Chicken Dum Biryani,147,no
+2025-06-23,Mutton Dum Biryani,45,no
+2025-06-23,Veg Biryani,24,no
+2025-06-23,Chicken 65,65,no
+2025-06-23,Apollo Fish,23,no
+2025-06-23,Paneer Butter Masala,21,no
+2025-06-23,Butter Naan,109,no
+2025-06-23,Double ka Meetha,21,no
+2025-06-23,Qubani ka Meetha,11,no
+2025-06-24,Chicken Dum Biryani,160,no
+2025-06-24,Mutton Dum Biryani,52,no
+2025-06-24,Veg Biryani,31,no
+2025-06-24,Chicken 65,23,no
+2025-06-24,Apollo Fish,27,no
+2025-06-24,Paneer Butter Masala,26,no
+2025-06-24,Butter Naan,92,no
+2025-06-24,Double ka Meetha,31,no
+2025-06-24,Qubani ka Meetha,12,no
+2025-06-25,Chicken Dum Biryani,136,no
+2025-06-25,Mutton Dum Biryani,65,no
+2025-06-25,Veg Biryani,19,no
+2025-06-25,Chicken 65,42,no
+2025-06-25,Apollo Fish,14,no
+2025-06-25,Paneer Butter Masala,21,no
+2025-06-25,Butter Naan,109,no
+2025-06-25,Double ka Meetha,23,no
+2025-06-25,Qubani ka Meetha,6,no
+2025-06-26,Chicken Dum Biryani,173,no
+2025-06-26,Mutton Dum Biryani,71,no
+2025-06-26,Veg Biryani,18,no
+2025-06-26,Chicken 65,42,no
+2025-06-26,Apollo Fish,15,no
+2025-06-26,Paneer Butter Masala,21,no
+2025-06-26,Butter Naan,103,no
+2025-06-26,Double ka Meetha,24,no
+2025-06-26,Qubani ka Meetha,11,no
+2025-06-27,Chicken Dum Biryani,168,no
+2025-06-27,Mutton Dum Biryani,73,no
+2025-06-27,Veg Biryani,57,no
+2025-06-27,Chicken 65,60,no
+2025-06-27,Apollo Fish,21,no
+2025-06-27,Paneer Butter Masala,15,no
+2025-06-27,Butter Naan,139,no
+2025-06-27,Double ka Meetha,50,no
+2025-06-27,Qubani ka Meetha,21,no
+2025-06-28,Chicken Dum Biryani,298,no
+2025-06-28,Mutton Dum Biryani,100,yes
+2025-06-28,Veg Biryani,28,no
+2025-06-28,Chicken 65,77,no
+2025-06-28,Apollo Fish,20,no
+2025-06-28,Paneer Butter Masala,19,no
+2025-06-28,Butter Naan,202,no
+2025-06-28,Double ka Meetha,80,no
+2025-06-28,Qubani ka Meetha,25,no
+2025-06-29,Chicken Dum Biryani,211,no
+2025-06-29,Mutton Dum Biryani,70,no
+2025-06-29,Veg Biryani,40,no
+2025-06-29,Chicken 65,93,no
+2025-06-29,Apollo Fish,37,no
+2025-06-29,Paneer Butter Masala,32,no
+2025-06-29,Butter Naan,163,no
+2025-06-29,Double ka Meetha,30,no
+2025-06-29,Qubani ka Meetha,9,no
+2025-06-30,Chicken Dum Biryani,138,no
+2025-06-30,Mutton Dum Biryani,69,no
+2025-06-30,Veg Biryani,12,no
+2025-06-30,Chicken 65,39,no
+2025-06-30,Apollo Fish,12,no
+2025-06-30,Paneer Butter Masala,21,no
+2025-06-30,Butter Naan,102,no
+2025-06-30,Double ka Meetha,19,no
+2025-06-30,Qubani ka Meetha,15,no
+2025-07-01,Chicken Dum Biryani,118,no
+2025-07-01,Mutton Dum Biryani,68,no
+2025-07-01,Veg Biryani,27,no
+2025-07-01,Chicken 65,44,no
+2025-07-01,Apollo Fish,13,no
+2025-07-01,Paneer Butter Masala,14,no
+2025-07-01,Butter Naan,89,no
+2025-07-01,Double ka Meetha,45,no
+2025-07-01,Qubani ka Meetha,14,no
+2025-07-02,Chicken Dum Biryani,158,no
+2025-07-02,Mutton Dum Biryani,39,no
+2025-07-02,Veg Biryani,18,no
+2025-07-02,Chicken 65,24,no
+2025-07-02,Apollo Fish,12,no
+2025-07-02,Paneer Butter Masala,14,no
+2025-07-02,Butter Naan,135,no
+2025-07-02,Double ka Meetha,21,no
+2025-07-02,Qubani ka Meetha,8,no
+2025-07-03,Chicken Dum Biryani,184,no
+2025-07-03,Mutton Dum Biryani,83,no
+2025-07-03,Veg Biryani,14,no
+2025-07-03,Chicken 65,34,no
+2025-07-03,Apollo Fish,14,no
+2025-07-03,Paneer Butter Masala,13,no
+2025-07-03,Butter Naan,100,no
+2025-07-03,Double ka Meetha,26,no
+2025-07-03,Qubani ka Meetha,8,no
+2025-07-04,Chicken Dum Biryani,219,no
+2025-07-04,Mutton Dum Biryani,85,no
+2025-07-04,Veg Biryani,25,no
+2025-07-04,Chicken 65,49,no
+2025-07-04,Apollo Fish,24,no
+2025-07-04,Paneer Butter Masala,34,no
+2025-07-04,Butter Naan,205,no
+2025-07-04,Double ka Meetha,35,no
+2025-07-04,Qubani ka Meetha,12,no
+2025-07-05,Chicken Dum Biryani,163,no
+2025-07-05,Mutton Dum Biryani,95,no
+2025-07-05,Veg Biryani,52,no
+2025-07-05,Chicken 65,58,no
+2025-07-05,Apollo Fish,20,no
+2025-07-05,Paneer Butter Masala,25,no
+2025-07-05,Butter Naan,229,no
+2025-07-05,Double ka Meetha,38,no
+2025-07-05,Qubani ka Meetha,19,no
+2025-07-06,Chicken Dum Biryani,303,no
+2025-07-06,Mutton Dum Biryani,99,no
+2025-07-06,Veg Biryani,40,no
+2025-07-06,Chicken 65,56,no
+2025-07-06,Apollo Fish,27,no
+2025-07-06,Paneer Butter Masala,43,no
+2025-07-06,Butter Naan,214,no
+2025-07-06,Double ka Meetha,46,no
+2025-07-06,Qubani ka Meetha,12,no
+2025-07-07,Chicken Dum Biryani,134,no
+2025-07-07,Mutton Dum Biryani,49,no
+2025-07-07,Veg Biryani,28,no
+2025-07-07,Chicken 65,41,no
+2025-07-07,Apollo Fish,17,no
+2025-07-07,Paneer Butter Masala,34,no
+2025-07-07,Butter Naan,145,no
+2025-07-07,Double ka Meetha,31,no
+2025-07-07,Qubani ka Meetha,12,no
+2025-07-09,Chicken Dum Biryani,117,no
+2025-07-09,Mutton Dum Biryani,50,no
+2025-07-09,Veg Biryani,28,no
+2025-07-09,Chicken 65,39,no
+2025-07-09,Apollo Fish,15,no
+2025-07-09,Paneer Butter Masala,28,no
+2025-07-09,Butter Naan,120,no
+2025-07-09,Double ka Meetha,26,no
+2025-07-09,Qubani ka Meetha,18,no
+2025-07-10,Chicken Dum Biryani,113,no
+2025-07-10,Mutton Dum Biryani,48,no
+2025-07-10,Veg Biryani,33,no
+2025-07-10,Chicken 65,43,no
+2025-07-10,Apollo Fish,19,no
+2025-07-10,Paneer Butter Masala,20,no
+2025-07-10,Butter Naan,95,no
+2025-07-10,Double ka Meetha,22,no
+2025-07-10,Qubani ka Meetha,21,no
+2025-07-11,Chicken Dum Biryani,108,no
+2025-07-11,Mutton Dum Biryani,77,no
+2025-07-11,Veg Biryani,24,no
+2025-07-11,Chicken 65,48,no
+2025-07-11,Apollo Fish,24,no
+2025-07-11,Paneer Butter Masala,31,no
+2025-07-11,Butter Naan,121,no
+2025-07-11,Double ka Meetha,28,no
+2025-07-11,Qubani ka Meetha,8,no
+2025-07-12,Chicken Dum Biryani,233,no
+2025-07-12,Mutton Dum Biryani,84,no
+2025-07-12,Veg Biryani,50,no
+2025-07-12,Chicken 65,61,no
+2025-07-12,Apollo Fish,19,no
+2025-07-12,Paneer Butter Masala,25,no
+2025-07-12,Butter Naan,98,no
+2025-07-12,Double ka Meetha,52,no
+2025-07-12,Qubani ka Meetha,18,no
+2025-07-13,Chicken Dum Biryani,237,no
+2025-07-13,Mutton Dum Biryani,100,yes
+2025-07-13,Veg Biryani,41,no
+2025-07-13,Chicken 65,70,no
+2025-07-13,Apollo Fish,19,no
+2025-07-13,Paneer Butter Masala,31,no
+2025-07-13,Butter Naan,178,no
+2025-07-13,Double ka Meetha,53,no
+2025-07-13,Qubani ka Meetha,28,no
+2025-07-14,Chicken Dum Biryani,125,no
+2025-07-14,Mutton Dum Biryani,57,no
+2025-07-14,Veg Biryani,17,no
+2025-07-14,Chicken 65,32,no
+2025-07-14,Apollo Fish,21,no
+2025-07-14,Paneer Butter Masala,30,no
+2025-07-14,Butter Naan,95,no
+2025-07-14,Double ka Meetha,25,no
+2025-07-14,Qubani ka Meetha,19,no
+2025-07-15,Chicken Dum Biryani,101,no
+2025-07-15,Mutton Dum Biryani,49,no
+2025-07-15,Veg Biryani,24,no
+2025-07-15,Chicken 65,37,no
+2025-07-15,Apollo Fish,12,no
+2025-07-15,Paneer Butter Masala,20,no
+2025-07-15,Butter Naan,99,no
+2025-07-15,Double ka Meetha,30,no
+2025-07-15,Qubani ka Meetha,13,no
+2025-07-16,Chicken Dum Biryani,194,no
+2025-07-16,Mutton Dum Biryani,46,no
+2025-07-16,Veg Biryani,27,no
+2025-07-16,Chicken 65,35,no
+2025-07-16,Apollo Fish,21,no
+2025-07-16,Paneer Butter Masala,18,no
+2025-07-16,Butter Naan,136,no
+2025-07-16,Double ka Meetha,42,no
+2025-07-16,Qubani ka Meetha,19,no
+2025-07-17,Chicken Dum Biryani,250,no
+2025-07-17,Mutton Dum Biryani,75,no
+2025-07-17,Veg Biryani,32,no
+2025-07-17,Chicken 65,38,no
+2025-07-17,Apollo Fish,20,no
+2025-07-17,Paneer Butter Masala,23,no
+2025-07-17,Butter Naan,128,no
+2025-07-17,Double ka Meetha,18,no
+2025-07-17,Qubani ka Meetha,18,no
+2025-07-18,Chicken Dum Biryani,193,no
+2025-07-18,Mutton Dum Biryani,80,no
+2025-07-18,Veg Biryani,26,no
+2025-07-18,Chicken 65,57,no
+2025-07-18,Apollo Fish,22,no
+2025-07-18,Paneer Butter Masala,24,no
+2025-07-18,Butter Naan,183,no
+2025-07-18,Double ka Meetha,35,no
+2025-07-18,Qubani ka Meetha,14,no
+2025-07-19,Chicken Dum Biryani,249,no
+2025-07-19,Mutton Dum Biryani,79,no
+2025-07-19,Veg Biryani,36,no
+2025-07-19,Chicken 65,53,no
+2025-07-19,Apollo Fish,28,no
+2025-07-19,Paneer Butter Masala,21,no
+2025-07-19,Butter Naan,150,no
+2025-07-19,Double ka Meetha,55,no
+2025-07-19,Qubani ka Meetha,27,no
+2025-07-20,Chicken Dum Biryani,186,no
+2025-07-20,Mutton Dum Biryani,95,no
+2025-07-20,Veg Biryani,43,no
+2025-07-20,Chicken 65,96,no
+2025-07-20,Apollo Fish,30,no
+2025-07-20,Paneer Butter Masala,33,no
+2025-07-20,Butter Naan,150,no
+2025-07-20,Double ka Meetha,39,no
+2025-07-20,Qubani ka Meetha,11,no
+2025-07-21,Chicken Dum Biryani,91,no
+2025-07-21,Mutton Dum Biryani,63,no
+2025-07-21,Veg Biryani,18,no
+2025-07-21,Chicken 65,27,no
+2025-07-21,Apollo Fish,11,no
+2025-07-21,Paneer Butter Masala,15,no
+2025-07-21,Butter Naan,101,no
+2025-07-21,Double ka Meetha,18,no
+2025-07-21,Qubani ka Meetha,8,no
+2025-07-22,Chicken Dum Biryani,153,no
+2025-07-22,Mutton Dum Biryani,72,no
+2025-07-22,Veg Biryani,11,no
+2025-07-22,Chicken 65,42,no
+2025-07-22,Apollo Fish,24,no
+2025-07-22,Paneer Butter Masala,16,no
+2025-07-22,Butter Naan,68,no
+2025-07-22,Double ka Meetha,31,no
+2025-07-22,Qubani ka Meetha,16,no
+2025-07-23,Chicken Dum Biryani,109,no
+2025-07-23,Mutton Dum Biryani,39,no
+2025-07-23,Veg Biryani,30,no
+2025-07-23,Chicken 65,35,no
+2025-07-23,Apollo Fish,20,no
+2025-07-23,Paneer Butter Masala,12,no
+2025-07-23,Butter Naan,101,no
+2025-07-23,Double ka Meetha,21,no
+2025-07-23,Qubani ka Meetha,10,no
+2025-07-24,Chicken Dum Biryani,144,no
+2025-07-24,Mutton Dum Biryani,53,no
+2025-07-24,Veg Biryani,41,no
+2025-07-24,Chicken 65,43,no
+2025-07-24,Apollo Fish,9,no
+2025-07-24,Paneer Butter Masala,30,no
+2025-07-24,Butter Naan,131,no
+2025-07-24,Double ka Meetha,25,no
+2025-07-24,Qubani ka Meetha,19,no
+2025-07-25,Chicken Dum Biryani,112,no
+2025-07-25,Mutton Dum Biryani,46,no
+2025-07-25,Veg Biryani,19,no
+2025-07-25,Chicken 65,49,no
+2025-07-25,Apollo Fish,10,no
+2025-07-25,Paneer Butter Masala,26,no
+2025-07-25,Butter Naan,118,no
+2025-07-25,Double ka Meetha,29,no
+2025-07-25,Qubani ka Meetha,14,no
+2025-07-26,Chicken Dum Biryani,154,no
+2025-07-26,Mutton Dum Biryani,68,no
+2025-07-26,Veg Biryani,31,no
+2025-07-26,Chicken 65,65,no
+2025-07-26,Apollo Fish,25,no
+2025-07-26,Paneer Butter Masala,24,no
+2025-07-26,Butter Naan,188,no
+2025-07-26,Double ka Meetha,56,no
+2025-07-26,Qubani ka Meetha,23,no
+2025-07-27,Chicken Dum Biryani,359,no
+2025-07-27,Mutton Dum Biryani,100,yes
+2025-07-27,Veg Biryani,49,no
+2025-07-27,Chicken 65,116,no
+2025-07-27,Apollo Fish,25,no
+2025-07-27,Paneer Butter Masala,24,no
+2025-07-27,Butter Naan,220,no
+2025-07-27,Double ka Meetha,69,no
+2025-07-27,Qubani ka Meetha,28,no
+2025-07-28,Chicken Dum Biryani,143,no
+2025-07-28,Mutton Dum Biryani,63,no
+2025-07-28,Veg Biryani,15,no
+2025-07-28,Chicken 65,42,no
+2025-07-28,Apollo Fish,24,no
+2025-07-28,Paneer Butter Masala,10,no
+2025-07-28,Butter Naan,80,no
+2025-07-28,Double ka Meetha,24,no
+2025-07-28,Qubani ka Meetha,8,no
+2025-07-29,Chicken Dum Biryani,124,no
+2025-07-29,Mutton Dum Biryani,46,no
+2025-07-29,Veg Biryani,26,no
+2025-07-29,Chicken 65,39,no
+2025-07-29,Apollo Fish,15,no
+2025-07-29,Paneer Butter Masala,16,no
+2025-07-29,Butter Naan,124,no
+2025-07-29,Double ka Meetha,21,no
+2025-07-29,Qubani ka Meetha,9,no
+2025-07-30,Chicken Dum Biryani,183,no
+2025-07-30,Mutton Dum Biryani,89,no
+2025-07-30,Veg Biryani,23,no
+2025-07-30,Chicken 65,36,no
+2025-07-30,Apollo Fish,23,no
+2025-07-30,Paneer Butter Masala,34,no
+2025-07-30,Butter Naan,82,no
+2025-07-30,Double ka Meetha,30,no
+2025-07-30,Qubani ka Meetha,16,no
+2025-07-31,Chicken Dum Biryani,207,no
+2025-07-31,Mutton Dum Biryani,86,no
+2025-07-31,Veg Biryani,20,no
+2025-07-31,Chicken 65,72,no
+2025-07-31,Apollo Fish,15,no
+2025-07-31,Paneer Butter Masala,24,no
+2025-07-31,Butter Naan,198,no
+2025-07-31,Double ka Meetha,85,no
+2025-07-31,Qubani ka Meetha,10,no
+2025-08-01,Chicken Dum Biryani,146,no
+2025-08-01,Mutton Dum Biryani,48,no
+2025-08-01,Veg Biryani,23,no
+2025-08-01,Chicken 65,65,no
+2025-08-01,Apollo Fish,23,no
+2025-08-01,Paneer Butter Masala,21,no
+2025-08-01,Butter Naan,145,no
+2025-08-01,Double ka Meetha,32,no
+2025-08-01,Qubani ka Meetha,15,no
+2025-08-02,Chicken Dum Biryani,167,no
+2025-08-02,Mutton Dum Biryani,50,no
+2025-08-02,Veg Biryani,37,no
+2025-08-02,Chicken 65,61,no
+2025-08-02,Apollo Fish,22,no
+2025-08-02,Paneer Butter Masala,32,no
+2025-08-02,Butter Naan,240,no
+2025-08-02,Double ka Meetha,41,no
+2025-08-02,Qubani ka Meetha,23,no
+2025-08-03,Chicken Dum Biryani,328,no
+2025-08-03,Mutton Dum Biryani,100,yes
+2025-08-03,Veg Biryani,37,no
+2025-08-03,Chicken 65,50,no
+2025-08-03,Apollo Fish,24,no
+2025-08-03,Paneer Butter Masala,29,no
+2025-08-03,Butter Naan,201,no
+2025-08-03,Double ka Meetha,30,no
+2025-08-03,Qubani ka Meetha,7,no
+2025-08-04,Chicken Dum Biryani,104,no
+2025-08-04,Mutton Dum Biryani,47,no
+2025-08-04,Veg Biryani,32,no
+2025-08-04,Chicken 65,56,no
+2025-08-04,Apollo Fish,16,no
+2025-08-04,Paneer Butter Masala,30,no
+2025-08-04,Butter Naan,115,no
+2025-08-04,Double ka Meetha,25,no
+2025-08-04,Qubani ka Meetha,11,no
+2025-08-05,Chicken Dum Biryani,102,no
+2025-08-05,Mutton Dum Biryani,78,no
+2025-08-05,Veg Biryani,23,no
+2025-08-05,Chicken 65,32,no
+2025-08-05,Apollo Fish,27,no
+2025-08-05,Paneer Butter Masala,11,no
+2025-08-05,Butter Naan,123,no
+2025-08-05,Double ka Meetha,22,no
+2025-08-05,Qubani ka Meetha,17,no
+2025-08-06,Chicken Dum Biryani,127,no
+2025-08-06,Mutton Dum Biryani,61,no
+2025-08-06,Veg Biryani,31,no
+2025-08-06,Chicken 65,43,no
+2025-08-06,Apollo Fish,17,no
+2025-08-06,Paneer Butter Masala,21,no
+2025-08-06,Butter Naan,140,no
+2025-08-06,Double ka Meetha,37,no
+2025-08-06,Qubani ka Meetha,12,no
+2025-08-07,Chicken Dum Biryani,115,no
+2025-08-07,Mutton Dum Biryani,70,no
+2025-08-07,Veg Biryani,26,no
+2025-08-07,Chicken 65,34,no
+2025-08-07,Apollo Fish,16,no
+2025-08-07,Paneer Butter Masala,14,no
+2025-08-07,Butter Naan,95,no
+2025-08-07,Double ka Meetha,33,no
+2025-08-07,Qubani ka Meetha,15,no
+2025-08-08,Chicken Dum Biryani,198,no
+2025-08-08,Mutton Dum Biryani,81,no
+2025-08-08,Veg Biryani,40,no
+2025-08-08,Chicken 65,61,no
+2025-08-08,Apollo Fish,16,no
+2025-08-08,Paneer Butter Masala,22,no
+2025-08-08,Butter Naan,176,no
+2025-08-08,Double ka Meetha,50,no
+2025-08-08,Qubani ka Meetha,25,no
+2025-08-09,Chicken Dum Biryani,183,no
+2025-08-09,Mutton Dum Biryani,60,no
+2025-08-09,Veg Biryani,34,no
+2025-08-09,Chicken 65,45,no
+2025-08-09,Apollo Fish,12,no
+2025-08-09,Paneer Butter Masala,35,no
+2025-08-09,Butter Naan,215,no
+2025-08-09,Double ka Meetha,29,no
+2025-08-09,Qubani ka Meetha,23,no
+2025-08-10,Chicken Dum Biryani,217,no
+2025-08-10,Mutton Dum Biryani,68,no
+2025-08-10,Veg Biryani,34,no
+2025-08-10,Chicken 65,37,no
+2025-08-10,Apollo Fish,20,no
+2025-08-10,Paneer Butter Masala,51,no
+2025-08-10,Butter Naan,236,no
+2025-08-10,Double ka Meetha,64,no
+2025-08-10,Qubani ka Meetha,17,no
+2025-08-11,Chicken Dum Biryani,124,no
+2025-08-11,Mutton Dum Biryani,89,no
+2025-08-11,Veg Biryani,27,no
+2025-08-11,Chicken 65,33,no
+2025-08-11,Apollo Fish,17,no
+2025-08-11,Paneer Butter Masala,7,no
+2025-08-11,Butter Naan,66,no
+2025-08-11,Double ka Meetha,22,no
+2025-08-11,Qubani ka Meetha,15,no
+2025-08-12,Chicken Dum Biryani,133,no
+2025-08-12,Mutton Dum Biryani,74,no
+2025-08-12,Veg Biryani,17,no
+2025-08-12,Chicken 65,35,no
+2025-08-12,Apollo Fish,18,no
+2025-08-12,Paneer Butter Masala,34,no
+2025-08-12,Butter Naan,91,no
+2025-08-12,Double ka Meetha,32,no
+2025-08-12,Qubani ka Meetha,16,no
+2025-08-13,Chicken Dum Biryani,95,no
+2025-08-13,Mutton Dum Biryani,40,no
+2025-08-13,Veg Biryani,17,no
+2025-08-13,Chicken 65,46,no
+2025-08-13,Apollo Fish,20,no
+2025-08-13,Paneer Butter Masala,21,no
+2025-08-13,Butter Naan,117,no
+2025-08-13,Double ka Meetha,37,no
+2025-08-13,Qubani ka Meetha,8,no
+2025-08-14,Chicken Dum Biryani,222,no
+2025-08-14,Mutton Dum Biryani,77,no
+2025-08-14,Veg Biryani,30,no
+2025-08-14,Chicken 65,61,no
+2025-08-14,Apollo Fish,19,no
+2025-08-14,Paneer Butter Masala,31,no
+2025-08-14,Butter Naan,223,no
+2025-08-14,Double ka Meetha,61,no
+2025-08-14,Qubani ka Meetha,16,no
+2025-08-15,Chicken Dum Biryani,124,no
+2025-08-15,Mutton Dum Biryani,85,no
+2025-08-15,Veg Biryani,27,no
+2025-08-15,Chicken 65,51,no
+2025-08-15,Apollo Fish,22,no
+2025-08-15,Paneer Butter Masala,45,no
+2025-08-15,Butter Naan,185,no
+2025-08-15,Double ka Meetha,26,no
+2025-08-15,Qubani ka Meetha,9,no
+2025-08-16,Chicken Dum Biryani,345,no
+2025-08-16,Mutton Dum Biryani,74,no
+2025-08-16,Veg Biryani,29,no
+2025-08-16,Chicken 65,68,no
+2025-08-16,Apollo Fish,26,no
+2025-08-16,Paneer Butter Masala,46,no
+2025-08-16,Butter Naan,212,no
+2025-08-16,Double ka Meetha,56,no
+2025-08-16,Qubani ka Meetha,16,no
+2025-08-17,Chicken Dum Biryani,270,no
+2025-08-17,Mutton Dum Biryani,100,yes
+2025-08-17,Veg Biryani,50,no
+2025-08-17,Chicken 65,38,no
+2025-08-17,Apollo Fish,31,no
+2025-08-17,Paneer Butter Masala,37,no
+2025-08-17,Butter Naan,125,no
+2025-08-17,Double ka Meetha,50,no
+2025-08-17,Qubani ka Meetha,15,no
+2025-08-18,Chicken Dum Biryani,197,no
+2025-08-18,Mutton Dum Biryani,58,no
+2025-08-18,Veg Biryani,35,no
+2025-08-18,Chicken 65,37,no
+2025-08-18,Apollo Fish,13,no
+2025-08-18,Paneer Butter Masala,23,no
+2025-08-18,Butter Naan,110,no
+2025-08-18,Double ka Meetha,13,no
+2025-08-18,Qubani ka Meetha,7,no
+2025-08-19,Chicken Dum Biryani,146,no
+2025-08-19,Mutton Dum Biryani,59,no
+2025-08-19,Veg Biryani,30,no
+2025-08-19,Chicken 65,34,no
+2025-08-19,Apollo Fish,21,no
+2025-08-19,Paneer Butter Masala,16,no
+2025-08-19,Butter Naan,136,no
+2025-08-19,Double ka Meetha,43,no
+2025-08-19,Qubani ka Meetha,14,no
+2025-08-20,Chicken Dum Biryani,107,no
+2025-08-20,Mutton Dum Biryani,44,no
+2025-08-20,Veg Biryani,17,no
+2025-08-20,Chicken 65,37,no
+2025-08-20,Apollo Fish,27,no
+2025-08-20,Paneer Butter Masala,20,no
+2025-08-20,Butter Naan,91,no
+2025-08-20,Double ka Meetha,26,no
+2025-08-20,Qubani ka Meetha,8,no
+2025-08-21,Chicken Dum Biryani,131,no
+2025-08-21,Mutton Dum Biryani,55,no
+2025-08-21,Veg Biryani,22,no
+2025-08-21,Chicken 65,36,no
+2025-08-21,Apollo Fish,6,no
+2025-08-21,Paneer Butter Masala,9,no
+2025-08-21,Butter Naan,138,no
+2025-08-21,Double ka Meetha,32,no
+2025-08-21,Qubani ka Meetha,6,no
+2025-08-22,Chicken Dum Biryani,120,no
+2025-08-22,Mutton Dum Biryani,77,no
+2025-08-22,Veg Biryani,42,no
+2025-08-22,Chicken 65,50,no
+2025-08-22,Apollo Fish,18,no
+2025-08-22,Paneer Butter Masala,23,no
+2025-08-22,Butter Naan,158,no
+2025-08-22,Double ka Meetha,21,no
+2025-08-22,Qubani ka Meetha,14,no
+2025-08-23,Chicken Dum Biryani,122,no
+2025-08-23,Mutton Dum Biryani,97,no
+2025-08-23,Veg Biryani,35,no
+2025-08-23,Chicken 65,48,no
+2025-08-23,Apollo Fish,10,no
+2025-08-23,Paneer Butter Masala,33,no
+2025-08-23,Butter Naan,208,no
+2025-08-23,Double ka Meetha,30,no
+2025-08-23,Qubani ka Meetha,14,no
+2025-08-24,Chicken Dum Biryani,182,no
+2025-08-24,Mutton Dum Biryani,66,no
+2025-08-24,Veg Biryani,63,no
+2025-08-24,Chicken 65,57,no
+2025-08-24,Apollo Fish,20,no
+2025-08-24,Paneer Butter Masala,24,no
+2025-08-24,Butter Naan,205,no
+2025-08-24,Double ka Meetha,32,no
+2025-08-24,Qubani ka Meetha,15,no
+2025-08-25,Chicken Dum Biryani,167,no
+2025-08-25,Mutton Dum Biryani,49,no
+2025-08-25,Veg Biryani,25,no
+2025-08-25,Chicken 65,34,no
+2025-08-25,Apollo Fish,26,no
+2025-08-25,Paneer Butter Masala,11,no
+2025-08-25,Butter Naan,128,no
+2025-08-25,Double ka Meetha,28,no
+2025-08-25,Qubani ka Meetha,9,no
+2025-08-26,Chicken Dum Biryani,155,no
+2025-08-26,Mutton Dum Biryani,49,no
+2025-08-26,Veg Biryani,24,no
+2025-08-26,Chicken 65,28,no
+2025-08-26,Apollo Fish,21,no
+2025-08-26,Paneer Butter Masala,21,no
+2025-08-26,Butter Naan,128,no
+2025-08-26,Double ka Meetha,42,no
+2025-08-26,Qubani ka Meetha,12,no
+2025-08-27,Chicken Dum Biryani,155,no
+2025-08-27,Mutton Dum Biryani,85,no
+2025-08-27,Veg Biryani,30,no
+2025-08-27,Chicken 65,56,no
+2025-08-27,Apollo Fish,19,no
+2025-08-27,Paneer Butter Masala,15,no
+2025-08-27,Butter Naan,134,no
+2025-08-27,Double ka Meetha,29,no
+2025-08-27,Qubani ka Meetha,16,no
+2025-08-28,Chicken Dum Biryani,120,no
+2025-08-28,Mutton Dum Biryani,29,no
+2025-08-28,Veg Biryani,23,no
+2025-08-28,Chicken 65,45,no
+2025-08-28,Apollo Fish,11,no
+2025-08-28,Paneer Butter Masala,17,no
+2025-08-28,Butter Naan,84,no
+2025-08-28,Double ka Meetha,31,no
+2025-08-28,Qubani ka Meetha,12,no
+2025-08-29,Chicken Dum Biryani,327,no
+2025-08-29,Mutton Dum Biryani,100,yes
+2025-08-29,Veg Biryani,41,no
+2025-08-29,Chicken 65,80,no
+2025-08-29,Apollo Fish,27,no
+2025-08-29,Paneer Butter Masala,22,no
+2025-08-29,Butter Naan,162,no
+2025-08-29,Double ka Meetha,40,no
+2025-08-29,Qubani ka Meetha,15,no
+2025-08-30,Chicken Dum Biryani,138,no
+2025-08-30,Mutton Dum Biryani,46,no
+2025-08-30,Veg Biryani,21,no
+2025-08-30,Chicken 65,57,no
+2025-08-30,Apollo Fish,16,no
+2025-08-30,Paneer Butter Masala,22,no
+2025-08-30,Butter Naan,154,no
+2025-08-30,Double ka Meetha,12,no
+2025-08-30,Qubani ka Meetha,9,no
+2025-08-31,Chicken Dum Biryani,236,no
+2025-08-31,Mutton Dum Biryani,73,no
+2025-08-31,Veg Biryani,47,no
+2025-08-31,Chicken 65,99,no
+2025-08-31,Apollo Fish,20,no
+2025-08-31,Paneer Butter Masala,28,no
+2025-08-31,Butter Naan,189,no
+2025-08-31,Double ka Meetha,38,no
+2025-08-31,Qubani ka Meetha,23,no
+2025-09-01,Chicken Dum Biryani,127,no
+2025-09-01,Mutton Dum Biryani,55,no
+2025-09-01,Veg Biryani,27,no
+2025-09-01,Chicken 65,29,no
+2025-09-01,Apollo Fish,10,no
+2025-09-01,Paneer Butter Masala,12,no
+2025-09-01,Butter Naan,125,no
+2025-09-01,Double ka Meetha,25,no
+2025-09-01,Qubani ka Meetha,5,no
+2025-09-02,Chicken Dum Biryani,148,no
+2025-09-02,Mutton Dum Biryani,75,no
+2025-09-02,Veg Biryani,18,no
+2025-09-02,Chicken 65,54,no
+2025-09-02,Apollo Fish,26,no
+2025-09-02,Paneer Butter Masala,33,no
+2025-09-02,Butter Naan,108,no
+2025-09-02,Double ka Meetha,37,no
+2025-09-02,Qubani ka Meetha,12,no
+2025-09-03,Chicken Dum Biryani,150,no
+2025-09-03,Mutton Dum Biryani,50,no
+2025-09-03,Veg Biryani,23,no
+2025-09-03,Chicken 65,49,no
+2025-09-03,Apollo Fish,18,no
+2025-09-03,Paneer Butter Masala,31,no
+2025-09-03,Butter Naan,144,no
+2025-09-03,Double ka Meetha,25,no
+2025-09-03,Qubani ka Meetha,14,no
+2025-09-04,Chicken Dum Biryani,138,no
+2025-09-04,Mutton Dum Biryani,75,no
+2025-09-04,Veg Biryani,29,no
+2025-09-04,Chicken 65,40,no
+2025-09-04,Apollo Fish,29,no
+2025-09-04,Paneer Butter Masala,19,no
+2025-09-04,Butter Naan,156,no
+2025-09-04,Double ka Meetha,57,no
+2025-09-04,Qubani ka Meetha,15,no
+2025-09-05,Chicken Dum Biryani,225,no
+2025-09-05,Mutton Dum Biryani,100,yes
+2025-09-05,Veg Biryani,49,no
+2025-09-05,Chicken 65,96,no
+2025-09-05,Apollo Fish,50,no
+2025-09-05,Paneer Butter Masala,37,no
+2025-09-05,Butter Naan,194,no
+2025-09-05,Double ka Meetha,40,no
+2025-09-05,Qubani ka Meetha,23,no
+2025-09-06,Chicken Dum Biryani,222,no
+2025-09-06,Mutton Dum Biryani,100,yes
+2025-09-06,Veg Biryani,39,no
+2025-09-06,Chicken 65,67,no
+2025-09-06,Apollo Fish,21,no
+2025-09-06,Paneer Butter Masala,20,no
+2025-09-06,Butter Naan,131,no
+2025-09-06,Double ka Meetha,108,no
+2025-09-06,Qubani ka Meetha,12,no
+2025-09-07,Chicken Dum Biryani,144,no
+2025-09-07,Mutton Dum Biryani,100,yes
+2025-09-07,Veg Biryani,24,no
+2025-09-07,Chicken 65,52,no
+2025-09-07,Apollo Fish,24,no
+2025-09-07,Paneer Butter Masala,43,no
+2025-09-07,Butter Naan,205,no
+2025-09-07,Double ka Meetha,32,no
+2025-09-07,Qubani ka Meetha,26,no
+2025-09-08,Chicken Dum Biryani,134,no
+2025-09-08,Mutton Dum Biryani,53,no
+2025-09-08,Veg Biryani,29,no
+2025-09-08,Chicken 65,49,no
+2025-09-08,Apollo Fish,16,no
+2025-09-08,Paneer Butter Masala,18,no
+2025-09-08,Butter Naan,96,no
+2025-09-08,Double ka Meetha,31,no
+2025-09-08,Qubani ka Meetha,16,no
+2025-09-09,Chicken Dum Biryani,139,no
+2025-09-09,Mutton Dum Biryani,57,no
+2025-09-09,Veg Biryani,21,no
+2025-09-09,Chicken 65,52,no
+2025-09-09,Apollo Fish,13,no
+2025-09-09,Paneer Butter Masala,21,no
+2025-09-09,Butter Naan,124,no
+2025-09-09,Double ka Meetha,27,no
+2025-09-09,Qubani ka Meetha,6,no
+2025-09-10,Chicken Dum Biryani,147,no
+2025-09-10,Mutton Dum Biryani,51,no
+2025-09-10,Veg Biryani,23,no
+2025-09-10,Chicken 65,55,no
+2025-09-10,Apollo Fish,12,no
+2025-09-10,Paneer Butter Masala,20,no
+2025-09-10,Butter Naan,129,no
+2025-09-10,Double ka Meetha,34,no
+2025-09-10,Qubani ka Meetha,13,no
+2025-09-11,Chicken Dum Biryani,187,no
+2025-09-11,Mutton Dum Biryani,82,no
+2025-09-11,Veg Biryani,30,no
+2025-09-11,Chicken 65,30,no
+2025-09-11,Apollo Fish,18,no
+2025-09-11,Paneer Butter Masala,12,no
+2025-09-11,Butter Naan,130,no
+2025-09-11,Double ka Meetha,44,no
+2025-09-11,Qubani ka Meetha,7,no
+2025-09-12,Chicken Dum Biryani,142,no
+2025-09-12,Mutton Dum Biryani,95,no
+2025-09-12,Veg Biryani,33,no
+2025-09-12,Chicken 65,51,no
+2025-09-12,Apollo Fish,15,no
+2025-09-12,Paneer Butter Masala,31,no
+2025-09-12,Butter Naan,154,no
+2025-09-12,Double ka Meetha,38,no
+2025-09-12,Qubani ka Meetha,14,no
+2025-09-13,Chicken Dum Biryani,183,no
+2025-09-13,Mutton Dum Biryani,75,no
+2025-09-13,Veg Biryani,19,no
+2025-09-13,Chicken 65,47,no
+2025-09-13,Apollo Fish,18,no
+2025-09-13,Paneer Butter Masala,23,no
+2025-09-13,Butter Naan,141,no
+2025-09-13,Double ka Meetha,37,no
+2025-09-13,Qubani ka Meetha,18,no
+2025-09-14,Chicken Dum Biryani,179,no
+2025-09-14,Mutton Dum Biryani,77,no
+2025-09-14,Veg Biryani,42,no
+2025-09-14,Chicken 65,69,no
+2025-09-14,Apollo Fish,24,no
+2025-09-14,Paneer Butter Masala,27,no
+2025-09-14,Butter Naan,214,no
+2025-09-14,Double ka Meetha,31,no
+2025-09-14,Qubani ka Meetha,12,no
+2025-09-15,Chicken Dum Biryani,123,no
+2025-09-15,Mutton Dum Biryani,80,no
+2025-09-15,Veg Biryani,23,no
+2025-09-15,Chicken 65,41,no
+2025-09-15,Apollo Fish,23,no
+2025-09-15,Paneer Butter Masala,17,no
+2025-09-15,Butter Naan,113,no
+2025-09-15,Double ka Meetha,25,no
+2025-09-15,Qubani ka Meetha,17,no
+2025-09-16,Chicken Dum Biryani,105,no
+2025-09-16,Mutton Dum Biryani,86,no
+2025-09-16,Veg Biryani,18,no
+2025-09-16,Chicken 65,40,no
+2025-09-16,Apollo Fish,18,no
+2025-09-16,Paneer Butter Masala,28,no
+2025-09-16,Butter Naan,119,no
+2025-09-16,Double ka Meetha,31,no
+2025-09-16,Qubani ka Meetha,12,no
+2025-09-17,Chicken Dum Biryani,128,no
+2025-09-17,Mutton Dum Biryani,46,no
+2025-09-17,Veg Biryani,27,no
+2025-09-17,Chicken 65,33,no
+2025-09-17,Apollo Fish,12,no
+2025-09-17,Paneer Butter Masala,11,no
+2025-09-17,Butter Naan,70,no
+2025-09-17,Double ka Meetha,17,no
+2025-09-17,Qubani ka Meetha,19,no
+2025-09-18,Chicken Dum Biryani,121,no
+2025-09-18,Mutton Dum Biryani,55,no
+2025-09-18,Veg Biryani,38,no
+2025-09-18,Chicken 65,68,no
+2025-09-18,Apollo Fish,20,no
+2025-09-18,Paneer Butter Masala,23,no
+2025-09-18,Butter Naan,128,no
+2025-09-18,Double ka Meetha,36,no
+2025-09-18,Qubani ka Meetha,19,no
+2025-09-19,Chicken Dum Biryani,159,no
+2025-09-19,Mutton Dum Biryani,98,no
+2025-09-19,Veg Biryani,56,no
+2025-09-19,Chicken 65,41,no
+2025-09-19,Apollo Fish,35,no
+2025-09-19,Paneer Butter Masala,24,no
+2025-09-19,Butter Naan,155,no
+2025-09-19,Double ka Meetha,42,no
+2025-09-19,Qubani ka Meetha,19,no
+2025-09-20,Chicken Dum Biryani,215,no
+2025-09-20,Mutton Dum Biryani,77,no
+2025-09-20,Veg Biryani,23,no
+2025-09-20,Chicken 65,75,no
+2025-09-20,Apollo Fish,30,no
+2025-09-20,Paneer Butter Masala,28,no
+2025-09-20,Butter Naan,154,no
+2025-09-20,Double ka Meetha,52,no
+2025-09-20,Qubani ka Meetha,16,no
+2025-09-21,Chicken Dum Biryani,183,no
+2025-09-21,Mutton Dum Biryani,93,no
+2025-09-21,Veg Biryani,32,no
+2025-09-21,Chicken 65,68,no
+2025-09-21,Apollo Fish,18,no
+2025-09-21,Paneer Butter Masala,43,no
+2025-09-21,Butter Naan,138,no
+2025-09-21,Double ka Meetha,41,no
+2025-09-21,Qubani ka Meetha,27,no
+2025-09-22,Chicken Dum Biryani,163,no
+2025-09-22,Mutton Dum Biryani,65,no
+2025-09-22,Veg Biryani,21,no
+2025-09-22,Chicken 65,57,no
+2025-09-22,Apollo Fish,17,no
+2025-09-22,Paneer Butter Masala,25,no
+2025-09-22,Butter Naan,151,no
+2025-09-22,Double ka Meetha,24,no
+2025-09-22,Qubani ka Meetha,12,no
+2025-09-23,Chicken Dum Biryani,126,no
+2025-09-23,Mutton Dum Biryani,74,no
+2025-09-23,Veg Biryani,34,no
+2025-09-23,Chicken 65,28,no
+2025-09-23,Apollo Fish,17,no
+2025-09-23,Paneer Butter Masala,15,no
+2025-09-23,Butter Naan,111,no
+2025-09-23,Double ka Meetha,40,no
+2025-09-23,Qubani ka Meetha,20,no
+2025-09-24,Chicken Dum Biryani,88,no
+2025-09-24,Mutton Dum Biryani,52,no
+2025-09-24,Veg Biryani,22,no
+2025-09-24,Chicken 65,29,no
+2025-09-24,Apollo Fish,11,no
+2025-09-24,Paneer Butter Masala,6,no
+2025-09-24,Butter Naan,141,no
+2025-09-24,Double ka Meetha,17,no
+2025-09-24,Qubani ka Meetha,7,no
+2025-09-25,Chicken Dum Biryani,95,no
+2025-09-25,Mutton Dum Biryani,72,no
+2025-09-25,Veg Biryani,35,no
+2025-09-25,Chicken 65,68,no
+2025-09-25,Apollo Fish,20,no
+2025-09-25,Paneer Butter Masala,34,no
+2025-09-25,Butter Naan,146,no
+2025-09-25,Double ka Meetha,32,no
+2025-09-25,Qubani ka Meetha,9,no
+2025-09-26,Chicken Dum Biryani,221,no
+2025-09-26,Mutton Dum Biryani,87,no
+2025-09-26,Veg Biryani,20,no
+2025-09-26,Chicken 65,34,no
+2025-09-26,Apollo Fish,19,no
+2025-09-26,Paneer Butter Masala,16,no
+2025-09-26,Butter Naan,137,no
+2025-09-26,Double ka Meetha,39,no
+2025-09-26,Qubani ka Meetha,14,no
+2025-09-27,Chicken Dum Biryani,157,no
+2025-09-27,Mutton Dum Biryani,91,no
+2025-09-27,Veg Biryani,26,no
+2025-09-27,Chicken 65,78,no
+2025-09-27,Apollo Fish,17,no
+2025-09-27,Paneer Butter Masala,35,no
+2025-09-27,Butter Naan,192,no
+2025-09-27,Double ka Meetha,41,no
+2025-09-27,Qubani ka Meetha,15,no
+2025-09-28,Chicken Dum Biryani,229,no
+2025-09-28,Mutton Dum Biryani,100,yes
+2025-09-28,Veg Biryani,18,no
+2025-09-28,Chicken 65,84,no
+2025-09-28,Apollo Fish,41,no
+2025-09-28,Paneer Butter Masala,21,no
+2025-09-28,Butter Naan,245,no
+2025-09-28,Double ka Meetha,43,no
+2025-09-28,Qubani ka Meetha,17,no
+2025-09-29,Chicken Dum Biryani,126,no
+2025-09-29,Mutton Dum Biryani,54,no
+2025-09-29,Veg Biryani,28,no
+2025-09-29,Chicken 65,57,no
+2025-09-29,Apollo Fish,13,no
+2025-09-29,Paneer Butter Masala,11,no
+2025-09-29,Butter Naan,132,no
+2025-09-29,Double ka Meetha,35,no
+2025-09-29,Qubani ka Meetha,9,no
+2025-09-30,Chicken Dum Biryani,116,no
+2025-09-30,Mutton Dum Biryani,55,no
+2025-09-30,Veg Biryani,17,no
+2025-09-30,Chicken 65,30,no
+2025-09-30,Apollo Fish,17,no
+2025-09-30,Paneer Butter Masala,30,no
+2025-09-30,Butter Naan,103,no
+2025-09-30,Double ka Meetha,38,no
+2025-09-30,Qubani ka Meetha,7,no
+2025-10-01,Chicken Dum Biryani,176,no
+2025-10-01,Mutton Dum Biryani,61,no
+2025-10-01,Veg Biryani,36,no
+2025-10-01,Chicken 65,59,no
+2025-10-01,Apollo Fish,12,no
+2025-10-01,Paneer Butter Masala,25,no
+2025-10-01,Butter Naan,146,no
+2025-10-01,Double ka Meetha,30,no
+2025-10-01,Qubani ka Meetha,13,no
+2025-10-02,Chicken Dum Biryani,99,no
+2025-10-02,Mutton Dum Biryani,53,no
+2025-10-02,Veg Biryani,16,no
+2025-10-02,Chicken 65,36,no
+2025-10-02,Apollo Fish,14,no
+2025-10-02,Paneer Butter Masala,22,no
+2025-10-02,Butter Naan,124,no
+2025-10-02,Double ka Meetha,30,no
+2025-10-02,Qubani ka Meetha,15,no
+2025-10-03,Chicken Dum Biryani,201,no
+2025-10-03,Mutton Dum Biryani,100,yes
+2025-10-03,Veg Biryani,50,no
+2025-10-03,Chicken 65,127,no
+2025-10-03,Apollo Fish,18,no
+2025-10-03,Paneer Butter Masala,33,no
+2025-10-03,Butter Naan,268,no
+2025-10-03,Double ka Meetha,89,no
+2025-10-03,Qubani ka Meetha,19,no
+2025-10-04,Chicken Dum Biryani,162,no
+2025-10-04,Mutton Dum Biryani,67,no
+2025-10-04,Veg Biryani,40,no
+2025-10-04,Chicken 65,72,no
+2025-10-04,Apollo Fish,13,no
+2025-10-04,Paneer Butter Masala,31,no
+2025-10-04,Butter Naan,118,no
+2025-10-04,Double ka Meetha,43,no
+2025-10-04,Qubani ka Meetha,22,no
+2025-10-05,Chicken Dum Biryani,206,no
+2025-10-05,Mutton Dum Biryani,100,yes
+2025-10-05,Veg Biryani,48,no
+2025-10-05,Chicken 65,116,no
+2025-10-05,Apollo Fish,25,no
+2025-10-05,Paneer Butter Masala,41,no
+2025-10-05,Butter Naan,173,no
+2025-10-05,Double ka Meetha,57,no
+2025-10-05,Qubani ka Meetha,26,no
+2025-10-06,Chicken Dum Biryani,94,no
+2025-10-06,Mutton Dum Biryani,56,no
+2025-10-06,Veg Biryani,28,no
+2025-10-06,Chicken 65,55,no
+2025-10-06,Apollo Fish,21,no
+2025-10-06,Paneer Butter Masala,34,no
+2025-10-06,Butter Naan,137,no
+2025-10-06,Double ka Meetha,28,no
+2025-10-06,Qubani ka Meetha,8,no
+2025-10-07,Chicken Dum Biryani,138,no
+2025-10-07,Mutton Dum Biryani,65,no
+2025-10-07,Veg Biryani,25,no
+2025-10-07,Chicken 65,59,no
+2025-10-07,Apollo Fish,11,no
+2025-10-07,Paneer Butter Masala,20,no
+2025-10-07,Butter Naan,104,no
+2025-10-07,Double ka Meetha,38,no
+2025-10-07,Qubani ka Meetha,17,no
+2025-10-08,Chicken Dum Biryani,73,no
+2025-10-08,Mutton Dum Biryani,67,no
+2025-10-08,Veg Biryani,20,no
+2025-10-08,Chicken 65,55,no
+2025-10-08,Apollo Fish,24,no
+2025-10-08,Paneer Butter Masala,19,no
+2025-10-08,Butter Naan,137,no
+2025-10-08,Double ka Meetha,15,no
+2025-10-08,Qubani ka Meetha,12,no
+2025-10-09,Chicken Dum Biryani,195,no
+2025-10-09,Mutton Dum Biryani,43,no
+2025-10-09,Veg Biryani,31,no
+2025-10-09,Chicken 65,64,no
+2025-10-09,Apollo Fish,23,no
+2025-10-09,Paneer Butter Masala,12,no
+2025-10-09,Butter Naan,144,no
+2025-10-09,Double ka Meetha,37,no
+2025-10-09,Qubani ka Meetha,18,no
+2025-10-10,Chicken Dum Biryani,176,no
+2025-10-10,Mutton Dum Biryani,96,no
+2025-10-10,Veg Biryani,52,no
+2025-10-10,Chicken 65,69,no
+2025-10-10,Apollo Fish,30,no
+2025-10-10,Paneer Butter Masala,28,no
+2025-10-10,Butter Naan,142,no
+2025-10-10,Double ka Meetha,43,no
+2025-10-10,Qubani ka Meetha,9,no
+2025-10-11,Chicken Dum Biryani,191,no
+2025-10-11,Mutton Dum Biryani,100,yes
+2025-10-11,Veg Biryani,26,no
+2025-10-11,Chicken 65,65,no
+2025-10-11,Apollo Fish,21,no
+2025-10-11,Paneer Butter Masala,33,no
+2025-10-11,Butter Naan,128,no
+2025-10-11,Double ka Meetha,40,no
+2025-10-11,Qubani ka Meetha,15,no
+2025-10-12,Chicken Dum Biryani,210,no
+2025-10-12,Mutton Dum Biryani,100,yes
+2025-10-12,Veg Biryani,31,no
+2025-10-12,Chicken 65,60,no
+2025-10-12,Apollo Fish,40,no
+2025-10-12,Paneer Butter Masala,26,no
+2025-10-12,Butter Naan,216,no
+2025-10-12,Double ka Meetha,52,no
+2025-10-12,Qubani ka Meetha,18,no
+2025-10-13,Chicken Dum Biryani,120,no
+2025-10-13,Mutton Dum Biryani,59,no
+2025-10-13,Veg Biryani,25,no
+2025-10-13,Chicken 65,37,no
+2025-10-13,Apollo Fish,22,no
+2025-10-13,Paneer Butter Masala,22,no
+2025-10-13,Butter Naan,102,no
+2025-10-13,Double ka Meetha,39,no
+2025-10-13,Qubani ka Meetha,12,no
+2025-10-14,Chicken Dum Biryani,121,no
+2025-10-14,Mutton Dum Biryani,78,no
+2025-10-14,Veg Biryani,23,no
+2025-10-14,Chicken 65,33,no
+2025-10-14,Apollo Fish,15,no
+2025-10-14,Paneer Butter Masala,19,no
+2025-10-14,Butter Naan,119,no
+2025-10-14,Double ka Meetha,26,no
+2025-10-14,Qubani ka Meetha,16,no
+2025-10-15,Chicken Dum Biryani,206,no
+2025-10-15,Mutton Dum Biryani,53,no
+2025-10-15,Veg Biryani,20,no
+2025-10-15,Chicken 65,49,no
+2025-10-15,Apollo Fish,20,no
+2025-10-15,Paneer Butter Masala,27,no
+2025-10-15,Butter Naan,160,no
+2025-10-15,Double ka Meetha,29,no
+2025-10-15,Qubani ka Meetha,12,no
+2025-10-16,Chicken Dum Biryani,150,no
+2025-10-16,Mutton Dum Biryani,34,no
+2025-10-16,Veg Biryani,35,no
+2025-10-16,Chicken 65,64,no
+2025-10-16,Apollo Fish,23,no
+2025-10-16,Paneer Butter Masala,19,no
+2025-10-16,Butter Naan,119,no
+2025-10-16,Double ka Meetha,23,no
+2025-10-16,Qubani ka Meetha,14,no
+2025-10-17,Chicken Dum Biryani,230,no
+2025-10-17,Mutton Dum Biryani,79,no
+2025-10-17,Veg Biryani,36,no
+2025-10-17,Chicken 65,55,no
+2025-10-17,Apollo Fish,21,no
+2025-10-17,Paneer Butter Masala,13,no
+2025-10-17,Butter Naan,197,no
+2025-10-17,Double ka Meetha,45,no
+2025-10-17,Qubani ka Meetha,8,no
+2025-10-18,Chicken Dum Biryani,309,no
+2025-10-18,Mutton Dum Biryani,100,yes
+2025-10-18,Veg Biryani,32,no
+2025-10-18,Chicken 65,99,no
+2025-10-18,Apollo Fish,19,no
+2025-10-18,Paneer Butter Masala,22,no
+2025-10-18,Butter Naan,246,no
+2025-10-18,Double ka Meetha,39,no
+2025-10-18,Qubani ka Meetha,18,no
+2025-10-19,Chicken Dum Biryani,302,no
+2025-10-19,Mutton Dum Biryani,63,no
+2025-10-19,Veg Biryani,38,no
+2025-10-19,Chicken 65,102,no
+2025-10-19,Apollo Fish,25,no
+2025-10-19,Paneer Butter Masala,54,no
+2025-10-19,Butter Naan,195,no
+2025-10-19,Double ka Meetha,37,no
+2025-10-19,Qubani ka Meetha,28,no
+2025-10-20,Chicken Dum Biryani,153,no
+2025-10-20,Mutton Dum Biryani,45,no
+2025-10-20,Veg Biryani,16,no
+2025-10-20,Chicken 65,18,no
+2025-10-20,Apollo Fish,13,no
+2025-10-20,Paneer Butter Masala,17,no
+2025-10-20,Butter Naan,71,no
+2025-10-20,Double ka Meetha,20,no
+2025-10-20,Qubani ka Meetha,3,no
+2025-10-21,Chicken Dum Biryani,143,no
+2025-10-21,Mutton Dum Biryani,52,no
+2025-10-21,Veg Biryani,22,no
+2025-10-21,Chicken 65,57,no
+2025-10-21,Apollo Fish,11,no
+2025-10-21,Paneer Butter Masala,26,no
+2025-10-21,Butter Naan,186,no
+2025-10-21,Double ka Meetha,18,no
+2025-10-21,Qubani ka Meetha,19,no
+2025-10-22,Chicken Dum Biryani,180,no
+2025-10-22,Mutton Dum Biryani,43,no
+2025-10-22,Veg Biryani,25,no
+2025-10-22,Chicken 65,33,no
+2025-10-22,Apollo Fish,12,no
+2025-10-22,Paneer Butter Masala,28,no
+2025-10-22,Butter Naan,123,no
+2025-10-22,Double ka Meetha,31,no
+2025-10-22,Qubani ka Meetha,14,no
+2025-10-23,Chicken Dum Biryani,140,no
+2025-10-23,Mutton Dum Biryani,42,no
+2025-10-23,Veg Biryani,20,no
+2025-10-23,Chicken 65,43,no
+2025-10-23,Apollo Fish,19,no
+2025-10-23,Paneer Butter Masala,25,no
+2025-10-23,Butter Naan,145,no
+2025-10-23,Double ka Meetha,27,no
+2025-10-23,Qubani ka Meetha,18,no
+2025-10-24,Chicken Dum Biryani,218,no
+2025-10-24,Mutton Dum Biryani,70,no
+2025-10-24,Veg Biryani,36,no
+2025-10-24,Chicken 65,58,no
+2025-10-24,Apollo Fish,23,no
+2025-10-24,Paneer Butter Masala,19,no
+2025-10-24,Butter Naan,125,no
+2025-10-24,Double ka Meetha,42,no
+2025-10-24,Qubani ka Meetha,13,no
+2025-10-25,Chicken Dum Biryani,128,no
+2025-10-25,Mutton Dum Biryani,56,no
+2025-10-25,Veg Biryani,37,no
+2025-10-25,Chicken 65,97,no
+2025-10-25,Apollo Fish,27,no
+2025-10-25,Paneer Butter Masala,36,no
+2025-10-25,Butter Naan,146,no
+2025-10-25,Double ka Meetha,55,no
+2025-10-25,Qubani ka Meetha,13,no
+2025-10-26,Chicken Dum Biryani,222,no
+2025-10-26,Mutton Dum Biryani,94,no
+2025-10-26,Veg Biryani,32,no
+2025-10-26,Chicken 65,77,no
+2025-10-26,Apollo Fish,25,no
+2025-10-26,Paneer Butter Masala,37,no
+2025-10-26,Butter Naan,211,no
+2025-10-26,Double ka Meetha,53,no
+2025-10-26,Qubani ka Meetha,14,no
+2025-10-27,Chicken Dum Biryani,103,no
+2025-10-27,Mutton Dum Biryani,55,no
+2025-10-27,Veg Biryani,17,no
+2025-10-27,Chicken 65,31,no
+2025-10-27,Apollo Fish,26,no
+2025-10-27,Paneer Butter Masala,32,no
+2025-10-27,Butter Naan,113,no
+2025-10-27,Double ka Meetha,19,no
+2025-10-27,Qubani ka Meetha,12,no
+2025-10-28,Chicken Dum Biryani,152,no
+2025-10-28,Mutton Dum Biryani,70,no
+2025-10-28,Veg Biryani,16,no
+2025-10-28,Chicken 65,59,no
+2025-10-28,Apollo Fish,14,no
+2025-10-28,Paneer Butter Masala,13,no
+2025-10-28,Butter Naan,183,no
+2025-10-28,Double ka Meetha,44,no
+2025-10-28,Qubani ka Meetha,12,no
+2025-10-29,Chicken Dum Biryani,129,no
+2025-10-29,Mutton Dum Biryani,69,no
+2025-10-29,Veg Biryani,34,no
+2025-10-29,Chicken 65,41,no
+2025-10-29,Apollo Fish,10,no
+2025-10-29,Paneer Butter Masala,12,no
+2025-10-29,Butter Naan,121,no
+2025-10-29,Double ka Meetha,26,no
+2025-10-29,Qubani ka Meetha,8,no
+2025-10-30,Chicken Dum Biryani,190,no
+2025-10-30,Mutton Dum Biryani,82,no
+2025-10-30,Veg Biryani,29,no
+2025-10-30,Chicken 65,63,no
+2025-10-30,Apollo Fish,27,no
+2025-10-30,Paneer Butter Masala,20,no
+2025-10-30,Butter Naan,97,no
+2025-10-30,Double ka Meetha,32,no
+2025-10-30,Qubani ka Meetha,11,no
+2025-10-31,Chicken Dum Biryani,185,no
+2025-10-31,Mutton Dum Biryani,86,no
+2025-10-31,Veg Biryani,24,no
+2025-10-31,Chicken 65,34,no
+2025-10-31,Apollo Fish,28,no
+2025-10-31,Paneer Butter Masala,26,no
+2025-10-31,Butter Naan,117,no
+2025-10-31,Double ka Meetha,24,no
+2025-10-31,Qubani ka Meetha,26,no
+2025-11-01,Chicken Dum Biryani,270,no
+2025-11-01,Mutton Dum Biryani,100,yes
+2025-11-01,Veg Biryani,47,no
+2025-11-01,Chicken 65,109,no
+2025-11-01,Apollo Fish,48,no
+2025-11-01,Paneer Butter Masala,35,no
+2025-11-01,Butter Naan,166,no
+2025-11-01,Double ka Meetha,39,no
+2025-11-01,Qubani ka Meetha,19,no
+2025-11-02,Chicken Dum Biryani,261,no
+2025-11-02,Mutton Dum Biryani,100,yes
+2025-11-02,Veg Biryani,42,no
+2025-11-02,Chicken 65,82,no
+2025-11-02,Apollo Fish,30,no
+2025-11-02,Paneer Butter Masala,37,no
+2025-11-02,Butter Naan,175,no
+2025-11-02,Double ka Meetha,59,no
+2025-11-02,Qubani ka Meetha,22,no
+2025-11-03,Chicken Dum Biryani,269,no
+2025-11-03,Mutton Dum Biryani,51,no
+2025-11-03,Veg Biryani,24,no
+2025-11-03,Chicken 65,77,no
+2025-11-03,Apollo Fish,30,no
+2025-11-03,Paneer Butter Masala,30,no
+2025-11-03,Butter Naan,167,no
+2025-11-03,Double ka Meetha,37,no
+2025-11-03,Qubani ka Meetha,7,no
+2025-11-04,Chicken Dum Biryani,158,no
+2025-11-04,Mutton Dum Biryani,66,no
+2025-11-04,Veg Biryani,25,no
+2025-11-04,Chicken 65,46,no
+2025-11-04,Apollo Fish,28,no
+2025-11-04,Paneer Butter Masala,24,no
+2025-11-04,Butter Naan,91,no
+2025-11-04,Double ka Meetha,24,no
+2025-11-04,Qubani ka Meetha,9,no
+2025-11-05,Chicken Dum Biryani,176,no
+2025-11-05,Mutton Dum Biryani,67,no
+2025-11-05,Veg Biryani,26,no
+2025-11-05,Chicken 65,60,no
+2025-11-05,Apollo Fish,25,no
+2025-11-05,Paneer Butter Masala,24,no
+2025-11-05,Butter Naan,139,no
+2025-11-05,Double ka Meetha,42,no
+2025-11-05,Qubani ka Meetha,16,no
+2025-11-06,Chicken Dum Biryani,157,no
+2025-11-06,Mutton Dum Biryani,33,no
+2025-11-06,Veg Biryani,28,no
+2025-11-06,Chicken 65,61,no
+2025-11-06,Apollo Fish,23,no
+2025-11-06,Paneer Butter Masala,11,no
+2025-11-06,Butter Naan,131,no
+2025-11-06,Double ka Meetha,32,no
+2025-11-06,Qubani ka Meetha,18,no
+2025-11-07,Chicken Dum Biryani,252,no
+2025-11-07,Mutton Dum Biryani,99,no
+2025-11-07,Veg Biryani,20,no
+2025-11-07,Chicken 65,55,no
+2025-11-07,Apollo Fish,28,no
+2025-11-07,Paneer Butter Masala,35,no
+2025-11-07,Butter Naan,169,no
+2025-11-07,Double ka Meetha,31,no
+2025-11-07,Qubani ka Meetha,18,no
+2025-11-08,Chicken Dum Biryani,182,no
+2025-11-08,Mutton Dum Biryani,60,no
+2025-11-08,Veg Biryani,45,no
+2025-11-08,Chicken 65,66,no
+2025-11-08,Apollo Fish,22,no
+2025-11-08,Paneer Butter Masala,41,no
+2025-11-08,Butter Naan,192,no
+2025-11-08,Double ka Meetha,49,no
+2025-11-08,Qubani ka Meetha,27,no
+2025-11-09,Chicken Dum Biryani,226,no
+2025-11-09,Mutton Dum Biryani,95,no
+2025-11-09,Veg Biryani,40,no
+2025-11-09,Chicken 65,82,no
+2025-11-09,Apollo Fish,23,no
+2025-11-09,Paneer Butter Masala,36,no
+2025-11-09,Butter Naan,253,no
+2025-11-09,Double ka Meetha,66,no
+2025-11-09,Qubani ka Meetha,21,no
+2025-11-10,Chicken Dum Biryani,115,no
+2025-11-10,Mutton Dum Biryani,58,no
+2025-11-10,Veg Biryani,16,no
+2025-11-10,Chicken 65,37,no
+2025-11-10,Apollo Fish,20,no
+2025-11-10,Paneer Butter Masala,14,no
+2025-11-10,Butter Naan,144,no
+2025-11-10,Double ka Meetha,32,no
+2025-11-10,Qubani ka Meetha,19,no
+2025-11-11,Chicken Dum Biryani,171,no
+2025-11-11,Mutton Dum Biryani,33,no
+2025-11-11,Veg Biryani,28,no
+2025-11-11,Chicken 65,51,no
+2025-11-11,Apollo Fish,15,no
+2025-11-11,Paneer Butter Masala,15,no
+2025-11-11,Butter Naan,133,no
+2025-11-11,Double ka Meetha,41,no
+2025-11-11,Qubani ka Meetha,11,no
+2025-11-12,Chicken Dum Biryani,235,no
+2025-11-12,Mutton Dum Biryani,47,no
+2025-11-12,Veg Biryani,28,no
+2025-11-12,Chicken 65,73,no
+2025-11-12,Apollo Fish,12,no
+2025-11-12,Paneer Butter Masala,24,no
+2025-11-12,Butter Naan,66,no
+2025-11-12,Double ka Meetha,25,no
+2025-11-12,Qubani ka Meetha,18,no
+2025-11-13,Chicken Dum Biryani,249,no
+2025-11-13,Mutton Dum Biryani,71,no
+2025-11-13,Veg Biryani,28,no
+2025-11-13,Chicken 65,59,no
+2025-11-13,Apollo Fish,23,no
+2025-11-13,Paneer Butter Masala,25,no
+2025-11-13,Butter Naan,125,no
+2025-11-13,Double ka Meetha,23,no
+2025-11-13,Qubani ka Meetha,15,no
+2025-11-14,Chicken Dum Biryani,198,no
+2025-11-14,Mutton Dum Biryani,100,yes
+2025-11-14,Veg Biryani,46,no
+2025-11-14,Chicken 65,63,no
+2025-11-14,Apollo Fish,20,no
+2025-11-14,Paneer Butter Masala,39,no
+2025-11-14,Butter Naan,104,no
+2025-11-14,Double ka Meetha,45,no
+2025-11-14,Qubani ka Meetha,24,no
+2025-11-15,Chicken Dum Biryani,189,no
+2025-11-15,Mutton Dum Biryani,52,no
+2025-11-15,Veg Biryani,24,no
+2025-11-15,Chicken 65,70,no
+2025-11-15,Apollo Fish,29,no
+2025-11-15,Paneer Butter Masala,33,no
+2025-11-15,Butter Naan,208,no
+2025-11-15,Double ka Meetha,20,no
+2025-11-15,Qubani ka Meetha,17,no
+2025-11-16,Chicken Dum Biryani,225,no
+2025-11-16,Mutton Dum Biryani,100,yes
+2025-11-16,Veg Biryani,63,no
+2025-11-16,Chicken 65,74,no
+2025-11-16,Apollo Fish,22,no
+2025-11-16,Paneer Butter Masala,46,no
+2025-11-16,Butter Naan,157,no
+2025-11-16,Double ka Meetha,28,no
+2025-11-16,Qubani ka Meetha,13,no
+2025-11-17,Chicken Dum Biryani,154,no
+2025-11-17,Mutton Dum Biryani,54,no
+2025-11-17,Veg Biryani,28,no
+2025-11-17,Chicken 65,26,no
+2025-11-17,Apollo Fish,16,no
+2025-11-17,Paneer Butter Masala,18,no
+2025-11-17,Butter Naan,126,no
+2025-11-17,Double ka Meetha,45,no
+2025-11-17,Qubani ka Meetha,17,no
+2025-11-18,Chicken Dum Biryani,101,no
+2025-11-18,Mutton Dum Biryani,57,no
+2025-11-18,Veg Biryani,29,no
+2025-11-18,Chicken 65,31,no
+2025-11-18,Apollo Fish,12,no
+2025-11-18,Paneer Butter Masala,16,no
+2025-11-18,Butter Naan,91,no
+2025-11-18,Double ka Meetha,35,no
+2025-11-18,Qubani ka Meetha,9,no
+2025-11-19,Chicken Dum Biryani,132,no
+2025-11-19,Mutton Dum Biryani,60,no
+2025-11-19,Veg Biryani,21,no
+2025-11-19,Chicken 65,33,no
+2025-11-19,Apollo Fish,13,no
+2025-11-19,Paneer Butter Masala,25,no
+2025-11-19,Butter Naan,210,no
+2025-11-19,Double ka Meetha,26,no
+2025-11-19,Qubani ka Meetha,8,no
+2025-11-20,Chicken Dum Biryani,138,no
+2025-11-20,Mutton Dum Biryani,41,no
+2025-11-20,Veg Biryani,29,no
+2025-11-20,Chicken 65,60,no
+2025-11-20,Apollo Fish,18,no
+2025-11-20,Paneer Butter Masala,25,no
+2025-11-20,Butter Naan,142,no
+2025-11-20,Double ka Meetha,37,no
+2025-11-20,Qubani ka Meetha,17,no
+2025-11-21,Chicken Dum Biryani,221,no
+2025-11-21,Mutton Dum Biryani,74,no
+2025-11-21,Veg Biryani,41,no
+2025-11-21,Chicken 65,66,no
+2025-11-21,Apollo Fish,20,no
+2025-11-21,Paneer Butter Masala,37,no
+2025-11-21,Butter Naan,137,no
+2025-11-21,Double ka Meetha,48,no
+2025-11-21,Qubani ka Meetha,16,no
+2025-11-22,Chicken Dum Biryani,180,no
+2025-11-22,Mutton Dum Biryani,49,no
+2025-11-22,Veg Biryani,29,no
+2025-11-22,Chicken 65,102,no
+2025-11-22,Apollo Fish,23,no
+2025-11-22,Paneer Butter Masala,30,no
+2025-11-22,Butter Naan,112,no
+2025-11-22,Double ka Meetha,59,no
+2025-11-22,Qubani ka Meetha,13,no
+2025-11-23,Chicken Dum Biryani,215,no
+2025-11-23,Mutton Dum Biryani,100,yes
+2025-11-23,Veg Biryani,38,no
+2025-11-23,Chicken 65,70,no
+2025-11-23,Apollo Fish,21,no
+2025-11-23,Paneer Butter Masala,35,no
+2025-11-23,Butter Naan,328,no
+2025-11-23,Double ka Meetha,35,no
+2025-11-23,Qubani ka Meetha,17,no
+2025-11-24,Chicken Dum Biryani,140,no
+2025-11-24,Mutton Dum Biryani,70,no
+2025-11-24,Veg Biryani,20,no
+2025-11-24,Chicken 65,39,no
+2025-11-24,Apollo Fish,22,no
+2025-11-24,Paneer Butter Masala,16,no
+2025-11-24,Butter Naan,123,no
+2025-11-24,Double ka Meetha,18,no
+2025-11-24,Qubani ka Meetha,10,no
+2025-11-25,Chicken Dum Biryani,134,no
+2025-11-25,Mutton Dum Biryani,64,no
+2025-11-25,Veg Biryani,21,no
+2025-11-25,Chicken 65,37,no
+2025-11-25,Apollo Fish,20,no
+2025-11-25,Paneer Butter Masala,15,no
+2025-11-25,Butter Naan,121,no
+2025-11-25,Double ka Meetha,21,no
+2025-11-25,Qubani ka Meetha,14,no
+2025-11-26,Chicken Dum Biryani,164,no
+2025-11-26,Mutton Dum Biryani,30,no
+2025-11-26,Veg Biryani,30,no
+2025-11-26,Chicken 65,38,no
+2025-11-26,Apollo Fish,26,no
+2025-11-26,Paneer Butter Masala,29,no
+2025-11-26,Butter Naan,128,no
+2025-11-26,Double ka Meetha,38,no
+2025-11-26,Qubani ka Meetha,13,no
+2025-11-27,Chicken Dum Biryani,158,no
+2025-11-27,Mutton Dum Biryani,61,no
+2025-11-27,Veg Biryani,29,no
+2025-11-27,Chicken 65,43,no
+2025-11-27,Apollo Fish,13,no
+2025-11-27,Paneer Butter Masala,19,no
+2025-11-27,Butter Naan,162,no
+2025-11-27,Double ka Meetha,37,no
+2025-11-27,Qubani ka Meetha,14,no
+2025-11-28,Chicken Dum Biryani,182,no
+2025-11-28,Mutton Dum Biryani,71,no
+2025-11-28,Veg Biryani,33,no
+2025-11-28,Chicken 65,85,no
+2025-11-28,Apollo Fish,19,no
+2025-11-28,Paneer Butter Masala,28,no
+2025-11-28,Butter Naan,108,no
+2025-11-28,Double ka Meetha,45,no
+2025-11-28,Qubani ka Meetha,21,no
+2025-11-29,Chicken Dum Biryani,228,no
+2025-11-29,Mutton Dum Biryani,92,no
+2025-11-29,Veg Biryani,37,no
+2025-11-29,Chicken 65,62,no
+2025-11-29,Apollo Fish,21,no
+2025-11-29,Paneer Butter Masala,33,no
+2025-11-29,Butter Naan,184,no
+2025-11-29,Double ka Meetha,49,no
+2025-11-29,Qubani ka Meetha,17,no
+2025-11-30,Chicken Dum Biryani,255,no
+2025-11-30,Mutton Dum Biryani,100,yes
+2025-11-30,Veg Biryani,41,no
+2025-11-30,Chicken 65,56,no
+2025-11-30,Apollo Fish,26,no
+2025-11-30,Paneer Butter Masala,39,no
+2025-11-30,Butter Naan,187,no
+2025-11-30,Double ka Meetha,45,no
+2025-11-30,Qubani ka Meetha,27,no
+2025-12-01,Chicken Dum Biryani,164,no
+2025-12-01,Mutton Dum Biryani,50,no
+2025-12-01,Veg Biryani,36,no
+2025-12-01,Chicken 65,46,no
+2025-12-01,Apollo Fish,18,no
+2025-12-01,Paneer Butter Masala,30,no
+2025-12-01,Butter Naan,78,no
+2025-12-01,Double ka Meetha,33,no
+2025-12-01,Qubani ka Meetha,20,no
+2025-12-02,Chicken Dum Biryani,251,no
+2025-12-02,Mutton Dum Biryani,75,no
+2025-12-02,Veg Biryani,8,no
+2025-12-02,Chicken 65,24,no
+2025-12-02,Apollo Fish,29,no
+2025-12-02,Paneer Butter Masala,30,no
+2025-12-02,Butter Naan,122,no
+2025-12-02,Double ka Meetha,38,no
+2025-12-02,Qubani ka Meetha,12,no
+2025-12-03,Chicken Dum Biryani,147,no
+2025-12-03,Mutton Dum Biryani,71,no
+2025-12-03,Veg Biryani,26,no
+2025-12-03,Chicken 65,55,no
+2025-12-03,Apollo Fish,16,no
+2025-12-03,Paneer Butter Masala,20,no
+2025-12-03,Butter Naan,104,no
+2025-12-03,Double ka Meetha,20,no
+2025-12-03,Qubani ka Meetha,8,no
+2025-12-04,Chicken Dum Biryani,219,no
+2025-12-04,Mutton Dum Biryani,48,no
+2025-12-04,Veg Biryani,28,no
+2025-12-04,Chicken 65,48,no
+2025-12-04,Apollo Fish,27,no
+2025-12-04,Paneer Butter Masala,29,no
+2025-12-04,Butter Naan,144,no
+2025-12-04,Double ka Meetha,46,no
+2025-12-04,Qubani ka Meetha,8,no
+2025-12-05,Chicken Dum Biryani,301,no
+2025-12-05,Mutton Dum Biryani,89,no
+2025-12-05,Veg Biryani,26,no
+2025-12-05,Chicken 65,72,no
+2025-12-05,Apollo Fish,31,no
+2025-12-05,Paneer Butter Masala,29,no
+2025-12-05,Butter Naan,196,no
+2025-12-05,Double ka Meetha,34,no
+2025-12-05,Qubani ka Meetha,12,no
+2025-12-06,Chicken Dum Biryani,247,no
+2025-12-06,Mutton Dum Biryani,100,yes
+2025-12-06,Veg Biryani,36,no
+2025-12-06,Chicken 65,98,no
+2025-12-06,Apollo Fish,23,no
+2025-12-06,Paneer Butter Masala,44,no
+2025-12-06,Butter Naan,156,no
+2025-12-06,Double ka Meetha,39,no
+2025-12-06,Qubani ka Meetha,14,no
+2025-12-07,Chicken Dum Biryani,212,no
+2025-12-07,Mutton Dum Biryani,95,no
+2025-12-07,Veg Biryani,26,no
+2025-12-07,Chicken 65,38,no
+2025-12-07,Apollo Fish,29,no
+2025-12-07,Paneer Butter Masala,35,no
+2025-12-07,Butter Naan,211,no
+2025-12-07,Double ka Meetha,44,no
+2025-12-07,Qubani ka Meetha,27,no
+2025-12-08,Chicken Dum Biryani,153,no
+2025-12-08,Mutton Dum Biryani,95,no
+2025-12-08,Veg Biryani,25,no
+2025-12-08,Chicken 65,48,no
+2025-12-08,Apollo Fish,18,no
+2025-12-08,Paneer Butter Masala,12,no
+2025-12-08,Butter Naan,143,no
+2025-12-08,Double ka Meetha,10,no
+2025-12-08,Qubani ka Meetha,13,no
+2025-12-09,Chicken Dum Biryani,138,no
+2025-12-09,Mutton Dum Biryani,37,no
+2025-12-09,Veg Biryani,28,no
+2025-12-09,Chicken 65,44,no
+2025-12-09,Apollo Fish,16,no
+2025-12-09,Paneer Butter Masala,30,no
+2025-12-09,Butter Naan,158,no
+2025-12-09,Double ka Meetha,29,no
+2025-12-09,Qubani ka Meetha,12,no
+2025-12-10,Chicken Dum Biryani,164,no
+2025-12-10,Mutton Dum Biryani,89,no
+2025-12-10,Veg Biryani,32,no
+2025-12-10,Chicken 65,37,no
+2025-12-10,Apollo Fish,28,no
+2025-12-10,Paneer Butter Masala,30,no
+2025-12-10,Butter Naan,125,no
+2025-12-10,Double ka Meetha,35,no
+2025-12-10,Qubani ka Meetha,8,no
+2025-12-11,Chicken Dum Biryani,197,no
+2025-12-11,Mutton Dum Biryani,77,no
+2025-12-11,Veg Biryani,25,no
+2025-12-11,Chicken 65,58,no
+2025-12-11,Apollo Fish,33,no
+2025-12-11,Paneer Butter Masala,23,no
+2025-12-11,Butter Naan,173,no
+2025-12-11,Double ka Meetha,22,no
+2025-12-11,Qubani ka Meetha,10,no
+2025-12-12,Chicken Dum Biryani,229,no
+2025-12-12,Mutton Dum Biryani,75,no
+2025-12-12,Veg Biryani,38,no
+2025-12-12,Chicken 65,79,no
+2025-12-12,Apollo Fish,25,no
+2025-12-12,Paneer Butter Masala,32,no
+2025-12-12,Butter Naan,153,no
+2025-12-12,Double ka Meetha,36,no
+2025-12-12,Qubani ka Meetha,26,no
+2025-12-13,Chicken Dum Biryani,201,no
+2025-12-13,Mutton Dum Biryani,100,yes
+2025-12-13,Veg Biryani,31,no
+2025-12-13,Chicken 65,69,no
+2025-12-13,Apollo Fish,30,no
+2025-12-13,Paneer Butter Masala,28,no
+2025-12-13,Butter Naan,221,no
+2025-12-13,Double ka Meetha,36,no
+2025-12-13,Qubani ka Meetha,13,no
+2025-12-14,Chicken Dum Biryani,185,no
+2025-12-14,Mutton Dum Biryani,100,yes
+2025-12-14,Veg Biryani,43,no
+2025-12-14,Chicken 65,89,no
+2025-12-14,Apollo Fish,34,no
+2025-12-14,Paneer Butter Masala,55,no
+2025-12-14,Butter Naan,255,no
+2025-12-14,Double ka Meetha,97,no
+2025-12-14,Qubani ka Meetha,16,no
+2025-12-15,Chicken Dum Biryani,138,no
+2025-12-15,Mutton Dum Biryani,70,no
+2025-12-15,Veg Biryani,23,no
+2025-12-15,Chicken 65,55,no
+2025-12-15,Apollo Fish,15,no
+2025-12-15,Paneer Butter Masala,20,no
+2025-12-15,Butter Naan,125,no
+2025-12-15,Double ka Meetha,54,no
+2025-12-15,Qubani ka Meetha,9,no
+2025-12-16,Chicken Dum Biryani,210,no
+2025-12-16,Mutton Dum Biryani,61,no
+2025-12-16,Veg Biryani,18,no
+2025-12-16,Chicken 65,44,no
+2025-12-16,Apollo Fish,12,no
+2025-12-16,Paneer Butter Masala,30,no
+2025-12-16,Butter Naan,83,no
+2025-12-16,Double ka Meetha,26,no
+2025-12-16,Qubani ka Meetha,6,no
+2025-12-17,Chicken Dum Biryani,219,no
+2025-12-17,Mutton Dum Biryani,64,no
+2025-12-17,Veg Biryani,19,no
+2025-12-17,Chicken 65,73,no
+2025-12-17,Apollo Fish,19,no
+2025-12-17,Paneer Butter Masala,24,no
+2025-12-17,Butter Naan,110,no
+2025-12-17,Double ka Meetha,53,no
+2025-12-17,Qubani ka Meetha,11,no
+2025-12-18,Chicken Dum Biryani,138,no
+2025-12-18,Mutton Dum Biryani,91,no
+2025-12-18,Veg Biryani,40,no
+2025-12-18,Chicken 65,75,no
+2025-12-18,Apollo Fish,17,no
+2025-12-18,Paneer Butter Masala,25,no
+2025-12-18,Butter Naan,93,no
+2025-12-18,Double ka Meetha,24,no
+2025-12-18,Qubani ka Meetha,14,no
+2025-12-19,Chicken Dum Biryani,260,no
+2025-12-19,Mutton Dum Biryani,93,no
+2025-12-19,Veg Biryani,33,no
+2025-12-19,Chicken 65,62,no
+2025-12-19,Apollo Fish,18,no
+2025-12-19,Paneer Butter Masala,13,no
+2025-12-19,Butter Naan,177,no
+2025-12-19,Double ka Meetha,31,no
+2025-12-19,Qubani ka Meetha,11,no
+2025-12-20,Chicken Dum Biryani,347,no
+2025-12-20,Mutton Dum Biryani,100,yes
+2025-12-20,Veg Biryani,52,no
+2025-12-20,Chicken 65,70,no
+2025-12-20,Apollo Fish,34,no
+2025-12-20,Paneer Butter Masala,35,no
+2025-12-20,Butter Naan,266,no
+2025-12-20,Double ka Meetha,51,no
+2025-12-20,Qubani ka Meetha,17,no
+2025-12-21,Chicken Dum Biryani,334,no
+2025-12-21,Mutton Dum Biryani,100,yes
+2025-12-21,Veg Biryani,59,no
+2025-12-21,Chicken 65,83,no
+2025-12-21,Apollo Fish,34,no
+2025-12-21,Paneer Butter Masala,63,no
+2025-12-21,Butter Naan,227,no
+2025-12-21,Double ka Meetha,83,no
+2025-12-21,Qubani ka Meetha,36,no
+2025-12-22,Chicken Dum Biryani,147,no
+2025-12-22,Mutton Dum Biryani,69,no
+2025-12-22,Veg Biryani,33,no
+2025-12-22,Chicken 65,40,no
+2025-12-22,Apollo Fish,10,no
+2025-12-22,Paneer Butter Masala,17,no
+2025-12-22,Butter Naan,136,no
+2025-12-22,Double ka Meetha,32,no
+2025-12-22,Qubani ka Meetha,9,no
+2025-12-23,Chicken Dum Biryani,198,no
+2025-12-23,Mutton Dum Biryani,82,no
+2025-12-23,Veg Biryani,26,no
+2025-12-23,Chicken 65,50,no
+2025-12-23,Apollo Fish,21,no
+2025-12-23,Paneer Butter Masala,34,no
+2025-12-23,Butter Naan,146,no
+2025-12-23,Double ka Meetha,26,no
+2025-12-23,Qubani ka Meetha,17,no
+2025-12-24,Chicken Dum Biryani,199,no
+2025-12-24,Mutton Dum Biryani,82,no
+2025-12-24,Veg Biryani,30,no
+2025-12-24,Chicken 65,41,no
+2025-12-24,Apollo Fish,20,no
+2025-12-24,Paneer Butter Masala,21,no
+2025-12-24,Butter Naan,135,no
+2025-12-24,Double ka Meetha,35,no
+2025-12-24,Qubani ka Meetha,19,no
+2025-12-25,Chicken Dum Biryani,219,no
+2025-12-25,Mutton Dum Biryani,100,yes
+2025-12-25,Veg Biryani,60,no
+2025-12-25,Chicken 65,66,no
+2025-12-25,Apollo Fish,36,no
+2025-12-25,Paneer Butter Masala,35,no
+2025-12-25,Butter Naan,169,no
+2025-12-25,Double ka Meetha,42,no
+2025-12-25,Qubani ka Meetha,15,no
+2025-12-26,Chicken Dum Biryani,253,no
+2025-12-26,Mutton Dum Biryani,87,no
+2025-12-26,Veg Biryani,35,no
+2025-12-26,Chicken 65,47,no
+2025-12-26,Apollo Fish,28,no
+2025-12-26,Paneer Butter Masala,39,no
+2025-12-26,Butter Naan,184,no
+2025-12-26,Double ka Meetha,50,no
+2025-12-26,Qubani ka Meetha,12,no
+2025-12-27,Chicken Dum Biryani,161,no
+2025-12-27,Mutton Dum Biryani,100,yes
+2025-12-27,Veg Biryani,38,no
+2025-12-27,Chicken 65,110,no
+2025-12-27,Apollo Fish,30,no
+2025-12-27,Paneer Butter Masala,21,no
+2025-12-27,Butter Naan,312,no
+2025-12-27,Double ka Meetha,68,no
+2025-12-27,Qubani ka Meetha,24,no
+2025-12-28,Chicken Dum Biryani,356,no
+2025-12-28,Mutton Dum Biryani,100,yes
+2025-12-28,Veg Biryani,48,no
+2025-12-28,Chicken 65,80,no
+2025-12-28,Apollo Fish,44,no
+2025-12-28,Paneer Butter Masala,20,no
+2025-12-28,Butter Naan,245,no
+2025-12-28,Double ka Meetha,100,no
+2025-12-28,Qubani ka Meetha,30,no
+2025-12-29,Chicken Dum Biryani,227,no
+2025-12-29,Mutton Dum Biryani,100,yes
+2025-12-29,Veg Biryani,28,no
+2025-12-29,Chicken 65,74,no
+2025-12-29,Apollo Fish,28,no
+2025-12-29,Paneer Butter Masala,31,no
+2025-12-29,Butter Naan,124,no
+2025-12-29,Double ka Meetha,75,no
+2025-12-29,Qubani ka Meetha,8,no
+2025-12-30,Chicken Dum Biryani,102,no
+2025-12-30,Mutton Dum Biryani,78,no
+2025-12-30,Veg Biryani,23,no
+2025-12-30,Chicken 65,58,no
+2025-12-30,Apollo Fish,11,no
+2025-12-30,Paneer Butter Masala,25,no
+2025-12-30,Butter Naan,131,no
+2025-12-30,Double ka Meetha,28,no
+2025-12-30,Qubani ka Meetha,12,no
+2025-12-31,Chicken Dum Biryani,182,no
+2025-12-31,Mutton Dum Biryani,100,yes
+2025-12-31,Veg Biryani,25,no
+2025-12-31,Chicken 65,94,no
+2025-12-31,Apollo Fish,20,no
+2025-12-31,Paneer Butter Masala,24,no
+2025-12-31,Butter Naan,250,no
+2025-12-31,Double ka Meetha,110,no
+2025-12-31,Qubani ka Meetha,10,no
+2026-01-01,Chicken Dum Biryani,208,no
+2026-01-01,Mutton Dum Biryani,56,no
+2026-01-01,Veg Biryani,24,no
+2026-01-01,Chicken 65,85,no
+2026-01-01,Apollo Fish,21,no
+2026-01-01,Paneer Butter Masala,23,no
+2026-01-01,Butter Naan,135,no
+2026-01-01,Double ka Meetha,31,no
+2026-01-01,Qubani ka Meetha,12,no
+2026-01-02,Chicken Dum Biryani,184,no
+2026-01-02,Mutton Dum Biryani,74,no
+2026-01-02,Veg Biryani,32,no
+2026-01-02,Chicken 65,46,no
+2026-01-02,Apollo Fish,20,no
+2026-01-02,Paneer Butter Masala,40,no
+2026-01-02,Butter Naan,192,no
+2026-01-02,Double ka Meetha,38,no
+2026-01-02,Qubani ka Meetha,15,no
+2026-01-03,Chicken Dum Biryani,199,no
+2026-01-03,Mutton Dum Biryani,91,no
+2026-01-03,Veg Biryani,43,no
+2026-01-03,Chicken 65,56,no
+2026-01-03,Apollo Fish,36,no
+2026-01-03,Paneer Butter Masala,36,no
+2026-01-03,Butter Naan,287,no
+2026-01-03,Double ka Meetha,73,no
+2026-01-03,Qubani ka Meetha,29,no
+2026-01-04,Chicken Dum Biryani,311,no
+2026-01-04,Mutton Dum Biryani,100,yes
+2026-01-04,Veg Biryani,46,no
+2026-01-04,Chicken 65,82,no
+2026-01-04,Apollo Fish,24,no
+2026-01-04,Paneer Butter Masala,36,no
+2026-01-04,Butter Naan,359,no
+2026-01-04,Double ka Meetha,42,no
+2026-01-04,Qubani ka Meetha,16,no
+2026-01-05,Chicken Dum Biryani,173,no
+2026-01-05,Mutton Dum Biryani,78,no
+2026-01-05,Veg Biryani,26,no
+2026-01-05,Chicken 65,41,no
+2026-01-05,Apollo Fish,27,no
+2026-01-05,Paneer Butter Masala,17,no
+2026-01-05,Butter Naan,108,no
+2026-01-05,Double ka Meetha,33,no
+2026-01-05,Qubani ka Meetha,10,no
+2026-01-06,Chicken Dum Biryani,138,no
+2026-01-06,Mutton Dum Biryani,37,no
+2026-01-06,Veg Biryani,23,no
+2026-01-06,Chicken 65,51,no
+2026-01-06,Apollo Fish,21,no
+2026-01-06,Paneer Butter Masala,30,no
+2026-01-06,Butter Naan,102,no
+2026-01-06,Double ka Meetha,37,no
+2026-01-06,Qubani ka Meetha,12,no
+2026-01-07,Chicken Dum Biryani,156,no
+2026-01-07,Mutton Dum Biryani,56,no
+2026-01-07,Veg Biryani,10,no
+2026-01-07,Chicken 65,64,no
+2026-01-07,Apollo Fish,19,no
+2026-01-07,Paneer Butter Masala,19,no
+2026-01-07,Butter Naan,109,no
+2026-01-07,Double ka Meetha,21,no
+2026-01-07,Qubani ka Meetha,14,no
+2026-01-08,Chicken Dum Biryani,136,no
+2026-01-08,Mutton Dum Biryani,67,no
+2026-01-08,Veg Biryani,14,no
+2026-01-08,Chicken 65,46,no
+2026-01-08,Apollo Fish,23,no
+2026-01-08,Paneer Butter Masala,27,no
+2026-01-08,Butter Naan,213,no
+2026-01-08,Double ka Meetha,23,no
+2026-01-08,Qubani ka Meetha,10,no
+2026-01-09,Chicken Dum Biryani,271,no
+2026-01-09,Mutton Dum Biryani,100,yes
+2026-01-09,Veg Biryani,32,no
+2026-01-09,Chicken 65,37,no
+2026-01-09,Apollo Fish,28,no
+2026-01-09,Paneer Butter Masala,21,no
+2026-01-09,Butter Naan,168,no
+2026-01-09,Double ka Meetha,40,no
+2026-01-09,Qubani ka Meetha,13,no
+2026-01-10,Chicken Dum Biryani,186,no
+2026-01-10,Mutton Dum Biryani,100,yes
+2026-01-10,Veg Biryani,30,no
+2026-01-10,Chicken 65,43,no
+2026-01-10,Apollo Fish,31,no
+2026-01-10,Paneer Butter Masala,41,no
+2026-01-10,Butter Naan,193,no
+2026-01-10,Double ka Meetha,37,no
+2026-01-10,Qubani ka Meetha,17,no
+2026-01-11,Chicken Dum Biryani,240,no
+2026-01-11,Mutton Dum Biryani,100,yes
+2026-01-11,Veg Biryani,60,no
+2026-01-11,Chicken 65,60,no
+2026-01-11,Apollo Fish,17,no
+2026-01-11,Paneer Butter Masala,26,no
+2026-01-11,Butter Naan,151,no
+2026-01-11,Double ka Meetha,87,no
+2026-01-11,Qubani ka Meetha,22,no
+2026-01-12,Chicken Dum Biryani,106,no
+2026-01-12,Mutton Dum Biryani,65,no
+2026-01-12,Veg Biryani,20,no
+2026-01-12,Chicken 65,29,no
+2026-01-12,Apollo Fish,14,no
+2026-01-12,Paneer Butter Masala,21,no
+2026-01-12,Butter Naan,120,no
+2026-01-12,Double ka Meetha,42,no
+2026-01-12,Qubani ka Meetha,16,no
+2026-01-13,Chicken Dum Biryani,101,no
+2026-01-13,Mutton Dum Biryani,81,no
+2026-01-13,Veg Biryani,26,no
+2026-01-13,Chicken 65,47,no
+2026-01-13,Apollo Fish,14,no
+2026-01-13,Paneer Butter Masala,13,no
+2026-01-13,Butter Naan,120,no
+2026-01-13,Double ka Meetha,35,no
+2026-01-13,Qubani ka Meetha,10,no
+2026-01-14,Chicken Dum Biryani,157,no
+2026-01-14,Mutton Dum Biryani,63,no
+2026-01-14,Veg Biryani,16,no
+2026-01-14,Chicken 65,40,no
+2026-01-14,Apollo Fish,20,no
+2026-01-14,Paneer Butter Masala,19,no
+2026-01-14,Butter Naan,114,no
+2026-01-14,Double ka Meetha,21,no
+2026-01-14,Qubani ka Meetha,6,no
+2026-01-15,Chicken Dum Biryani,129,no
+2026-01-15,Mutton Dum Biryani,63,no
+2026-01-15,Veg Biryani,22,no
+2026-01-15,Chicken 65,35,no
+2026-01-15,Apollo Fish,14,no
+2026-01-15,Paneer Butter Masala,14,no
+2026-01-15,Butter Naan,91,no
+2026-01-15,Double ka Meetha,26,no
+2026-01-15,Qubani ka Meetha,10,no
+2026-01-16,Chicken Dum Biryani,254,no
+2026-01-16,Mutton Dum Biryani,100,yes
+2026-01-16,Veg Biryani,50,no
+2026-01-16,Chicken 65,111,no
+2026-01-16,Apollo Fish,15,no
+2026-01-16,Paneer Butter Masala,37,no
+2026-01-16,Butter Naan,132,no
+2026-01-16,Double ka Meetha,113,no
+2026-01-16,Qubani ka Meetha,16,no
+2026-01-17,Chicken Dum Biryani,212,no
+2026-01-17,Mutton Dum Biryani,91,no
+2026-01-17,Veg Biryani,29,no
+2026-01-17,Chicken 65,85,no
+2026-01-17,Apollo Fish,29,no
+2026-01-17,Paneer Butter Masala,23,no
+2026-01-17,Butter Naan,270,no
+2026-01-17,Double ka Meetha,65,no
+2026-01-17,Qubani ka Meetha,23,no
+2026-01-18,Chicken Dum Biryani,246,no
+2026-01-18,Mutton Dum Biryani,77,no
+2026-01-18,Veg Biryani,39,no
+2026-01-18,Chicken 65,50,no
+2026-01-18,Apollo Fish,18,no
+2026-01-18,Paneer Butter Masala,24,no
+2026-01-18,Butter Naan,227,no
+2026-01-18,Double ka Meetha,43,no
+2026-01-18,Qubani ka Meetha,16,no
+2026-01-19,Chicken Dum Biryani,183,no
+2026-01-19,Mutton Dum Biryani,65,no
+2026-01-19,Veg Biryani,31,no
+2026-01-19,Chicken 65,37,no
+2026-01-19,Apollo Fish,23,no
+2026-01-19,Paneer Butter Masala,20,no
+2026-01-19,Butter Naan,140,no
+2026-01-19,Double ka Meetha,55,no
+2026-01-19,Qubani ka Meetha,17,no
+2026-01-20,Chicken Dum Biryani,135,no
+2026-01-20,Mutton Dum Biryani,63,no
+2026-01-20,Veg Biryani,32,no
+2026-01-20,Chicken 65,43,no
+2026-01-20,Apollo Fish,16,no
+2026-01-20,Paneer Butter Masala,18,no
+2026-01-20,Butter Naan,108,no
+2026-01-20,Double ka Meetha,33,no
+2026-01-20,Qubani ka Meetha,26,no
+2026-01-21,Chicken Dum Biryani,179,no
+2026-01-21,Mutton Dum Biryani,54,no
+2026-01-21,Veg Biryani,34,no
+2026-01-21,Chicken 65,54,no
+2026-01-21,Apollo Fish,14,no
+2026-01-21,Paneer Butter Masala,38,no
+2026-01-21,Butter Naan,101,no
+2026-01-21,Double ka Meetha,40,no
+2026-01-21,Qubani ka Meetha,9,no
+2026-01-22,Chicken Dum Biryani,209,no
+2026-01-22,Mutton Dum Biryani,72,no
+2026-01-22,Veg Biryani,18,no
+2026-01-22,Chicken 65,61,no
+2026-01-22,Apollo Fish,17,no
+2026-01-22,Paneer Butter Masala,22,no
+2026-01-22,Butter Naan,115,no
+2026-01-22,Double ka Meetha,29,no
+2026-01-22,Qubani ka Meetha,16,no
+2026-01-23,Chicken Dum Biryani,326,no
+2026-01-23,Mutton Dum Biryani,100,yes
+2026-01-23,Veg Biryani,28,no
+2026-01-23,Chicken 65,94,no
+2026-01-23,Apollo Fish,22,no
+2026-01-23,Paneer Butter Masala,44,no
+2026-01-23,Butter Naan,191,no
+2026-01-23,Double ka Meetha,61,no
+2026-01-23,Qubani ka Meetha,16,no
+2026-01-24,Chicken Dum Biryani,227,no
+2026-01-24,Mutton Dum Biryani,96,no
+2026-01-24,Veg Biryani,37,no
+2026-01-24,Chicken 65,68,no
+2026-01-24,Apollo Fish,21,no
+2026-01-24,Paneer Butter Masala,39,no
+2026-01-24,Butter Naan,125,no
+2026-01-24,Double ka Meetha,26,no
+2026-01-24,Qubani ka Meetha,19,no
+2026-01-25,Chicken Dum Biryani,351,no
+2026-01-25,Mutton Dum Biryani,100,yes
+2026-01-25,Veg Biryani,55,no
+2026-01-25,Chicken 65,96,no
+2026-01-25,Apollo Fish,33,no
+2026-01-25,Paneer Butter Masala,36,no
+2026-01-25,Butter Naan,297,no
+2026-01-25,Double ka Meetha,76,no
+2026-01-25,Qubani ka Meetha,16,no
+2026-01-26,Chicken Dum Biryani,253,no
+2026-01-26,Mutton Dum Biryani,71,no
+2026-01-26,Veg Biryani,25,no
+2026-01-26,Chicken 65,41,no
+2026-01-26,Apollo Fish,11,no
+2026-01-26,Paneer Butter Masala,24,no
+2026-01-26,Butter Naan,166,no
+2026-01-26,Double ka Meetha,27,no
+2026-01-26,Qubani ka Meetha,14,no
+2026-01-27,Chicken Dum Biryani,169,no
+2026-01-27,Mutton Dum Biryani,54,no
+2026-01-27,Veg Biryani,24,no
+2026-01-27,Chicken 65,55,no
+2026-01-27,Apollo Fish,16,no
+2026-01-27,Paneer Butter Masala,24,no
+2026-01-27,Butter Naan,70,no
+2026-01-27,Double ka Meetha,22,no
+2026-01-27,Qubani ka Meetha,18,no
+2026-01-28,Chicken Dum Biryani,146,no
+2026-01-28,Mutton Dum Biryani,72,no
+2026-01-28,Veg Biryani,34,no
+2026-01-28,Chicken 65,45,no
+2026-01-28,Apollo Fish,29,no
+2026-01-28,Paneer Butter Masala,16,no
+2026-01-28,Butter Naan,165,no
+2026-01-28,Double ka Meetha,41,no
+2026-01-28,Qubani ka Meetha,22,no
+2026-01-29,Chicken Dum Biryani,182,no
+2026-01-29,Mutton Dum Biryani,59,no
+2026-01-29,Veg Biryani,27,no
+2026-01-29,Chicken 65,31,no
+2026-01-29,Apollo Fish,27,no
+2026-01-29,Paneer Butter Masala,36,no
+2026-01-29,Butter Naan,114,no
+2026-01-29,Double ka Meetha,26,no
+2026-01-29,Qubani ka Meetha,8,no
+2026-01-30,Chicken Dum Biryani,164,no
+2026-01-30,Mutton Dum Biryani,60,no
+2026-01-30,Veg Biryani,24,no
+2026-01-30,Chicken 65,57,no
+2026-01-30,Apollo Fish,24,no
+2026-01-30,Paneer Butter Masala,21,no
+2026-01-30,Butter Naan,124,no
+2026-01-30,Double ka Meetha,27,no
+2026-01-30,Qubani ka Meetha,14,no
+2026-01-31,Chicken Dum Biryani,221,no
+2026-01-31,Mutton Dum Biryani,94,no
+2026-01-31,Veg Biryani,44,no
+2026-01-31,Chicken 65,65,no
+2026-01-31,Apollo Fish,34,no
+2026-01-31,Paneer Butter Masala,39,no
+2026-01-31,Butter Naan,132,no
+2026-01-31,Double ka Meetha,16,no
+2026-01-31,Qubani ka Meetha,7,no
+2026-02-01,Chicken Dum Biryani,226,no
+2026-02-01,Mutton Dum Biryani,100,yes
+2026-02-01,Veg Biryani,38,no
+2026-02-01,Chicken 65,92,no
+2026-02-01,Apollo Fish,29,no
+2026-02-01,Paneer Butter Masala,24,no
+2026-02-01,Butter Naan,149,no
+2026-02-01,Double ka Meetha,53,no
+2026-02-01,Qubani ka Meetha,14,no
+2026-02-02,Chicken Dum Biryani,124,no
+2026-02-02,Mutton Dum Biryani,61,no
+2026-02-02,Veg Biryani,18,no
+2026-02-02,Chicken 65,70,no
+2026-02-02,Apollo Fish,24,no
+2026-02-02,Paneer Butter Masala,10,no
+2026-02-02,Butter Naan,131,no
+2026-02-02,Double ka Meetha,32,no
+2026-02-02,Qubani ka Meetha,18,no
+2026-02-04,Chicken Dum Biryani,178,no
+2026-02-04,Mutton Dum Biryani,46,no
+2026-02-04,Veg Biryani,44,no
+2026-02-04,Chicken 65,57,no
+2026-02-04,Apollo Fish,23,no
+2026-02-04,Paneer Butter Masala,29,no
+2026-02-04,Butter Naan,164,no
+2026-02-04,Double ka Meetha,33,no
+2026-02-04,Qubani ka Meetha,10,no
+2026-02-05,Chicken Dum Biryani,191,no
+2026-02-05,Mutton Dum Biryani,92,no
+2026-02-05,Veg Biryani,33,no
+2026-02-05,Chicken 65,32,no
+2026-02-05,Apollo Fish,22,no
+2026-02-05,Paneer Butter Masala,28,no
+2026-02-05,Butter Naan,128,no
+2026-02-05,Double ka Meetha,42,no
+2026-02-05,Qubani ka Meetha,4,no
+2026-02-06,Chicken Dum Biryani,255,no
+2026-02-06,Mutton Dum Biryani,53,no
+2026-02-06,Veg Biryani,35,no
+2026-02-06,Chicken 65,82,no
+2026-02-06,Apollo Fish,18,no
+2026-02-06,Paneer Butter Masala,39,no
+2026-02-06,Butter Naan,115,no
+2026-02-06,Double ka Meetha,44,no
+2026-02-06,Qubani ka Meetha,10,no
+2026-02-07,Chicken Dum Biryani,166,no
+2026-02-07,Mutton Dum Biryani,96,no
+2026-02-07,Veg Biryani,41,no
+2026-02-07,Chicken 65,69,no
+2026-02-07,Apollo Fish,35,no
+2026-02-07,Paneer Butter Masala,19,no
+2026-02-07,Butter Naan,221,no
+2026-02-07,Double ka Meetha,16,no
+2026-02-07,Qubani ka Meetha,24,no
+2026-02-08,Chicken Dum Biryani,179,no
+2026-02-08,Mutton Dum Biryani,77,no
+2026-02-08,Veg Biryani,20,no
+2026-02-08,Chicken 65,75,no
+2026-02-08,Apollo Fish,40,no
+2026-02-08,Paneer Butter Masala,56,no
+2026-02-08,Butter Naan,206,no
+2026-02-08,Double ka Meetha,32,no
+2026-02-08,Qubani ka Meetha,16,no
+2026-02-09,Chicken Dum Biryani,106,no
+2026-02-09,Mutton Dum Biryani,79,no
+2026-02-09,Veg Biryani,29,no
+2026-02-09,Chicken 65,52,no
+2026-02-09,Apollo Fish,19,no
+2026-02-09,Paneer Butter Masala,17,no
+2026-02-09,Butter Naan,82,no
+2026-02-09,Double ka Meetha,35,no
+2026-02-09,Qubani ka Meetha,11,no
+2026-02-10,Chicken Dum Biryani,95,no
+2026-02-10,Mutton Dum Biryani,69,no
+2026-02-10,Veg Biryani,21,no
+2026-02-10,Chicken 65,46,no
+2026-02-10,Apollo Fish,14,no
+2026-02-10,Paneer Butter Masala,15,no
+2026-02-10,Butter Naan,85,no
+2026-02-10,Double ka Meetha,34,no
+2026-02-10,Qubani ka Meetha,9,no
+2026-02-11,Chicken Dum Biryani,116,no
+2026-02-11,Mutton Dum Biryani,54,no
+2026-02-11,Veg Biryani,34,no
+2026-02-11,Chicken 65,44,no
+2026-02-11,Apollo Fish,23,no
+2026-02-11,Paneer Butter Masala,24,no
+2026-02-11,Butter Naan,99,no
+2026-02-11,Double ka Meetha,38,no
+2026-02-11,Qubani ka Meetha,9,no
+2026-02-12,Chicken Dum Biryani,205,no
+2026-02-12,Mutton Dum Biryani,58,no
+2026-02-12,Veg Biryani,29,no
+2026-02-12,Chicken 65,62,no
+2026-02-12,Apollo Fish,19,no
+2026-02-12,Paneer Butter Masala,23,no
+2026-02-12,Butter Naan,107,no
+2026-02-12,Double ka Meetha,33,no
+2026-02-12,Qubani ka Meetha,17,no
+2026-02-13,Chicken Dum Biryani,221,no
+2026-02-13,Mutton Dum Biryani,89,no
+2026-02-13,Veg Biryani,28,no
+2026-02-13,Chicken 65,43,no
+2026-02-13,Apollo Fish,21,no
+2026-02-13,Paneer Butter Masala,31,no
+2026-02-13,Butter Naan,176,no
+2026-02-13,Double ka Meetha,40,no
+2026-02-13,Qubani ka Meetha,20,no
+2026-02-14,Chicken Dum Biryani,235,no
+2026-02-14,Mutton Dum Biryani,100,yes
+2026-02-14,Veg Biryani,41,no
+2026-02-14,Chicken 65,57,no
+2026-02-14,Apollo Fish,23,no
+2026-02-14,Paneer Butter Masala,50,no
+2026-02-14,Butter Naan,258,no
+2026-02-14,Double ka Meetha,63,no
+2026-02-14,Qubani ka Meetha,19,no
+2026-02-15,Chicken Dum Biryani,299,no
+2026-02-15,Mutton Dum Biryani,89,no
+2026-02-15,Veg Biryani,29,no
+2026-02-15,Chicken 65,83,no
+2026-02-15,Apollo Fish,22,no
+2026-02-15,Paneer Butter Masala,33,no
+2026-02-15,Butter Naan,206,no
+2026-02-15,Double ka Meetha,39,no
+2026-02-15,Qubani ka Meetha,24,no
+2026-02-16,Chicken Dum Biryani,132,no
+2026-02-16,Mutton Dum Biryani,72,no
+2026-02-16,Veg Biryani,49,no
+2026-02-16,Chicken 65,38,no
+2026-02-16,Apollo Fish,13,no
+2026-02-16,Paneer Butter Masala,35,no
+2026-02-16,Butter Naan,135,no
+2026-02-16,Double ka Meetha,41,no
+2026-02-16,Qubani ka Meetha,6,no
+2026-02-17,Chicken Dum Biryani,314,no
+2026-02-17,Mutton Dum Biryani,75,no
+2026-02-17,Veg Biryani,23,no
+2026-02-17,Chicken 65,34,no
+2026-02-17,Apollo Fish,10,no
+2026-02-17,Paneer Butter Masala,19,no
+2026-02-17,Butter Naan,117,no
+2026-02-17,Double ka Meetha,41,no
+2026-02-17,Qubani ka Meetha,8,no
+2026-02-18,Chicken Dum Biryani,167,no
+2026-02-18,Mutton Dum Biryani,54,no
+2026-02-18,Veg Biryani,22,no
+2026-02-18,Chicken 65,63,no
+2026-02-18,Apollo Fish,17,no
+2026-02-18,Paneer Butter Masala,21,no
+2026-02-18,Butter Naan,145,no
+2026-02-18,Double ka Meetha,31,no
+2026-02-18,Qubani ka Meetha,13,no
+2026-02-19,Chicken Dum Biryani,196,no
+2026-02-19,Mutton Dum Biryani,59,no
+2026-02-19,Veg Biryani,48,no
+2026-02-19,Chicken 65,45,no
+2026-02-19,Apollo Fish,33,no
+2026-02-19,Paneer Butter Masala,19,no
+2026-02-19,Butter Naan,130,no
+2026-02-19,Double ka Meetha,63,no
+2026-02-19,Qubani ka Meetha,6,no
+2026-02-19,Haleem,245,no
+2026-02-20,Chicken Dum Biryani,201,no
+2026-02-20,Mutton Dum Biryani,100,yes
+2026-02-20,Veg Biryani,49,no
+2026-02-20,Chicken 65,62,no
+2026-02-20,Apollo Fish,23,no
+2026-02-20,Paneer Butter Masala,31,no
+2026-02-20,Butter Naan,172,no
+2026-02-20,Double ka Meetha,31,no
+2026-02-20,Qubani ka Meetha,20,no
+2026-02-20,Haleem,320,yes
+2026-02-21,Chicken Dum Biryani,240,no
+2026-02-21,Mutton Dum Biryani,100,yes
+2026-02-21,Veg Biryani,43,no
+2026-02-21,Chicken 65,89,no
+2026-02-21,Apollo Fish,39,no
+2026-02-21,Paneer Butter Masala,32,no
+2026-02-21,Butter Naan,175,no
+2026-02-21,Double ka Meetha,55,no
+2026-02-21,Qubani ka Meetha,26,no
+2026-02-21,Haleem,313,no
+2026-02-22,Chicken Dum Biryani,325,no
+2026-02-22,Mutton Dum Biryani,100,yes
+2026-02-22,Veg Biryani,49,no
+2026-02-22,Chicken 65,78,no
+2026-02-22,Apollo Fish,29,no
+2026-02-22,Paneer Butter Masala,56,no
+2026-02-22,Butter Naan,163,no
+2026-02-22,Double ka Meetha,61,no
+2026-02-22,Qubani ka Meetha,14,no
+2026-02-22,Haleem,320,yes
+2026-02-23,Chicken Dum Biryani,201,no
+2026-02-23,Mutton Dum Biryani,48,no
+2026-02-23,Veg Biryani,28,no
+2026-02-23,Chicken 65,33,no
+2026-02-23,Apollo Fish,18,no
+2026-02-23,Paneer Butter Masala,17,no
+2026-02-23,Butter Naan,106,no
+2026-02-23,Double ka Meetha,51,no
+2026-02-23,Qubani ka Meetha,14,no
+2026-02-23,Haleem,210,no
+2026-02-24,Chicken Dum Biryani,153,no
+2026-02-24,Mutton Dum Biryani,38,no
+2026-02-24,Veg Biryani,33,no
+2026-02-24,Chicken 65,53,no
+2026-02-24,Apollo Fish,13,no
+2026-02-24,Paneer Butter Masala,17,no
+2026-02-24,Butter Naan,176,no
+2026-02-24,Double ka Meetha,40,no
+2026-02-24,Qubani ka Meetha,11,no
+2026-02-24,Haleem,244,no
+2026-02-25,Chicken Dum Biryani,194,no
+2026-02-25,Mutton Dum Biryani,93,no
+2026-02-25,Veg Biryani,16,no
+2026-02-25,Chicken 65,29,no
+2026-02-25,Apollo Fish,13,no
+2026-02-25,Paneer Butter Masala,22,no
+2026-02-25,Butter Naan,131,no
+2026-02-25,Double ka Meetha,24,no
+2026-02-25,Qubani ka Meetha,17,no
+2026-02-25,Haleem,193,no
+2026-02-26,Chicken Dum Biryani,174,no
+2026-02-26,Mutton Dum Biryani,59,no
+2026-02-26,Veg Biryani,46,no
+2026-02-26,Chicken 65,44,no
+2026-02-26,Apollo Fish,28,no
+2026-02-26,Paneer Butter Masala,23,no
+2026-02-26,Butter Naan,111,no
+2026-02-26,Double ka Meetha,44,no
+2026-02-26,Qubani ka Meetha,22,no
+2026-02-26,Haleem,140,no
+2026-02-27,Chicken Dum Biryani,257,no
+2026-02-27,Mutton Dum Biryani,100,yes
+2026-02-27,Veg Biryani,58,no
+2026-02-27,Chicken 65,48,no
+2026-02-27,Apollo Fish,20,no
+2026-02-27,Paneer Butter Masala,27,no
+2026-02-27,Butter Naan,171,no
+2026-02-27,Double ka Meetha,49,no
+2026-02-27,Qubani ka Meetha,21,no
+2026-02-27,Haleem,206,no
+2026-02-28,Chicken Dum Biryani,325,no
+2026-02-28,Mutton Dum Biryani,100,yes
+2026-02-28,Veg Biryani,36,no
+2026-02-28,Chicken 65,113,no
+2026-02-28,Apollo Fish,18,no
+2026-02-28,Paneer Butter Masala,60,no
+2026-02-28,Butter Naan,206,no
+2026-02-28,Double ka Meetha,106,no
+2026-02-28,Qubani ka Meetha,30,no
+2026-02-28,Haleem,309,no
+2026-03-01,Chicken Dum Biryani,376,no
+2026-03-01,Mutton Dum Biryani,100,yes
+2026-03-01,Veg Biryani,61,no
+2026-03-01,Chicken 65,103,no
+2026-03-01,Apollo Fish,26,no
+2026-03-01,Paneer Butter Masala,40,no
+2026-03-01,Butter Naan,207,no
+2026-03-01,Double ka Meetha,67,no
+2026-03-01,Qubani ka Meetha,23,no
+2026-03-01,Haleem,320,yes
+2026-03-02,Chicken Dum Biryani,160,no
+2026-03-02,Mutton Dum Biryani,90,no
+2026-03-02,Veg Biryani,34,no
+2026-03-02,Chicken 65,53,no
+2026-03-02,Apollo Fish,27,no
+2026-03-02,Paneer Butter Masala,21,no
+2026-03-02,Butter Naan,106,no
+2026-03-02,Double ka Meetha,46,no
+2026-03-02,Qubani ka Meetha,19,no
+2026-03-02,Haleem,138,no
+2026-03-03,Chicken Dum Biryani,218,no
+2026-03-03,Mutton Dum Biryani,100,yes
+2026-03-03,Veg Biryani,53,no
+2026-03-03,Chicken 65,56,no
+2026-03-03,Apollo Fish,28,no
+2026-03-03,Paneer Butter Masala,30,no
+2026-03-03,Butter Naan,131,no
+2026-03-03,Double ka Meetha,25,no
+2026-03-03,Qubani ka Meetha,23,no
+2026-03-03,Haleem,235,no
+2026-03-04,Chicken Dum Biryani,233,no
+2026-03-04,Mutton Dum Biryani,100,yes
+2026-03-04,Veg Biryani,29,no
+2026-03-04,Chicken 65,39,no
+2026-03-04,Apollo Fish,28,no
+2026-03-04,Paneer Butter Masala,24,no
+2026-03-04,Butter Naan,99,no
+2026-03-04,Double ka Meetha,29,no
+2026-03-04,Qubani ka Meetha,21,no
+2026-03-04,Haleem,261,no
+2026-03-05,Chicken Dum Biryani,344,no
+2026-03-05,Mutton Dum Biryani,80,no
+2026-03-05,Veg Biryani,37,no
+2026-03-05,Chicken 65,52,no
+2026-03-05,Apollo Fish,14,no
+2026-03-05,Paneer Butter Masala,15,no
+2026-03-05,Butter Naan,163,no
+2026-03-05,Double ka Meetha,37,no
+2026-03-05,Qubani ka Meetha,15,no
+2026-03-05,Haleem,235,no
+2026-03-06,Chicken Dum Biryani,249,no
+2026-03-06,Mutton Dum Biryani,100,yes
+2026-03-06,Veg Biryani,50,no
+2026-03-06,Chicken 65,50,no
+2026-03-06,Apollo Fish,30,no
+2026-03-06,Paneer Butter Masala,31,no
+2026-03-06,Butter Naan,114,no
+2026-03-06,Double ka Meetha,50,no
+2026-03-06,Qubani ka Meetha,22,no
+2026-03-06,Haleem,320,yes
+2026-03-07,Chicken Dum Biryani,382,no
+2026-03-07,Mutton Dum Biryani,100,yes
+2026-03-07,Veg Biryani,55,no
+2026-03-07,Chicken 65,59,no
+2026-03-07,Apollo Fish,20,no
+2026-03-07,Paneer Butter Masala,38,no
+2026-03-07,Butter Naan,196,no
+2026-03-07,Double ka Meetha,47,no
+2026-03-07,Qubani ka Meetha,54,no
+2026-03-07,Haleem,280,no
+2026-03-08,Chicken Dum Biryani,366,no
+2026-03-08,Mutton Dum Biryani,100,yes
+2026-03-08,Veg Biryani,58,no
+2026-03-08,Chicken 65,69,no
+2026-03-08,Apollo Fish,26,no
+2026-03-08,Paneer Butter Masala,38,no
+2026-03-08,Butter Naan,176,no
+2026-03-08,Double ka Meetha,35,no
+2026-03-08,Qubani ka Meetha,13,no
+2026-03-08,Haleem,320,yes
+2026-03-09,Chicken Dum Biryani,126,no
+2026-03-09,Mutton Dum Biryani,76,no
+2026-03-09,Veg Biryani,34,no
+2026-03-09,Chicken 65,37,no
+2026-03-09,Apollo Fish,10,no
+2026-03-09,Paneer Butter Masala,26,no
+2026-03-09,Butter Naan,110,no
+2026-03-09,Double ka Meetha,43,no
+2026-03-09,Qubani ka Meetha,7,no
+2026-03-09,Haleem,176,no
+2026-03-10,Chicken Dum Biryani,134,no
+2026-03-10,Mutton Dum Biryani,93,no
+2026-03-10,Veg Biryani,24,no
+2026-03-10,Chicken 65,34,no
+2026-03-10,Apollo Fish,16,no
+2026-03-10,Paneer Butter Masala,24,no
+2026-03-10,Butter Naan,116,no
+2026-03-10,Double ka Meetha,35,no
+2026-03-10,Qubani ka Meetha,7,no
+2026-03-10,Haleem,176,no
+2026-03-11,Chicken Dum Biryani,172,no
+2026-03-11,Mutton Dum Biryani,93,no
+2026-03-11,Veg Biryani,34,no
+2026-03-11,Chicken 65,91,no
+2026-03-11,Apollo Fish,23,no
+2026-03-11,Paneer Butter Masala,30,no
+2026-03-11,Butter Naan,132,no
+2026-03-11,Double ka Meetha,43,no
+2026-03-11,Qubani ka Meetha,14,no
+2026-03-11,Haleem,231,no
+2026-03-12,Chicken Dum Biryani,230,no
+2026-03-12,Mutton Dum Biryani,88,no
+2026-03-12,Veg Biryani,37,no
+2026-03-12,Chicken 65,67,no
+2026-03-12,Apollo Fish,25,no
+2026-03-12,Paneer Butter Masala,21,no
+2026-03-12,Butter Naan,161,no
+2026-03-12,Double ka Meetha,43,no
+2026-03-12,Qubani ka Meetha,13,no
+2026-03-12,Haleem,249,no
+2026-03-13,Chicken Dum Biryani,248,no
+2026-03-13,Mutton Dum Biryani,100,yes
+2026-03-13,Veg Biryani,55,no
+2026-03-13,Chicken 65,69,no
+2026-03-13,Apollo Fish,19,no
+2026-03-13,Paneer Butter Masala,45,no
+2026-03-13,Butter Naan,100,no
+2026-03-13,Double ka Meetha,51,no
+2026-03-13,Qubani ka Meetha,28,no
+2026-03-13,Haleem,286,no
+2026-03-14,Chicken Dum Biryani,372,no
+2026-03-14,Mutton Dum Biryani,100,yes
+2026-03-14,Veg Biryani,40,no
+2026-03-14,Chicken 65,69,no
+2026-03-14,Apollo Fish,30,no
+2026-03-14,Paneer Butter Masala,26,no
+2026-03-14,Butter Naan,161,no
+2026-03-14,Double ka Meetha,48,no
+2026-03-14,Qubani ka Meetha,30,no
+2026-03-14,Haleem,302,no
+2026-03-15,Chicken Dum Biryani,248,no
+2026-03-15,Mutton Dum Biryani,100,yes
+2026-03-15,Veg Biryani,56,no
+2026-03-15,Chicken 65,80,no
+2026-03-15,Apollo Fish,34,no
+2026-03-15,Paneer Butter Masala,57,no
+2026-03-15,Butter Naan,114,no
+2026-03-15,Double ka Meetha,37,no
+2026-03-15,Qubani ka Meetha,14,no
+2026-03-15,Haleem,293,no
+2026-03-16,Chicken Dum Biryani,182,no
+2026-03-16,Mutton Dum Biryani,81,no
+2026-03-16,Veg Biryani,33,no
+2026-03-16,Chicken 65,37,no
+2026-03-16,Apollo Fish,16,no
+2026-03-16,Paneer Butter Masala,25,no
+2026-03-16,Butter Naan,89,no
+2026-03-16,Double ka Meetha,41,no
+2026-03-16,Qubani ka Meetha,13,no
+2026-03-16,Haleem,240,no
+2026-03-17,Chicken Dum Biryani,120,no
+2026-03-17,Mutton Dum Biryani,50,no
+2026-03-17,Veg Biryani,35,no
+2026-03-17,Chicken 65,46,no
+2026-03-17,Apollo Fish,9,no
+2026-03-17,Paneer Butter Masala,24,no
+2026-03-17,Butter Naan,98,no
+2026-03-17,Double ka Meetha,28,no
+2026-03-17,Qubani ka Meetha,19,no
+2026-03-17,Haleem,177,no
+2026-03-18,Chicken Dum Biryani,216,no
+2026-03-18,Mutton Dum Biryani,92,no
+2026-03-18,Veg Biryani,38,no
+2026-03-18,Chicken 65,44,no
+2026-03-18,Apollo Fish,17,no
+2026-03-18,Paneer Butter Masala,32,no
+2026-03-18,Butter Naan,76,no
+2026-03-18,Double ka Meetha,35,no
+2026-03-18,Qubani ka Meetha,13,no
+2026-03-18,Haleem,179,no
+2026-03-19,Chicken Dum Biryani,274,no
+2026-03-19,Mutton Dum Biryani,72,no
+2026-03-19,Veg Biryani,29,no
+2026-03-19,Chicken 65,72,no
+2026-03-19,Apollo Fish,16,no
+2026-03-19,Paneer Butter Masala,23,no
+2026-03-19,Butter Naan,165,no
+2026-03-19,Double ka Meetha,64,no
+2026-03-19,Qubani ka Meetha,22,no
+2026-03-19,Haleem,257,no
+2026-03-20,Chicken Dum Biryani,144,no
+2026-03-20,Mutton Dum Biryani,95,no
+2026-03-20,Veg Biryani,19,no
+2026-03-20,Chicken 65,92,no
+2026-03-20,Apollo Fish,23,no
+2026-03-20,Paneer Butter Masala,34,no
+2026-03-20,Butter Naan,144,no
+2026-03-20,Double ka Meetha,51,no
+2026-03-20,Qubani ka Meetha,17,no
+2026-03-21,Chicken Dum Biryani,282,no
+2026-03-21,Mutton Dum Biryani,100,yes
+2026-03-21,Veg Biryani,53,no
+2026-03-21,Chicken 65,71,no
+2026-03-21,Apollo Fish,41,no
+2026-03-21,Paneer Butter Masala,47,no
+2026-03-21,Butter Naan,350,no
+2026-03-21,Double ka Meetha,61,no
+2026-03-21,Qubani ka Meetha,31,no
+2026-03-22,Chicken Dum Biryani,246,no
+2026-03-22,Mutton Dum Biryani,100,yes
+2026-03-22,Veg Biryani,37,no
+2026-03-22,Chicken 65,96,no
+2026-03-22,Apollo Fish,31,no
+2026-03-22,Paneer Butter Masala,29,no
+2026-03-22,Butter Naan,146,no
+2026-03-22,Double ka Meetha,43,no
+2026-03-22,Qubani ka Meetha,14,no
+2026-03-23,Chicken Dum Biryani,115,no
+2026-03-23,Mutton Dum Biryani,59,no
+2026-03-23,Veg Biryani,25,no
+2026-03-23,Chicken 65,52,no
+2026-03-23,Apollo Fish,18,no
+2026-03-23,Paneer Butter Masala,22,no
+2026-03-23,Butter Naan,170,no
+2026-03-23,Double ka Meetha,44,no
+2026-03-23,Qubani ka Meetha,6,no
+2026-03-24,Chicken Dum Biryani,178,no
+2026-03-24,Mutton Dum Biryani,53,no
+2026-03-24,Veg Biryani,27,no
+2026-03-24,Chicken 65,45,no
+2026-03-24,Apollo Fish,8,no
+2026-03-24,Paneer Butter Masala,24,no
+2026-03-24,Butter Naan,140,no
+2026-03-24,Double ka Meetha,33,no
+2026-03-24,Qubani ka Meetha,1,no
+2026-03-25,Chicken Dum Biryani,167,no
+2026-03-25,Mutton Dum Biryani,100,yes
+2026-03-25,Veg Biryani,47,no
+2026-03-25,Chicken 65,86,no
+2026-03-25,Apollo Fish,16,no
+2026-03-25,Paneer Butter Masala,23,no
+2026-03-25,Butter Naan,162,no
+2026-03-25,Double ka Meetha,23,no
+2026-03-25,Qubani ka Meetha,14,no
+2026-03-26,Chicken Dum Biryani,232,no
+2026-03-26,Mutton Dum Biryani,92,no
+2026-03-26,Veg Biryani,44,no
+2026-03-26,Chicken 65,47,no
+2026-03-26,Apollo Fish,40,no
+2026-03-26,Paneer Butter Masala,30,no
+2026-03-26,Butter Naan,166,no
+2026-03-26,Double ka Meetha,42,no
+2026-03-26,Qubani ka Meetha,14,no
+2026-03-27,Chicken Dum Biryani,252,no
+2026-03-27,Mutton Dum Biryani,64,no
+2026-03-27,Veg Biryani,36,no
+2026-03-27,Chicken 65,81,no
+2026-03-27,Apollo Fish,26,no
+2026-03-27,Paneer Butter Masala,16,no
+2026-03-27,Butter Naan,169,no
+2026-03-27,Double ka Meetha,31,no
+2026-03-27,Qubani ka Meetha,11,no
+2026-03-28,Chicken Dum Biryani,203,no
+2026-03-28,Mutton Dum Biryani,100,yes
+2026-03-28,Veg Biryani,43,no
+2026-03-28,Chicken 65,94,no
+2026-03-28,Apollo Fish,27,no
+2026-03-28,Paneer Butter Masala,32,no
+2026-03-28,Butter Naan,169,no
+2026-03-28,Double ka Meetha,55,no
+2026-03-28,Qubani ka Meetha,28,no
+2026-03-29,Chicken Dum Biryani,212,no
+2026-03-29,Mutton Dum Biryani,93,no
+2026-03-29,Veg Biryani,33,no
+2026-03-29,Chicken 65,77,no
+2026-03-29,Apollo Fish,33,no
+2026-03-29,Paneer Butter Masala,34,no
+2026-03-29,Butter Naan,218,no
+2026-03-29,Double ka Meetha,37,no
+2026-03-29,Qubani ka Meetha,22,no
+2026-03-30,Chicken Dum Biryani,165,no
+2026-03-30,Mutton Dum Biryani,93,no
+2026-03-30,Veg Biryani,27,no
+2026-03-30,Chicken 65,51,no
+2026-03-30,Apollo Fish,22,no
+2026-03-30,Paneer Butter Masala,12,no
+2026-03-30,Butter Naan,99,no
+2026-03-30,Double ka Meetha,38,no
+2026-03-30,Qubani ka Meetha,4,no
+2026-03-31,Chicken Dum Biryani,177,no
+2026-03-31,Mutton Dum Biryani,82,no
+2026-03-31,Veg Biryani,29,no
+2026-03-31,Chicken 65,49,no
+2026-03-31,Apollo Fish,23,no
+2026-03-31,Paneer Butter Masala,20,no
+2026-03-31,Butter Naan,117,no
+2026-03-31,Double ka Meetha,36,no
+2026-03-31,Qubani ka Meetha,25,no
+2026-04-01,Chicken Dum Biryani,127,no
+2026-04-01,Mutton Dum Biryani,76,no
+2026-04-01,Veg Biryani,26,no
+2026-04-01,Chicken 65,52,no
+2026-04-01,Apollo Fish,9,no
+2026-04-01,Paneer Butter Masala,21,no
+2026-04-01,Butter Naan,97,no
+2026-04-01,Double ka Meetha,31,no
+2026-04-01,Qubani ka Meetha,14,no
+2026-04-02,Chicken Dum Biryani,185,no
+2026-04-02,Mutton Dum Biryani,70,no
+2026-04-02,Veg Biryani,43,no
+2026-04-02,Chicken 65,94,no
+2026-04-02,Apollo Fish,22,no
+2026-04-02,Paneer Butter Masala,21,no
+2026-04-02,Butter Naan,161,no
+2026-04-02,Double ka Meetha,51,no
+2026-04-02,Qubani ka Meetha,15,no
+2026-04-03,Chicken Dum Biryani,331,no
+2026-04-03,Mutton Dum Biryani,100,yes
+2026-04-03,Veg Biryani,32,no
+2026-04-03,Chicken 65,149,no
+2026-04-03,Apollo Fish,27,no
+2026-04-03,Paneer Butter Masala,27,no
+2026-04-03,Butter Naan,272,no
+2026-04-03,Double ka Meetha,82,no
+2026-04-03,Qubani ka Meetha,15,no
+2026-04-04,Chicken Dum Biryani,187,no
+2026-04-04,Mutton Dum Biryani,86,no
+2026-04-04,Veg Biryani,41,no
+2026-04-04,Chicken 65,80,no
+2026-04-04,Apollo Fish,23,no
+2026-04-04,Paneer Butter Masala,27,no
+2026-04-04,Butter Naan,175,no
+2026-04-04,Double ka Meetha,56,no
+2026-04-04,Qubani ka Meetha,21,no
+2026-04-05,Chicken Dum Biryani,225,no
+2026-04-05,Mutton Dum Biryani,98,no
+2026-04-05,Veg Biryani,27,no
+2026-04-05,Chicken 65,62,no
+2026-04-05,Apollo Fish,29,no
+2026-04-05,Paneer Butter Masala,32,no
+2026-04-05,Butter Naan,208,no
+2026-04-05,Double ka Meetha,60,no
+2026-04-05,Qubani ka Meetha,17,no
+2026-04-06,Chicken Dum Biryani,137,no
+2026-04-06,Mutton Dum Biryani,69,no
+2026-04-06,Veg Biryani,26,no
+2026-04-06,Chicken 65,46,no
+2026-04-06,Apollo Fish,14,no
+2026-04-06,Paneer Butter Masala,19,no
+2026-04-06,Butter Naan,89,no
+2026-04-06,Double ka Meetha,29,no
+2026-04-06,Qubani ka Meetha,12,no
+2026-04-07,Chicken Dum Biryani,166,no
+2026-04-07,Mutton Dum Biryani,73,no
+2026-04-07,Veg Biryani,15,no
+2026-04-07,Chicken 65,59,no
+2026-04-07,Apollo Fish,16,no
+2026-04-07,Paneer Butter Masala,16,no
+2026-04-07,Butter Naan,114,no
+2026-04-07,Double ka Meetha,20,no
+2026-04-07,Qubani ka Meetha,12,no
+2026-04-08,Chicken Dum Biryani,168,no
+2026-04-08,Mutton Dum Biryani,66,no
+2026-04-08,Veg Biryani,32,no
+2026-04-08,Chicken 65,62,no
+2026-04-08,Apollo Fish,23,no
+2026-04-08,Paneer Butter Masala,43,no
+2026-04-08,Butter Naan,199,no
+2026-04-08,Double ka Meetha,45,no
+2026-04-08,Qubani ka Meetha,20,no
+2026-04-09,Chicken Dum Biryani,130,no
+2026-04-09,Mutton Dum Biryani,72,no
+2026-04-09,Veg Biryani,24,no
+2026-04-09,Chicken 65,84,no
+2026-04-09,Apollo Fish,15,no
+2026-04-09,Paneer Butter Masala,29,no
+2026-04-09,Butter Naan,148,no
+2026-04-09,Double ka Meetha,29,no
+2026-04-09,Qubani ka Meetha,9,no
+2026-04-10,Chicken Dum Biryani,169,no
+2026-04-10,Mutton Dum Biryani,88,no
+2026-04-10,Veg Biryani,31,no
+2026-04-10,Chicken 65,43,no
+2026-04-10,Apollo Fish,18,no
+2026-04-10,Paneer Butter Masala,21,no
+2026-04-10,Butter Naan,136,no
+2026-04-10,Double ka Meetha,43,no
+2026-04-10,Qubani ka Meetha,12,no
+2026-04-11,Chicken Dum Biryani,290,no
+2026-04-11,Mutton Dum Biryani,88,no
+2026-04-11,Veg Biryani,34,no
+2026-04-11,Chicken 65,66,no
+2026-04-11,Apollo Fish,30,no
+2026-04-11,Paneer Butter Masala,36,no
+2026-04-11,Butter Naan,154,no
+2026-04-11,Double ka Meetha,53,no
+2026-04-11,Qubani ka Meetha,20,no
+2026-04-12,Chicken Dum Biryani,253,no
+2026-04-12,Mutton Dum Biryani,100,yes
+2026-04-12,Veg Biryani,41,no
+2026-04-12,Chicken 65,77,no
+2026-04-12,Apollo Fish,24,no
+2026-04-12,Paneer Butter Masala,59,no
+2026-04-12,Butter Naan,245,no
+2026-04-12,Double ka Meetha,54,no
+2026-04-12,Qubani ka Meetha,26,no
+2026-04-13,Chicken Dum Biryani,145,no
+2026-04-13,Mutton Dum Biryani,52,no
+2026-04-13,Veg Biryani,33,no
+2026-04-13,Chicken 65,63,no
+2026-04-13,Apollo Fish,13,no
+2026-04-13,Paneer Butter Masala,22,no
+2026-04-13,Butter Naan,117,no
+2026-04-13,Double ka Meetha,46,no
+2026-04-13,Qubani ka Meetha,14,no
+2026-04-14,Chicken Dum Biryani,148,no
+2026-04-14,Mutton Dum Biryani,58,no
+2026-04-14,Veg Biryani,20,no
+2026-04-14,Chicken 65,33,no
+2026-04-14,Apollo Fish,12,no
+2026-04-14,Paneer Butter Masala,22,no
+2026-04-14,Butter Naan,117,no
+2026-04-14,Double ka Meetha,23,no
+2026-04-14,Qubani ka Meetha,22,no
+2026-04-15,Chicken Dum Biryani,95,no
+2026-04-15,Mutton Dum Biryani,51,no
+2026-04-15,Veg Biryani,28,no
+2026-04-15,Chicken 65,28,no
+2026-04-15,Apollo Fish,26,no
+2026-04-15,Paneer Butter Masala,11,no
+2026-04-15,Butter Naan,171,no
+2026-04-15,Double ka Meetha,27,no
+2026-04-15,Qubani ka Meetha,20,no
+2026-04-16,Chicken Dum Biryani,132,no
+2026-04-16,Mutton Dum Biryani,39,no
+2026-04-16,Veg Biryani,34,no
+2026-04-16,Chicken 65,65,no
+2026-04-16,Apollo Fish,24,no
+2026-04-16,Paneer Butter Masala,14,no
+2026-04-16,Butter Naan,152,no
+2026-04-16,Double ka Meetha,26,no
+2026-04-16,Qubani ka Meetha,13,no
+2026-04-17,Chicken Dum Biryani,171,no
+2026-04-17,Mutton Dum Biryani,89,no
+2026-04-17,Veg Biryani,49,no
+2026-04-17,Chicken 65,100,no
+2026-04-17,Apollo Fish,33,no
+2026-04-17,Paneer Butter Masala,30,no
+2026-04-17,Butter Naan,135,no
+2026-04-17,Double ka Meetha,42,no
+2026-04-17,Qubani ka Meetha,19,no
+2026-04-18,Chicken Dum Biryani,263,no
+2026-04-18,Mutton Dum Biryani,100,yes
+2026-04-18,Veg Biryani,32,no
+2026-04-18,Chicken 65,60,no
+2026-04-18,Apollo Fish,23,no
+2026-04-18,Paneer Butter Masala,36,no
+2026-04-18,Butter Naan,261,no
+2026-04-18,Double ka Meetha,23,no
+2026-04-18,Qubani ka Meetha,23,no
+2026-04-19,Chicken Dum Biryani,214,no
+2026-04-19,Mutton Dum Biryani,100,yes
+2026-04-19,Veg Biryani,48,no
+2026-04-19,Chicken 65,85,no
+2026-04-19,Apollo Fish,22,no
+2026-04-19,Paneer Butter Masala,56,no
+2026-04-19,Butter Naan,204,no
+2026-04-19,Double ka Meetha,76,no
+2026-04-19,Qubani ka Meetha,17,no
+2026-04-20,Chicken Dum Biryani,105,no
+2026-04-20,Mutton Dum Biryani,44,no
+2026-04-20,Veg Biryani,16,no
+2026-04-20,Chicken 65,41,no
+2026-04-20,Apollo Fish,9,no
+2026-04-20,Paneer Butter Masala,16,no
+2026-04-20,Butter Naan,133,no
+2026-04-20,Double ka Meetha,27,no
+2026-04-20,Qubani ka Meetha,4,no
+2026-04-21,Chicken Dum Biryani,84,no
+2026-04-21,Mutton Dum Biryani,49,no
+2026-04-21,Veg Biryani,29,no
+2026-04-21,Chicken 65,25,no
+2026-04-21,Apollo Fish,19,no
+2026-04-21,Paneer Butter Masala,17,no
+2026-04-21,Butter Naan,99,no
+2026-04-21,Double ka Meetha,25,no
+2026-04-21,Qubani ka Meetha,6,no
+2026-04-22,Chicken Dum Biryani,134,no
+2026-04-22,Mutton Dum Biryani,65,no
+2026-04-22,Veg Biryani,23,no
+2026-04-22,Chicken 65,38,no
+2026-04-22,Apollo Fish,17,no
+2026-04-22,Paneer Butter Masala,18,no
+2026-04-22,Butter Naan,67,no
+2026-04-22,Double ka Meetha,39,no
+2026-04-22,Qubani ka Meetha,10,no
+2026-04-23,Chicken Dum Biryani,154,no
+2026-04-23,Mutton Dum Biryani,89,no
+2026-04-23,Veg Biryani,19,no
+2026-04-23,Chicken 65,33,no
+2026-04-23,Apollo Fish,28,no
+2026-04-23,Paneer Butter Masala,20,no
+2026-04-23,Butter Naan,102,no
+2026-04-23,Double ka Meetha,28,no
+2026-04-23,Qubani ka Meetha,12,no
+2026-04-24,Chicken Dum Biryani,184,no
+2026-04-24,Mutton Dum Biryani,68,no
+2026-04-24,Veg Biryani,35,no
+2026-04-24,Chicken 65,63,no
+2026-04-24,Apollo Fish,26,no
+2026-04-24,Paneer Butter Masala,25,no
+2026-04-24,Butter Naan,184,no
+2026-04-24,Double ka Meetha,48,no
+2026-04-24,Qubani ka Meetha,21,no
+2026-04-25,Chicken Dum Biryani,172,no
+2026-04-25,Mutton Dum Biryani,100,yes
+2026-04-25,Veg Biryani,52,no
+2026-04-25,Chicken 65,54,no
+2026-04-25,Apollo Fish,23,no
+2026-04-25,Paneer Butter Masala,27,no
+2026-04-25,Butter Naan,121,no
+2026-04-25,Double ka Meetha,39,no
+2026-04-25,Qubani ka Meetha,16,no
+2026-04-26,Chicken Dum Biryani,168,no
+2026-04-26,Mutton Dum Biryani,84,no
+2026-04-26,Veg Biryani,20,no
+2026-04-26,Chicken 65,69,no
+2026-04-26,Apollo Fish,39,no
+2026-04-26,Paneer Butter Masala,33,no
+2026-04-26,Butter Naan,169,no
+2026-04-26,Double ka Meetha,43,no
+2026-04-26,Qubani ka Meetha,22,no
+2026-04-27,Chicken Dum Biryani,124,no
+2026-04-27,Mutton Dum Biryani,52,no
+2026-04-27,Veg Biryani,22,no
+2026-04-27,Chicken 65,55,no
+2026-04-27,Apollo Fish,8,no
+2026-04-27,Paneer Butter Masala,12,no
+2026-04-27,Butter Naan,133,no
+2026-04-27,Double ka Meetha,26,no
+2026-04-27,Qubani ka Meetha,17,no
+2026-04-28,Chicken Dum Biryani,133,no
+2026-04-28,Mutton Dum Biryani,50,no
+2026-04-28,Veg Biryani,20,no
+2026-04-28,Chicken 65,50,no
+2026-04-28,Apollo Fish,16,no
+2026-04-28,Paneer Butter Masala,18,no
+2026-04-28,Butter Naan,137,no
+2026-04-28,Double ka Meetha,30,no
+2026-04-28,Qubani ka Meetha,11,no
+2026-04-29,Chicken Dum Biryani,130,no
+2026-04-29,Mutton Dum Biryani,57,no
+2026-04-29,Veg Biryani,22,no
+2026-04-29,Chicken 65,37,no
+2026-04-29,Apollo Fish,19,no
+2026-04-29,Paneer Butter Masala,26,no
+2026-04-29,Butter Naan,146,no
+2026-04-29,Double ka Meetha,41,no
+2026-04-29,Qubani ka Meetha,17,no
+2026-04-30,Chicken Dum Biryani,167,no
+2026-04-30,Mutton Dum Biryani,52,no
+2026-04-30,Veg Biryani,17,no
+2026-04-30,Chicken 65,43,no
+2026-04-30,Apollo Fish,11,no
+2026-04-30,Paneer Butter Masala,21,no
+2026-04-30,Butter Naan,119,no
+2026-04-30,Double ka Meetha,41,no
+2026-04-30,Qubani ka Meetha,15,no
+2026-05-01,Chicken Dum Biryani,188,no
+2026-05-01,Mutton Dum Biryani,100,yes
+2026-05-01,Veg Biryani,51,no
+2026-05-01,Chicken 65,70,no
+2026-05-01,Apollo Fish,20,no
+2026-05-01,Paneer Butter Masala,38,no
+2026-05-01,Butter Naan,234,no
+2026-05-01,Double ka Meetha,42,no
+2026-05-01,Qubani ka Meetha,14,no
+2026-05-02,Chicken Dum Biryani,278,no
+2026-05-02,Mutton Dum Biryani,71,no
+2026-05-02,Veg Biryani,34,no
+2026-05-02,Chicken 65,89,no
+2026-05-02,Apollo Fish,32,no
+2026-05-02,Paneer Butter Masala,25,no
+2026-05-02,Butter Naan,209,no
+2026-05-02,Double ka Meetha,70,no
+2026-05-02,Qubani ka Meetha,14,no
+2026-05-03,Chicken Dum Biryani,186,no
+2026-05-03,Mutton Dum Biryani,99,no
+2026-05-03,Veg Biryani,35,no
+2026-05-03,Chicken 65,52,no
+2026-05-03,Apollo Fish,25,no
+2026-05-03,Paneer Butter Masala,31,no
+2026-05-03,Butter Naan,298,no
+2026-05-03,Double ka Meetha,45,no
+2026-05-03,Qubani ka Meetha,37,no
+2026-05-04,Chicken Dum Biryani,184,no
+2026-05-04,Mutton Dum Biryani,55,no
+2026-05-04,Veg Biryani,17,no
+2026-05-04,Chicken 65,49,no
+2026-05-04,Apollo Fish,26,no
+2026-05-04,Paneer Butter Masala,30,no
+2026-05-04,Butter Naan,99,no
+2026-05-04,Double ka Meetha,41,no
+2026-05-04,Qubani ka Meetha,17,no
+2026-05-05,Chicken Dum Biryani,167,no
+2026-05-05,Mutton Dum Biryani,68,no
+2026-05-05,Veg Biryani,18,no
+2026-05-05,Chicken 65,33,no
+2026-05-05,Apollo Fish,20,no
+2026-05-05,Paneer Butter Masala,30,no
+2026-05-05,Butter Naan,139,no
+2026-05-05,Double ka Meetha,17,no
+2026-05-05,Qubani ka Meetha,19,no
+2026-05-06,Chicken Dum Biryani,174,no
+2026-05-06,Mutton Dum Biryani,51,no
+2026-05-06,Veg Biryani,15,no
+2026-05-06,Chicken 65,48,no
+2026-05-06,Apollo Fish,10,no
+2026-05-06,Paneer Butter Masala,28,no
+2026-05-06,Butter Naan,86,no
+2026-05-06,Double ka Meetha,33,no
+2026-05-06,Qubani ka Meetha,13,no
+2026-05-07,Chicken Dum Biryani,196,no
+2026-05-07,Mutton Dum Biryani,69,no
+2026-05-07,Veg Biryani,21,no
+2026-05-07,Chicken 65,33,no
+2026-05-07,Apollo Fish,13,no
+2026-05-07,Paneer Butter Masala,25,no
+2026-05-07,Butter Naan,151,no
+2026-05-07,Double ka Meetha,34,no
+2026-05-07,Qubani ka Meetha,15,no
+2026-05-08,Chicken Dum Biryani,176,no
+2026-05-08,Mutton Dum Biryani,81,no
+2026-05-08,Veg Biryani,35,no
+2026-05-08,Chicken 65,71,no
+2026-05-08,Apollo Fish,29,no
+2026-05-08,Paneer Butter Masala,24,no
+2026-05-08,Butter Naan,202,no
+2026-05-08,Double ka Meetha,43,no
+2026-05-08,Qubani ka Meetha,15,no
+2026-05-09,Chicken Dum Biryani,191,no
+2026-05-09,Mutton Dum Biryani,100,yes
+2026-05-09,Veg Biryani,46,no
+2026-05-09,Chicken 65,88,no
+2026-05-09,Apollo Fish,17,no
+2026-05-09,Paneer Butter Masala,33,no
+2026-05-09,Butter Naan,223,no
+2026-05-09,Double ka Meetha,53,no
+2026-05-09,Qubani ka Meetha,16,no
+2026-05-10,Chicken Dum Biryani,194,no
+2026-05-10,Mutton Dum Biryani,79,no
+2026-05-10,Veg Biryani,46,no
+2026-05-10,Chicken 65,67,no
+2026-05-10,Apollo Fish,28,no
+2026-05-10,Paneer Butter Masala,37,no
+2026-05-10,Butter Naan,222,no
+2026-05-10,Double ka Meetha,64,no
+2026-05-10,Qubani ka Meetha,26,no
+2026-05-11,Chicken Dum Biryani,159,no
+2026-05-11,Mutton Dum Biryani,62,no
+2026-05-11,Veg Biryani,11,no
+2026-05-11,Chicken 65,35,no
+2026-05-11,Apollo Fish,16,no
+2026-05-11,Paneer Butter Masala,27,no
+2026-05-11,Butter Naan,116,no
+2026-05-11,Double ka Meetha,30,no
+2026-05-11,Qubani ka Meetha,17,no
+2026-05-12,Chicken Dum Biryani,105,no
+2026-05-12,Mutton Dum Biryani,51,no
+2026-05-12,Veg Biryani,26,no
+2026-05-12,Chicken 65,42,no
+2026-05-12,Apollo Fish,19,no
+2026-05-12,Paneer Butter Masala,18,no
+2026-05-12,Butter Naan,118,no
+2026-05-12,Double ka Meetha,29,no
+2026-05-12,Qubani ka Meetha,10,no
+2026-05-13,Chicken Dum Biryani,121,no
+2026-05-13,Mutton Dum Biryani,56,no
+2026-05-13,Veg Biryani,17,no
+2026-05-13,Chicken 65,49,no
+2026-05-13,Apollo Fish,11,no
+2026-05-13,Paneer Butter Masala,27,no
+2026-05-13,Butter Naan,109,no
+2026-05-13,Double ka Meetha,31,no
+2026-05-13,Qubani ka Meetha,6,no
+2026-05-14,Chicken Dum Biryani,141,no
+2026-05-14,Mutton Dum Biryani,50,no
+2026-05-14,Veg Biryani,31,no
+2026-05-14,Chicken 65,47,no
+2026-05-14,Apollo Fish,20,no
+2026-05-14,Paneer Butter Masala,12,no
+2026-05-14,Butter Naan,111,no
+2026-05-14,Double ka Meetha,45,no
+2026-05-14,Qubani ka Meetha,3,no
+2026-05-15,Chicken Dum Biryani,352,no
+2026-05-15,Mutton Dum Biryani,100,yes
+2026-05-15,Veg Biryani,28,no
+2026-05-15,Chicken 65,79,no
+2026-05-15,Apollo Fish,21,no
+2026-05-15,Paneer Butter Masala,26,no
+2026-05-15,Butter Naan,146,no
+2026-05-15,Double ka Meetha,57,no
+2026-05-15,Qubani ka Meetha,19,no
+2026-05-16,Chicken Dum Biryani,165,no
+2026-05-16,Mutton Dum Biryani,95,no
+2026-05-16,Veg Biryani,37,no
+2026-05-16,Chicken 65,87,no
+2026-05-16,Apollo Fish,21,no
+2026-05-16,Paneer Butter Masala,35,no
+2026-05-16,Butter Naan,219,no
+2026-05-16,Double ka Meetha,45,no
+2026-05-16,Qubani ka Meetha,10,no
+2026-05-17,Chicken Dum Biryani,192,no
+2026-05-17,Mutton Dum Biryani,100,yes
+2026-05-17,Veg Biryani,20,no
+2026-05-17,Chicken 65,93,no
+2026-05-17,Apollo Fish,27,no
+2026-05-17,Paneer Butter Masala,41,no
+2026-05-17,Butter Naan,145,no
+2026-05-17,Double ka Meetha,31,no
+2026-05-17,Qubani ka Meetha,15,no
+2026-05-18,Chicken Dum Biryani,193,no
+2026-05-18,Mutton Dum Biryani,52,no
+2026-05-18,Veg Biryani,19,no
+2026-05-18,Chicken 65,55,no
+2026-05-18,Apollo Fish,24,no
+2026-05-18,Paneer Butter Masala,16,no
+2026-05-18,Butter Naan,136,no
+2026-05-18,Double ka Meetha,26,no
+2026-05-18,Qubani ka Meetha,18,no
+2026-05-19,Chicken Dum Biryani,127,no
+2026-05-19,Mutton Dum Biryani,71,no
+2026-05-19,Veg Biryani,36,no
+2026-05-19,Chicken 65,37,no
+2026-05-19,Apollo Fish,13,no
+2026-05-19,Paneer Butter Masala,21,no
+2026-05-19,Butter Naan,123,no
+2026-05-19,Double ka Meetha,19,no
+2026-05-19,Qubani ka Meetha,4,no
+2026-05-20,Chicken Dum Biryani,104,no
+2026-05-20,Mutton Dum Biryani,78,no
+2026-05-20,Veg Biryani,30,no
+2026-05-20,Chicken 65,47,no
+2026-05-20,Apollo Fish,11,no
+2026-05-20,Paneer Butter Masala,34,no
+2026-05-20,Butter Naan,91,no
+2026-05-20,Double ka Meetha,24,no
+2026-05-20,Qubani ka Meetha,10,no
+2026-05-21,Chicken Dum Biryani,153,no
+2026-05-21,Mutton Dum Biryani,62,no
+2026-05-21,Veg Biryani,37,no
+2026-05-21,Chicken 65,49,no
+2026-05-21,Apollo Fish,27,no
+2026-05-21,Paneer Butter Masala,15,no
+2026-05-21,Butter Naan,100,no
+2026-05-21,Double ka Meetha,34,no
+2026-05-21,Qubani ka Meetha,8,no
+2026-05-22,Chicken Dum Biryani,279,no
+2026-05-22,Mutton Dum Biryani,84,no
+2026-05-22,Veg Biryani,54,no
+2026-05-22,Chicken 65,95,no
+2026-05-22,Apollo Fish,30,no
+2026-05-22,Paneer Butter Masala,33,no
+2026-05-22,Butter Naan,230,no
+2026-05-22,Double ka Meetha,23,no
+2026-05-22,Qubani ka Meetha,13,no
+2026-05-23,Chicken Dum Biryani,267,no
+2026-05-23,Mutton Dum Biryani,100,yes
+2026-05-23,Veg Biryani,35,no
+2026-05-23,Chicken 65,63,no
+2026-05-23,Apollo Fish,22,no
+2026-05-23,Paneer Butter Masala,37,no
+2026-05-23,Butter Naan,151,no
+2026-05-23,Double ka Meetha,48,no
+2026-05-23,Qubani ka Meetha,13,no
+2026-05-24,Chicken Dum Biryani,198,no
+2026-05-24,Mutton Dum Biryani,95,no
+2026-05-24,Veg Biryani,48,no
+2026-05-24,Chicken 65,56,no
+2026-05-24,Apollo Fish,26,no
+2026-05-24,Paneer Butter Masala,38,no
+2026-05-24,Butter Naan,202,no
+2026-05-24,Double ka Meetha,46,no
+2026-05-24,Qubani ka Meetha,18,no
+2026-05-25,Chicken Dum Biryani,110,no
+2026-05-25,Mutton Dum Biryani,63,no
+2026-05-25,Veg Biryani,23,no
+2026-05-25,Chicken 65,37,no
+2026-05-25,Apollo Fish,16,no
+2026-05-25,Paneer Butter Masala,14,no
+2026-05-25,Butter Naan,87,no
+2026-05-25,Double ka Meetha,15,no
+2026-05-25,Qubani ka Meetha,16,no
+2026-05-26,Chicken Dum Biryani,147,no
+2026-05-26,Mutton Dum Biryani,53,no
+2026-05-26,Veg Biryani,25,no
+2026-05-26,Chicken 65,50,no
+2026-05-26,Apollo Fish,19,no
+2026-05-26,Paneer Butter Masala,23,no
+2026-05-26,Butter Naan,127,no
+2026-05-26,Double ka Meetha,25,no
+2026-05-26,Qubani ka Meetha,20,no
+2026-05-27,Chicken Dum Biryani,157,no
+2026-05-27,Mutton Dum Biryani,73,no
+2026-05-27,Veg Biryani,19,no
+2026-05-27,Chicken 65,65,no
+2026-05-27,Apollo Fish,25,no
+2026-05-27,Paneer Butter Masala,30,no
+2026-05-27,Butter Naan,163,no
+2026-05-27,Double ka Meetha,38,no
+2026-05-27,Qubani ka Meetha,20,no
+2026-05-28,Chicken Dum Biryani,108,no
+2026-05-28,Mutton Dum Biryani,56,no
+2026-05-28,Veg Biryani,34,no
+2026-05-28,Chicken 65,46,no
+2026-05-28,Apollo Fish,23,no
+2026-05-28,Paneer Butter Masala,22,no
+2026-05-28,Butter Naan,176,no
+2026-05-28,Double ka Meetha,21,no
+2026-05-28,Qubani ka Meetha,14,no
+2026-05-29,Chicken Dum Biryani,170,no
+2026-05-29,Mutton Dum Biryani,97,no
+2026-05-29,Veg Biryani,19,no
+2026-05-29,Chicken 65,44,no
+2026-05-29,Apollo Fish,28,no
+2026-05-29,Paneer Butter Masala,24,no
+2026-05-29,Butter Naan,142,no
+2026-05-29,Double ka Meetha,31,no
+2026-05-29,Qubani ka Meetha,20,no
+2026-05-30,Chicken Dum Biryani,238,no
+2026-05-30,Mutton Dum Biryani,88,no
+2026-05-30,Veg Biryani,49,no
+2026-05-30,Chicken 65,62,no
+2026-05-30,Apollo Fish,39,no
+2026-05-30,Paneer Butter Masala,33,no
+2026-05-30,Butter Naan,161,no
+2026-05-30,Double ka Meetha,31,no
+2026-05-30,Qubani ka Meetha,13,no
+2026-05-31,Chicken Dum Biryani,190,no
+2026-05-31,Mutton Dum Biryani,96,no
+2026-05-31,Veg Biryani,55,no
+2026-05-31,Chicken 65,89,no
+2026-05-31,Apollo Fish,20,no
+2026-05-31,Paneer Butter Masala,34,no
+2026-05-31,Butter Naan,161,no
+2026-05-31,Double ka Meetha,53,no
+2026-05-31,Qubani ka Meetha,16,no
+2026-06-01,Chicken Dum Biryani,126,no
+2026-06-01,Mutton Dum Biryani,70,no
+2026-06-01,Veg Biryani,24,no
+2026-06-01,Chicken 65,39,no
+2026-06-01,Apollo Fish,12,no
+2026-06-01,Paneer Butter Masala,23,no
+2026-06-01,Butter Naan,179,no
+2026-06-01,Double ka Meetha,27,no
+2026-06-01,Qubani ka Meetha,12,no
+2026-06-02,Chicken Dum Biryani,142,no
+2026-06-02,Mutton Dum Biryani,89,no
+2026-06-02,Veg Biryani,41,no
+2026-06-02,Chicken 65,56,no
+2026-06-02,Apollo Fish,19,no
+2026-06-02,Paneer Butter Masala,36,no
+2026-06-02,Butter Naan,176,no
+2026-06-02,Double ka Meetha,26,no
+2026-06-02,Qubani ka Meetha,20,no
+2026-06-03,Chicken Dum Biryani,164,no
+2026-06-03,Mutton Dum Biryani,72,no
+2026-06-03,Veg Biryani,19,no
+2026-06-03,Chicken 65,62,no
+2026-06-03,Apollo Fish,14,no
+2026-06-03,Paneer Butter Masala,33,no
+2026-06-03,Butter Naan,115,no
+2026-06-03,Double ka Meetha,27,no
+2026-06-03,Qubani ka Meetha,13,no
+2026-06-04,Chicken Dum Biryani,173,no
+2026-06-04,Mutton Dum Biryani,50,no
+2026-06-04,Veg Biryani,42,no
+2026-06-04,Chicken 65,44,no
+2026-06-04,Apollo Fish,17,no
+2026-06-04,Paneer Butter Masala,32,no
+2026-06-04,Butter Naan,93,no
+2026-06-04,Double ka Meetha,30,no
+2026-06-04,Qubani ka Meetha,11,no
+2026-06-05,Chicken Dum Biryani,231,no
+2026-06-05,Mutton Dum Biryani,77,no
+2026-06-05,Veg Biryani,57,no
+2026-06-05,Chicken 65,57,no
+2026-06-05,Apollo Fish,31,no
+2026-06-05,Paneer Butter Masala,39,no
+2026-06-05,Butter Naan,162,no
+2026-06-05,Double ka Meetha,29,no
+2026-06-05,Qubani ka Meetha,14,no
+2026-06-06,Chicken Dum Biryani,277,no
+2026-06-06,Mutton Dum Biryani,94,no
+2026-06-06,Veg Biryani,50,no
+2026-06-06,Chicken 65,100,no
+2026-06-06,Apollo Fish,25,no
+2026-06-06,Paneer Butter Masala,24,no
+2026-06-06,Butter Naan,193,no
+2026-06-06,Double ka Meetha,69,no
+2026-06-06,Qubani ka Meetha,20,no
+2026-06-07,Chicken Dum Biryani,258,no
+2026-06-07,Mutton Dum Biryani,100,yes
+2026-06-07,Veg Biryani,51,no
+2026-06-07,Chicken 65,83,no
+2026-06-07,Apollo Fish,24,no
+2026-06-07,Paneer Butter Masala,44,no
+2026-06-07,Butter Naan,232,no
+2026-06-07,Double ka Meetha,49,no
+2026-06-07,Qubani ka Meetha,24,no
+2026-06-08,Chicken Dum Biryani,126,no
+2026-06-08,Mutton Dum Biryani,53,no
+2026-06-08,Veg Biryani,26,no
+2026-06-08,Chicken 65,50,no
+2026-06-08,Apollo Fish,20,no
+2026-06-08,Paneer Butter Masala,20,no
+2026-06-08,Butter Naan,110,no
+2026-06-08,Double ka Meetha,23,no
+2026-06-08,Qubani ka Meetha,5,no
+2026-06-09,Chicken Dum Biryani,160,no
+2026-06-09,Mutton Dum Biryani,80,no
+2026-06-09,Veg Biryani,45,no
+2026-06-09,Chicken 65,33,no
+2026-06-09,Apollo Fish,23,no
+2026-06-09,Paneer Butter Masala,38,no
+2026-06-09,Butter Naan,88,no
+2026-06-09,Double ka Meetha,33,no
+2026-06-09,Qubani ka Meetha,13,no
+2026-06-10,Chicken Dum Biryani,203,no
+2026-06-10,Mutton Dum Biryani,41,no
+2026-06-10,Veg Biryani,29,no
+2026-06-10,Chicken 65,59,no
+2026-06-10,Apollo Fish,16,no
+2026-06-10,Paneer Butter Masala,11,no
+2026-06-10,Butter Naan,101,no
+2026-06-10,Double ka Meetha,21,no
+2026-06-10,Qubani ka Meetha,9,no

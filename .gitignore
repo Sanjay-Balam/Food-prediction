@@ -1,10 +1,9 @@
-# secrets
+# secrets (any app)
 .env
 
-# restaurant data and generated output: never push client data
-/data/
-/artifacts/
-/forecasts/
+# node / turborepo
+node_modules/
+.turbo/
 
 # python
 __pycache__/

@@ -1,0 +1,64 @@
+date,item,qty_sold,sold_out
+2026-06-11,Chicken Dum Biryani,235,no
+2026-06-11,Mutton Dum Biryani,95,no
+2026-06-11,Veg Biryani,30,no
+2026-06-11,Chicken 65,64,no
+2026-06-11,Apollo Fish,12,no
+2026-06-11,Paneer Butter Masala,14,no
+2026-06-11,Butter Naan,163,no
+2026-06-11,Double ka Meetha,39,no
+2026-06-11,Qubani ka Meetha,13,no
+2026-06-12,Chicken Dum Biryani,217,no
+2026-06-12,Mutton Dum Biryani,100,yes
+2026-06-12,Veg Biryani,36,no
+2026-06-12,Chicken 65,75,no
+2026-06-12,Apollo Fish,23,no
+2026-06-12,Paneer Butter Masala,38,no
+2026-06-12,Butter Naan,192,no
+2026-06-12,Double ka Meetha,35,no
+2026-06-12,Qubani ka Meetha,14,no
+2026-06-13,Chicken Dum Biryani,280,no
+2026-06-13,Mutton Dum Biryani,100,yes
+2026-06-13,Veg Biryani,40,no
+2026-06-13,Chicken 65,131,no
+2026-06-13,Apollo Fish,29,no
+2026-06-13,Paneer Butter Masala,41,no
+2026-06-13,Butter Naan,269,no
+2026-06-13,Double ka Meetha,99,no
+2026-06-13,Qubani ka Meetha,19,no
+2026-06-14,Chicken Dum Biryani,286,no
+2026-06-14,Mutton Dum Biryani,99,no
+2026-06-14,Veg Biryani,36,no
+2026-06-14,Chicken 65,91,no
+2026-06-14,Apollo Fish,34,no
+2026-06-14,Paneer Butter Masala,29,no
+2026-06-14,Butter Naan,218,no
+2026-06-14,Double ka Meetha,78,no
+2026-06-14,Qubani ka Meetha,28,no
+2026-06-15,Chicken Dum Biryani,123,no
+2026-06-15,Mutton Dum Biryani,62,no
+2026-06-15,Veg Biryani,36,no
+2026-06-15,Chicken 65,34,no
+2026-06-15,Apollo Fish,24,no
+2026-06-15,Paneer Butter Masala,30,no
+2026-06-15,Butter Naan,135,no
+2026-06-15,Double ka Meetha,32,no
+2026-06-15,Qubani ka Meetha,19,no
+2026-06-16,Chicken Dum Biryani,152,no
+2026-06-16,Mutton Dum Biryani,66,no
+2026-06-16,Veg Biryani,28,no
+2026-06-16,Chicken 65,48,no
+2026-06-16,Apollo Fish,23,no
+2026-06-16,Paneer Butter Masala,20,no
+2026-06-16,Butter Naan,118,no
+2026-06-16,Double ka Meetha,22,no
+2026-06-16,Qubani ka Meetha,10,no
+2026-06-17,Chicken Dum Biryani,217,no
+2026-06-17,Mutton Dum Biryani,46,no
+2026-06-17,Veg Biryani,21,no
+2026-06-17,Chicken 65,42,no
+2026-06-17,Apollo Fish,24,no
+2026-06-17,Paneer Butter Masala,33,no
+2026-06-17,Butter Naan,153,no
+2026-06-17,Double ka Meetha,38,no
+2026-06-17,Qubani ka Meetha,19,no
