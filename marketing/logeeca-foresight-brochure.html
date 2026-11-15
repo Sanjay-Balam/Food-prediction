@@ -8,20 +8,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap">
 <style>
-  /* Brand tokens */
+  /* Brand tokens: the logo's teal and mint on warm white */
   :root {
-    --ink: #14110F;          /* warm black: cover and back */
-    --paper: #FAF7F0;        /* ivory: inner pages */
-    --card: #FFFDF8;
-    --gold: #C9A25A;         /* gold on dark */
-    --gold-soft: #D8B672;
-    --gold-deep: #8A5A12;    /* gold text on ivory (passes 4.5:1) */
-    --gold-rule: #D9C9A6;
-    --text: #1A1612;
-    --text-body: #3A342C;
-    --text-muted: #5C554B;
-    --on-ink: #F3EEE3;
-    --on-ink-muted: #CFC7B8;
+    --paper: #FCFBF8;          /* warm white: inner pages */
+    --tint: #EAF4F1;           /* soft mint tint: back page, icon discs, panels */
+    --brand: #12695C;          /* teal: headings, accents on light (6.3:1) */
+    --brand-deep: #0B2129;     /* the logo's deep teal: cover and call-to-action box */
+    --accent: #5CC2A8;         /* the logo's mint: accents on deep teal (7.7:1) */
+    --accent-deep: #187563;    /* deep mint: numerals and ticks on light (5.5:1) */
+    --text: #221A1A;
+    --text-body: #3D3333;
+    --text-muted: #6B5F5D;
+    --hairline: #E1ECE8;
+    --on-brand: #FFFFFF;
+    --on-brand-muted: #CFE3DD;
     --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
     --sans: 'Inter', 'Segoe UI', Arial, sans-serif;
   }
@@ -30,7 +30,7 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; }
   body {
-    background: #E7E2D8;
+    background: #E3ECE9;
     font-family: var(--sans);
     color: var(--text);
     -webkit-print-color-adjust: exact;
@@ -46,22 +46,23 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 64px 72px 48px;
+    padding: 72px 76px 52px;
     background: var(--paper);
-    box-shadow: 0 10px 40px rgba(20, 17, 15, 0.18);
+    box-shadow: 0 10px 40px rgba(11, 33, 41, 0.14);
     break-after: page;
   }
-  .page.dark { background: var(--ink); color: var(--on-ink); }
+  .page.cover { background: var(--brand-deep); color: var(--on-brand); }
+  .page.tint { background: var(--tint); }
 
   .print-button {
     position: fixed; right: 24px; bottom: 24px; z-index: 10;
-    font: 600 15px var(--sans); letter-spacing: 0.04em;
-    color: var(--ink); background: var(--gold);
+    font: 600 15px var(--sans); letter-spacing: 0.03em;
+    color: var(--on-brand); background: var(--brand);
     border: 0; border-radius: 999px; padding: 14px 22px; min-height: 48px;
-    cursor: pointer; box-shadow: 0 6px 20px rgba(20, 17, 15, 0.25);
+    cursor: pointer; box-shadow: 0 6px 20px rgba(11, 33, 41, 0.28);
   }
-  .print-button:hover { background: var(--gold-soft); }
-  .print-button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .print-button:hover { background: var(--brand-deep); }
+  .print-button:focus-visible { outline: 3px solid var(--brand-deep); outline-offset: 3px; }
 
   @media print {
     body { background: none; }
@@ -70,116 +71,129 @@
   }
 
   /* Type */
-  .eyebrow { display: flex; align-items: center; gap: 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-deep); }
-  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--gold-rule); }
-  .dark .eyebrow { color: var(--gold); }
-  .dark .eyebrow::after { background: rgba(201, 162, 90, 0.4); }
-  .title { margin: 18px 0 0; font-family: var(--serif); font-weight: 600; font-size: 46px; line-height: 1.1; letter-spacing: -0.01em; text-wrap: balance; }
-  .title em { font-style: italic; font-weight: 500; color: var(--gold-deep); }
-  .dark .title em { color: var(--gold-soft); }
-  .lead { margin: 22px 0 0; font-size: 17px; line-height: 1.6; color: var(--text-body); text-wrap: pretty; }
-  .dark .lead { color: var(--on-ink-muted); }
+  .eyebrow { display: flex; align-items: center; gap: 14px; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brand); }
+  .eyebrow::before { content: ""; width: 28px; height: 2px; border-radius: 2px; background: var(--brand); }
+  .title { margin: 20px 0 0; font-family: var(--serif); font-weight: 600; font-size: 46px; line-height: 1.12; letter-spacing: -0.01em; color: var(--text); text-wrap: balance; }
+  .title em { font-style: italic; font-weight: 500; color: var(--brand); }
+  .lead { margin: 22px 0 0; font-size: 17px; line-height: 1.65; color: var(--text-body); text-wrap: pretty; }
 
   /* Running foot */
-  .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.16em; color: #6B6357; }
-  .foot .num { font-family: var(--serif); font-style: italic; font-size: 16px; letter-spacing: 0; color: var(--gold-deep); }
-  .dark .foot { color: #A79F92; }
-  .dark .foot .num { color: var(--gold); }
+  .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.16em; color: var(--text-muted); }
+  .foot .num { font-family: var(--serif); font-style: italic; font-size: 16px; letter-spacing: 0; color: var(--accent-deep); }
 
-  /* Brand mark */
-  .brand { display: flex; align-items: center; gap: 14px; }
-  .brand-name { font-size: 15px; font-weight: 700; letter-spacing: 0.32em; color: #E9D9B6; }
-  .brand-name.on-paper { color: var(--text); }
+  /* Logo (transparent PNGs cut from the original artwork) */
+  .logo { display: block; width: auto; align-self: flex-start; }  /* never stretch to the column width */
 
   /* Cover */
-  .cover-rings { position: absolute; left: 360px; top: -110px; }
+  .cover-visual { position: absolute; left: 76px; top: 152px; width: 642px; height: 395px; }
+  .forecast-card { position: absolute; right: 0; top: 232px; width: 262px; padding: 16px 20px; border-radius: 10px; background: #FFFFFF; color: var(--brand-deep); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35); display: flex; flex-direction: column; gap: 6px; }
+  .card-top { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; color: var(--text-muted); }
+  .card-top em { font-style: normal; font-weight: 500; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 999px; background: var(--tint); color: var(--brand); }
+  .card-dish { font-size: 15px; font-weight: 600; color: var(--brand-deep); }
+  .card-number { display: flex; align-items: baseline; gap: 8px; }
+  .card-number strong { font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--brand-deep); }
+  .card-number span { font-size: 13px; color: var(--text-muted); }
+  .range-bar { position: relative; height: 4px; margin-top: 4px; border-radius: 4px; background: var(--hairline); }
+  .range-bar i { position: absolute; left: 28%; right: 26%; top: 0; bottom: 0; border-radius: 4px; background: var(--accent); }
+  .range-bar b { position: absolute; left: 51%; top: -4px; width: 3px; height: 12px; border-radius: 2px; background: var(--brand-deep); }
+  .card-range { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); }
+  .card-range strong { font-weight: 600; color: var(--brand-deep); }
   .cover-copy { position: relative; margin-top: auto; display: flex; flex-direction: column; gap: 24px; }
   .product { display: flex; align-items: baseline; gap: 14px; }
-  .product-name { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--gold-soft); }
-  .product-tag { font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--on-ink-muted); }
-  .cover-headline { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 80px; line-height: 1.04; letter-spacing: -0.01em; color: #F6F1E6; }
-  .cover-headline em { font-style: italic; font-weight: 500; color: var(--gold-soft); }
-  .cover-sub { margin: 0; max-width: 570px; font-size: 19px; line-height: 1.6; font-weight: 300; color: var(--on-ink-muted); }
-  .pillars { position: relative; margin-top: 60px; padding-top: 22px; border-top: 1px solid rgba(201, 162, 90, 0.45); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+  .product-name { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--accent); }
+  .product-tag { font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--on-brand-muted); }
+  .cover-headline { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 80px; line-height: 1.04; letter-spacing: -0.01em; color: var(--on-brand); }
+  .cover-headline em { font-style: italic; font-weight: 500; color: var(--accent); }
+  .cover-sub { margin: 0; max-width: 560px; font-size: 19px; line-height: 1.6; font-weight: 300; color: var(--on-brand-muted); }
+  .pillars { position: relative; margin-top: 60px; padding-top: 22px; border-top: 1px solid rgba(92, 194, 168, 0.6); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
   .pillar { display: flex; flex-direction: column; gap: 8px; }
-  .pillar b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; color: var(--gold); }
-  .pillar span { font-size: 14px; font-weight: 500; line-height: 1.35; color: #EDE6D8; }
+  .pillar b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; color: var(--accent); }
+  .pillar span { font-size: 14px; font-weight: 500; line-height: 1.35; color: var(--on-brand); }
 
   /* Problem page */
-  .problem-intro { margin-top: 24px; display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 40px; align-items: start; }
+  .problem-intro { margin-top: 26px; display: grid; grid-template-columns: minmax(0, 1fr) 224px; gap: 40px; align-items: start; }
   .problem-intro .lead { margin: 0; }
-  .stat { border-top: 2px solid #B8862B; padding-top: 14px; display: flex; flex-direction: column; gap: 6px; }
-  .stat strong { font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--gold-deep); }
+  .stat { display: flex; flex-direction: column; gap: 6px; }
+  .stat strong { font-family: var(--serif); font-size: 36px; font-weight: 600; line-height: 1; color: var(--brand); white-space: nowrap; }
   .stat span { font-size: 15px; line-height: 1.45; color: var(--text-body); }
   .stat small { font-size: 12px; line-height: 1.4; color: var(--text-muted); }
-  .problems { margin-top: 34px; border-bottom: 1px solid #E3D8C3; }
-  .problem { display: grid; grid-template-columns: 64px minmax(0, 1fr); padding: 16px 0; border-top: 1px solid #E3D8C3; }
-  .problem > b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 26px; line-height: 1.1; color: #B8862B; }
-  .problem h2 { margin: 0 0 5px; font-family: var(--serif); font-weight: 600; font-size: 21px; }
-  .problem p { margin: 0; font-size: 16px; line-height: 1.5; color: #4A443B; }
+  .problems { margin-top: 40px; }
+  .problem { display: grid; grid-template-columns: 60px minmax(0, 1fr); padding: 17px 0; border-top: 1px solid var(--hairline); }
+  .problem > b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 24px; line-height: 1.15; color: var(--accent-deep); }
+  .problem h2 { margin: 0 0 5px; font-family: var(--serif); font-weight: 600; font-size: 21px; color: var(--text); }
+  .problem p { margin: 0; font-size: 16px; line-height: 1.55; color: var(--text-body); }
 
-  /* Feature cards (solution pages) */
-  .features { margin-top: 26px; display: flex; flex-direction: column; gap: 20px; }
-  .feature { background: var(--card); border: 1px solid #E1D5BD; border-radius: 3px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+  /* Features (solution pages): open layout, hairline separators, no boxes */
+  .features { margin-top: 30px; display: flex; flex-direction: column; }
+  .feature { padding: 26px 0; border-top: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 12px; }
   .feature-head { display: flex; align-items: center; gap: 16px; }
-  .icon { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--gold-rule); display: grid; place-items: center; }
-  .icon svg { width: 22px; height: 22px; fill: none; stroke: var(--gold-deep); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-  .feature-head b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; color: #B8862B; }
-  .feature-head h2 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 25px; }
-  .solves { margin: 0; font-size: 15px; line-height: 1.5; color: var(--text-muted); }
-  .solves span { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; color: var(--gold-deep); margin-right: 8px; }
-  .solves i { font-family: var(--serif); font-size: 17px; color: var(--text); }
-  .feature p.how { margin: 0; font-size: 16px; line-height: 1.55; color: var(--text-body); text-wrap: pretty; }
+  .icon { flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--tint); display: grid; place-items: center; }
+  .icon svg { width: 22px; height: 22px; fill: none; stroke: var(--brand); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .feature-head b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; color: var(--accent-deep); }
+  .feature-head h2 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 26px; color: var(--text); }
+  .solves { margin: 0; display: flex; align-items: baseline; gap: 10px; }
+  .solves span { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; color: var(--brand); }
+  .solves i { font-family: var(--serif); font-size: 17px; color: var(--text-muted); }
+  .feature p.how { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text-body); text-wrap: pretty; }
   .outcomes { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 26px; }
-  .outcomes li { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text); }
-  .outcomes svg { width: 16px; height: 16px; fill: none; stroke: #B8862B; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-  .proof { margin-top: 4px; padding-top: 16px; border-top: 1px solid #EBE1CE; display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 32px; align-items: end; }
+  .outcomes li { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--brand); }
+  .outcomes svg { width: 16px; height: 16px; fill: none; stroke: var(--accent-deep); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .proof { margin-top: 6px; padding: 18px 22px; border-radius: 6px; background: var(--tint); display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 30px; align-items: end; }
   .proof div { display: flex; flex-direction: column; gap: 4px; }
-  .proof strong { font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--gold-deep); }
-  .proof span { font-size: 13px; line-height: 1.35; color: var(--text-muted); }
+  .proof strong { font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--brand); }
+  .proof span { font-size: 13px; line-height: 1.35; color: var(--text-body); }
   .proof small { font-size: 12px; line-height: 1.45; color: var(--text-muted); }
 
   /* Back page */
-  .steps { margin-top: 30px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 40px; }
-  .step { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 4px; }
-  .step > b { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 34px; line-height: 1; color: var(--gold); }
-  .step h3 { margin: 4px 0 6px; font-family: var(--serif); font-weight: 600; font-size: 20px; color: #F6F1E6; }
-  .step p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--on-ink-muted); }
-  .why { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(201, 162, 90, 0.35); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-  .why h3 { margin: 0 0 8px; font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--gold-soft); }
-  .why p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--on-ink-muted); }
-  .cta { margin-top: 40px; border: 1px solid rgba(201, 162, 90, 0.6); padding: 28px 32px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; }
-  .cta h2 { margin: 0 0 8px; font-family: var(--serif); font-weight: 600; font-size: 28px; color: #F6F1E6; }
-  .cta p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--on-ink-muted); }
-  .contact { display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 500; color: #EDE6D8; white-space: nowrap; }
-  .contact span { color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; margin-right: 10px; }
+  .steps { margin-top: 32px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 44px; }
+  .step { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 4px; }
+  .step > b { width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: var(--on-brand); display: grid; place-items: center; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 19px; }
+  .step h3 { margin: 6px 0 6px; font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--text); }
+  .step p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-body); }
+  .why { margin-top: 44px; padding-top: 26px; border-top: 1px solid #CFE0DA; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+  .why h3 { margin: 0 0 8px; font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--brand); }
+  .why p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--text-body); }
+  .cta { margin-top: 44px; border-radius: 8px; background: var(--brand-deep); padding: 32px 36px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; }
+  .cta h2 { margin: 0 0 8px; font-family: var(--serif); font-weight: 600; font-size: 28px; color: var(--on-brand); }
+  .cta h2 em { font-style: italic; font-weight: 500; color: var(--accent); }
+  .cta p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--on-brand-muted); }
+  .contact { display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 500; color: var(--on-brand); white-space: nowrap; }
+  .contact span { color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; margin-right: 10px; }
 </style>
 </head>
 <body>
 
 <!-- ============ PAGE 1 · COVER ============ -->
-<section class="page dark" aria-label="Cover">
-  <svg class="cover-rings" aria-hidden="true" width="680" height="680" viewBox="0 0 680 680">
-    <circle cx="340" cy="340" r="320" fill="none" stroke="#C9A25A" stroke-opacity="0.16"/>
-    <circle cx="340" cy="340" r="262" fill="none" stroke="#C9A25A" stroke-opacity="0.24"/>
-    <circle cx="340" cy="340" r="204" fill="none" stroke="#C9A25A" stroke-opacity="0.32"/>
-    <circle cx="340" cy="340" r="146" fill="none" stroke="#C9A25A" stroke-opacity="0.42"/>
-    <circle cx="340" cy="340" r="88" fill="none" stroke="#C9A25A" stroke-opacity="0.55"/>
-    <path d="M340 340 L 82 152" stroke="#C9A25A" stroke-opacity="0.5"/>
-    <path d="M 202 118 A 262 262 0 0 1 340 78" fill="none" stroke="#C9A25A" stroke-width="2.5"/>
-    <path d="M 158 208 A 204 204 0 0 1 216 154" fill="none" stroke="#C9A25A" stroke-opacity="0.8" stroke-width="2"/>
-    <circle cx="340" cy="340" r="7" fill="#C9A25A"/>
-    <circle cx="202" cy="118" r="4.5" fill="#E2C489"/>
-  </svg>
-
-  <div class="brand" style="position: relative;">
-    <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34">
-      <circle cx="17" cy="17" r="15.5" fill="none" stroke="#C9A25A" stroke-width="1.5"/>
-      <circle cx="17" cy="17" r="9" fill="none" stroke="#C9A25A"/>
-      <circle cx="17" cy="17" r="3.5" fill="#C9A25A"/>
+<section class="page cover" aria-label="Cover">
+  <!-- Cover visual: two weeks of sales, then tomorrow's forecast with its safe range -->
+  <div class="cover-visual">
+    <svg aria-hidden="true" width="642" height="250" viewBox="0 0 642 250" style="overflow: visible;">
+      <g stroke="#FFFFFF" stroke-opacity="0.08">
+        <line x1="0" y1="40" x2="642" y2="40"/><line x1="0" y1="100" x2="642" y2="100"/>
+        <line x1="0" y1="160" x2="642" y2="160"/><line x1="0" y1="220" x2="642" y2="220"/>
+      </g>
+      <polygon points="0,80 36,95 72,155 108,170 144,165 180,155 216,125 252,75 288,90 324,150 360,165 396,160 432,150 468,120 468,220 0,220" fill="#FFFFFF" fill-opacity="0.05"/>
+      <polyline points="0,80 36,95 72,155 108,170 144,165 180,155 216,125 252,75 288,90 324,150 360,165 396,160 432,150 468,120" fill="none" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <line x1="468" y1="22" x2="468" y2="220" stroke="#FFFFFF" stroke-opacity="0.3" stroke-dasharray="3 4"/>
+      <text x="468" y="12" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.6" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="1.4">TODAY</text>
+      <polygon points="468,120 530,46 586,58 642,116 642,166 586,108 530,92" fill="#5CC2A8" fill-opacity="0.2"/>
+      <polyline points="468,120 530,68 586,82 642,140" fill="none" stroke="#5CC2A8" stroke-width="2.2" stroke-dasharray="6 5" stroke-linejoin="round" stroke-linecap="round"/>
+      <text x="642" y="30" text-anchor="end" fill="#5CC2A8" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="1.4">FORECAST</text>
+      <circle cx="468" cy="120" r="4" fill="#FFFFFF"/>
+      <line x1="530" y1="68" x2="530" y2="232" stroke="#5CC2A8" stroke-opacity="0.8" stroke-width="1.2"/>
+      <circle cx="530" cy="68" r="13" fill="#5CC2A8" fill-opacity="0.25"/>
+      <circle cx="530" cy="68" r="6" fill="#5CC2A8"/>
     </svg>
-    <span class="brand-name">LOGEECA</span>
+    <div class="forecast-card">
+      <div class="card-top"><span>TOMORROW · SAT</span><em>Example</em></div>
+      <div class="card-dish">Chicken Dum Biryani</div>
+      <div class="card-number"><strong>185</strong><span>portions</span></div>
+      <div class="range-bar"><i></i><b></b></div>
+      <div class="card-range"><span>Safe range</span><strong>160 – 210</strong></div>
+    </div>
   </div>
+
+  <img class="logo" src="assets/logeeca-logo-light.png" alt="Logeeca" style="position: relative; height: 40px;">
 
   <div class="cover-copy">
     <div class="product">
@@ -318,7 +332,7 @@
 </section>
 
 <!-- ============ PAGE 5 · HOW IT WORKS & CONTACT ============ -->
-<section class="page dark" aria-label="How it works and contact">
+<section class="page tint" aria-label="How it works and contact">
   <div class="eyebrow">How it works</div>
   <h1 class="title">From last night’s sales to <em>this morning’s plan.</em></h1>
 
@@ -337,7 +351,7 @@
 
   <div class="cta">
     <div>
-      <h2>See Foresight on your own sales.</h2>
+      <h2>See Foresight on <em>your own sales.</em></h2>
       <p>Book a demo: share your past sales, and we will show you tomorrow’s forecast for your kitchen.</p>
     </div>
     <div class="contact">
@@ -348,14 +362,7 @@
   </div>
 
   <div class="foot">
-    <span class="brand">
-      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 34 34">
-        <circle cx="17" cy="17" r="15.5" fill="none" stroke="#C9A25A" stroke-width="1.5"/>
-        <circle cx="17" cy="17" r="9" fill="none" stroke="#C9A25A"/>
-        <circle cx="17" cy="17" r="3.5" fill="#C9A25A"/>
-      </svg>
-      <span>LOGEECA</span>
-    </span>
+    <img class="logo" src="assets/logeeca-logo-dark.png" alt="Logeeca" style="height: 26px;">
     <span>© 2026 LOGEECA · FORESIGHT</span>
   </div>
 </section>
