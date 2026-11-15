@@ -1,47 +1,110 @@
 @import "tailwindcss";
 
-/* Brand tokens: the logo's teal and mint, same palette as the brochure */
+/* 
+ * The Michelin Atelier Design Tokens
+ * Bespoke luxury culinary intelligence: Smoked Truffle, Forest Velvet, Aged Champagne, and Fresh Celadon Herb
+ */
 @theme {
-  --color-ink: #0B2129;            /* the logo's deep teal: dark sections */
-  --color-ink-soft: #12303A;
-  --color-teal: #12695C;           /* headings and accents on light (6.3:1) */
-  --color-mint: #5CC2A8;           /* the logo's mint: accents on ink (7.7:1) */
-  --color-mint-deep: #187563;      /* numerals and ticks on light (5.5:1) */
-  --color-paper: #FCFBF8;
-  --color-tint: #EAF4F1;
-  --color-text: #13252B;
-  --color-body: #3A4A4E;
-  --color-muted: #5E6B6E;          /* 5.4:1 on paper */
-  --color-hairline: #E1ECE8;
-  --color-on-ink-muted: #B9CFC8;   /* 10:1 on ink */
+  --color-canvas: #0A110F;            /* Smoked Truffle Noir base */
+  --color-surface: #121C19;           /* Forest Velvet card container */
+  --color-surface-elevated: #1A2723;  /* Elevated/hover state card */
+  
+  --color-ink: #0A110F;               /* Dark base canvas */
+  --color-ink-soft: #121C19;          /* Deep forest card background */
+  --color-ink-card: rgba(18, 28, 25, 0.85);
+  
+  --color-champagne: #E8D5B5;         /* Primary Luxury Accent: Aged Champagne */
+  --color-champagne-light: #F3E7D3;   /* Champagne hover */
+  --color-champagne-dark: #C9B28F;    /* Rich antique brass */
 
-  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), "Segoe UI", Arial, sans-serif;
+  --color-celadon: #4E9B7E;           /* Secondary Accent: Fresh Celadon Herb */
+  --color-celadon-light: #6BBF9E;     /* Highlight Celadon */
+  --color-celadon-deep: #38735D;      /* Deep culinary sage */
+  
+  --color-mint: #4E9B7E;              /* Map mint to Celadon Herb for natural organic feel */
+  --color-mint-light: #E8D5B5;        /* Champagne highlight */
+  --color-mint-deep: #38735D;         /* Deep Celadon */
+  --color-teal: #38735D;              /* Deep Herb Teal */
 
-  --animate-float: float 6s ease-in-out infinite;
+  --color-paper: #F7F5F0;             /* Warm unbleached Alabaster parchment */
+  --color-paper-warm: #EFECE4;        /* Aged linen cream */
+  --color-tint: #EEF3EE;              /* Subtle herbal tint on light */
+  --color-sage: #DDE5DF;              /* Sage divider */
+
+  --color-alabaster: #F5F3EF;         /* High-contrast pure reading text */
+  --color-lichen: #8A9690;            /* Muted herbal grey */
+  --color-text: #151E1B;              /* Dark Truffle headline text on light */
+  --color-body: #3A4642;              /* Comfortable editorial reading tone */
+  --color-muted: #6D7B76;             /* Secondary labels on light */
+  --color-hairline: rgba(232, 213, 181, 0.16); /* Champagne whisper hairline */
+  --color-on-ink-muted: #8A9690;      /* Muted Lichen on dark */
+
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
   @keyframes float {
-    50% { transform: translateY(-8px); }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
   }
 }
 
-/* Frosted glass for panels on dark sections */
-@utility glass-dark {
-  background: linear-gradient(160deg, rgb(255 255 255 / 0.10), rgb(255 255 255 / 0.03));
-  border: 1px solid rgb(255 255 255 / 0.14);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 30px 80px rgb(0 0 0 / 0.35);
-  backdrop-filter: blur(22px) saturate(160%);
+/* Lenis recommended css */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
-/* A glass ball: bright highlight top-left, mint light caught bottom-right, a darker rim like a lens */
-@utility glass-sphere {
-  border-radius: 9999px;
-  background:
-    radial-gradient(circle at 30% 26%, rgb(255 255 255 / 0.65), rgb(255 255 255 / 0) 22%),
-    radial-gradient(circle at 70% 80%, rgb(92 194 168 / 0.45), rgb(92 194 168 / 0) 40%),
-    radial-gradient(circle at 50% 50%, rgb(255 255 255 / 0.03) 55%, rgb(255 255 255 / 0.2));
-  border: 1px solid rgb(255 255 255 / 0.16);
-  box-shadow: inset -10px -16px 36px rgb(11 33 41 / 0.55), inset 8px 10px 28px rgb(255 255 255 / 0.12), 0 40px 80px rgb(0 0 0 / 0.35);
-  backdrop-filter: blur(3px) brightness(1.2) saturate(170%);
+/* Frosted glass utilities for floating navbar and dark cards with Champagne borders */
+@utility glass-dark {
+  background: linear-gradient(135deg, rgba(18, 28, 25, 0.88) 0%, rgba(10, 17, 15, 0.96) 100%);
+  border: 1px solid rgba(232, 213, 181, 0.14);
+  box-shadow: inset 0 1px 0 rgba(232, 213, 181, 0.2), 0 24px 60px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(24px) saturate(150%);
+}
+
+@utility glass-pill {
+  background: rgba(10, 17, 15, 0.88);
+  border: 1px solid rgba(232, 213, 181, 0.15);
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(232, 213, 181, 0.2);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+@utility glass-light {
+  background: rgba(247, 245, 240, 0.88);
+  border: 1px solid rgba(56, 115, 93, 0.14);
+  box-shadow: 0 20px 50px rgba(10, 17, 15, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A110F;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A2723;
+  border-radius: 4px;
+  border: 1px solid rgba(232, 213, 181, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9B28F;
 }
 
 body {
@@ -51,11 +114,11 @@ body {
 }
 
 ::selection {
-  background: var(--color-mint);
-  color: var(--color-ink);
+  background: #E8D5B5;
+  color: #0A110F;
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-mint);
+  outline: 2px solid #E8D5B5;
   outline-offset: 3px;
 }

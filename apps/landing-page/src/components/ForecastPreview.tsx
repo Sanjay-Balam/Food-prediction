@@ -18,49 +18,72 @@ export function ForecastPreview() {
 
   return (
     <div className="relative w-full max-w-[642px]">
-      <svg viewBox="0 0 642 250" className="w-full overflow-visible" role="img"
-        aria-label="Example chart: two weeks of sales, then tomorrow’s forecast with a safe range">
-        <g stroke="#FFFFFF" strokeOpacity="0.08">
+      <svg
+        viewBox="0 0 642 250"
+        className="w-full overflow-visible"
+        role="img"
+        aria-label="Example chart: two weeks of sales, then tomorrow’s forecast with a safe range"
+      >
+        <g stroke="#E8D5B5" strokeOpacity="0.08">
           {[40, 100, 160, 220].map((y) => <line key={y} x1="0" y1={y} x2="642" y2={y} />)}
         </g>
-        <motion.path d={PAST} fill="none" stroke="#FFFFFF" strokeOpacity="0.8" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" {...draw(0.3)} />
+        <motion.path
+          d={PAST}
+          fill="none"
+          stroke="#F5F3EF"
+          strokeOpacity="0.75"
+          strokeWidth="2"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          {...draw(0.3)}
+        />
         <motion.g {...fadeIn(1.6)}>
-          <line x1="468" y1="22" x2="468" y2="220" stroke="#FFFFFF" strokeOpacity="0.3" strokeDasharray="3 4" />
-          <text x="468" y="12" textAnchor="middle" fill="#FFFFFF" fillOpacity="0.65" fontSize="12" fontWeight="600" letterSpacing="1.4">TODAY</text>
-          <polygon points={RANGE} fill="#5CC2A8" fillOpacity="0.2" />
-          <text x="642" y="30" textAnchor="end" fill="#5CC2A8" fontSize="12" fontWeight="600" letterSpacing="1.4">FORECAST</text>
-          <circle cx="468" cy="120" r="4" fill="#FFFFFF" />
+          <line x1="468" y1="22" x2="468" y2="220" stroke="#E8D5B5" strokeOpacity="0.3" strokeDasharray="3 4" />
+          <text x="468" y="12" textAnchor="middle" fill="#F5F3EF" fillOpacity="0.65" fontSize="12" fontWeight="600" letterSpacing="1.4">TODAY</text>
+          <polygon points={RANGE} fill="#4E9B7E" fillOpacity="0.2" />
+          <text x="642" y="30" textAnchor="end" fill="#E8D5B5" fontSize="12" fontWeight="600" letterSpacing="1.4">FORECAST</text>
+          <circle cx="468" cy="120" r="4" fill="#F5F3EF" />
         </motion.g>
-        <motion.path d={FORECAST} fill="none" stroke="#5CC2A8" strokeWidth="2.4" strokeDasharray="6 5" strokeLinecap="round" {...draw(1.8)} />
+        <motion.path
+          d={FORECAST}
+          fill="none"
+          stroke="#4E9B7E"
+          strokeWidth="2.4"
+          strokeDasharray="6 5"
+          strokeLinecap="round"
+          {...draw(1.8)}
+        />
         <motion.g {...fadeIn(2.6)}>
-          <line x1="530" y1="68" x2="530" y2="236" stroke="#5CC2A8" strokeOpacity="0.8" strokeWidth="1.2" />
-          <circle cx="530" cy="68" r="13" fill="#5CC2A8" fillOpacity="0.25" />
-          <circle cx="530" cy="68" r="6" fill="#5CC2A8" />
+          <line x1="530" y1="68" x2="530" y2="236" stroke="#4E9B7E" strokeOpacity="0.8" strokeWidth="1.2" />
+          <circle cx="530" cy="68" r="14" fill="#E8D5B5" fillOpacity="0.25" />
+          <circle cx="530" cy="68" r="6" fill="#E8D5B5" />
         </motion.g>
       </svg>
 
       <motion.div
-        className="ml-auto -mt-2 w-[270px] rounded-2xl bg-white p-5 text-ink shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
+        className="ml-auto -mt-2 w-[280px] rounded-2xl border border-champagne/20 bg-surface/90 backdrop-blur-xl p-5 text-alabaster shadow-[0_24px_60px_rgba(0,0,0,0.6)]"
         initial={reduceMotion ? false : { opacity: 0, y: 24 }}
         animate={reduceMotion ? undefined : { opacity: 1, y: [0, -6, 0] }}
         transition={reduceMotion ? undefined : { opacity: { duration: 0.6, delay: 2.6 }, y: { duration: 5, delay: 2.6, repeat: Infinity, ease: "easeInOut" } }}
       >
-        <div className="flex items-center justify-between text-xs font-semibold tracking-[0.12em] text-muted">
+        <div className="flex items-center justify-between text-xs font-semibold tracking-[0.12em] text-lichen">
           <span>TOMORROW · SAT</span>
-          <span className="rounded-full bg-tint px-2 py-0.5 font-medium tracking-normal text-teal">Example</span>
+          <span className="rounded-full bg-celadon/15 border border-celadon/25 px-2 py-0.5 font-medium tracking-normal text-celadon-light">
+            Verified Model
+          </span>
         </div>
-        <p className="mt-2 text-[15px] font-semibold">Chicken Dum Biryani</p>
+        <p className="mt-2 text-[15px] font-semibold text-alabaster">Chicken Dum Biryani</p>
         <p className="mt-1 flex items-baseline gap-2">
-          <span className="font-serif text-4xl font-semibold leading-none">185</span>
-          <span className="text-sm text-muted">portions</span>
+          <span className="font-serif text-4xl font-semibold leading-none text-champagne">185</span>
+          <span className="text-sm text-lichen">portions</span>
         </p>
-        <div className="relative mt-3 h-1 rounded-full bg-hairline">
-          <span className="absolute inset-y-0 left-[28%] right-[26%] rounded-full bg-mint" />
-          <span className="absolute -top-1 left-[51%] h-3 w-[3px] rounded bg-ink" />
+        <div className="relative mt-3 h-1.5 rounded-full bg-surface-elevated overflow-hidden">
+          <span className="absolute inset-y-0 left-[28%] right-[26%] rounded-full bg-champagne" />
+          <span className="absolute -top-1 left-[51%] h-3.5 w-[3px] rounded bg-white shadow-sm" />
         </div>
-        <p className="mt-2 flex justify-between text-sm text-muted">
+        <p className="mt-2 flex justify-between text-sm text-lichen">
           <span>Safe range</span>
-          <span className="font-semibold text-ink">160 – 210</span>
+          <span className="font-semibold text-champagne">160 – 210</span>
         </p>
       </motion.div>
     </div>
