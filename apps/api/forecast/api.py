@@ -11,6 +11,7 @@ from typing import Literal
 
 import numpy as np
 from fastapi import Depends, FastAPI, File, HTTPException, Query, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .app import create_forecast_service, create_message_writer
@@ -18,6 +19,18 @@ from .service import ForecastService
 
 app = FastAPI(title="Food quantity forecast API",
               description="Upload sales, train weekly, forecast portions per menu item, and compare with real sales.")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/health", summary="Health check endpoint for frontend demo")
+def health():
+    return {"status": "ok", "service": "food-quantity-forecast-api"}
 
 UPLOAD_HELP = "a .csv file, or a .json file holding a list of rows"
 UNTIL_HELP = ("test mode: use only sales up to this day (YYYY-MM-DD); the uploaded days after it stay unseen "

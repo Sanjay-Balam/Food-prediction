@@ -64,7 +64,7 @@ class CsvRestaurantStore:
         return str(path)
 
     def latest_forecast(self, rid: str) -> pd.DataFrame | None:
-        files = sorted((self.forecasts_dir / schema.restaurant_id(rid)).glob("*.csv"))
+        files = sorted((self.forecasts_dir / schema.restaurant_id(rid)).glob("*.csv"), key=lambda p: p.stat().st_mtime)
         return pd.read_csv(files[-1]) if files else None
 
 
