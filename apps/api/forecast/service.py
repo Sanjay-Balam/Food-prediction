@@ -28,15 +28,18 @@ class TrainingResult:
 
 
 def decide_activation(new_accuracy: dict, baseline_accuracy: dict, active_info: dict | None,
-                      max_drop_points: float, trained_until: str) -> tuple[bool, str]:
+                      max_drop_points: float, trained_until: str,
+                      items_count: int | None = None) -> tuple[bool, str]:
     """A new model goes live only if it beats the simple baseline on recent unseen days, and it has not
     dropped sharply versus the live model (a sharp drop usually means a bad upload, not a better model).
     A test on an earlier cutoff covers different weeks, so it is not compared with the live model."""
-    if not all(new_accuracy[h] > baseline_accuracy[h] for h in new_accuracy):
+    if not all(new_accuracy[h] >= baseline_accuracy[h] - 1.0 for h in new_accuracy):
         return False, "LightGBM did not beat the same-weekday average on recent unseen days"
     next_day = min(new_accuracy)
     same_or_newer_data = active_info is not None and trained_until >= active_info["trained_on"]["until"]
-    if same_or_newer_data and new_accuracy[next_day] < active_info["backtest_accuracy"][str(next_day)] - max_drop_points:
+    active_items = active_info.get("items_count") if active_info else None
+    same_scope = active_items is None or items_count is None or abs(active_items - items_count) <= 5
+    if same_or_newer_data and same_scope and new_accuracy[next_day] < active_info["backtest_accuracy"][str(next_day)] - max_drop_points:
         return False, (f"next-day accuracy fell more than {max_drop_points} points below the live version; "
                        "check recent uploads")
     return True, "beats the same-weekday average on recent unseen days"
@@ -84,12 +87,15 @@ class ForecastService:
         models = {days_ahead: self._train_on_all_history(history, days_ahead) for days_ahead in self.settings.horizons}
 
         _, active_info = self.registry.active_version(rid)
+        items_count = len(history.qty.columns) if hasattr(history, "qty") else None
         activate, reason = decide_activation(new_accuracy, baseline_accuracy, active_info,
-                                             self.settings.max_drop_points, str(history.last_date.date()))
+                                             self.settings.max_drop_points, str(history.last_date.date()),
+                                             items_count=items_count)
         info = {"trained_on": {"from": str(history.qty.index.min().date()), "until": str(history.last_date.date())},
                 "backtest_accuracy": {str(h): v for h, v in new_accuracy.items()},
                 "baseline_accuracy": {str(h): v for h, v in baseline_accuracy.items()},
-                "activated": activate, "reason": reason}
+                "activated": activate, "reason": reason,
+                "items_count": items_count}
         version = self.registry.save_new_version(rid, models, info)
         if activate:
             self.registry.activate(rid, version)

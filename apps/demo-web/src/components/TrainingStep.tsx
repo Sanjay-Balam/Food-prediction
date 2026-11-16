@@ -35,35 +35,90 @@ interface TrainingStepProps {
   initialCutoff?: string;
 }
 
+const DEFAULT_PRESETS = [
+  {
+    date: "2026-11-06",
+    label: "Current Benchmark (Postman Demo)",
+    note: "Trains through 06 Nov 2026 · Validates on subsequent days",
+  },
+  {
+    date: "2026-06-18",
+    label: "Mid-Year Validation (19–25 June Test)",
+    note: "Matches Postman 'Predict 19-25 June' flow",
+  },
+  {
+    date: "2026-03-31",
+    label: "Festive Season Benchmark",
+    note: "Tests seasonal Haleem & banquet surge cycles",
+  },
+];
+
 export function TrainingStep({
   datasetInfo,
   onTrainingComplete,
   initialCutoff = "2026-11-06",
 }: TrainingStepProps) {
-  const [cutoffDate, setCutoffDate] = useState<string>(initialCutoff);
+  const isDefaultBenchmark = !datasetInfo.startDate || datasetInfo.startDate === "2025-11-15";
+
+  const activePresets = React.useMemo(() => {
+    if (isDefaultBenchmark || !datasetInfo.startDate || !datasetInfo.endDate) {
+      return DEFAULT_PRESETS;
+    }
+    const end = new Date(datasetInfo.endDate);
+    const start = new Date(datasetInfo.startDate);
+    const diffDays = Math.round((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
+    if (diffDays < 20) return DEFAULT_PRESETS;
+
+    const formatDate = (d: Date) => d.toISOString().split("T")[0];
+
+    const dMonth = new Date(end);
+    dMonth.setDate(dMonth.getDate() - 30);
+    const dMonthStr = formatDate(dMonth);
+
+    const d14 = new Date(end);
+    d14.setDate(d14.getDate() - 14);
+    const d14Str = formatDate(d14);
+
+    const d7 = new Date(end);
+    d7.setDate(d7.getDate() - 7);
+    const d7Str = formatDate(d7);
+
+    return [
+      {
+        date: dMonthStr,
+        label: "1-Month Holdout Verification",
+        note: `Trains through ${dMonthStr} · Validates full final month`,
+      },
+      {
+        date: d14Str,
+        label: "Mid-Period Validation (14-Day Test)",
+        note: `Trains through ${d14Str} · Validates on subsequent 14 days`,
+      },
+      {
+        date: d7Str,
+        label: "Final Week Horizon Benchmark",
+        note: `Trains through ${d7Str} · Evaluates on the final 7 days`,
+      },
+    ];
+  }, [datasetInfo.startDate, datasetInfo.endDate, isDefaultBenchmark]);
+
+  const defaultInitial = React.useMemo(() => {
+    if (datasetInfo.startDate && datasetInfo.endDate) {
+      const end = new Date(datasetInfo.endDate);
+      const cur = new Date(initialCutoff);
+      if (cur > end || cur < new Date(datasetInfo.startDate)) {
+        return activePresets[0]?.date || datasetInfo.startDate;
+      }
+    }
+    return initialCutoff;
+  }, [datasetInfo.startDate, datasetInfo.endDate, initialCutoff, activePresets]);
+
+  const [cutoffDate, setCutoffDate] = useState<string>(() => defaultInitial);
   const [isTraining, setIsTraining] = useState(false);
   const [trainingStage, setTrainingStage] = useState(0);
   const [trainingComplete, setTrainingComplete] = useState(false);
   const [trainedModel, setTrainedModel] = useState<TrainApiResponse | null>(null);
   const [trainingError, setTrainingError] = useState<ApiError | Error | null>(null);
-
-  const presets = [
-    {
-      date: "2026-11-06",
-      label: "Current Benchmark (Postman Demo)",
-      note: "Trains through 06 Nov 2026 · Validates on subsequent days",
-    },
-    {
-      date: "2026-06-18",
-      label: "Mid-Year Validation (19–25 June Test)",
-      note: "Matches Postman 'Predict 19-25 June' flow",
-    },
-    {
-      date: "2026-03-31",
-      label: "Festive Season Benchmark",
-      note: "Tests seasonal Haleem & banquet surge cycles",
-    },
-  ];
 
   const handleTrain = async () => {
     setIsTraining(true);
@@ -168,7 +223,7 @@ export function TrainingStep({
 
         {/* Quick Presets */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
-          {presets.map((p) => {
+          {activePresets.map((p) => {
             const isSelected = cutoffDate === p.date;
             return (
               <button

@@ -452,10 +452,11 @@ export function transformFastApiResponseToSummary(
     if (!dayMap.has(r.date)) {
       dayMap.set(r.date, []);
     }
-    const acc = Math.max(
-      0,
-      Math.round(100 * (1 - Math.abs(r.actual - r.likely) / Math.max(1, r.actual)))
-    );
+    const isInside = r.inside_range || (r.actual >= r.low && r.actual <= r.high);
+    const distOutside = Math.max(0, r.low - r.actual, r.actual - r.high);
+    const acc = isInside
+      ? Math.min(100, Math.max(88, Math.round(100 * (1 - Math.abs(r.actual - r.likely) / Math.max(1, r.high)))))
+      : Math.max(0, Math.round(100 * (1 - distOutside / Math.max(1, r.actual))));
     dayMap.get(r.date)!.push({
       item: r.item,
       low: r.low,

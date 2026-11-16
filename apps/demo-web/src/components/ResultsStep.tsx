@@ -17,6 +17,7 @@ import {
   Table as TableIcon,
   BarChart3,
   RefreshCw,
+  Search,
 } from "lucide-react";
 import {
   ComparisonSummary,
@@ -24,6 +25,7 @@ import {
 } from "@/data/demoDataset";
 import { ApiError } from "@/lib/api";
 import { ErrorAlert } from "@/components/ErrorAlert";
+import { TablePagination } from "@/components/TablePagination";
 
 // Helper: Safely add days to an ISO YYYY-MM-DD string without timezone offset shifts
 function addDaysToIso(dateStr: string, days: number): string {
@@ -55,6 +57,38 @@ export function ResultsStep({
   const [activeDayIndex, setActiveDayIndex] = useState(0);
   const [viewMode, setViewMode] = useState<"day-wise" | "aggregate" | "chart">("day-wise");
   const currentDay: DayForecast = results.days[activeDayIndex] || results.days[0];
+
+  // Day-Wise Pagination & Search States
+  const [dayPageSize, setDayPageSize] = useState<number>(5);
+  const [dayCurrentPage, setDayCurrentPage] = useState<number>(1);
+  const [daySearch, setDaySearch] = useState<string>("");
+
+  // Aggregate View Pagination & Search States
+  const [aggPageSize, setAggPageSize] = useState<number>(10);
+  const [aggCurrentPage, setAggCurrentPage] = useState<number>(1);
+  const [aggSearch, setAggSearch] = useState<string>("");
+
+  const filteredDayItems = React.useMemo(() => {
+    if (!daySearch.trim()) return currentDay.items;
+    const q = daySearch.toLowerCase();
+    return currentDay.items.filter((it) => it.item.toLowerCase().includes(q));
+  }, [currentDay.items, daySearch]);
+
+  const paginatedDayItems = React.useMemo(() => {
+    const start = (dayCurrentPage - 1) * dayPageSize;
+    return filteredDayItems.slice(start, start + dayPageSize);
+  }, [filteredDayItems, dayCurrentPage, dayPageSize]);
+
+  const filteredAggItems = React.useMemo(() => {
+    if (!aggSearch.trim()) return results.itemAggregates;
+    const q = aggSearch.toLowerCase();
+    return results.itemAggregates.filter((it) => it.item.toLowerCase().includes(q));
+  }, [results.itemAggregates, aggSearch]);
+
+  const paginatedAggItems = React.useMemo(() => {
+    const start = (aggCurrentPage - 1) * aggPageSize;
+    return filteredAggItems.slice(start, start + aggPageSize);
+  }, [filteredAggItems, aggCurrentPage, aggPageSize]);
 
   // Rolling Real-Time Retraining State — Strictly calculated from initial cutoffDate
   const [advanceCutoffDate, setAdvanceCutoffDate] = useState<string>(() =>
@@ -222,7 +256,9 @@ export function ResultsStep({
           </div>
           <div className="mt-2 text-xs text-[#52525B] flex items-center justify-between border-t border-[#EADDCE] pt-2 font-mono">
             <span>accuracy_per_item_per_day</span>
-            <span className="text-[#18181B] font-semibold">Across 10 Menu Items</span>
+            <span className="text-[#18181B] font-semibold">
+              Across {results.itemAggregates?.length || currentDay.items.length} Dishes
+            </span>
           </div>
         </div>
 
@@ -322,7 +358,11 @@ export function ResultsStep({
                   return (
                     <button
                       key={day.date}
-                      onClick={() => setActiveDayIndex(idx)}
+                      onClick={() => {
+                        setActiveDayIndex(idx);
+                        setDayCurrentPage(1);
+                        setDaySearch("");
+                      }}
                       className={`flex flex-col items-center px-4 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer ${
                         isActive
                           ? "bg-[#FAF5EA] border-2 border-[#B88E3E] text-[#18181B] font-bold shadow-sm"
@@ -405,6 +445,26 @@ export function ResultsStep({
 
           {/* Itemized Table */}
           <div className="rounded-2xl border border-[#EADDCE] bg-white overflow-hidden shadow-sm">
+            {/* Search and Filter Toolbar */}
+            <div className="p-4 border-b border-[#EADDCE] bg-white flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="relative w-full sm:w-80">
+                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#71717A]" />
+                <input
+                  type="text"
+                  placeholder="Search dishes or items..."
+                  value={daySearch}
+                  onChange={(e) => {
+                    setDaySearch(e.target.value);
+                    setDayCurrentPage(1);
+                  }}
+                  className="w-full pl-10 pr-4 py-2 text-xs rounded-xl border border-[#EADDCE] bg-[#FAF8F5] text-[#18181B] placeholder:text-[#A1A1AA] focus:bg-white focus:border-[#B88E3E] focus:outline-none transition-all shadow-inner"
+                />
+              </div>
+              <div className="text-xs text-[#52525B] font-mono">
+                Showing <span className="font-semibold text-[#18181B]">{filteredDayItems.length}</span> of {currentDay.items.length} dishes
+              </div>
+            </div>
+
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
                 <thead>
@@ -419,7 +479,14 @@ export function ResultsStep({
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#EADDCE]/60">
-                  {currentDay.items.map((item, idx) => {
+                  {paginatedDayItems.length === 0 ? (
+                    <tr>
+                      <td colSpan={7} className="py-8 text-center text-[#71717A] font-mono">
+                        No dishes found matching &quot;{daySearch}&quot;
+                      </td>
+                    </tr>
+                  ) : (
+                    paginatedDayItems.map((item, idx) => {
                     const isPositive = item.difference > 0;
                     const isZero = item.difference === 0;
 
@@ -512,19 +579,32 @@ export function ResultsStep({
                         </td>
                       </tr>
                     );
-                  })}
+                  }))}
                 </tbody>
               </table>
             </div>
 
-            {/* Table Footer */}
-            <div className="bg-[#FAF8F5] px-5 py-3 border-t border-[#EADDCE] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#52525B]">
-              <span className="font-mono">
-                Postman JSON endpoint: <code className="text-[#8F6D27] font-semibold">POST /restaurants/&#123;id&#125;/compare?period=day</code>
-              </span>
-              <span className="text-[#18181B] font-bold">
-                Day Range Hit Rate: {currentDay.rangeHitPercent}% inside P5–P95
-              </span>
+            {/* Table Footer with Pagination */}
+            <div className="bg-[#FAF8F5] px-5 py-4 border-t border-[#EADDCE] flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+              <div className="text-xs text-[#52525B]">
+                Showing <span className="font-semibold text-[#18181B]">{filteredDayItems.length > 0 ? (dayCurrentPage - 1) * dayPageSize + 1 : 0}</span>–
+                <span className="font-semibold text-[#18181B]">{Math.min(dayCurrentPage * dayPageSize, filteredDayItems.length)}</span> of{" "}
+                <span className="font-semibold text-[#18181B]">{filteredDayItems.length}</span> dishes
+                <span className="mx-2 text-[#D4D4D8]">•</span>
+                <span className="text-emerald-800 font-semibold">{currentDay.rangeHitPercent}%</span> Inside Range
+              </div>
+
+              <TablePagination
+                totalItems={filteredDayItems.length}
+                pageSize={dayPageSize}
+                currentPage={dayCurrentPage}
+                onPageChange={setDayCurrentPage}
+                onPageSizeChange={(newSize) => {
+                  setDayPageSize(newSize);
+                  setDayCurrentPage(1);
+                }}
+                pageSizeOptions={[5, 10, 20, 50, 80, 100]}
+              />
             </div>
           </div>
         </div>
@@ -547,6 +627,26 @@ export function ResultsStep({
             </div>
           </div>
 
+          {/* Aggregate Search Toolbar */}
+          <div className="p-4 border-b border-[#EADDCE] bg-white flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="relative w-full sm:w-80">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#71717A]" />
+              <input
+                type="text"
+                placeholder="Search dishes..."
+                value={aggSearch}
+                onChange={(e) => {
+                  setAggSearch(e.target.value);
+                  setAggCurrentPage(1);
+                }}
+                className="w-full pl-10 pr-4 py-2 text-xs rounded-xl border border-[#EADDCE] bg-[#FAF8F5] text-[#18181B] placeholder:text-[#A1A1AA] focus:bg-white focus:border-[#B88E3E] focus:outline-none transition-all shadow-inner"
+              />
+            </div>
+            <div className="text-xs text-[#52525B] font-mono">
+              Showing <span className="font-semibold text-[#18181B]">{filteredAggItems.length}</span> of {results.itemAggregates.length} dishes
+            </div>
+          </div>
+
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
@@ -559,35 +659,64 @@ export function ResultsStep({
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#EADDCE]/60">
-                {results.itemAggregates.map((agg, idx) => (
-                  <tr key={idx} className="hover:bg-[#FAF8F5] transition-colors">
-                    <td className="py-3.5 px-5 font-semibold text-[#18181B] text-sm">{agg.item}</td>
-                    <td className="py-3.5 px-4 text-right font-mono font-bold text-[#B88E3E] text-sm">
-                      {agg.totalLikely}
-                    </td>
-                    <td className="py-3.5 px-4 text-right font-mono font-bold text-[#18181B] text-sm">
-                      {agg.totalActual}
-                    </td>
-                    <td className="py-3.5 px-4 text-right font-mono text-xs">
-                      <span
-                        className={
-                          agg.difference > 0
-                            ? "text-amber-700 font-bold"
-                            : agg.difference < 0
-                            ? "text-emerald-700 font-bold"
-                            : "text-[#71717A]"
-                        }
-                      >
-                        {agg.difference > 0 ? `+${agg.difference}` : agg.difference}
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-5 text-right font-mono">
-                      <span className="font-bold text-emerald-700 text-sm">{agg.accuracy}%</span>
+                {paginatedAggItems.length === 0 ? (
+                  <tr>
+                    <td colSpan={5} className="py-8 text-center text-[#71717A] font-mono">
+                      No dishes found matching &quot;{aggSearch}&quot;
                     </td>
                   </tr>
-                ))}
+                ) : (
+                  paginatedAggItems.map((agg, idx) => (
+                    <tr key={idx} className="hover:bg-[#FAF8F5] transition-colors">
+                      <td className="py-3.5 px-5 font-semibold text-[#18181B] text-sm">{agg.item}</td>
+                      <td className="py-3.5 px-4 text-right font-mono font-bold text-[#B88E3E] text-sm">
+                        {agg.totalLikely}
+                      </td>
+                      <td className="py-3.5 px-4 text-right font-mono font-bold text-[#18181B] text-sm">
+                        {agg.totalActual}
+                      </td>
+                      <td className="py-3.5 px-4 text-right font-mono text-xs">
+                        <span
+                          className={
+                            agg.difference > 0
+                              ? "text-amber-700 font-bold"
+                              : agg.difference < 0
+                              ? "text-emerald-700 font-bold"
+                              : "text-[#71717A]"
+                          }
+                        >
+                          {agg.difference > 0 ? `+${agg.difference}` : agg.difference}
+                        </span>
+                      </td>
+                      <td className="py-3.5 px-5 text-right font-mono">
+                        <span className="font-bold text-emerald-700 text-sm">{agg.accuracy}%</span>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
+          </div>
+
+          {/* Table Footer with Pagination */}
+          <div className="bg-[#FAF8F5] px-5 py-4 border-t border-[#EADDCE] flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+            <div className="text-xs text-[#52525B]">
+              Showing <span className="font-semibold text-[#18181B]">{filteredAggItems.length > 0 ? (aggCurrentPage - 1) * aggPageSize + 1 : 0}</span>–
+              <span className="font-semibold text-[#18181B]">{Math.min(aggCurrentPage * aggPageSize, filteredAggItems.length)}</span> of{" "}
+              <span className="font-semibold text-[#18181B]">{filteredAggItems.length}</span> dishes
+            </div>
+
+            <TablePagination
+              totalItems={filteredAggItems.length}
+              pageSize={aggPageSize}
+              currentPage={aggCurrentPage}
+              onPageChange={setAggCurrentPage}
+              onPageSizeChange={(newSize) => {
+                setAggPageSize(newSize);
+                setAggCurrentPage(1);
+              }}
+              pageSizeOptions={[5, 10, 20, 50, 80, 100]}
+            />
           </div>
         </div>
       )}
