@@ -18,6 +18,7 @@ COPY . .
 
 ENV NODE_ENV=production
 ENV HOSTNAME="0.0.0.0"
+ENV PORT=3001
 
 RUN pnpm --filter landing-page build
 
