@@ -159,6 +159,21 @@ class ForecastService:
             new_items = history.items_newer_than(self.settings.min_history_days)
             use_model = ~rows.index.get_level_values("item").isin(new_items)
             if use_model.any():
-                result.loc[use_model, RANGE_COLUMNS] = model.forecast(rows[use_model]).to_numpy()
+                lgb_pred = model.forecast(rows[use_model])
+                base_pred = result.loc[use_model, RANGE_COLUMNS]
+
+                # Adaptive Ensemble: blends tree pattern learning with baseline volume stability
+                blended_likely = np.round(0.6 * lgb_pred["likely"] + 0.4 * base_pred["likely"]).astype(int)
+                blended_low = np.minimum(lgb_pred["low"], base_pred["low"])
+                blended_high = np.maximum(lgb_pred["high"], base_pred["high"])
+
+                # Zero-sales filter: items dormant in recent history do not hallucinate phantom portions
+                zero_history = (rows.loc[use_model, "avg_last_4_same_weekdays"].fillna(0) == 0) & (rows.loc[use_model, "avg_last_7_known_days"].fillna(0) == 0)
+                blended_likely = np.where(zero_history, 0, blended_likely)
+                blended_low = np.where(zero_history, 0, blended_low)
+
+                result.loc[use_model, "likely"] = blended_likely
+                result.loc[use_model, "low"] = np.minimum(blended_low, blended_likely)
+                result.loc[use_model, "high"] = np.maximum(blended_high, blended_likely)
                 result.loc[use_model, "method"] = model.name
         return result.assign(horizon=f"{days_ahead}-day model")
