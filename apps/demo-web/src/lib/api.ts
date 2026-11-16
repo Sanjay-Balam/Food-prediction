@@ -328,7 +328,7 @@ export async function trainApi(
       until: cutoffDate || undefined,
       weeks: weeks || undefined,
     },
-    timeoutMs: 180000,
+    timeoutMs: 300000,
   });
 }
 
@@ -384,7 +384,7 @@ export async function backtestApi(
 ): Promise<Record<string, unknown>> {
   return PrismaAPI.get<Record<string, unknown>>(`/restaurants/${restaurantId}/backtest`, {
     params: { weeks: weeks || undefined },
-    timeoutMs: 180000,
+    timeoutMs: 300000,
   });
 }
 

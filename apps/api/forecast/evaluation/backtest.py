@@ -25,11 +25,13 @@ class Backtester:
 
     def evaluate(self, history: SalesHistory, weeks: int | None = None, horizons=None, skip_groups=(),
                  with_range: bool = True) -> dict[int, dict]:
-        weeks = weeks or self.settings.backtest_weeks
+        total_history_days = (history.last_date - history.qty.index.min()).days
+        min_history = min(self.settings.min_history_days, max(14, total_history_days // 2))
+        max_possible_weeks = max(1, (total_history_days - min_history) // 7)
+        weeks = min(weeks or self.settings.backtest_weeks, max_possible_weeks)
         test_start = history.last_date - pd.Timedelta(days=weeks * 7 - 1)
-        if test_start - history.qty.index.min() < pd.Timedelta(days=self.settings.min_history_days):
-            raise ValueError(f"need {self.settings.min_history_days}+ days of sales before the "
-                             f"{weeks}-week test window")
+        if test_start - history.qty.index.min() < pd.Timedelta(days=min_history):
+            raise ValueError(f"need {min_history}+ days of sales before the {weeks}-week test window")
         return {days_ahead: self._evaluate_horizon(history, days_ahead, test_start, skip_groups, with_range)
                 for days_ahead in (horizons or self.settings.horizons)}
 
