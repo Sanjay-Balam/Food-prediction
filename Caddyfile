@@ -3,12 +3,12 @@
 
 # 1. Main Marketing Landing Page
 logeeca.com, www.logeeca.com {
-    reverse_proxy 127.0.0.1:3001
+    reverse_proxy 127.0.0.1:3021
 }
 
 # 2. Interactive Client Evaluation Console
 demo.logeeca.com {
-    reverse_proxy 127.0.0.1:3000
+    reverse_proxy 127.0.0.1:3020
 }
 
 # 3. Machine Learning Forecasting API Engine

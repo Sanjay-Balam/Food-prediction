@@ -30,7 +30,7 @@ services:
     container_name: logeeca-demo-web
     restart: unless-stopped
     ports:
-      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3020:3000"
     depends_on:
       api:
         condition: service_healthy
@@ -42,4 +42,4 @@ services:
     container_name: logeeca-landing
     restart: unless-stopped
     ports:
-      - "127.0.0.1:3001:3001"
+      - "127.0.0.1:3021:3001"
