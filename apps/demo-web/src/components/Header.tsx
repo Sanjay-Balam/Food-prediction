@@ -1,34 +1,16 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { Cpu, RotateCcw } from "lucide-react";
-import { checkApiHealth, ApiHealthStatus } from "@/lib/api";
+import { ApiHealthStatus } from "@/lib/api";
 
 interface HeaderProps {
   onReset: () => void;
   apiHealth?: ApiHealthStatus;
 }
 
-export function Header({ onReset, apiHealth: propHealth }: HeaderProps) {
-  const [internalHealth, setInternalHealth] = useState<ApiHealthStatus | null>(null);
-
-  useEffect(() => {
-    let isMounted = true;
-    checkApiHealth()
-      .then((res) => {
-        if (isMounted) setInternalHealth(res);
-      })
-      .catch(() => {
-        if (isMounted) setInternalHealth({ online: false });
-      });
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
-  const health: ApiHealthStatus = propHealth || internalHealth || { online: false };
-
+export function Header({ onReset }: HeaderProps) {
   return (
     <header className="border-b border-[#EADDCE] bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
@@ -52,30 +34,8 @@ export function Header({ onReset, apiHealth: propHealth }: HeaderProps) {
 
         {/* Engine Status Indicators & Actions */}
         <div className="flex items-center gap-3">
-          {/* Live FastAPI Status Badge */}
-          {health.online ? (
-            <div
-              className="flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800"
-              title="FastAPI service is online on port 8000"
-            >
-              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>FastAPI Live :8000</span>
-              {health.latencyMs && (
-                <span className="text-[10px] text-emerald-600 font-mono">({health.latencyMs}ms)</span>
-              )}
-            </div>
-          ) : (
-            <div
-              className="flex items-center gap-2 rounded-lg border border-rose-200 bg-rose-50 px-3 py-1 text-xs font-medium text-rose-800"
-              title="FastAPI backend offline on port 8000. Start backend with 'python -m uvicorn forecast.api:app --reload'."
-            >
-              <span className="size-2 rounded-full bg-rose-500" />
-              <span>FastAPI Offline (:8000)</span>
-            </div>
-          )}
-
           {/* Model Engine Badge */}
-          <div className="hidden md:flex items-center gap-2 rounded-lg border border-[#E5D7B7] bg-[#FAF6EE] px-3 py-1 text-xs font-medium text-[#7D5F23]">
+          <div className="flex items-center gap-2 rounded-lg border border-[#E5D7B7] bg-[#FAF6EE] px-3 py-1 text-xs font-medium text-[#7D5F23]">
             <Cpu className="size-3.5 text-[#B88E3E]" />
             <span>Forecasting Model</span>
           </div>
