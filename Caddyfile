@@ -1,0 +1,21 @@
+# Caddyfile for Logeeca Production
+# Place in /etc/caddy/Caddyfile or reload with: caddy reload
+
+# 1. Main Marketing Landing Page
+logeeca.com, www.logeeca.com {
+    reverse_proxy 127.0.0.1:3001
+}
+
+# 2. Interactive Client Evaluation Console
+demo.logeeca.com {
+    reverse_proxy 127.0.0.1:3000
+}
+
+# 3. Machine Learning Forecasting API Engine
+api.logeeca.com {
+    reverse_proxy 127.0.0.1:8000 {
+        transport http {
+            response_header_timeout 300s
+        }
+    }
+}

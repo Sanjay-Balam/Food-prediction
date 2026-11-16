@@ -1,0 +1,45 @@
+services:
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    container_name: logeeca-api
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./apps/api/data:/app/data
+      - ./apps/api/artifacts:/app/artifacts
+      - ./apps/api/forecasts:/app/forecasts
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  demo-web:
+    build:
+      context: .
+      dockerfile: apps/demo-web/Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: https://api.logeeca.com
+        NEXT_PUBLIC_DEFAULT_RESTAURANT_ID: hyderabad_demo
+    container_name: logeeca-demo-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+
+  landing-page:
+    build:
+      context: .
+      dockerfile: apps/landing-page/Dockerfile
+    container_name: logeeca-landing
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3001:3001"

@@ -1,9 +1,12 @@
 # secrets (any app)
 .env
 
-# node / turborepo
+# node / turborepo / next
 node_modules/
 .turbo/
+.next/
+dist/
+build/
 
 # python
 __pycache__/
