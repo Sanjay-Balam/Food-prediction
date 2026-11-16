@@ -24,4 +24,4 @@ RUN pnpm --filter landing-page build
 
 EXPOSE 3001
 
-CMD ["pnpm", "--filter", "landing-page", "start", "--", "-p", "3001", "-H", "0.0.0.0"]
+CMD ["pnpm", "--filter", "landing-page", "start"]

@@ -29,4 +29,4 @@ RUN pnpm --filter demo-web build
 
 EXPOSE 3000
 
-CMD ["pnpm", "--filter", "demo-web", "start", "--", "-p", "3000", "-H", "0.0.0.0"]
+CMD ["pnpm", "--filter", "demo-web", "start"]
