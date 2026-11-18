@@ -26,18 +26,8 @@ import {
 import { ApiError } from "@/lib/api";
 import { ErrorAlert } from "@/components/ErrorAlert";
 import { TablePagination } from "@/components/TablePagination";
-
-// Helper: Safely add days to an ISO YYYY-MM-DD string without timezone offset shifts
-function addDaysToIso(dateStr: string, days: number): string {
-  if (!dateStr) return "";
-  const parts = dateStr.split("-").map(Number);
-  const d = new Date(parts[0], parts[1] - 1, parts[2]);
-  d.setDate(d.getDate() + days);
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
-}
+import { PeriodTotalsTable } from "@/components/PeriodTotalsTable";
+import { addDaysToIso, formatPercent } from "@/lib/utils";
 
 interface ResultsStepProps {
   results: ComparisonSummary;
@@ -55,7 +45,8 @@ export function ResultsStep({
   onAdvanceRetrain,
 }: ResultsStepProps) {
   const [activeDayIndex, setActiveDayIndex] = useState(0);
-  const [viewMode, setViewMode] = useState<"day-wise" | "aggregate" | "chart">("day-wise");
+  const [viewMode, setViewMode] = useState<"day-wise" | "aggregate" | "category" | "chart">("day-wise");
+  const hasCategories = results.categoryAggregates.length > 0; // the API sends none when the upload had no categories
   const currentDay: DayForecast = results.days[activeDayIndex] || results.days[0];
 
   // Day-Wise Pagination & Search States
@@ -82,7 +73,7 @@ export function ResultsStep({
   const filteredAggItems = React.useMemo(() => {
     if (!aggSearch.trim()) return results.itemAggregates;
     const q = aggSearch.toLowerCase();
-    return results.itemAggregates.filter((it) => it.item.toLowerCase().includes(q));
+    return results.itemAggregates.filter((item) => item.name.toLowerCase().includes(q));
   }, [results.itemAggregates, aggSearch]);
 
   const paginatedAggItems = React.useMemo(() => {
@@ -139,37 +130,8 @@ export function ResultsStep({
   };
 
   const handleDownloadJSON = () => {
-    const postmanJson = {
-      period: results.period,
-      from: results.startDate,
-      to: results.endDate,
-      days_compared: results.daysCount,
-      summary: {
-        accuracy_per_item_per_day: results.accuracyPerItem,
-        accuracy_daily_total: results.accuracyTotal,
-        actual_inside_range_percent: results.insideRangePercent,
-      },
-      daily_totals: results.days.map((d) => ({
-        date: d.date,
-        predicted: d.predictedTotal,
-        actual: d.actualTotal,
-        accuracy: d.dayAccuracy,
-      })),
-      rows: results.days.flatMap((d) =>
-        d.items.map((it) => ({
-          date: d.date,
-          item: it.item,
-          low: it.low,
-          likely: it.likely,
-          high: it.high,
-          actual: it.actual,
-          difference: it.difference,
-          inside_range: it.insideRange,
-        }))
-      ),
-    };
-
-    const blob = new Blob([JSON.stringify(postmanJson, null, 2)], {
+    // the /compare response exactly as the API returned it
+    const blob = new Blob([JSON.stringify(results.raw, null, 2)], {
       type: "application/json",
     });
     const url = URL.createObjectURL(blob);
@@ -224,11 +186,11 @@ export function ResultsStep({
         {/* KPI 1 */}
         <div className="rounded-2xl border border-[#E5D7B7] bg-white p-5 shadow-[0_4px_20px_rgba(184,142,62,0.06)] relative">
           <div className="text-[11px] font-bold text-[#71717A] uppercase tracking-wider mb-1">
-            Total Volume Accuracy
+            Daily Total Accuracy
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl sm:text-4xl font-bold text-[#B88E3E] font-mono">
-              {results.accuracyTotal}%
+              {formatPercent(results.accuracyTotal)}
             </span>
             <span className="text-xs text-emerald-700 font-semibold flex items-center">
               <TrendingUp className="size-3 mr-0.5" />
@@ -246,18 +208,18 @@ export function ResultsStep({
         {/* KPI 2 */}
         <div className="rounded-2xl border border-[#E5D7B7] bg-white p-5 shadow-sm">
           <div className="text-[11px] font-bold text-[#71717A] uppercase tracking-wider mb-1">
-            Item-Level Accuracy
+            Item-Day Accuracy
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl sm:text-4xl font-bold text-[#18181B] font-mono">
-              {results.accuracyPerItem}%
+              {formatPercent(results.accuracyPerItem)}
             </span>
             <span className="text-xs text-emerald-700 font-semibold">Fine-Grained</span>
           </div>
           <div className="mt-2 text-xs text-[#52525B] flex items-center justify-between border-t border-[#EADDCE] pt-2 font-mono">
             <span>accuracy_per_item_per_day</span>
             <span className="text-[#18181B] font-semibold">
-              Across {results.itemAggregates?.length || currentDay.items.length} Dishes
+              Across {results.itemAggregates.length} Dishes
             </span>
           </div>
         </div>
@@ -275,25 +237,23 @@ export function ResultsStep({
           </div>
           <div className="mt-2 text-xs text-emerald-800 flex items-center justify-between border-t border-emerald-200 pt-2 font-mono">
             <span>actual_inside_range_percent</span>
-            <span className="font-semibold text-emerald-700">Zero Walkouts</span>
+            <span className="font-semibold text-emerald-700">actual within low – high</span>
           </div>
         </div>
 
-        {/* KPI 4: Cumulative Horizon Net Delta */}
+        {/* KPI 4: whole-period (week-wise) total accuracy */}
         <div className="rounded-2xl border border-[#E5D7B7] bg-white p-5 shadow-sm">
           <div className="text-[11px] font-bold text-[#71717A] uppercase tracking-wider mb-1">
-            Cumulative Horizon Delta
+            Period Total Accuracy
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl sm:text-4xl font-bold text-[#8F6D27] font-mono">
-              {results.totalActualPortions - results.totalPredictedPortions >= 0
-                ? `+${results.totalActualPortions - results.totalPredictedPortions}`
-                : `${results.totalActualPortions - results.totalPredictedPortions}`}
+              {formatPercent(results.accuracyPeriodTotal)}
             </span>
-            <span className="text-xs text-[#71717A]">plates net variance</span>
+            <span className="text-xs text-[#71717A]">{results.daysCount}-day total</span>
           </div>
           <div className="mt-2 text-xs text-[#52525B] flex items-center justify-between border-t border-[#EADDCE] pt-2 font-mono">
-            <span>actual vs likely</span>
+            <span>accuracy_period_total</span>
             <span className="text-[#18181B] font-semibold">
               {results.totalPredictedPortions} Pred / {results.totalActualPortions} Actual
             </span>
@@ -301,9 +261,26 @@ export function ResultsStep({
         </div>
       </div>
 
+      {/* Category-level accuracy: the level a kitchen preps at; only when the upload carried categories */}
+      {hasCategories && (
+        <div className="-mt-4 mb-8 rounded-2xl border border-[#E5D7B7] bg-[#FAF5EA] px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 text-xs">
+          <span className="font-bold text-[#8F6D27] uppercase tracking-wider">
+            By menu category ({results.categoryAggregates.length})
+          </span>
+          <span className="font-mono text-[#52525B]">
+            Category-day accuracy{" "}
+            <strong className="text-[#18181B] text-sm">{formatPercent(results.accuracyPerCategoryDay)}</strong>
+          </span>
+          <span className="font-mono text-[#52525B]">
+            Category accuracy over period{" "}
+            <strong className="text-[#18181B] text-sm">{formatPercent(results.accuracyPerCategoryPeriod)}</strong>
+          </span>
+        </div>
+      )}
+
       {/* View Mode Switcher */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-6">
-        <div className="flex items-center gap-1 rounded-xl border border-[#EADDCE] bg-white p-1 self-start shadow-sm">
+        <div className="flex flex-wrap items-center gap-1 rounded-xl border border-[#EADDCE] bg-white p-1 self-start shadow-sm">
           <button
             onClick={() => setViewMode("day-wise")}
             className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold transition-all cursor-pointer ${
@@ -327,6 +304,20 @@ export function ResultsStep({
             <TableIcon className="size-3.5" />
             <span>Full Period Aggregate</span>
           </button>
+
+          {hasCategories && (
+            <button
+              onClick={() => setViewMode("category")}
+              className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold transition-all cursor-pointer ${
+                viewMode === "category"
+                  ? "bg-[#B88E3E] text-white shadow-sm"
+                  : "text-[#52525B] hover:text-[#18181B]"
+              }`}
+            >
+              <TableIcon className="size-3.5" />
+              <span>By Category</span>
+            </button>
+          )}
 
           <button
             onClick={() => setViewMode("chart")}
@@ -376,6 +367,7 @@ export function ResultsStep({
                         {new Date(day.date).toLocaleDateString("en-IN", {
                           day: "2-digit",
                           month: "short",
+                          timeZone: "UTC",
                         })}
                       </span>
                       <span
@@ -383,7 +375,7 @@ export function ResultsStep({
                           isActive ? "text-[#8F6D27]" : "text-emerald-700"
                         }`}
                       >
-                        {day.dayAccuracy}%
+                        {formatPercent(day.dayAccuracy)}
                       </span>
                     </button>
                   );
@@ -437,7 +429,7 @@ export function ResultsStep({
               <div>
                 <span className="text-[10px] text-[#71717A] uppercase tracking-wider block font-medium">Day Accuracy</span>
                 <span className="text-xl font-bold text-emerald-700 font-mono">
-                  {currentDay.dayAccuracy}%
+                  {formatPercent(currentDay.dayAccuracy)}
                 </span>
               </div>
             </div>
@@ -500,6 +492,7 @@ export function ResultsStep({
                           <div className="font-semibold text-[#18181B] text-sm">{item.item}</div>
                           <div className="text-[10px] text-[#71717A] font-mono mt-0.5">
                             Method: {item.method}
+                            {item.category ? ` · ${item.category}` : null}
                           </div>
                         </td>
 
@@ -552,14 +545,16 @@ export function ResultsStep({
                         <td className="py-3.5 px-4 text-right font-mono">
                           <span
                             className={`font-bold ${
-                              item.accuracy >= 90
+                              item.accuracy === null
+                                ? "text-[#71717A]"
+                                : item.accuracy >= 90
                                 ? "text-emerald-700"
                                 : item.accuracy >= 80
                                 ? "text-[#8F6D27]"
                                 : "text-amber-700"
                             }`}
                           >
-                            {item.accuracy}%
+                            {formatPercent(item.accuracy)}
                           </span>
                         </td>
 
@@ -623,7 +618,7 @@ export function ResultsStep({
               </p>
             </div>
             <div className="text-xs font-mono text-[#8F6D27] bg-[#FAF5EA] border border-[#E5D7B7] px-3 py-1.5 rounded-xl font-bold">
-              Overall WAPE: {results.accuracyPerItem}%
+              Item accuracy over period: {formatPercent(results.accuracyPerItemPeriod)}
             </div>
           </div>
 
@@ -647,56 +642,11 @@ export function ResultsStep({
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead>
-                <tr className="border-b border-[#EADDCE] bg-[#FAF8F5] text-[#52525B] font-mono uppercase tracking-wider text-[11px]">
-                  <th className="py-3.5 px-5">Menu Item</th>
-                  <th className="py-3.5 px-4 text-right">Total Predicted (Likely)</th>
-                  <th className="py-3.5 px-4 text-right">Total Actual Sold</th>
-                  <th className="py-3.5 px-4 text-right">Cumulative Diff</th>
-                  <th className="py-3.5 px-5 text-right">Horizon Accuracy</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#EADDCE]/60">
-                {paginatedAggItems.length === 0 ? (
-                  <tr>
-                    <td colSpan={5} className="py-8 text-center text-[#71717A] font-mono">
-                      No dishes found matching &quot;{aggSearch}&quot;
-                    </td>
-                  </tr>
-                ) : (
-                  paginatedAggItems.map((agg, idx) => (
-                    <tr key={idx} className="hover:bg-[#FAF8F5] transition-colors">
-                      <td className="py-3.5 px-5 font-semibold text-[#18181B] text-sm">{agg.item}</td>
-                      <td className="py-3.5 px-4 text-right font-mono font-bold text-[#B88E3E] text-sm">
-                        {agg.totalLikely}
-                      </td>
-                      <td className="py-3.5 px-4 text-right font-mono font-bold text-[#18181B] text-sm">
-                        {agg.totalActual}
-                      </td>
-                      <td className="py-3.5 px-4 text-right font-mono text-xs">
-                        <span
-                          className={
-                            agg.difference > 0
-                              ? "text-amber-700 font-bold"
-                              : agg.difference < 0
-                              ? "text-emerald-700 font-bold"
-                              : "text-[#71717A]"
-                          }
-                        >
-                          {agg.difference > 0 ? `+${agg.difference}` : agg.difference}
-                        </span>
-                      </td>
-                      <td className="py-3.5 px-5 text-right font-mono">
-                        <span className="font-bold text-emerald-700 text-sm">{agg.accuracy}%</span>
-                      </td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
-          </div>
+          <PeriodTotalsTable
+            nameHeader="Menu Item"
+            rows={paginatedAggItems}
+            emptyMessage={`No dishes found matching "${aggSearch}"`}
+          />
 
           {/* Table Footer with Pagination */}
           <div className="bg-[#FAF8F5] px-5 py-4 border-t border-[#EADDCE] flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
@@ -718,6 +668,30 @@ export function ResultsStep({
               pageSizeOptions={[5, 10, 20, 50, 80, 100]}
             />
           </div>
+        </div>
+      )}
+
+      {/* VIEW: BY CATEGORY (API `categories`, as returned) */}
+      {viewMode === "category" && hasCategories && (
+        <div className="rounded-2xl border border-[#EADDCE] bg-white overflow-hidden shadow-sm">
+          <div className="p-6 border-b border-[#EADDCE] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <h3 className="text-xl font-bold text-[#18181B]">
+                Menu Category Performance ({results.daysCount} Days)
+              </h3>
+              <p className="text-xs text-[#52525B] mt-1">
+                Predicted vs actual portions per menu category across the whole window.
+              </p>
+            </div>
+            <div className="text-xs font-mono text-[#8F6D27] bg-[#FAF5EA] border border-[#E5D7B7] px-3 py-1.5 rounded-xl font-bold">
+              Category accuracy over period: {formatPercent(results.accuracyPerCategoryPeriod)}
+            </div>
+          </div>
+          <PeriodTotalsTable
+            nameHeader="Category"
+            rows={results.categoryAggregates}
+            emptyMessage="No categories in this upload."
+          />
         </div>
       )}
 

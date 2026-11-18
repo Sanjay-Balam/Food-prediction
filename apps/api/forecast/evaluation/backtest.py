@@ -5,7 +5,7 @@ import pandas as pd
 
 from ..config import Settings
 from ..model.features import FEATURE_GROUPS, FeatureBuilder
-from ..model.forecasters import LightGBMForecaster, SameDayLastWeek, SameWeekdayAverage
+from ..model.forecasters import BlendedForecaster, LightGBMForecaster, SameDayLastWeek, SameWeekdayAverage
 from ..data.history import SalesHistory
 
 VOLUME_BANDS = [(0, 10, "under 10/day"), (10, 30, "10-30/day"), (30, 100, "30-100/day"), (100, np.inf, "100+/day")]
@@ -19,19 +19,30 @@ def accuracy(actual, predicted) -> float:
     return round(100 * (1 - np.abs(actual - predicted).sum() / actual.sum()), 1)
 
 
+def explain_too_little_history(first_day: pd.Timestamp, last_day: pd.Timestamp, days_to_learn_from: int,
+                               test_weeks: int) -> str:
+    """Says how many days the data has, how many are needed, and the earliest cutoff that would work."""
+    test_days = test_weeks * 7
+    earliest_cutoff = first_day + pd.Timedelta(days=days_to_learn_from + test_days - 1)
+    return (f"not enough sales to train and test: {first_day.date()} to {last_day.date()} is "
+            f"{(last_day - first_day).days + 1} days, but training needs {days_to_learn_from} days to learn from plus "
+            f"a {test_days}-day test ({days_to_learn_from + test_days} days). Use a cutoff on or after "
+            f"{earliest_cutoff.date()}, or upload more history")
+
+
 class Backtester:
     def __init__(self, feature_builder: FeatureBuilder, settings: Settings):
         self.feature_builder, self.settings = feature_builder, settings
 
     def evaluate(self, history: SalesHistory, weeks: int | None = None, horizons=None, skip_groups=(),
                  with_range: bool = True) -> dict[int, dict]:
-        total_history_days = (history.last_date - history.qty.index.min()).days
-        min_history = min(self.settings.min_history_days, max(14, total_history_days // 2))
-        max_possible_weeks = max(1, (total_history_days - min_history) // 7)
-        weeks = min(weeks or self.settings.backtest_weeks, max_possible_weeks)
-        test_start = history.last_date - pd.Timedelta(days=weeks * 7 - 1)
-        if test_start - history.qty.index.min() < pd.Timedelta(days=min_history):
-            raise ValueError(f"need {min_history}+ days of sales before the {weeks}-week test window")
+        first_day, last_day = history.qty.index.min(), history.last_date
+        days_to_learn_from = history.days_needed_for_model(self.settings.min_history_days)
+        most_test_weeks_possible = max(1, ((last_day - first_day).days - days_to_learn_from) // 7)
+        weeks = min(weeks or self.settings.backtest_weeks, most_test_weeks_possible)
+        test_start = last_day - pd.Timedelta(days=weeks * 7 - 1)
+        if test_start - first_day < pd.Timedelta(days=days_to_learn_from):
+            raise ValueError(explain_too_little_history(first_day, last_day, days_to_learn_from, weeks))
         return {days_ahead: self._evaluate_horizon(history, days_ahead, test_start, skip_groups, with_range)
                 for days_ahead in (horizons or self.settings.horizons)}
 
@@ -55,7 +66,7 @@ class Backtester:
         feature_columns = FeatureBuilder.feature_columns(table)
         dates = table.index.get_level_values("date")
         step = pd.Timedelta(days=self.settings.retrain_every_days)
-        baselines = [SameWeekdayAverage(), SameDayLastWeek()]
+        same_weekday_average, same_day_last_week = SameWeekdayAverage(), SameDayLastWeek()
         actual_parts, forecast_parts = [], {}
         for retrain_day in pd.date_range(test_start, history.last_date, freq=step):
             known_rows = table[dates <= retrain_day - pd.Timedelta(days=days_ahead)]
@@ -65,7 +76,8 @@ class Backtester:
             if test_rows.empty:
                 continue
             actual_parts.append(test_rows["qty_sold"])
-            for forecaster in [lightgbm, *baselines]:
+            served_forecaster = BlendedForecaster(lightgbm, same_weekday_average)  # scored exactly as it is served
+            for forecaster in (served_forecaster, same_weekday_average, same_day_last_week):
                 forecast_parts.setdefault(forecaster.name, []).append(forecaster.forecast(test_rows))
         actual = pd.concat(actual_parts)
         forecasts = {name: pd.concat(parts) for name, parts in forecast_parts.items()}

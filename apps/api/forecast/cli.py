@@ -34,10 +34,10 @@ def print_accuracy_report(report: dict):
     print("\nPer item, next day:\n" + by_item.sort_values("avg sold/day", ascending=False).to_string())
 
 
-def print_forecast(forecast: pd.DataFrame, rid: str):
+def print_forecast(forecast: pd.DataFrame, restaurant_id: str):
     print(forecast.pivot_table(index="item", columns="date", values="likely", aggfunc="first").to_string())
     print(f"\nmodel: {forecast['model_version'].iloc[0]} | sales data until {forecast['data_until'].iloc[0]} | "
-          f"saved with low/high ranges to forecasts/{rid}/{forecast['date'].min()}.csv")
+          f"saved with low/high ranges to forecasts/{restaurant_id}/{forecast['date'].min()}.csv")
 
 
 def print_prep_message(forecast: pd.DataFrame, language: str, settings: Settings | None):

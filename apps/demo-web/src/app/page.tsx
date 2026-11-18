@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Stepper } from "@/components/Stepper";
-import { UploadStep, SampleRow } from "@/components/UploadStep";
+import { UploadStep, DatasetInfo } from "@/components/UploadStep";
 import { TrainingStep } from "@/components/TrainingStep";
 import { HorizonStep } from "@/components/HorizonStep";
 import { ResultsStep } from "@/components/ResultsStep";
@@ -13,9 +13,8 @@ import {
   forecastApi,
   compareApi,
   dynamicRetrainAndForecastApi,
-  transformFastApiResponseToSummary,
+  buildComparisonSummary,
   ApiHealthStatus,
-  DEFAULT_RESTAURANT_ID,
 } from "@/lib/api";
 
 export default function Home() {
@@ -23,24 +22,10 @@ export default function Home() {
   const [apiHealth, setApiHealth] = useState<ApiHealthStatus>({ online: false });
 
   // Ingested dataset metadata
-  const [datasetInfo, setDatasetInfo] = useState<{
-    restaurantName: string;
-    startDate: string;
-    endDate: string;
-    totalDays: number;
-    itemsCount: number;
-    totalPortions: number;
-    sampleRows: SampleRow[];
-  } | null>(null);
+  const [datasetInfo, setDatasetInfo] = useState<DatasetInfo | null>(null);
 
   // Training parameters
   const [cutoffDate, setCutoffDate] = useState<string>("2026-11-06");
-  const [modelInfo, setModelInfo] = useState<{
-    version: string;
-    trainingRows: number;
-    holdoutDays: number;
-    baselineAdvantage: string;
-  } | null>(null);
 
   // Horizon & Simulation output
   const [results, setResults] = useState<ComparisonSummary | null>(null);
@@ -58,32 +43,21 @@ export default function Home() {
     setCurrentStep(2);
   };
 
-  const handleTrainingComplete = (
-    selectedCutoff: string,
-    info: {
-      version: string;
-      trainingRows: number;
-      holdoutDays: number;
-      baselineAdvantage: string;
-    }
-  ) => {
+  // the model version shown with results comes from the /forecast response, not from training
+  const handleTrainingComplete = (selectedCutoff: string) => {
     setCutoffDate(selectedCutoff);
-    setModelInfo(info);
     setCurrentStep(3);
   };
 
   const handleSelectHorizon = async (daysAhead: number) => {
     // 1. Generate live forecast from FastAPI backend
-    await forecastApi(daysAhead, cutoffDate, DEFAULT_RESTAURANT_ID);
+    const forecastRes = await forecastApi(daysAhead, cutoffDate, datasetInfo!.restaurantId);
 
     // 2. Compare with real holdout sales (always query 'day' to retrieve full daily totals & dish rows)
-    const compareRes = await compareApi("day", DEFAULT_RESTAURANT_ID);
+    const compareRes = await compareApi("day", datasetInfo!.restaurantId);
 
-    // 3. Transform verified 200 response to domain summary
-    const liveSummary = transformFastApiResponseToSummary(
-      compareRes,
-      modelInfo?.version || "MODEL-LIVE-FASTAPI"
-    );
+    // 3. Map the response as-is; model_version is the one that actually produced this forecast
+    const liveSummary = buildComparisonSummary(compareRes, forecastRes.model_version);
     setResults(liveSummary);
     setCurrentStep(4);
   };
@@ -97,7 +71,7 @@ export default function Home() {
     const liveResult = await dynamicRetrainAndForecastApi(
       newCutoffDate,
       daysAhead,
-      DEFAULT_RESTAURANT_ID,
+      datasetInfo!.restaurantId,
       incrementalFile
     );
     setResults(liveResult);
@@ -107,7 +81,6 @@ export default function Home() {
     setCurrentStep(1);
     setDatasetInfo(null);
     setCutoffDate("2026-11-06");
-    setModelInfo(null);
     setResults(null);
   };
 

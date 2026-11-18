@@ -42,7 +42,7 @@ def test_invalid_uploads_are_rejected():
     with pytest.raises(ValueError):
         schema.sales(pd.concat([good, good.iloc[:1]]))
     with pytest.raises(ValueError):
-        schema.restaurant_id("../other_restaurant")
+        schema.validate_restaurant_id("../other_restaurant")
 
 
 def test_reuploading_a_day_replaces_it(service, tmp_path):
@@ -55,7 +55,11 @@ def test_reuploading_a_day_replaces_it(service, tmp_path):
     pd.concat([correction, next_day]).to_csv(tmp_path / "day2.csv", index=False)
     result = service.ingest_sales_file("r1", tmp_path / "day2.csv")
 
-    assert result == {"added": len(next_day), "replaced": 1, "total_rows": len(first_upload) + len(next_day)}
+    corrected_total = (first_upload["qty_sold"].sum() - first_upload["qty_sold"].iloc[0] + 999
+                       + next_day["qty_sold"].sum())
+    assert result == {"added": len(next_day), "replaced": 1, "total_rows": len(first_upload) + len(next_day),
+                      "from": "2025-01-01", "to": "2025-01-03", "days": 3, "items": first_upload["item"].nunique(),
+                      "categories": 0, "total_qty": corrected_total}
     stored = service.store.load_sales("r1")
     corrected = stored[(stored["date"] == "2025-01-01") & (stored["item"] == correction["item"].iloc[0])]
     assert corrected["qty_sold"].item() == 999

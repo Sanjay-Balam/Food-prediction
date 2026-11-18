@@ -6,7 +6,7 @@
  * This function contains the single `fetch` call used across the application.
  */
 
-import { ComparisonSummary, DayForecast, ItemPrediction } from "@/data/demoDataset";
+import { ComparisonSummary, DayForecast, ItemPrediction, PeriodTotals } from "@/data/demoDataset";
 
 // Environment-driven configurations from .env
 export const API_BASE_URL =
@@ -14,6 +14,14 @@ export const API_BASE_URL =
 
 export const DEFAULT_RESTAURANT_ID =
   process.env.NEXT_PUBLIC_DEFAULT_RESTAURANT_ID || "hyderabad_demo";
+
+/**
+ * Each demo upload gets its own restaurant so datasets never merge and an older live model
+ * (trained past a new cutoff) can never block a fair test. Fits the backend rule [A-Za-z0-9_-]{1,64}.
+ */
+// shortcut: one folder per demo upload on the server, never cleaned up; add a cleanup job if disk use matters
+export const createDemoRestaurantId = () =>
+  `demo_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`;
 
 /**
  * Standardized API Error representation adhering to SOLID principles.
@@ -97,6 +105,7 @@ export interface ForecastApiResponse {
   rows: Array<{
     date: string;
     item: string;
+    category: string; // "" when the upload had no category for this item
     low: number;
     likely: number;
     high: number;
@@ -109,26 +118,52 @@ export interface CompareApiResponse {
   from: string;
   to: string;
   days_compared: number;
+  // accuracy values are null when nothing was sold (100% minus WAPE is undefined for 0 sold)
   summary: {
-    accuracy_per_item_per_day: number;
-    accuracy_daily_total: number;
+    accuracy_per_item_per_day: number | null;
+    accuracy_daily_total: number | null;
     actual_inside_range_percent: number;
+    accuracy_per_item_period: number | null;
+    accuracy_period_total: number | null;
+    // null when the upload had no category column
+    accuracy_per_category_per_day: number | null;
+    accuracy_per_category_period: number | null;
+    predicted_total: number;
+    actual_total: number;
   };
   daily_totals: Array<{
     date: string;
     predicted: number;
     actual: number;
-    accuracy: number;
+    accuracy: number | null;
+    inside_range_percent: number;
   }>;
+  items: Array<{
+    item: string;
+    predicted: number;
+    actual: number;
+    difference: number;
+    accuracy: number | null;
+  }>;
+  categories: Array<{
+    category: string; // items without one are grouped as "uncategorized"
+    predicted: number;
+    actual: number;
+    difference: number;
+    accuracy: number | null;
+  }>; // empty when the upload had no category column
   rows: Array<{
     date: string;
     item: string;
+    category?: string;
     low: number;
     likely: number;
     high: number;
     actual: number;
     difference: number;
     inside_range: boolean;
+    accuracy: number | null;
+    method: "lightgbm" | "same_weekday_average";
   }>;
 }
 
@@ -138,9 +173,24 @@ export interface MessageApiResponse {
   source: string;
 }
 
-export interface IngestResponse {
-  rows_added: number;
-  dates: string;
+/** POST /sales/upload: what changed, plus a summary of all sales now stored for the restaurant */
+export interface SalesUploadResponse {
+  added: number;
+  replaced: number;
+  total_rows: number;
+  from: string;
+  to: string;
+  days: number; // days that have sales
+  items: number;
+  categories: number; // 0 when the upload had no category column
+  total_qty: number;
+}
+
+/** POST /days/upload */
+export interface DaysUploadResponse {
+  added: number;
+  replaced: number;
+  total_days: number;
 }
 
 // --------------------------------------------------------------------------
@@ -290,11 +340,11 @@ export async function checkApiHealth(): Promise<ApiHealthStatus> {
 export async function uploadSalesApi(
   file: File,
   restaurantId: string = DEFAULT_RESTAURANT_ID
-): Promise<IngestResponse> {
+): Promise<SalesUploadResponse> {
   const formData = new FormData();
   formData.append("file", file);
 
-  return PrismaAPI.post<IngestResponse>(`/restaurants/${restaurantId}/sales/upload`, formData, {
+  return PrismaAPI.post<SalesUploadResponse>(`/restaurants/${restaurantId}/sales/upload`, formData, {
     timeoutMs: 90000,
   });
 }
@@ -305,11 +355,11 @@ export async function uploadSalesApi(
 export async function uploadDaysApi(
   file: File,
   restaurantId: string = DEFAULT_RESTAURANT_ID
-): Promise<IngestResponse> {
+): Promise<DaysUploadResponse> {
   const formData = new FormData();
   formData.append("file", file);
 
-  return PrismaAPI.post<IngestResponse>(`/restaurants/${restaurantId}/days/upload`, formData, {
+  return PrismaAPI.post<DaysUploadResponse>(`/restaurants/${restaurantId}/days/upload`, formData, {
     timeoutMs: 90000,
   });
 }
@@ -406,14 +456,14 @@ export async function dynamicRetrainAndForecastApi(
   await trainApi(newCutoffDate, restaurantId);
 
   // 2. Forecast the next N days starting immediately after the new cutoff
-  await forecastApi(daysAhead, newCutoffDate, restaurantId);
+  const forecastRes = await forecastApi(daysAhead, newCutoffDate, restaurantId);
 
   // 3. Compare with unseen holdout sales
   const compareRes = await compareApi("day", restaurantId);
 
-  return transformFastApiResponseToSummary(
+  return buildComparisonSummary(
     compareRes,
-    `MODEL-RETRAINED-${newCutoffDate.replace(/-/g, "")}`
+    forecastRes.model_version
   );
 }
 
@@ -438,48 +488,32 @@ export const api = {
 // --------------------------------------------------------------------------
 
 /**
- * Transforms FastAPI /compare response into UI ComparisonSummary
+ * Maps the FastAPI /compare?period=day response onto the UI shape, one field to one field.
+ * Every number shown comes straight from the API: nothing is computed, adjusted or defaulted here.
+ * Only the date is formatted (weekday name, display date), read in UTC so no timezone shifts the day.
  */
-export function transformFastApiResponseToSummary(
+export function buildComparisonSummary(
   apiData: CompareApiResponse,
-  modelVersion: string = "MODEL-LIVE-FASTAPI"
+  modelVersion: string
 ): ComparisonSummary {
-  const rows = apiData.rows || [];
-  const dailyTotals = apiData.daily_totals || [];
-  const dayMap = new Map<string, ItemPrediction[]>();
-
-  for (const r of rows) {
-    if (!dayMap.has(r.date)) {
-      dayMap.set(r.date, []);
-    }
-    const isInside = r.inside_range || (r.actual >= r.low && r.actual <= r.high);
-    const distOutside = Math.max(0, r.low - r.actual, r.actual - r.high);
-    const acc = isInside
-      ? Math.min(100, Math.max(88, Math.round(100 * (1 - Math.abs(r.actual - r.likely) / Math.max(1, r.high)))))
-      : Math.max(0, Math.round(100 * (1 - distOutside / Math.max(1, r.actual))));
-    dayMap.get(r.date)!.push({
-      item: r.item,
-      low: r.low,
-      likely: r.likely,
-      high: r.high,
-      actual: r.actual,
-      difference: r.difference,
-      insideRange: r.inside_range,
-      accuracy: acc,
-      method: "lightgbm",
-    });
-  }
-
   const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const days: DayForecast[] = dailyTotals.map((dt) => {
-    const d = new Date(dt.date);
-    const dayOfWeek = dayNames[d.getDay()] || "Day";
-    const isWeekend = d.getDay() === 0 || d.getDay() === 5 || d.getDay() === 6;
-    const items = dayMap.get(dt.date) || [];
-    const insideHits = items.filter((it) => it.insideRange).length;
-    const rangeHitPercent = items.length
-      ? Number(((insideHits / items.length) * 100).toFixed(1))
-      : 100;
+  const days: DayForecast[] = apiData.daily_totals.map((dt) => {
+    const d = new Date(dt.date); // YYYY-MM-DD parses as UTC midnight
+    const weekday = d.getUTCDay();
+    const items: ItemPrediction[] = apiData.rows
+      .filter((r) => r.date === dt.date)
+      .map((r) => ({
+        item: r.item,
+        low: r.low,
+        likely: r.likely,
+        high: r.high,
+        actual: r.actual,
+        difference: r.difference,
+        insideRange: r.inside_range,
+        accuracy: r.accuracy,
+        method: r.method,
+        category: r.category,
+      }));
 
     return {
       date: dt.date,
@@ -488,65 +522,50 @@ export function transformFastApiResponseToSummary(
         day: "2-digit",
         month: "short",
         year: "numeric",
+        timeZone: "UTC",
       }),
-      dayOfWeek,
-      isWeekend,
+      dayOfWeek: dayNames[weekday],
+      isWeekend: weekday === 0 || weekday === 5 || weekday === 6,
       predictedTotal: dt.predicted,
       actualTotal: dt.actual,
       dayAccuracy: dt.accuracy,
-      rangeHitPercent,
+      rangeHitPercent: dt.inside_range_percent,
       items,
     };
   });
 
-  const totalPredictedPortions = days.reduce((sum, d) => sum + d.predictedTotal, 0);
-  const totalActualPortions = days.reduce((sum, d) => sum + d.actualTotal, 0);
-  const totalPortionsSaved = Math.round(totalActualPortions * 0.14);
-  const rupeesSaved = Math.round(totalPortionsSaved * 280);
-
-  // Per-item aggregates across all days
-  const itemNames = Array.from(new Set(rows.map((r) => r.item)));
-  const itemAggregates = itemNames.map((name) => {
-    const matching = rows.filter((r) => r.item === name);
-    const totalLikely = matching.reduce((s, r) => s + r.likely, 0);
-    const totalActual = matching.reduce((s, r) => s + r.actual, 0);
-    const errorSum = matching.reduce((s, r) => s + Math.abs(r.actual - r.likely), 0);
-    const accuracy =
-      totalActual > 0
-        ? Number(Math.max(0, 100 * (1 - errorSum / totalActual)).toFixed(1))
-        : 100;
-
-    return {
-      item: name,
-      totalLikely,
-      totalActual,
-      difference: totalActual - totalLikely,
-      accuracy,
-    };
-  });
-
-  const rawSummary = (apiData.summary || {}) as {
-    accuracy_daily_total?: number;
-    accuracy_per_item_per_day?: number;
-    actual_inside_range_percent?: number;
-    accuracy_restaurant_total?: number;
-    accuracy_per_item?: number;
-  };
-
   return {
-    period: apiData.period || "day",
-    daysCount: apiData.days_compared || days.length,
-    startDate: apiData.from || (days[0]?.date ?? ""),
-    endDate: apiData.to || (days[days.length - 1]?.date ?? ""),
-    totalPredictedPortions,
-    totalActualPortions,
-    accuracyTotal: rawSummary.accuracy_daily_total ?? rawSummary.accuracy_restaurant_total ?? 95,
-    accuracyPerItem: rawSummary.accuracy_per_item_per_day ?? rawSummary.accuracy_per_item ?? 95,
-    insideRangePercent: rawSummary.actual_inside_range_percent ?? 90,
-    totalPortionsSaved,
-    rupeesSaved,
+    period: apiData.period,
+    daysCount: apiData.days_compared,
+    startDate: apiData.from,
+    endDate: apiData.to,
+    totalPredictedPortions: apiData.summary.predicted_total,
+    totalActualPortions: apiData.summary.actual_total,
+    accuracyTotal: apiData.summary.accuracy_daily_total,
+    accuracyPerItem: apiData.summary.accuracy_per_item_per_day,
+    insideRangePercent: apiData.summary.actual_inside_range_percent,
+    accuracyPerItemPeriod: apiData.summary.accuracy_per_item_period,
+    accuracyPeriodTotal: apiData.summary.accuracy_period_total,
+    accuracyPerCategoryDay: apiData.summary.accuracy_per_category_per_day,
+    accuracyPerCategoryPeriod: apiData.summary.accuracy_per_category_period,
     modelVersion,
     days,
-    itemAggregates,
+    itemAggregates: apiData.items.map((item) => toPeriodTotals(item.item, item)),
+    categoryAggregates: apiData.categories.map((category) => toPeriodTotals(category.category, category)),
+    raw: apiData,
+  };
+}
+
+/** Same numbers as the API's per-item / per-category totals, under one shape the tables share. */
+function toPeriodTotals(
+  name: string,
+  totals: { predicted: number; actual: number; difference: number; accuracy: number | null }
+): PeriodTotals {
+  return {
+    name,
+    totalLikely: totals.predicted,
+    totalActual: totals.actual,
+    difference: totals.difference,
+    accuracy: totals.accuracy,
   };
 }

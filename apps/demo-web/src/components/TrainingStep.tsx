@@ -13,25 +13,18 @@ import {
 } from "lucide-react";
 import { trainApi, ApiError, TrainApiResponse } from "@/lib/api";
 import { ErrorAlert } from "@/components/ErrorAlert";
+import { addDaysToIso } from "@/lib/utils";
+import {
+  describeCutoffProblem,
+  earliestTrainingCutoff,
+  latestTrainingCutoff,
+  splitTrainingAndHoldoutDays,
+} from "@/lib/trainingCutoff";
+import { DatasetInfo } from "@/components/UploadStep";
 
 interface TrainingStepProps {
-  datasetInfo: {
-    restaurantName: string;
-    startDate: string;
-    endDate: string;
-    totalDays: number;
-    itemsCount: number;
-    totalPortions: number;
-  };
-  onTrainingComplete: (
-    cutoffDate: string,
-    modelInfo: {
-      version: string;
-      trainingRows: number;
-      holdoutDays: number;
-      baselineAdvantage: string;
-    }
-  ) => void;
+  datasetInfo: DatasetInfo;
+  onTrainingComplete: (cutoffDate: string) => void;
   initialCutoff?: string;
 }
 
@@ -58,62 +51,49 @@ export function TrainingStep({
   onTrainingComplete,
   initialCutoff = "2026-11-06",
 }: TrainingStepProps) {
-  const isDefaultBenchmark = !datasetInfo.startDate || datasetInfo.startDate === "2025-11-15";
+  const { upload } = datasetInfo; // the upload API response, shown as returned
+  const startDate = upload.from;
+  const endDate = upload.to;
+  const isDefaultBenchmark = startDate === "2025-11-15";
+  const earliestCutoff = earliestTrainingCutoff(startDate);
+  const latestCutoff = latestTrainingCutoff(endDate);
 
   const activePresets = React.useMemo(() => {
-    if (isDefaultBenchmark || !datasetInfo.startDate || !datasetInfo.endDate) {
+    const daysOfData = Math.round((Date.parse(endDate) - Date.parse(startDate)) / 86_400_000);
+    if (isDefaultBenchmark || daysOfData < 20) {
       return DEFAULT_PRESETS;
     }
-    const end = new Date(datasetInfo.endDate);
-    const start = new Date(datasetInfo.startDate);
-    const diffDays = Math.round((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
-    if (diffDays < 20) return DEFAULT_PRESETS;
-
-    const formatDate = (d: Date) => d.toISOString().split("T")[0];
-
-    const dMonth = new Date(end);
-    dMonth.setDate(dMonth.getDate() - 30);
-    const dMonthStr = formatDate(dMonth);
-
-    const d14 = new Date(end);
-    d14.setDate(d14.getDate() - 14);
-    const d14Str = formatDate(d14);
-
-    const d7 = new Date(end);
-    d7.setDate(d7.getDate() - 7);
-    const d7Str = formatDate(d7);
-
+    const oneMonthBack = addDaysToIso(endDate, -30);
+    const twoWeeksBack = addDaysToIso(endDate, -14);
+    const oneWeekBack = addDaysToIso(endDate, -7);
     return [
       {
-        date: dMonthStr,
+        date: oneMonthBack,
         label: "1-Month Holdout Verification",
-        note: `Trains through ${dMonthStr} · Validates full final month`,
+        note: `Trains through ${oneMonthBack} · Validates full final month`,
       },
       {
-        date: d14Str,
+        date: twoWeeksBack,
         label: "Mid-Period Validation (14-Day Test)",
-        note: `Trains through ${d14Str} · Validates on subsequent 14 days`,
+        note: `Trains through ${twoWeeksBack} · Validates on subsequent 14 days`,
       },
       {
-        date: d7Str,
+        date: oneWeekBack,
         label: "Final Week Horizon Benchmark",
-        note: `Trains through ${d7Str} · Evaluates on the final 7 days`,
+        note: `Trains through ${oneWeekBack} · Evaluates on the final 7 days`,
       },
-    ];
-  }, [datasetInfo.startDate, datasetInfo.endDate, isDefaultBenchmark]);
+    ].filter((preset) => preset.date >= earliestCutoff);
+  }, [startDate, endDate, isDefaultBenchmark, earliestCutoff]);
 
-  const defaultInitial = React.useMemo(() => {
-    if (datasetInfo.startDate && datasetInfo.endDate) {
-      const end = new Date(datasetInfo.endDate);
-      const cur = new Date(initialCutoff);
-      if (cur > end || cur < new Date(datasetInfo.startDate)) {
-        return activePresets[0]?.date || datasetInfo.startDate;
-      }
-    }
-    return initialCutoff;
-  }, [datasetInfo.startDate, datasetInfo.endDate, initialCutoff, activePresets]);
+  const firstCutoffToShow = React.useMemo(() => {
+    const isOutsideData = initialCutoff > endDate || initialCutoff < earliestCutoff;
+    return isOutsideData ? activePresets[0]?.date || earliestCutoff : initialCutoff;
+  }, [endDate, initialCutoff, activePresets, earliestCutoff]);
 
-  const [cutoffDate, setCutoffDate] = useState<string>(() => defaultInitial);
+  const [cutoffDate, setCutoffDate] = useState<string>(() => firstCutoffToShow);
+  const { trainingDays, holdoutDays, trainingPercent } = splitTrainingAndHoldoutDays(startDate, endDate, cutoffDate);
+  const cutoffProblem = describeCutoffProblem(cutoffDate, startDate, endDate);
+
   const [isTraining, setIsTraining] = useState(false);
   const [trainingStage, setTrainingStage] = useState(0);
   const [trainingComplete, setTrainingComplete] = useState(false);
@@ -134,7 +114,7 @@ export function TrainingStep({
 
     try {
       // STRICT REQUIREMENT: Only mark as trained when API returns 200 OK
-      const res = await trainApi(cutoffDate);
+      const res = await trainApi(cutoffDate, datasetInfo.restaurantId);
 
       clearTimeout(timer1);
       clearTimeout(timer2);
@@ -170,12 +150,7 @@ export function TrainingStep({
   const handleProceed = () => {
     if (!trainingComplete || !trainedModel) return;
 
-    onTrainingComplete(cutoffDate, {
-      version: trainedModel.version,
-      trainingRows: 7360,
-      holdoutDays: 30,
-      baselineAdvantage: trainedModel.reason || "+3.8% vs Same-Weekday Average",
-    });
+    onTrainingComplete(cutoffDate);
   };
 
   return (
@@ -202,16 +177,30 @@ export function TrainingStep({
             <span className="text-[#71717A] block text-xs uppercase tracking-wider font-medium">Active Kitchen Facility</span>
             <span className="font-semibold text-[#18181B] text-base">{datasetInfo.restaurantName}</span>
           </div>
-          <div className="flex items-center gap-6">
-            <div>
-              <span className="text-[#71717A] block text-xs font-medium">Historical Range</span>
-              <span className="text-[#18181B] font-mono">{datasetInfo.startDate} → {datasetInfo.endDate}</span>
-            </div>
-            <div>
-              <span className="text-[#71717A] block text-xs font-medium">Menu Items</span>
-              <span className="text-[#8F6D27] font-mono font-semibold">{datasetInfo.itemsCount} Core Dishes</span>
-            </div>
+          <div>
+            <span className="text-[#71717A] block text-xs font-medium">Historical Range</span>
+            <span className="text-[#18181B] font-mono">{startDate} → {endDate}</span>
           </div>
+        </div>
+
+        {/* POST /sales/upload response, field for field */}
+        <div className="mt-4 pt-4 border-t border-[#EADDCE] grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-xs">
+          {(
+            [
+              ["Rows added", upload.added],
+              ["Rows replaced", upload.replaced],
+              ["Rows stored", upload.total_rows],
+              ["Days with sales", upload.days],
+              ["Menu items", upload.items],
+              ["Categories", upload.categories],
+              ["Portions sold", upload.total_qty],
+            ] as const
+          ).map(([label, value]) => (
+            <div key={label}>
+              <span className="text-[#71717A] block font-medium">{label}</span>
+              <span className="text-[#18181B] font-mono font-semibold">{value}</span>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -271,8 +260,10 @@ export function TrainingStep({
                 id="custom-cutoff"
                 type="date"
                 value={cutoffDate}
-                min={datasetInfo.startDate}
-                max={datasetInfo.endDate}
+                min={earliestCutoff}
+                max={latestCutoff}
+                aria-invalid={cutoffProblem !== null}
+                aria-describedby="cutoff-problem"
                 onChange={(e) => {
                   setCutoffDate(e.target.value);
                   setTrainingComplete(false);
@@ -284,22 +275,32 @@ export function TrainingStep({
               />
             </div>
           </div>
+          {cutoffProblem && (
+            <p id="cutoff-problem" role="alert" className="mt-3 text-xs font-semibold text-amber-800">
+              {cutoffProblem}
+            </p>
+          )}
         </div>
 
         {/* Split Visualization */}
         <div className="space-y-2 pt-2">
-          <div className="flex items-center justify-between text-xs font-mono">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs font-mono">
             <span className="text-[#8F6D27] font-semibold">
-              Training Portion: {datasetInfo.startDate} to {cutoffDate}
+              Training Portion: {startDate} to {cutoffDate} ({trainingDays} days)
             </span>
-            <span className="text-emerald-800 font-semibold">
-              Holdout Verification: After {cutoffDate}
+            <span className="text-emerald-800 font-semibold text-right">
+              {holdoutDays > 0
+                ? `Holdout Verification: ${addDaysToIso(cutoffDate, 1)} to ${endDate} (${holdoutDays} days)`
+                : "Holdout Verification: none (cutoff is the last sales day)"}
             </span>
           </div>
 
           <div className="w-full h-2.5 rounded-full bg-[#FAF5EA] border border-[#EADDCE] overflow-hidden flex">
-            <div className="h-full bg-gradient-to-r from-[#B88E3E] to-[#9E772E] w-[75%] transition-all" />
-            <div className="h-full bg-emerald-500 w-[25%]" />
+            <div
+              className="h-full bg-gradient-to-r from-[#B88E3E] to-[#9E772E] transition-all"
+              style={{ width: `${trainingPercent}%` }}
+            />
+            <div className="h-full bg-emerald-500 flex-1" />
           </div>
 
           <div className="flex items-center gap-2 text-[11px] text-[#71717A]">
@@ -418,8 +419,10 @@ export function TrainingStep({
             </div>
             <div className="p-3 rounded-xl border border-[#EADDCE] bg-[#FAF8F5]">
               <span className="text-[11px] text-[#71717A] block mb-0.5 font-medium">Status</span>
-              <span className="font-mono text-sm font-bold text-emerald-700">
-                {trainedModel.activated ? "Activated Live" : "Calibrated"}
+              <span
+                className={`font-mono text-sm font-bold ${trainedModel.activated ? "text-emerald-700" : "text-amber-700"}`}
+              >
+                {trainedModel.activated ? "Activated Live" : "Not Activated"}
               </span>
             </div>
             <div className="p-3 rounded-xl border border-[#EADDCE] bg-[#FAF8F5]">
@@ -429,7 +432,7 @@ export function TrainingStep({
               </span>
             </div>
             <div className="p-3 rounded-xl border border-[#EADDCE] bg-[#FAF8F5]">
-              <span className="text-[11px] text-[#71717A] block mb-0.5 font-medium">Out-Of-Sample WAPE</span>
+              <span className="text-[11px] text-[#71717A] block mb-0.5 font-medium">Out-of-Sample Accuracy (100 − WAPE)</span>
               <span className="font-mono text-sm font-bold text-emerald-700">
                 {trainedModel.accuracy?.["1"]?.methods?.lightgbm?.item_day_accuracy != null
                   ? `${trainedModel.accuracy["1"].methods.lightgbm.item_day_accuracy}% Accuracy`
@@ -443,7 +446,7 @@ export function TrainingStep({
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
             <div className="flex items-center gap-2 text-xs text-[#52525B]">
               <Info className="size-4 text-[#B88E3E] shrink-0" />
-              <span>Training verified on backend. You can now forecast Next Day, Next Week, or Next Month.</span>
+              <span>Training verified on backend. You can now forecast the Next Day or Next Week.</span>
             </div>
             <button
               onClick={handleProceed}
@@ -461,7 +464,8 @@ export function TrainingStep({
         <div className="flex justify-center">
           <button
             onClick={handleTrain}
-            className="group inline-flex items-center gap-2.5 rounded-xl bg-[#B88E3E] hover:bg-[#9E772E] text-white px-8 py-4 font-bold text-base transition-all shadow-[0_4px_16px_rgba(184,142,62,0.3)] hover:shadow-[0_6px_22px_rgba(184,142,62,0.4)] cursor-pointer"
+            disabled={cutoffProblem !== null}
+            className="group inline-flex items-center gap-2.5 rounded-xl bg-[#B88E3E] hover:bg-[#9E772E] text-white px-8 py-4 font-bold text-base transition-all shadow-[0_4px_16px_rgba(184,142,62,0.3)] hover:shadow-[0_6px_22px_rgba(184,142,62,0.4)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#B88E3E]"
           >
             <Zap className="size-5" />
             <span>Train Model on Sales up to {cutoffDate}</span>

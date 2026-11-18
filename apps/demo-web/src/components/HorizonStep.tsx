@@ -13,11 +13,12 @@ import { ErrorAlert } from "@/components/ErrorAlert";
 
 interface HorizonStepProps {
   cutoffDate: string;
-  onSelectHorizon: (daysAhead: number, horizonType: "day" | "week" | "month") => Promise<void>;
+  onSelectHorizon: (daysAhead: number, horizonType: "day" | "week") => Promise<void>;
 }
 
+// The API forecasts 1 to 7 days ahead (Settings.horizons = (1, 7)), so there is no monthly option.
 export function HorizonStep({ cutoffDate, onSelectHorizon }: HorizonStepProps) {
-  const [selectedHorizon, setSelectedHorizon] = useState<"day" | "week" | "month">("week");
+  const [selectedHorizon, setSelectedHorizon] = useState<"day" | "week">("week");
   const [isRunning, setIsRunning] = useState(false);
   const [error, setError] = useState<ApiError | Error | null>(null);
 
@@ -27,9 +28,6 @@ export function HorizonStep({ cutoffDate, onSelectHorizon }: HorizonStepProps) {
 
   const nextWeekEnd = new Date(cutoff);
   nextWeekEnd.setDate(cutoff.getDate() + 7);
-
-  const nextMonthEnd = new Date(cutoff);
-  nextMonthEnd.setDate(cutoff.getDate() + 30);
 
   const formatDate = (d: Date) =>
     d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
@@ -46,8 +44,7 @@ export function HorizonStep({ cutoffDate, onSelectHorizon }: HorizonStepProps) {
       description:
         "Single-day point estimate and P5–P95 range bands for immediate morning market procurement and kitchen station setup.",
       features: [
-        "Day-wise portions for all 10 dishes",
-        "Raw kilogram meat & grain conversion",
+        "Portions for each dish sold in the last 28 days",
         "P5 / Likely / P95 safety bounds for procurement",
       ],
     },
@@ -61,36 +58,20 @@ export function HorizonStep({ cutoffDate, onSelectHorizon }: HorizonStepProps) {
       badge: "Most Popular for Clients",
       isRecommended: true,
       description:
-        "Individual portion quantities for Day 1 through Day 7. Captures weekday vs weekend surge, Friday Jummah peaks, and evening dinner demand.",
+        "Individual portion quantities for Day 1 through Day 7, learned from each dish's weekday pattern and the Hyderabad festival calendar.",
       features: [
         "Day-wise portion targets (NOT an aggregated lump sum)",
         "Daily P5/P95 safety buffers per item",
         "Day-by-day variance tracking vs ground truth",
       ],
     },
-    {
-      id: "month" as const,
-      days: 30,
-      title: "Next Month",
-      subtitle: "30-Day Day-Wise Capacity",
-      dateRange: `${formatDate(nextDay)} → ${formatDate(nextMonthEnd)}`,
-      dayBreakdownNote: "Day-by-Day Targets for All 30 Days",
-      badge: "Strategic Roster",
-      description:
-        "30 consecutive individual days of portions. Optimizes monthly cold storage contracts, bulk spice procurement, and kitchen staff shifts.",
-      features: [
-        "Complete 30-day chronological breakdown",
-        "Dynamic calendar event & holiday awareness",
-        "Total monthly ₹ bottom-line waste reduction",
-      ],
-    },
   ];
 
-  const handleExecute = async (hId: "day" | "week" | "month") => {
+  const handleExecute = async (hId: "day" | "week") => {
     setSelectedHorizon(hId);
     setIsRunning(true);
     setError(null);
-    const days = hId === "day" ? 1 : hId === "week" ? 7 : 30;
+    const days = hId === "day" ? 1 : 7;
 
     try {
       // STRICT REQUIREMENT: Only transitions to Step 4 when API resolves with 200 OK
@@ -124,7 +105,7 @@ export function HorizonStep({ cutoffDate, onSelectHorizon }: HorizonStepProps) {
           Select Your Prediction Horizon
         </h2>
         <p className="mt-2 text-sm text-[#52525B] max-w-2xl mx-auto">
-          Choose whether to forecast the next day, next 7 days, or next 30 days. Both weekly and monthly horizons generate{" "}
+          Choose whether to forecast the next day or the next 7 days. The weekly horizon generates{" "}
           <strong className="text-[#8F6D27]">day-wise portions for each individual day</strong>, never a vague lump sum.
         </p>
       </div>
@@ -142,7 +123,7 @@ export function HorizonStep({ cutoffDate, onSelectHorizon }: HorizonStepProps) {
       )}
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {horizons.map((h) => {
           const isSelected = selectedHorizon === h.id;
 

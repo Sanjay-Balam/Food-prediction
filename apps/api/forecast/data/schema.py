@@ -8,11 +8,11 @@ YES = {"1", "y", "yes", "true"}
 _RESTAURANT_ID = re.compile(r"[A-Za-z0-9_-]{1,64}")
 
 
-def restaurant_id(rid: str) -> str:
+def validate_restaurant_id(restaurant_id: str) -> str:
     """Ids become folder names, so only safe characters are allowed (blocks '../' paths)."""
-    if not _RESTAURANT_ID.fullmatch(rid or ""):
+    if not _RESTAURANT_ID.fullmatch(restaurant_id or ""):
         raise ValueError("restaurant id may only contain letters, digits, '-' and '_'")
-    return rid
+    return restaurant_id
 
 
 def _flag(col) -> pd.Series:
@@ -37,7 +37,8 @@ def _normalise(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def sales(df: pd.DataFrame) -> pd.DataFrame:
-    """Columns: date, item, qty_sold, optional sold_out (yes/no). One row per date and item."""
+    """Columns: date, item, qty_sold, optional sold_out (yes/no), optional category (menu section, e.g. Starters).
+    One row per date and item."""
     df = _normalise(df)
     missing = {"date", "item", "qty_sold"} - set(df.columns)
     if missing:
@@ -47,6 +48,7 @@ def sales(df: pd.DataFrame) -> pd.DataFrame:
         "item": df["item"].astype(str).str.strip(),
         "qty_sold": pd.to_numeric(df["qty_sold"], errors="coerce"),
         "sold_out": _flag(df["sold_out"]) if "sold_out" in df else 0,
+        "category": df["category"].fillna("").astype(str).str.strip() if "category" in df else "",
     })
     _fail_if(out["item"].isin(["", "nan"]), "sales: empty item name")
     q = out["qty_sold"]

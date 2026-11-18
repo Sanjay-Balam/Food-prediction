@@ -11,7 +11,7 @@ interface StepperProps {
 const STEPS = [
   { id: 1, title: "1. Data Ingestion", subtitle: "POS receipts upload", icon: Database },
   { id: 2, title: "2. Training Cutoff", subtitle: "Set learning boundary", icon: Calendar },
-  { id: 3, title: "3. Forecast Horizon", subtitle: "Day / Week / Month", icon: Layers },
+  { id: 3, title: "3. Forecast Horizon", subtitle: "Day / Week", icon: Layers },
   { id: 4, title: "4. Accuracy & Output", subtitle: "WAPE & day-wise targets", icon: BarChart3 },
 ];
 

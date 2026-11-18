@@ -47,7 +47,12 @@ class SalesHistory:
 
     def active_items(self, window_days: int) -> list[str]:
         recent = self.qty.loc[self.last_date - pd.Timedelta(days=window_days - 1):]
-        return [i for i in self.qty.columns if recent[i].fillna(0).sum() > 0]
+        return [item for item in self.qty.columns if recent[item].fillna(0).sum() > 0]
+
+    def days_needed_for_model(self, usual_days: int) -> int:
+        """Days of sales the model needs before it is trusted: `usual_days`, but fewer for a short new dataset
+        (never under 14), so a 3-week upload can still be tested and served by the model."""
+        return min(usual_days, max(14, (self.last_date - self.qty.index.min()).days // 2))
 
     def items_newer_than(self, days: int) -> set[str]:
         first_seen = self.qty.notna().idxmax()

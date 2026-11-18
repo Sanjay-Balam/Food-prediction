@@ -56,6 +56,7 @@ copy .env.example .env      # then fill in LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
 | item | Chicken Biryani | |
 | qty_sold | 185 | whole number |
 | sold_out | yes / no | optional; sold-out days are not treated as true demand |
+| category | Starters | optional menu section; adds accuracy per category to `/compare` |
 
 `data/<restaurant>/days.csv`, optional, added to with `ingest-days`. Future dates are allowed, e.g. a party booked for next Friday:
 
@@ -108,7 +109,7 @@ http://127.0.0.1:8000/docs.
 | GET | `/restaurants/{id}/backtest?weeks=8` | accuracy on recent unseen weeks |
 | POST | `/restaurants/{id}/message?language=Hinglish` | chef prep message |
 
-JSON uploads are a list of rows: `[{"date": "2026-11-14", "item": "Chicken Biryani", "qty_sold": 182, "sold_out": "no"}]`
+JSON uploads are a list of rows: `[{"date": "2026-11-14", "item": "Chicken Biryani", "qty_sold": 182, "sold_out": "no", "category": "Biryani"}]`
 (see `postman/sample_files/sales_example.json`).
 
 **Hold-out test with your own data:** upload all real sales once → `train?until=<cutoff>` →

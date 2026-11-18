@@ -2,6 +2,7 @@
  * Domain Data Models & Typing Contracts for Commercial Kitchen Forecasting
  * Formatted directly after FastAPI /compare and /forecast response schemas.
  */
+import type { CompareApiResponse } from "@/lib/api";
 
 export interface MenuItem {
   id: string;
@@ -137,8 +138,9 @@ export interface ItemPrediction {
   actual: number;
   difference: number;
   insideRange: boolean;
-  accuracy: number;
+  accuracy: number | null; // null when 0 were sold
   method: "lightgbm" | "same_weekday_average";
+  category?: string; // menu section from the upload; "" or absent when none was given
 }
 
 export interface DayForecast {
@@ -149,32 +151,39 @@ export interface DayForecast {
   eventNote?: string;
   predictedTotal: number;
   actualTotal: number;
-  dayAccuracy: number;
+  dayAccuracy: number | null;
   rangeHitPercent: number;
   items: ItemPrediction[];
 }
 
+/** One item's or one category's portions summed over the compared period (API `items` / `categories`). */
+export interface PeriodTotals {
+  name: string;
+  totalLikely: number;
+  totalActual: number;
+  difference: number;
+  accuracy: number | null;
+}
+
 export interface ComparisonSummary {
-  period: "day" | "week" | "month";
+  period: CompareApiResponse["period"];
   daysCount: number;
   startDate: string;
   endDate: string;
   totalPredictedPortions: number;
   totalActualPortions: number;
-  accuracyTotal: number;
-  accuracyPerItem: number;
+  accuracyTotal: number | null; // accuracy_daily_total
+  accuracyPerItem: number | null; // accuracy_per_item_per_day
   insideRangePercent: number;
-  totalPortionsSaved: number;
-  rupeesSaved: number;
+  accuracyPerItemPeriod: number | null; // accuracy_per_item_period
+  accuracyPeriodTotal: number | null; // accuracy_period_total
+  accuracyPerCategoryDay: number | null; // accuracy_per_category_per_day; null without categories
+  accuracyPerCategoryPeriod: number | null; // accuracy_per_category_period; null without categories
   modelVersion: string;
   days: DayForecast[];
-  itemAggregates: {
-    item: string;
-    totalLikely: number;
-    totalActual: number;
-    difference: number;
-    accuracy: number;
-  }[];
+  itemAggregates: PeriodTotals[];
+  categoryAggregates: PeriodTotals[]; // empty without categories
+  raw: CompareApiResponse; // the /compare response exactly as received
 }
 
 /**

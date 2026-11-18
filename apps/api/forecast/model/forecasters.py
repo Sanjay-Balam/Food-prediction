@@ -1,5 +1,5 @@
 """Forecasting methods behind one interface (Strategy pattern). The backtest scores them all the same way,
-and the service picks LightGBM or the baseline per item. Every quantity comes from here, never from an LLM."""
+and the service picks the blended model or the baseline per item. Every quantity comes from here, never from an LLM."""
 from pathlib import Path
 from typing import Protocol
 
@@ -19,6 +19,11 @@ def make_range(low, likely, high, index) -> pd.DataFrame:
     low = np.minimum(np.clip(np.round(np.asarray(low, dtype=float)), 0, None), likely)
     high = np.maximum(np.round(np.asarray(high, dtype=float)), likely)
     return pd.DataFrame({"low": low, "likely": likely, "high": high}, index=index).astype(int)
+
+
+def has_no_recent_sales(rows: pd.DataFrame) -> pd.Series:
+    """True for items that sold nothing on their last 4 same weekdays and their last 7 known days."""
+    return (rows["avg_last_4_same_weekdays"].fillna(0) == 0) & (rows["avg_last_7_known_days"].fillna(0) == 0)
 
 
 class Forecaster(Protocol):
@@ -89,3 +94,24 @@ class LightGBMForecaster:
         files = {name: folder / f"{prefix}_{name}.txt" for name in RANGE_COLUMNS}
         models = {name: lgb.Booster(model_file=str(path)) for name, path in files.items() if path.exists()}
         return cls(models, feature_columns)
+
+
+class BlendedForecaster:
+    """Two forecasters combined into one (Composite): it is what the service serves and what the backtest scores,
+    so the accuracy shown at training time is the accuracy of the real forecast.
+    - likely: MODEL_WEIGHT of the model plus the rest from the baseline, which is steadier on short histories
+    - range:  the wider of the two ranges
+    - items with no recent sales get 0, so a dish that stopped selling is not prepped"""
+    MODEL_WEIGHT = 0.6
+    name = LightGBMForecaster.name  # reports keep calling it 'lightgbm': the trained model is what it adds
+
+    def __init__(self, model: Forecaster, baseline: Forecaster):
+        self.model, self.baseline = model, baseline
+
+    def forecast(self, rows: pd.DataFrame) -> pd.DataFrame:
+        model_range, baseline_range = self.model.forecast(rows), self.baseline.forecast(rows)
+        likely = self.MODEL_WEIGHT * model_range["likely"] + (1 - self.MODEL_WEIGHT) * baseline_range["likely"]
+        low = np.minimum(model_range["low"], baseline_range["low"])
+        high = np.maximum(model_range["high"], baseline_range["high"])
+        stopped_selling = has_no_recent_sales(rows)
+        return make_range(np.where(stopped_selling, 0, low), np.where(stopped_selling, 0, likely), high, rows.index)

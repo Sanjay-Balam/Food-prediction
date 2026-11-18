@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 ACCEPTED_TYPES = (".csv", ".json")
-JSON_EXAMPLE = '[{"date": "2026-11-14", "item": "Chicken Biryani", "qty_sold": 182, "sold_out": "no"}]'
+JSON_EXAMPLE = '[{"date": "2026-11-14", "item": "Chicken Biryani", "qty_sold": 182, "sold_out": "no", "category": "Biryani"}]'
 
 
 def read_table_file(source, filename: str | None = None) -> pd.DataFrame:

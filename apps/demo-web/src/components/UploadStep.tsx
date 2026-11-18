@@ -10,81 +10,18 @@ import {
   Download,
   RefreshCw,
 } from "lucide-react";
-import { uploadSalesApi, ApiError } from "@/lib/api";
+import { uploadSalesApi, ApiError, createDemoRestaurantId, SalesUploadResponse } from "@/lib/api";
 import { ErrorAlert } from "@/components/ErrorAlert";
 
-export interface SampleRow {
-  date: string;
-  item: string;
-  qty_sold: number;
-  sold_out: string;
+/** One uploaded dataset. Every number comes from the upload API; the file is never parsed in the browser. */
+export interface DatasetInfo {
+  restaurantId: string;
+  restaurantName: string; // display label only
+  upload: SalesUploadResponse; // POST /sales/upload response, as returned
 }
 
 interface UploadStepProps {
-  onDatasetLoaded: (data: {
-    restaurantName: string;
-    startDate: string;
-    endDate: string;
-    totalDays: number;
-    itemsCount: number;
-    totalPortions: number;
-    sampleRows: SampleRow[];
-  }) => void;
-}
-
-/**
- * Extracts real dataset parameters directly from an uploaded CSV string.
- * Strictly avoids any synthetic or placeholder figures.
- */
-function parseCsvMetadata(csvText: string, restaurantName: string) {
-  const lines = csvText.trim().split(/\r?\n/);
-  if (lines.length < 2) {
-    throw new Error("Uploaded file is empty or does not contain data rows.");
-  }
-
-  const header = lines[0].split(",").map((h) => h.trim().toLowerCase());
-  const dateIdx = header.indexOf("date");
-  const itemIdx = header.indexOf("item");
-  const qtyIdx = header.findIndex((h) => h === "qty_sold" || h === "qty" || h === "quantity");
-  const soldOutIdx = header.indexOf("sold_out");
-
-  if (dateIdx === -1 || itemIdx === -1 || qtyIdx === -1) {
-    throw new Error("CSV must include 'date', 'item', and 'qty_sold' columns.");
-  }
-
-  const dates = new Set<string>();
-  const items = new Set<string>();
-  let totalPortions = 0;
-  const sampleRows: SampleRow[] = [];
-
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (!line) continue;
-    const cols = line.split(",").map((c) => c.trim());
-    const d = cols[dateIdx];
-    const it = cols[itemIdx];
-    const q = parseInt(cols[qtyIdx], 10) || 0;
-    const so = soldOutIdx !== -1 ? cols[soldOutIdx] : "no";
-
-    if (d) dates.add(d);
-    if (it) items.add(it);
-    totalPortions += q;
-
-    if (sampleRows.length < 5) {
-      sampleRows.push({ date: d, item: it, qty_sold: q, sold_out: so });
-    }
-  }
-
-  const sortedDates = Array.from(dates).sort();
-  return {
-    restaurantName,
-    startDate: sortedDates[0] || "",
-    endDate: sortedDates[sortedDates.length - 1] || "",
-    totalDays: sortedDates.length,
-    itemsCount: items.size,
-    totalPortions,
-    sampleRows,
-  };
+  onDatasetLoaded: (data: DatasetInfo) => void;
 }
 
 export function UploadStep({ onDatasetLoaded }: UploadStepProps) {
@@ -93,76 +30,59 @@ export function UploadStep({ onDatasetLoaded }: UploadStepProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<ApiError | Error | null>(null);
 
-  const handleLoadBenchmark = async () => {
+  /**
+   * Uploads a sales file into a fresh restaurant (the API validates it) and moves on only after a 200 response,
+   * carrying the API's own summary of the stored sales. `getFile` runs inside the same error handling.
+   */
+  const uploadAsNewDataset = async (
+    fileName: string,
+    getFile: () => Promise<File>,
+    restaurantName: string,
+    failureMessage: string
+  ) => {
     setIsLoading(true);
     setError(null);
-    setSelectedFileName("benchmark_sales_1year.csv");
+    setSelectedFileName(fileName);
 
     try {
-      // 1. Fetch benchmark file from public directory
-      const fetchRes = await fetch("/benchmark_sales_1year.csv");
-      if (!fetchRes.ok) {
-        throw new Error("Unable to retrieve benchmark sample file from server.");
-      }
-      const csvText = await fetchRes.text();
-      const file = new File([csvText], "benchmark_sales_1year.csv", { type: "text/csv" });
-
-      // 2. Upload actual sales file to FastAPI backend
-      await uploadSalesApi(file);
-
-      // 3. Parse real metadata derived entirely from the ingested CSV
-      const parsedMetadata = parseCsvMetadata(
-        csvText,
-        "Commercial Kitchen Benchmark Line"
-      );
-
-      // 4. Advance strictly upon 200 OK
-      onDatasetLoaded(parsedMetadata);
+      const restaurantId = createDemoRestaurantId();
+      const upload = await uploadSalesApi(await getFile(), restaurantId);
+      onDatasetLoaded({ restaurantId, restaurantName, upload });
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : String(err);
       setError(
         err instanceof ApiError
           ? err
-          : new ApiError(
-              message || "Failed to load benchmark dataset to FastAPI backend.",
-              0,
-              "/restaurants/{id}/sales/upload"
-            )
+          : new ApiError(message || failureMessage, 0, "/restaurants/{id}/sales/upload")
       );
     } finally {
       setIsLoading(false);
     }
   };
 
-  const processUploadedFile = async (file: File) => {
-    setIsLoading(true);
-    setError(null);
-    setSelectedFileName(file.name);
-
-    try {
-      const csvText = await file.text();
-      const parsedMetadata = parseCsvMetadata(csvText, `Uploaded POS Export (${file.name})`);
-
-      // Upload file directly to FastAPI backend
-      await uploadSalesApi(file);
-
-      // Advance strictly upon 200 OK
-      onDatasetLoaded(parsedMetadata);
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : String(err);
-      setError(
-        err instanceof ApiError
-          ? err
-          : new ApiError(
-              message || "File ingestion failed. Check CSV format and backend connection.",
-              0,
-              "/restaurants/{id}/sales/upload"
-            )
-      );
-    } finally {
-      setIsLoading(false);
+  const fetchBenchmarkFile = async () => {
+    const response = await fetch("/benchmark_sales_1year.csv");
+    if (!response.ok) {
+      throw new Error("Unable to retrieve benchmark sample file from server.");
     }
+    return new File([await response.text()], "benchmark_sales_1year.csv", { type: "text/csv" });
   };
+
+  const handleLoadBenchmark = () =>
+    uploadAsNewDataset(
+      "benchmark_sales_1year.csv",
+      fetchBenchmarkFile,
+      "Commercial Kitchen Benchmark Line",
+      "Failed to load benchmark dataset to FastAPI backend."
+    );
+
+  const processUploadedFile = (file: File) =>
+    uploadAsNewDataset(
+      file.name,
+      async () => file,
+      `Uploaded POS Export (${file.name})`,
+      "File ingestion failed. Check CSV format and backend connection."
+    );
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -310,7 +230,7 @@ export function UploadStep({ onDatasetLoaded }: UploadStepProps) {
         )}
 
         <div className="mt-6 pt-4 border-t border-[#EADDCE]/60 flex items-center justify-center gap-6 text-[11px] text-[#71717A] font-mono">
-          <span>Expected columns: date, item, qty_sold, sold_out</span>
+          <span>Expected columns: date, item, qty_sold, optional sold_out and category</span>
           <span>•</span>
           <span>Zero-leakage temporal isolation</span>
         </div>

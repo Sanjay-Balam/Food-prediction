@@ -1,4 +1,5 @@
 import json
+import math
 
 import pandas as pd
 import pytest
@@ -7,6 +8,8 @@ from fastapi.testclient import TestClient
 from forecast.api import app, get_service
 from forecast.app import create_forecast_service
 from forecast.config import Settings
+from forecast.data import schema
+from forecast.data.history import SalesHistory
 from forecast.evaluation.comparison import compare_by_day, compare_by_week
 from forecast.service import decide_activation
 from sample_data import AVERAGE_DAILY_SALES, make_sales
@@ -138,10 +141,73 @@ def test_comparison_numbers_match_hand_calculation():
     by_day = compare_by_day(forecast, actuals)
     # misses 2+5+4+10 = 21 of 63 sold -> 66.7%; daily totals 30 vs 27 and 30 vs 36 -> misses 3+6 of 63 -> 85.7%
     # in range: day 1 both on the edge (12 of 8-12, 15 of 15-25) count as inside; day 2 both outside -> 50%
+    # period: Biryani 20 vs 18, Haleem 40 vs 45 -> misses 2+5 of 63 -> 88.9%; total 60 vs 63 -> 95.2%
     assert by_day["summary"] == {"accuracy_per_item_per_day": 66.7, "accuracy_daily_total": 85.7,
-                                 "actual_inside_range_percent": 50.0}
+                                 "actual_inside_range_percent": 50.0, "accuracy_per_item_period": 88.9,
+                                 "accuracy_period_total": 95.2, "accuracy_per_category_per_day": None,
+                                 "accuracy_per_category_period": None, "predicted_total": 60, "actual_total": 63}
+    assert by_day["categories"] == []  # no categories given: nothing reported, nothing made up
+    # rows: 12 vs 10, 15 vs 20, 6 vs 10, 30 vs 20; days: 27 vs 30, 36 vs 30; items: 18 vs 20, 45 vs 40
+    assert [row["accuracy"] for row in by_day["rows"]] == [83.3, 66.7, 33.3, 66.7]
+    assert [(day["accuracy"], day["inside_range_percent"]) for day in by_day["daily_totals"]] == [(88.9, 100.0),
+                                                                                                  (83.3, 0.0)]
+    assert [(item["item"], item["accuracy"]) for item in by_day["items"]] == [("Biryani", 88.9), ("Haleem", 88.9)]
     by_week = compare_by_week(forecast, actuals)
     # week: Biryani 20 vs 18, Haleem 40 vs 45 -> misses 2+5 of 63 -> 88.9%; total 60 vs 63 -> 95.2%
-    assert by_week["summary"] == {"accuracy_per_item": 88.9, "accuracy_restaurant_total": 95.2,
-                                  "predicted_total": 60, "actual_total": 63}
+    assert by_week["summary"] == {"accuracy_per_item": 88.9, "accuracy_per_category": None,
+                                  "accuracy_restaurant_total": 95.2, "predicted_total": 60, "actual_total": 63}
     assert by_week["note"].startswith("only 2 day(s)")
+
+
+def test_accuracy_is_reported_as_measured_with_many_items():
+    """No floor or cap: a bad forecast over many items must show its real, low accuracy."""
+    forecast = pd.DataFrame({"date": ["2025-01-01"] * 4, "item": ["Biryani", "Haleem", "Kheer", "Naan"],
+                             "low": [8, 8, 8, 2], "likely": [10, 10, 10, 3], "high": [12, 12, 12, 4]})
+    actuals = pd.DataFrame({"date": pd.to_datetime(["2025-01-01"] * 3), "item": ["Biryani", "Haleem", "Kheer"],
+                            "qty_sold": [2, 5, 20]})
+    by_day = compare_by_day(forecast, actuals)
+    # misses 8+5+10+3 = 26 of 27 sold -> 3.7%
+    assert by_day["summary"]["accuracy_per_item_per_day"] == 3.7
+    assert compare_by_week(forecast, actuals)["summary"]["accuracy_per_item"] == 3.7  # one day: same misses
+    assert math.isnan(by_day["rows"][3]["accuracy"])  # Naan sold 0: no accuracy, shown as null in JSON
+
+
+def test_category_accuracy_matches_hand_calculation():
+    forecast = pd.DataFrame({"date": ["2025-01-01"] * 3 + ["2025-01-02"] * 3, "item": ["Biryani", "Pulao", "Naan"] * 2,
+                             "category": ["Rice", "Rice", ""] * 2,
+                             "low": [0] * 6, "likely": [10, 5, 4] * 2, "high": [20] * 6})
+    actuals = pd.DataFrame({"date": pd.to_datetime(["2025-01-01"] * 3 + ["2025-01-02"] * 3),
+                            "item": ["Biryani", "Pulao", "Naan"] * 2, "qty_sold": [12, 2, 4, 6, 11, 2]})
+    by_day = compare_by_day(forecast, actuals)
+    # category-days: Rice 15 vs 14 and 15 vs 17, uncategorized (Naan) 4 vs 4 and 4 vs 2 -> misses 1+2+0+2 = 5 of 37
+    assert by_day["summary"]["accuracy_per_category_per_day"] == 86.5
+    # period: Rice 30 vs 31, uncategorized 8 vs 6 -> misses 1+2 = 3 of 37
+    assert by_day["summary"]["accuracy_per_category_period"] == 91.9
+    category_rows = [(category["category"], category["predicted"], category["actual"], category["difference"],
+                      category["accuracy"]) for category in by_day["categories"]]
+    assert category_rows == [("Rice", 30, 31, 1, 96.8), ("uncategorized", 8, 6, -2, 66.7)]
+    assert by_day["rows"][2]["category"] == "uncategorized"
+    assert compare_by_week(forecast, actuals)["summary"]["accuracy_per_category"] == 91.9
+
+
+def test_categories_flow_from_upload_to_forecast_and_compare(client):
+    upload = client.post("/restaurants/r1/sales/upload",
+                         files=as_upload(make_sales(150).assign(category=" Mains "))).json()  # spaces are stripped
+    assert upload["categories"] == 1
+    forecast = client.post("/restaurants/r1/forecast?days=7&until=2025-05-23").json()
+    assert {row["category"] for row in forecast["rows"]} == {"Mains"}
+    by_day = client.post("/restaurants/r1/compare?period=day").json()
+    assert by_day["categories"][0]["category"] == "Mains"
+    assert by_day["summary"]["accuracy_per_category_per_day"] is not None
+
+
+def test_a_cutoff_one_day_too_early_names_the_earliest_cutoff(client):
+    client.post("/restaurants/r1/sales/upload", files=as_upload(make_sales(31, start="2026-08-01")))
+    too_early = client.post("/restaurants/r1/train?until=2026-08-20")  # 20 days; 14 to learn + 7 to test = 21
+    assert too_early.status_code == 400
+    assert "is 20 days" in too_early.json()["detail"] and "on or after 2026-08-21" in too_early.json()["detail"]
+
+
+def test_short_new_datasets_need_less_history_before_the_model_is_trusted():
+    assert SalesHistory.from_records(schema.sales(make_sales(21))).days_needed_for_model(28) == 14
+    assert SalesHistory.from_records(schema.sales(make_sales(201))).days_needed_for_model(28) == 28
