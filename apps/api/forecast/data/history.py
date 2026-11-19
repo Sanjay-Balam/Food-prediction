@@ -4,6 +4,8 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
+BATCH_PREP, COOK_TO_ORDER = "batch_prep", "cook_to_order"  # how a kitchen makes a dish, see prep_style_of_each_item
+
 
 @dataclass(frozen=True)
 class SalesHistory:
@@ -45,9 +47,18 @@ class SalesHistory:
         idx = pd.date_range(self.qty.index.min(), until, name="date")
         return SalesHistory(self.qty.reindex(idx), self.sold_out.reindex(idx), self.days)
 
+    def average_daily_sales(self, window_days: int) -> pd.Series:
+        """item -> average portions per known day over the last `window_days`; NaN when the item had no known day."""
+        return self.qty.loc[self.last_date - pd.Timedelta(days=window_days - 1):].mean()
+
     def active_items(self, window_days: int) -> list[str]:
-        recent = self.qty.loc[self.last_date - pd.Timedelta(days=window_days - 1):]
-        return [item for item in self.qty.columns if recent[item].fillna(0).sum() > 0]
+        return [item for item, average in self.average_daily_sales(window_days).items() if average > 0]
+
+    def prep_style_of_each_item(self, window_days: int, batch_prep_min_daily_portions: float) -> dict[str, str]:
+        """BATCH_PREP for dishes that sold enough per day to be cooked ahead and judged per dish per day,
+        COOK_TO_ORDER for the rest. Uses only the sales in this history, so a test cutoff cannot leak in."""
+        return {item: BATCH_PREP if average >= batch_prep_min_daily_portions else COOK_TO_ORDER
+                for item, average in self.average_daily_sales(window_days).items()}
 
     def days_needed_for_model(self, usual_days: int) -> int:
         """Days of sales the model needs before it is trusted: `usual_days`, but fewer for a short new dataset

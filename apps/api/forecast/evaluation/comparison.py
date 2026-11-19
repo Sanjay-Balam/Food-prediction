@@ -2,11 +2,12 @@
 Every number is the plain formula on the matched rows: nothing is adjusted, floored or capped."""
 import pandas as pd
 
+from ..data.history import BATCH_PREP
 from .backtest import accuracy
 
-# 'category' and 'method' come from the saved forecast; a hand-made forecast may not have them
-ROW_COLUMNS = ["date", "item", "category", "low", "likely", "high", "actual", "difference", "inside_range",
-               "accuracy", "method"]
+# 'category', 'prep_style' and 'method' come from the saved forecast; a hand-made forecast may not have them
+ROW_COLUMNS = ["date", "item", "category", "prep_style", "low", "likely", "high", "actual", "difference",
+               "inside_range", "accuracy", "method"]
 UNCATEGORIZED = "uncategorized"
 
 
@@ -18,6 +19,7 @@ def compare_by_day(forecast: pd.DataFrame, actuals: pd.DataFrame) -> dict:
     item_totals = _period_totals_by(matched, "item")
     category_totals = _period_totals_by(matched, "category") if _has_categories(matched) else None
     predicted_total, actual_total = int(item_totals["predicted"].sum()), int(item_totals["actual"].sum())
+    prep_styles = _prep_style_report(matched)
     return {
         "period": "day", **_compared_dates(matched),
         "summary": {
@@ -29,9 +31,11 @@ def compare_by_day(forecast: pd.DataFrame, actuals: pd.DataFrame) -> dict:
             "accuracy_per_category_per_day": None if category_totals is None
             else _accuracy_of(_sum_by(matched, ["date", "category"])),
             "accuracy_per_category_period": None if category_totals is None else _accuracy_of(category_totals),
+            "accuracy_per_item_per_day_batch_prep": _batch_prep_accuracy(prep_styles),
             "predicted_total": predicted_total,
             "actual_total": actual_total,
         },
+        "prep_styles": prep_styles,
         "daily_totals": daily_totals.reset_index().to_dict("records"),
         "items": item_totals.reset_index().to_dict("records"),
         "categories": [] if category_totals is None else category_totals.reset_index().to_dict("records"),
@@ -55,6 +59,7 @@ def compare_by_week(forecast: pd.DataFrame, actuals: pd.DataFrame) -> dict:
         },
         "items": item_totals.reset_index().to_dict("records"),
         "categories": [] if category_totals is None else category_totals.reset_index().to_dict("records"),
+        "prep_styles": _prep_style_report(matched),
     }
     if result["days_compared"] < 7:
         result["note"] = f"only {result['days_compared']} day(s) had real sales to compare; a full week needs 7"
@@ -113,6 +118,26 @@ def _period_totals_by(matched: pd.DataFrame, key: str) -> pd.DataFrame:
     totals["difference"] = totals["actual"] - totals["predicted"]
     totals["accuracy"] = _accuracy_of_each_row(totals["actual"], totals["predicted"])
     return totals
+
+
+def _prep_style_report(matched: pd.DataFrame) -> list[dict]:
+    """Per prep style (batch_prep / cook_to_order): dishes, their share of portions sold, and per-dish accuracy
+    per day and over the whole period. Empty when the forecast carries no prep style."""
+    if "prep_style" not in matched:
+        return []
+    total_sold = matched["actual"].sum()
+    return [{"prep_style": prep_style, "dishes": int(rows["item"].nunique()),
+             "share_of_portions_sold_percent": round(100 * rows["actual"].sum() / total_sold, 1) if total_sold
+             else None,
+             "accuracy_per_item_per_day": accuracy(rows["actual"], rows["likely"]),
+             "accuracy_per_item_period": _accuracy_of(_sum_by(rows, "item"))}
+            for prep_style, rows in matched.groupby("prep_style")]
+
+
+def _batch_prep_accuracy(prep_styles: list[dict]) -> float | None:
+    """Per-dish daily accuracy of the batch-prep dishes, or None when no dish sold enough to be one."""
+    return next((style["accuracy_per_item_per_day"] for style in prep_styles if style["prep_style"] == BATCH_PREP),
+                None)
 
 
 def _accuracy_of(totals: pd.DataFrame) -> float:

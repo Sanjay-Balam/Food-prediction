@@ -278,6 +278,32 @@ export function ResultsStep({
         </div>
       )}
 
+      {/* Per-dish daily accuracy split by prep style (API `prep_styles`, as returned) */}
+      {results.prepStyles.length > 0 && (
+        <div className="-mt-4 mb-8 rounded-2xl border border-[#E5D7B7] bg-white px-5 py-4 space-y-2 text-xs">
+          <div className="font-bold text-[#8F6D27] uppercase tracking-wider">
+            Dish prep styles · batch-prep = {results.batchPrepMinDailyPortions}+ portions a day before the cutoff
+          </div>
+          {results.accuracyPerItemPerDayBatchPrep === null && (
+            <p className="text-[#52525B]">
+              No dish averaged {results.batchPrepMinDailyPortions}+ portions a day before the cutoff, so per-dish
+              daily accuracy isn&apos;t a meaningful target for this menu; use category and period accuracy.
+            </p>
+          )}
+          {results.prepStyles.map((style) => (
+            <div key={style.prep_style} className="font-mono text-[#52525B] flex flex-wrap gap-x-6 gap-y-1">
+              <strong className="text-[#18181B]">
+                {style.prep_style === "batch_prep" ? "Batch-prep" : "Cook-to-order"}
+              </strong>
+              <span>{style.dishes} dishes</span>
+              <span>{formatPercent(style.share_of_portions_sold_percent)} of portions sold</span>
+              <span>item-day accuracy {formatPercent(style.accuracy_per_item_per_day)}</span>
+              <span>item accuracy over period {formatPercent(style.accuracy_per_item_period)}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* View Mode Switcher */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-6">
         <div className="flex flex-wrap items-center gap-1 rounded-xl border border-[#EADDCE] bg-white p-1 self-start shadow-sm">

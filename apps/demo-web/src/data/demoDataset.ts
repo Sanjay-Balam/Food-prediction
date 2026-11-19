@@ -179,6 +179,9 @@ export interface ComparisonSummary {
   accuracyPeriodTotal: number | null; // accuracy_period_total
   accuracyPerCategoryDay: number | null; // accuracy_per_category_per_day; null without categories
   accuracyPerCategoryPeriod: number | null; // accuracy_per_category_period; null without categories
+  accuracyPerItemPerDayBatchPrep: number | null; // null when no dish reached the batch-prep threshold
+  batchPrepMinDailyPortions: number;
+  prepStyles: CompareApiResponse["prep_styles"]; // as returned by the API
   modelVersion: string;
   days: DayForecast[];
   itemAggregates: PeriodTotals[];

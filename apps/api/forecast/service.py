@@ -86,7 +86,8 @@ class ForecastService:
             raise FileNotFoundError(f"no forecast yet for '{restaurant_id}': make a forecast first")
         actuals = (schema.sales(read_table_file(actuals_source, filename)) if actuals_source is not None
                    else self.store.load_sales(restaurant_id))
-        return comparisons[period](forecast, actuals)
+        return comparisons[period](forecast, actuals) | {
+            "batch_prep_min_daily_portions": self.settings.batch_prep_min_daily_portions}
 
     def train_weekly(self, restaurant_id: str, weeks: int | None = None, until=None) -> TrainingResult:
         """`until` trains only on sales up to that day, keeping the later uploaded days as a hidden test."""
@@ -137,6 +138,9 @@ class ForecastService:
         # a menu label, not sales, so using the latest one cannot leak the test days
         category_of_item = self._latest_category_of_each_item(restaurant_id)
         forecast["category"] = forecast["item"].map(lambda item: category_of_item.get(item, ""))
+        prep_style_of_item = history.prep_style_of_each_item(self.settings.active_item_days,
+                                                             self.settings.batch_prep_min_daily_portions)
+        forecast["prep_style"] = forecast["item"].map(prep_style_of_item)
         self.store.save_forecast(restaurant_id, forecast)
         return forecast
 

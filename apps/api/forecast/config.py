@@ -11,6 +11,9 @@ class Settings:
     horizons: tuple[int, ...] = (1, 7)  # h1: tomorrow; h7: days 2-7, and tomorrow if an upload is missing
     min_history_days: int = 28  # items newer than this use the same-weekday baseline
     active_item_days: int = 28  # items with no sale in this window are treated as off the menu
+    # dishes averaging this many portions a day are batch-prepped and judged per dish per day; below it random
+    # day-to-day swings dominate (at 10/day the best possible per-day accuracy is about 75%), so they are cook-to-order
+    batch_prep_min_daily_portions: int = 10
     backtest_weeks: int = 2
     retrain_every_days: int = 14
     keep_versions: int = 3

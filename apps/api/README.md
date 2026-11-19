@@ -105,7 +105,7 @@ http://127.0.0.1:8000/docs.
 | POST | `/restaurants/{id}/days/upload` | upload bookings / promo / closed days as `.csv` or `.json` |
 | POST | `/restaurants/{id}/train?weeks=8&until=YYYY-MM-DD` | weekly training (~40 s); `until` = test mode, train only up to that day |
 | POST | `/restaurants/{id}/forecast?days=7&until=YYYY-MM-DD` | low / likely / high per item, for the days after `until` (or after the last upload) |
-| POST | `/restaurants/{id}/compare?period=day` or `week` | latest forecast vs real sales: the uploaded sales, or an optional reference file (not saved) |
+| POST | `/restaurants/{id}/compare?period=day` or `week` | latest forecast vs real sales: the uploaded sales, or an optional reference file (not saved); `prep_styles` splits accuracy into batch-prep dishes (averaged `batch_prep_min_daily_portions`+ a day before the cutoff, judged per dish per day) and cook-to-order dishes |
 | GET | `/restaurants/{id}/backtest?weeks=8` | accuracy on recent unseen weeks |
 | POST | `/restaurants/{id}/message?language=Hinglish` | chef prep message |
 

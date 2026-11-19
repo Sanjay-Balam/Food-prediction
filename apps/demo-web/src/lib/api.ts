@@ -128,9 +128,18 @@ export interface CompareApiResponse {
     // null when the upload had no category column
     accuracy_per_category_per_day: number | null;
     accuracy_per_category_period: number | null;
+    accuracy_per_item_per_day_batch_prep: number | null; // null when no dish reached the batch-prep threshold
     predicted_total: number;
     actual_total: number;
   };
+  prep_styles: Array<{
+    prep_style: "batch_prep" | "cook_to_order";
+    dishes: number;
+    share_of_portions_sold_percent: number | null;
+    accuracy_per_item_per_day: number | null;
+    accuracy_per_item_period: number | null;
+  }>; // empty when the forecast has no prep style
+  batch_prep_min_daily_portions: number;
   daily_totals: Array<{
     date: string;
     predicted: number;
@@ -548,6 +557,9 @@ export function buildComparisonSummary(
     accuracyPeriodTotal: apiData.summary.accuracy_period_total,
     accuracyPerCategoryDay: apiData.summary.accuracy_per_category_per_day,
     accuracyPerCategoryPeriod: apiData.summary.accuracy_per_category_period,
+    accuracyPerItemPerDayBatchPrep: apiData.summary.accuracy_per_item_per_day_batch_prep,
+    batchPrepMinDailyPortions: apiData.batch_prep_min_daily_portions,
+    prepStyles: apiData.prep_styles,
     modelVersion,
     days,
     itemAggregates: apiData.items.map((item) => toPeriodTotals(item.item, item)),

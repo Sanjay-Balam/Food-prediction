@@ -94,7 +94,8 @@ def forecast(restaurant_id: str, days: int = Query(7, ge=1),
              service: ForecastService = Depends(get_service)):
     rows = service.forecast_next_days(restaurant_id, days, until)
     return json_safe({"data_until": rows["data_until"].iloc[0], "model_version": rows["model_version"].iloc[0],
-                      "rows": rows[["date", "item", "category", "low", "likely", "high", "method"]].to_dict("records")})
+                      "rows": rows[["date", "item", "category", "prep_style", "low", "likely", "high", "method"]]
+                      .to_dict("records")})
 
 
 @app.post("/restaurants/{restaurant_id}/compare",

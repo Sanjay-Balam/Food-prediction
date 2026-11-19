@@ -145,7 +145,9 @@ def test_comparison_numbers_match_hand_calculation():
     assert by_day["summary"] == {"accuracy_per_item_per_day": 66.7, "accuracy_daily_total": 85.7,
                                  "actual_inside_range_percent": 50.0, "accuracy_per_item_period": 88.9,
                                  "accuracy_period_total": 95.2, "accuracy_per_category_per_day": None,
-                                 "accuracy_per_category_period": None, "predicted_total": 60, "actual_total": 63}
+                                 "accuracy_per_category_period": None, "accuracy_per_item_per_day_batch_prep": None,
+                                 "predicted_total": 60, "actual_total": 63}
+    assert by_day["prep_styles"] == []  # no prep style in the forecast: nothing reported, nothing made up
     assert by_day["categories"] == []  # no categories given: nothing reported, nothing made up
     # rows: 12 vs 10, 15 vs 20, 6 vs 10, 30 vs 20; days: 27 vs 30, 36 vs 30; items: 18 vs 20, 45 vs 40
     assert [row["accuracy"] for row in by_day["rows"]] == [83.3, 66.7, 33.3, 66.7]
@@ -199,6 +201,35 @@ def test_categories_flow_from_upload_to_forecast_and_compare(client):
     by_day = client.post("/restaurants/r1/compare?period=day").json()
     assert by_day["categories"][0]["category"] == "Mains"
     assert by_day["summary"]["accuracy_per_category_per_day"] is not None
+
+
+def test_prep_style_accuracy_matches_hand_calculation():
+    forecast = pd.DataFrame({"date": ["2025-01-01"] * 3 + ["2025-01-02"] * 3, "item": ["Biryani", "Pulao", "Naan"] * 2,
+                             "prep_style": ["batch_prep", "batch_prep", "cook_to_order"] * 2,
+                             "low": [0] * 6, "likely": [10, 5, 4] * 2, "high": [20] * 6})
+    actuals = pd.DataFrame({"date": pd.to_datetime(["2025-01-01"] * 3 + ["2025-01-02"] * 3),
+                            "item": ["Biryani", "Pulao", "Naan"] * 2, "qty_sold": [12, 2, 4, 6, 11, 2]})
+    by_day = compare_by_day(forecast, actuals)
+    # batch: Biryani 12 vs 10 and 6 vs 10, Pulao 2 vs 5 and 11 vs 5 -> misses 2+4+3+6 = 15 of 31 sold -> 51.6%
+    #        over the period Biryani 18 vs 20, Pulao 13 vs 10 -> misses 2+3 = 5 of 31 -> 83.9%; 31 of 37 sold -> 83.8%
+    # cook-to-order: Naan 4 vs 4 and 2 vs 4 -> misses 2 of 6 -> 66.7% per day; period 6 vs 8 -> 66.7%; 6 of 37 -> 16.2%
+    assert by_day["prep_styles"] == [
+        {"prep_style": "batch_prep", "dishes": 2, "share_of_portions_sold_percent": 83.8,
+         "accuracy_per_item_per_day": 51.6, "accuracy_per_item_period": 83.9},
+        {"prep_style": "cook_to_order", "dishes": 1, "share_of_portions_sold_percent": 16.2,
+         "accuracy_per_item_per_day": 66.7, "accuracy_per_item_period": 66.7}]
+    assert by_day["summary"]["accuracy_per_item_per_day_batch_prep"] == 51.6
+    assert compare_by_week(forecast, actuals)["prep_styles"] == by_day["prep_styles"]
+
+
+def test_dishes_get_their_prep_style_from_sales_before_the_cutoff(client):
+    client.post("/restaurants/r1/sales/upload", files=as_upload(make_sales(150)))  # 60, 20 and 6 portions a day
+    forecast = client.post("/restaurants/r1/forecast?days=7&until=2025-05-23").json()
+    assert {row["item"]: row["prep_style"] for row in forecast["rows"]} == {
+        "Chicken Biryani": "batch_prep", "Haleem": "batch_prep", "Double ka Meetha": "cook_to_order"}
+    by_day = client.post("/restaurants/r1/compare?period=day").json()
+    assert by_day["batch_prep_min_daily_portions"] == 10
+    assert [style["prep_style"] for style in by_day["prep_styles"]] == ["batch_prep", "cook_to_order"]
 
 
 def test_a_cutoff_one_day_too_early_names_the_earliest_cutoff(client):
